@@ -410,7 +410,17 @@ function renderHistory() {
     const label = STIMULUS_LABELS[entry.stimulusMode] || "Spokojny";
     node.querySelector(".history-title").textContent = entry.quizTitle;
     node.querySelector(".history-meta").textContent =
-      entry.score + " pkt • " + entry.correct + "/" + entry.total + " • " + label;
+      "Opanowane: " +
+      (entry.masteredCount || 0) +
+      "/" +
+      entry.total +
+      " • Do pracy: " +
+      (entry.pendingCount || 0) +
+      " • " +
+      label +
+      " • " +
+      entry.score +
+      " pkt";
     elements.historyList.append(node);
   });
 }
@@ -452,21 +462,87 @@ function renderAnswers(item) {
   });
 }
 
-function buildSummaryText(session) {
-  if (session.correctCount === session.totalQuestions && session.reviewCount === 0) {
-    return "Brawo. Runda zakonczona bez pomylek. Zdobywasz " + session.score + " pkt.";
+function getRoundQuestionIndexes(session) {
+  const seen = {};
+
+  if (!session || !Array.isArray(session.queue)) {
+    return [];
   }
 
+  return session.queue.slice(0, session.totalQuestions).filter(function filterUnique(questionIndex) {
+    if (seen[questionIndex]) {
+      return false;
+    }
+
+    seen[questionIndex] = true;
+    return true;
+  });
+}
+
+function getSessionMasteryStats(session) {
+  const roundIndexes = getRoundQuestionIndexes(session);
+  let masteredCount = 0;
+
+  roundIndexes.forEach(function countMastered(questionIndex) {
+    const progress = session.questionProgress && session.questionProgress[questionIndex];
+
+    if (progress && progress.resolved) {
+      masteredCount += 1;
+    }
+  });
+
+  return {
+    totalCount: roundIndexes.length,
+    masteredCount: masteredCount,
+    pendingCount: Math.max(0, roundIndexes.length - masteredCount)
+  };
+}
+
+function buildProgressComparison(currentStats, previousEntry) {
+  const previousMastered = previousEntry ? (previousEntry.masteredCount || 0) : 0;
+  const previousPending = previousEntry ? (previousEntry.pendingCount || 0) : 0;
+  const masteredDelta = currentStats.masteredCount - previousMastered;
+  const pendingDelta = currentStats.pendingCount - previousPending;
+
+  if (!previousEntry) {
+    return "To pierwsza zapisana runda, wiec kolejna pokaze porownanie postepu.";
+  }
+
+  if (masteredDelta > 0 && pendingDelta < 0) {
+    return "To postep wzgledem poprzedniej rundy: wiecej pytan opanowanych i mniej do dalszej pracy.";
+  }
+
+  if (masteredDelta > 0) {
+    return "To postep wzgledem poprzedniej rundy: opanowano o " + masteredDelta + " pytan wiecej.";
+  }
+
+  if (pendingDelta < 0) {
+    return "To postep wzgledem poprzedniej rundy: o " + Math.abs(pendingDelta) + " pytan mniej wymaga dalszej pracy.";
+  }
+
+  if (masteredDelta < 0 && pendingDelta > 0) {
+    return "Ta runda wypadla slabiej niz poprzednia: mniej pytan zostalo opanowanych.";
+  }
+
+  return "Wynik opanowania jest taki sam jak w poprzedniej rundzie.";
+}
+
+function buildSummaryText(session) {
+  const stats = getSessionMasteryStats(session);
+  const previousEntry = state.history[1] || null;
+
   return (
-    "Koniec rundy. Masz " +
-    session.score +
-    " pkt, " +
-    session.correctCount +
+    "Koniec rundy. Opanowane pytania: " +
+    stats.masteredCount +
     "/" +
-    session.totalQuestions +
-    " zaliczonych pytan i " +
-    session.reviewCount +
-    " dodatkowych powrotow do pytan."
+    stats.totalCount +
+    ". Dalszej pracy wymaga: " +
+    stats.pendingCount +
+    ". " +
+    buildProgressComparison(stats, previousEntry) +
+    " Punkty: " +
+    session.score +
+    "."
   );
 }
 
@@ -661,6 +737,8 @@ function submitAnswer(option) {
 }
 
 function finishSession() {
+  const stats = getSessionMasteryStats(state.session);
+
   state.session.completed = true;
   state.session.selectedAnswer = null;
   state.session.eliminatedAnswers = [];
@@ -673,6 +751,8 @@ function finishSession() {
     score: state.session.score,
     correct: state.session.correctCount,
     total: state.session.totalQuestions,
+    masteredCount: stats.masteredCount,
+    pendingCount: stats.pendingCount,
     reviewCount: state.session.reviewCount,
     stimulusMode: state.quiz.settings.stimulusMode,
     createdAt: new Date().toISOString()
@@ -837,6 +917,23 @@ function migrateStoredState() {
 
   if (state.quiz && !state.session) {
     state.session = createSession(state.quiz);
+  }
+
+  if (Array.isArray(state.history)) {
+    state.history = state.history.map(function migrateHistoryEntry(entry) {
+      const total = Number.isInteger(entry.total) ? entry.total : 0;
+      const masteredCount = Number.isInteger(entry.masteredCount)
+        ? entry.masteredCount
+        : (Number.isInteger(entry.correct) ? entry.correct : 0);
+      const pendingCount = Number.isInteger(entry.pendingCount)
+        ? entry.pendingCount
+        : Math.max(0, total - masteredCount);
+
+      return Object.assign({}, entry, {
+        masteredCount: masteredCount,
+        pendingCount: pendingCount
+      });
+    });
   }
 }
 

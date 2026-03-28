@@ -227,6 +227,8 @@ function createSession(quiz) {
     answeredCount: 0,
     reviewCount: 0,
     selectedAnswer: null,
+    eliminatedAnswers: [],
+    attemptCountForCurrent: 0,
     lastAnswerCorrect: null,
     lastFeedback: "",
     lastGain: 0,
@@ -396,6 +398,10 @@ function renderHistory() {
 }
 
 function renderAnswers(item) {
+  const eliminatedAnswers = Array.isArray(state.session.eliminatedAnswers)
+    ? state.session.eliminatedAnswers
+    : [];
+
   elements.answerGrid.innerHTML = "";
 
   item.options.forEach(function renderOption(option) {
@@ -409,6 +415,14 @@ function renderAnswers(item) {
         button.classList.add("selected");
         button.classList.add(state.session.lastAnswerCorrect ? "correct" : "wrong");
       }
+
+      if (!state.session.lastAnswerCorrect && option === item.correctAnswer) {
+        button.classList.add("correct");
+      }
+
+      button.disabled = true;
+    } else if (eliminatedAnswers.indexOf(option) !== -1) {
+      button.classList.add("wrong");
       button.disabled = true;
     } else {
       button.addEventListener("click", function onClick() {
@@ -472,7 +486,9 @@ function renderQuestion() {
 
   elements.questionIndex.textContent = "Pytanie " + (session.currentStep + 1);
   elements.questionText.textContent = item.question;
-  elements.hintText.textContent = session.revealHint && item.hint ? "Podpowiedz: " + item.hint : "";
+  elements.hintText.textContent = session.revealHint
+    ? "Podpowiedz: " + (item.hint || "Odrzuc zla odpowiedz i sprobuj jeszcze raz.")
+    : "";
   elements.feedbackText.textContent = session.lastFeedback || "";
   elements.showHintButton.disabled = !item.hint || Boolean(session.selectedAnswer);
   elements.nextQuestionButton.disabled = !session.selectedAnswer;
@@ -493,26 +509,49 @@ function enqueueReview(currentIndex) {
 function submitAnswer(option) {
   const item = getCurrentItem();
   const currentIndex = state.session.queue[state.session.currentStep];
+  const attemptCount = state.session.attemptCountForCurrent || 0;
   const isCorrect = option === item.correctAnswer;
   let gainedScore;
 
-  state.session.selectedAnswer = option;
-  state.session.lastAnswerCorrect = isCorrect;
-  state.session.answeredCount += 1;
-
   if (isCorrect) {
+    state.session.selectedAnswer = option;
+    state.session.lastAnswerCorrect = true;
+    state.session.answeredCount += 1;
     gainedScore = 12 + Math.min(state.session.streak, 3) * 2;
     state.session.correctCount += 1;
     state.session.score += gainedScore;
     state.session.streak += 1;
     state.session.bestStreak = Math.max(state.session.bestStreak, state.session.streak);
     state.session.lastGain = gainedScore;
-    state.session.lastFeedback = "Poprawna odpowiedz: " + item.correctAnswer + ". +" + gainedScore + " pkt.";
+    state.session.lastFeedback =
+      (attemptCount > 0 ? "Poprawna odpowiedz po podpowiedzi: " : "Poprawna odpowiedz: ") +
+      item.correctAnswer +
+      ". +" +
+      gainedScore +
+      " pkt.";
     celebrate();
+  } else if (attemptCount === 0) {
+    state.session.attemptCountForCurrent = 1;
+    state.session.eliminatedAnswers = [option];
+    state.session.revealHint = true;
+    state.session.lastAnswerCorrect = false;
+    state.session.lastGain = 0;
+    state.session.lastFeedback = item.hint
+      ? "To nie ta odpowiedz. Sprawdz podpowiedz i sprobuj jeszcze raz."
+      : "To nie ta odpowiedz. Odrzucamy te odpowiedz, masz druga probe.";
+    saveToStorage();
+    render();
+    return;
   } else {
+    state.session.selectedAnswer = option;
+    state.session.lastAnswerCorrect = false;
+    state.session.answeredCount += 1;
     state.session.streak = 0;
     state.session.lastGain = 0;
-    state.session.lastFeedback = "To nie ta odpowiedz. Wrocimy do tego pytania za chwile.";
+    state.session.lastFeedback =
+      "To nadal nie ta odpowiedz. Poprawna odpowiedz: " +
+      item.correctAnswer +
+      ". Wrocimy do tego pytania za chwile.";
     enqueueReview(currentIndex);
   }
 
@@ -528,6 +567,8 @@ function submitAnswer(option) {
 function finishSession() {
   state.session.completed = true;
   state.session.selectedAnswer = null;
+  state.session.eliminatedAnswers = [];
+  state.session.attemptCountForCurrent = 0;
   state.session.lastAnswerCorrect = null;
   state.session.revealHint = false;
   state.history.unshift({
@@ -556,6 +597,8 @@ function goToNextQuestion() {
 
   state.session.currentStep += 1;
   state.session.selectedAnswer = null;
+  state.session.eliminatedAnswers = [];
+  state.session.attemptCountForCurrent = 0;
   state.session.lastAnswerCorrect = null;
   state.session.lastFeedback = "";
   state.session.lastGain = 0;
@@ -662,6 +705,14 @@ function migrateStoredState() {
 
   if (state.session && !Number.isInteger(state.session.totalQuestions)) {
     state.session.totalQuestions = Math.max(1, state.session.queue.length - (state.session.reviewCount || 0));
+  }
+
+  if (state.session && !Array.isArray(state.session.eliminatedAnswers)) {
+    state.session.eliminatedAnswers = [];
+  }
+
+  if (state.session && !Number.isInteger(state.session.attemptCountForCurrent)) {
+    state.session.attemptCountForCurrent = 0;
   }
 
   if (state.quiz && !state.session) {

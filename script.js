@@ -19,6 +19,7 @@ const STREAK_PENALTY_ON_MISTAKE = 1;
 const DEFAULT_QUIZ_PATH = "./data.json";
 const LAYOUT_DENSITIES = ["regular", "compact", "tight", "ultra"];
 const DEFAULT_SOUND_ENABLED = true;
+const TRUE_FALSE_OPTIONS = ["Prawda", "Fałsz"];
 const SOUND_EVENT_CONFIG = {
   correct: {
     calm: { volume: 0.12, stepMs: 74, duration: 0.28 },
@@ -68,6 +69,7 @@ const exampleQuiz = {
   settings: {
     sessionSize: 4,
     stimulusMode: "calm",
+    trueFalsePercent: 25,
     shuffleQuestions: false,
     shuffleOptions: false
   },
@@ -126,6 +128,7 @@ const elements = {
   quizTitleInput: document.querySelector("#quizTitleInput"),
   sessionSizeInput: document.querySelector("#sessionSizeInput"),
   stimulusModeSelect: document.querySelector("#stimulusModeSelect"),
+  trueFalsePercentInput: document.querySelector("#trueFalsePercentInput"),
   quizJsonInput: document.querySelector("#quizJsonInput"),
   builderMessage: document.querySelector("#builderMessage"),
   saveQuizButton: document.querySelector("#saveQuizButton"),
@@ -597,6 +600,74 @@ function normalizeSessionSize(value, itemCount) {
   return clamp(candidate, 3, Math.max(3, Math.min(10, safeCount)));
 }
 
+function normalizeTrueFalsePercent(value) {
+  const parsed = Number.parseInt(value, 10);
+  const candidate = Number.isFinite(parsed) ? parsed : 0;
+  return clamp(candidate, 0, 100);
+}
+
+function getQueueEntryQuestionIndex(entry) {
+  if (Number.isInteger(entry)) {
+    return entry;
+  }
+
+  if (entry && Number.isInteger(entry.questionIndex)) {
+    return entry.questionIndex;
+  }
+
+  return -1;
+}
+
+function buildTrueFalsePrompt(item, quizSettings) {
+  const falseOptions = item.options.filter(function filterIncorrect(option) {
+    return option !== item.correctAnswer;
+  });
+  const useTrueStatement = falseOptions.length === 0 || Math.random() >= 0.5;
+  const proposedAnswer = useTrueStatement
+    ? item.correctAnswer
+    : falseOptions[Math.floor(Math.random() * falseOptions.length)];
+  const options = quizSettings.shuffleOptions
+    ? getStableShuffledOptions(item.question + "::true-false::" + proposedAnswer, TRUE_FALSE_OPTIONS)
+    : TRUE_FALSE_OPTIONS.slice();
+
+  return {
+    answerMode: "boolean",
+    displayQuestion: "Prawda czy fałsz?",
+    statementText: "Na pytanie \"" + item.question + "\" poprawna odpowiedź to \"" + proposedAnswer + "\".",
+    options: options,
+    correctAnswer: useTrueStatement ? "Prawda" : "Fałsz"
+  };
+}
+
+function createPromptEntry(questionIndex, quiz, forcedMode) {
+  const item = quiz.items[questionIndex];
+  const trueFalsePercent = quiz.settings.trueFalsePercent || 0;
+  const choiceOptions = quiz.settings.shuffleOptions
+    ? getStableShuffledOptions(item.question + "::choice", item.options)
+    : item.options.slice();
+  const useBooleanMode = forcedMode
+    ? forcedMode === "boolean"
+    : (trueFalsePercent > 0 && Math.random() * 100 < trueFalsePercent);
+
+  if (useBooleanMode) {
+    return Object.assign(
+      {
+        questionIndex: questionIndex
+      },
+      buildTrueFalsePrompt(item, quiz.settings)
+    );
+  }
+
+  return {
+    questionIndex: questionIndex,
+    answerMode: "choice",
+    displayQuestion: item.question,
+    statementText: "",
+    options: choiceOptions,
+    correctAnswer: item.correctAnswer
+  };
+}
+
 function normalizeQuiz(rawQuiz, fallbackTitle, overrides) {
   const source = rawQuiz || {};
   const opts = overrides || {};
@@ -658,6 +729,11 @@ function normalizeQuiz(rawQuiz, fallbackTitle, overrides) {
       ),
       stimulusMode: normalizeStimulusMode(
         typeof opts.stimulusMode !== "undefined" ? opts.stimulusMode : settingsSource.stimulusMode
+      ),
+      trueFalsePercent: normalizeTrueFalsePercent(
+        typeof opts.trueFalsePercent !== "undefined"
+          ? opts.trueFalsePercent
+          : settingsSource.trueFalsePercent
       ),
       shuffleQuestions: Boolean(settingsSource.shuffleQuestions),
       shuffleOptions: Boolean(settingsSource.shuffleOptions)
@@ -722,8 +798,22 @@ function getRoundQueue(quiz, questionProgress) {
       return !(progress && progress.resolved);
     });
   const ordered = quiz.settings.shuffleQuestions ? shuffleArray(unresolvedIndexes) : unresolvedIndexes;
+  const roundIndexes = ordered.slice(0, Math.min(quiz.settings.sessionSize, ordered.length));
+  const booleanCount = Math.min(
+    roundIndexes.length,
+    Math.round((roundIndexes.length * (quiz.settings.trueFalsePercent || 0)) / 100)
+  );
+  const booleanIndexes = {};
 
-  return ordered.slice(0, Math.min(quiz.settings.sessionSize, ordered.length));
+  if (booleanCount > 0) {
+    shuffleArray(roundIndexes).slice(0, booleanCount).forEach(function markBoolean(questionIndex) {
+      booleanIndexes[questionIndex] = true;
+    });
+  }
+
+  return roundIndexes.map(function mapPrompt(questionIndex) {
+    return createPromptEntry(questionIndex, quiz, booleanIndexes[questionIndex] ? "boolean" : "choice");
+  });
 }
 
 function createSession(quiz, previousSession) {
@@ -986,8 +1076,24 @@ function applyStimulusMode(mode) {
 }
 
 function getCurrentItem() {
-  const queueIndex = state.session.queue[state.session.currentStep];
+  const queueIndex = getQueueEntryQuestionIndex(state.session.queue[state.session.currentStep]);
   return state.quiz.items[queueIndex];
+}
+
+function getCurrentPrompt() {
+  const entry = state.session.queue[state.session.currentStep];
+  const questionIndex = getQueueEntryQuestionIndex(entry);
+  const item = state.quiz.items[questionIndex];
+
+  if (!item) {
+    return null;
+  }
+
+  if (entry && typeof entry === "object" && Array.isArray(entry.options) && typeof entry.correctAnswer === "string") {
+    return entry;
+  }
+
+  return createPromptEntry(questionIndex, state.quiz, "choice");
 }
 
 function getSafeQuiz() {
@@ -1012,6 +1118,7 @@ function updateBuilderFields() {
   elements.quizTitleInput.value = quiz.title || "";
   elements.sessionSizeInput.value = String(quiz.settings.sessionSize);
   elements.stimulusModeSelect.value = quiz.settings.stimulusMode;
+  elements.trueFalsePercentInput.value = String(quiz.settings.trueFalsePercent || 0);
   elements.quizJsonInput.value = JSON.stringify(
     {
       title: quiz.title,
@@ -1178,7 +1285,11 @@ function getRoundQuestionIndexes(session) {
     return [];
   }
 
-  return session.queue.slice(0, session.totalQuestions).filter(function filterUnique(questionIndex) {
+  return session.queue.slice(0, session.totalQuestions).map(getQueueEntryQuestionIndex).filter(function filterUnique(questionIndex) {
+    if (questionIndex < 0) {
+      return false;
+    }
+
     if (seen[questionIndex]) {
       return false;
     }
@@ -1271,6 +1382,7 @@ function renderQuestion() {
   const quiz = state.quiz;
   const session = state.session;
   let item;
+  let prompt;
 
   if (!quiz || !session) {
     hideSummaryView();
@@ -1316,17 +1428,23 @@ function renderQuestion() {
 
   hideSummaryView();
   item = getCurrentItem();
+  prompt = getCurrentPrompt();
   elements.nextQuestionButton.textContent = "Następne pytanie";
 
-  elements.questionIndex.textContent = "Pytanie " + (session.currentStep + 1);
-  elements.questionText.textContent = item.question;
+  elements.questionIndex.textContent =
+    "Pytanie " +
+    (session.currentStep + 1) +
+    (prompt && prompt.answerMode === "boolean" ? " • prawda/fałsz" : "");
+  elements.questionText.textContent = prompt && prompt.answerMode === "boolean"
+    ? prompt.statementText
+    : item.question;
   elements.hintText.textContent = session.revealHint
     ? (item.hint ? "Podpowiedź: " + item.hint : "")
     : "";
   elements.feedbackText.textContent = session.lastFeedback || "";
   elements.showHintButton.disabled = !item.hint || Boolean(session.selectedAnswer);
   elements.nextQuestionButton.disabled = !session.selectedAnswer;
-  renderAnswers(item);
+  renderAnswers(prompt || item);
 }
 
 function render() {
@@ -1337,7 +1455,7 @@ function render() {
 }
 
 function enqueueReview(currentIndex) {
-  state.session.queue.push(currentIndex);
+  state.session.queue.push(createPromptEntry(currentIndex, state.quiz));
   state.session.reviewCount += 1;
 }
 
@@ -1415,11 +1533,16 @@ function markQuestionResolved(questionIndex) {
 }
 
 function submitAnswer(option) {
-  const item = getCurrentItem();
-  const currentIndex = state.session.queue[state.session.currentStep];
+  const prompt = getCurrentPrompt();
+  const currentIndex = getQueueEntryQuestionIndex(state.session.queue[state.session.currentStep]);
+
+  if (!prompt || currentIndex < 0) {
+    return;
+  }
+
   const questionProgress = getQuestionProgress(currentIndex);
   const attemptCount = state.session.attemptCountForCurrent || 0;
-  const isCorrect = option === item.correctAnswer;
+  const isCorrect = option === prompt.correctAnswer;
   let resolvedNow = false;
   let encouragement = "";
   let gainedScore;
@@ -1577,7 +1700,8 @@ function replaceActiveQuiz() {
     const parsedQuiz = JSON.parse(elements.quizJsonInput.value);
     state.quiz = normalizeQuiz(parsedQuiz, elements.quizTitleInput.value, {
       sessionSize: elements.sessionSizeInput.value,
-      stimulusMode: elements.stimulusModeSelect.value
+      stimulusMode: elements.stimulusModeSelect.value,
+      trueFalsePercent: elements.trueFalsePercentInput.value
     });
     state.session = createSession(state.quiz);
     render();
@@ -1605,6 +1729,7 @@ function loadExampleIntoEditor() {
   elements.quizTitleInput.value = quiz.title;
   elements.sessionSizeInput.value = String(quiz.settings.sessionSize);
   elements.stimulusModeSelect.value = quiz.settings.stimulusMode;
+  elements.trueFalsePercentInput.value = String(quiz.settings.trueFalsePercent || 0);
   elements.quizJsonInput.value = JSON.stringify(exampleQuiz, null, 2);
   setBuilderMessage("Przykładowy quiz został wczytany.", false);
 }
@@ -1710,8 +1835,36 @@ function migrateStoredState() {
     state.session = null;
   }
 
+  if (state.session && Array.isArray(state.session.queue)) {
+    state.session.queue = state.session.queue.map(function migrateQueueEntry(entry) {
+      const questionIndex = getQueueEntryQuestionIndex(entry);
+
+      if (questionIndex < 0 || !state.quiz || !state.quiz.items[questionIndex]) {
+        return null;
+      }
+
+      if (
+        entry &&
+        typeof entry === "object" &&
+        (entry.answerMode === "choice" || entry.answerMode === "boolean") &&
+        Array.isArray(entry.options) &&
+        typeof entry.correctAnswer === "string"
+      ) {
+        return Object.assign({}, entry, {
+          questionIndex: questionIndex
+        });
+      }
+
+      return createPromptEntry(questionIndex, state.quiz, "choice");
+    }).filter(Boolean);
+  }
+
   if (state.session && !Number.isInteger(state.session.totalQuestions)) {
     state.session.totalQuestions = Math.max(1, state.session.queue.length - (state.session.reviewCount || 0));
+  }
+
+  if (state.session) {
+    state.session.totalQuestions = clamp(state.session.totalQuestions || 0, 0, state.session.queue.length);
   }
 
   if (state.session && !Array.isArray(state.session.eliminatedAnswers)) {
@@ -1724,6 +1877,14 @@ function migrateStoredState() {
 
   if (state.session && !Number.isInteger(state.session.reviewCount)) {
     state.session.reviewCount = 0;
+  }
+
+  if (state.session && !Number.isInteger(state.session.currentStep)) {
+    state.session.currentStep = 0;
+  }
+
+  if (state.session) {
+    state.session.currentStep = clamp(state.session.currentStep, 0, Math.max(0, state.session.queue.length - 1));
   }
 
   if (state.session && typeof state.session.completed !== "boolean") {

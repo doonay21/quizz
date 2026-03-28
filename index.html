@@ -54,6 +54,11 @@
                 </div>
               </div>
 
+              <div class="field-group">
+                <label class="field-label" for="trueFalsePercentInput">Pytania prawda/fałsz (%)</label>
+                <input id="trueFalsePercentInput" class="text-input" type="number" min="0" max="100" step="5" value="0">
+              </div>
+
               <div class="field-group field-group-fill">
                 <label class="field-label" for="quizJsonInput">JSON</label>
                 <textarea id="quizJsonInput" class="json-textarea" spellcheck="false"></textarea>
@@ -67,6 +72,7 @@
   "settings": {
     "sessionSize": 5,
     "stimulusMode": "calm",
+    "trueFalsePercent": 25,
     "shuffleQuestions": false,
     "shuffleOptions": false
   },

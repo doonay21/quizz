@@ -4,6 +4,7 @@
   "settings": {
     "sessionSize": 4,
     "stimulusMode": "calm",
+    "trueFalsePercent": 0,
     "shuffleQuestions": false,
     "shuffleOptions": false
   },

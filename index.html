@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quizownia Turbo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <section class="scene scene-builder is-active" id="builderScene">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Panel</p>
+          <h1>Quizownia Turbo</h1>
+        </div>
+          <p class="topbar-text">Wklej JSON, ustaw parametry sesji i uruchom quiz.</p>
+      </header>
+
+      <main class="main-grid">
+        <section class="panel builder-panel">
+          <div class="panel-header">
+            <div>
+              <p class="panel-kicker">Edytor</p>
+              <h2>Konfiguracja quizu</h2>
+            </div>
+            <button class="ghost-button" id="loadExampleButton" type="button">Wczytaj przykład</button>
+          </div>
+
+          <div class="builder-form">
+            <div class="field-group">
+              <label class="field-label" for="quizTitleInput">Nazwa zestawu</label>
+              <input id="quizTitleInput" class="text-input" type="text" placeholder="Na przykład: Kosmos">
+            </div>
+
+            <div class="field-group settings-grid">
+              <div>
+                <label class="field-label" for="sessionSizeInput">Pytania w rundzie</label>
+                <input id="sessionSizeInput" class="text-input" type="number" min="3" max="10" step="1" value="5">
+              </div>
+              <div>
+                <label class="field-label" for="stimulusModeSelect">Tryb bodźców</label>
+                <select id="stimulusModeSelect" class="text-input">
+                  <option value="calm">Spokojny</option>
+                  <option value="standard" selected>Standard</option>
+                  <option value="turbo">Turbo</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field-group field-group-fill">
+              <label class="field-label" for="quizJsonInput">JSON</label>
+              <textarea id="quizJsonInput" class="json-textarea" spellcheck="false"></textarea>
+            </div>
+
+            <details class="schema-box">
+              <summary>Format danych</summary>
+              <pre><code>{
+  "title": "Kosmos",
+  "description": "Krótki quiz o planetach",
+  "settings": {
+    "sessionSize": 5,
+    "stimulusMode": "standard",
+    "shuffleQuestions": false,
+    "shuffleOptions": false
+  },
+  "items": [
+    {
+      "question": "Która planeta jest nazywana Czerwoną Planetą?",
+      "options": ["Mars", "Wenus", "Jowisz", "Merkury"],
+      "correctAnswer": "Mars",
+      "hint": "To czwarta planeta od Słońca."
+    }
+  ]
+}</code></pre>
+            </details>
+
+            <div class="builder-actions">
+              <button class="primary-button" id="saveQuizButton" type="button">Zapisz i uruchom</button>
+              <button class="secondary-button" id="replaceQuizButton" type="button">Podmień aktywny quiz</button>
+              <button class="danger-button" id="resetAllButton" type="button">Wyczyść dane</button>
+            </div>
+
+            <p id="builderMessage" class="builder-message" aria-live="polite"></p>
+          </div>
+        </section>
+
+        <section class="panel status-panel">
+          <div class="panel-header compact">
+            <div>
+              <p class="panel-kicker">Sesja</p>
+              <h2>Aktualny stan</h2>
+            </div>
+          </div>
+
+          <div class="status-grid">
+            <article class="stat-card">
+              <span>Quiz</span>
+              <strong id="activeQuizName">Brak aktywnego</strong>
+            </article>
+            <article class="stat-card">
+              <span>Punkty</span>
+              <strong id="scoreValue">0</strong>
+            </article>
+            <article class="stat-card">
+              <span>Seria</span>
+              <strong id="streakValue">0</strong>
+            </article>
+            <article class="stat-card">
+              <span>Najlepsza seria</span>
+              <strong id="bestStreakValue">0</strong>
+            </article>
+            <article class="stat-card">
+              <span>Powtórki</span>
+              <strong id="reviewCountValue">0</strong>
+            </article>
+            <article class="stat-card">
+              <span>Tryb</span>
+              <strong id="stimulusModeValue">Standard</strong>
+            </article>
+          </div>
+
+          <div class="progress-block">
+            <div class="progress-copy">
+              <span>Postęp</span>
+              <strong id="progressLabel">0 / 0</strong>
+            </div>
+            <div class="progress-track" aria-hidden="true">
+              <div id="progressBar" class="progress-bar"></div>
+            </div>
+          </div>
+
+          <div class="session-actions">
+            <button class="secondary-button" id="restartSessionButton" type="button">Nowa runda</button>
+            <button class="ghost-button" id="clearSessionButton" type="button">Wyczyść sesję</button>
+          </div>
+
+          <section class="history-card">
+            <div class="panel-header compact">
+              <div>
+                <p class="panel-kicker">Historia</p>
+                <h3>Ostatnie rundy</h3>
+              </div>
+            </div>
+            <ul id="historyList" class="history-list"></ul>
+          </section>
+        </section>
+      </main>
+    </section>
+
+    <section class="scene scene-quiz" id="quizScene">
+      <div class="quiz-stage">
+        <div class="quiz-toolbar">
+          <button class="ghost-button small-button" id="backToBuilderButton" type="button">Powrót do ustawień</button>
+          <div class="reward-pill" id="rewardPill">Gotowe</div>
+        </div>
+
+        <section class="panel quiz-panel">
+          <div class="panel-header quiz-header">
+            <div>
+              <p class="panel-kicker">Quiz</p>
+              <h2 id="quizHeading">Najpierw wczytaj quiz</h2>
+            </div>
+          </div>
+
+          <p id="quizDescription" class="quiz-description">
+            Aplikacja czeka na zapisany zestaw pytań.
+          </p>
+
+          <div class="quiz-progress">
+            <div class="progress-copy">
+              <span>Postęp</span>
+              <strong id="quizProgressLabel">0 / 0</strong>
+            </div>
+            <div class="progress-track" aria-hidden="true">
+              <div id="quizProgressBar" class="progress-bar"></div>
+            </div>
+          </div>
+
+          <article class="question-card" id="questionCard">
+            <p class="question-index" id="questionIndex">Pytanie 0</p>
+            <h3 class="question-text" id="questionText">Tutaj pojawi się pytanie.</h3>
+            <p class="hint-text" id="hintText"></p>
+            <div class="answer-grid" id="answerGrid"></div>
+            <p class="feedback-text" id="feedbackText" aria-live="polite"></p>
+            <div class="card-actions">
+              <button class="ghost-button" id="showHintButton" type="button">Pokaż podpowiedź</button>
+              <button class="primary-button" id="nextQuestionButton" type="button">Następne pytanie</button>
+            </div>
+          </article>
+        </section>
+      </div>
+    </section>
+  </div>
+
+  <template id="historyItemTemplate">
+    <li class="history-item">
+      <strong class="history-title"></strong>
+      <span class="history-meta"></span>
+    </li>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>

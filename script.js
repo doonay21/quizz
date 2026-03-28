@@ -65,6 +65,7 @@ const state = {
 const elements = {
   builderScene: document.querySelector("#builderScene"),
   quizScene: document.querySelector("#quizScene"),
+  fullscreenToggleButton: document.querySelector("#fullscreenToggleButton"),
   backToBuilderButton: document.querySelector("#backToBuilderButton"),
   quizTitleInput: document.querySelector("#quizTitleInput"),
   sessionSizeInput: document.querySelector("#sessionSizeInput"),
@@ -109,6 +110,64 @@ const elements = {
   summaryComparisonText: document.querySelector("#summaryComparisonText"),
   summaryRemainingText: document.querySelector("#summaryRemainingText")
 };
+
+function getFullscreenElement() {
+  return (
+    document.fullscreenElement ||
+    document.webkitFullscreenElement ||
+    null
+  );
+}
+
+function supportsFullscreen() {
+  const root = document.documentElement;
+
+  return Boolean(
+    root.requestFullscreen ||
+    root.webkitRequestFullscreen
+  );
+}
+
+function updateFullscreenButton() {
+  const isFullscreen = Boolean(getFullscreenElement());
+
+  if (!elements.fullscreenToggleButton) {
+    return;
+  }
+
+  elements.fullscreenToggleButton.textContent = isFullscreen ? "Wyłącz pełny ekran" : "Pełny ekran";
+  elements.fullscreenToggleButton.setAttribute("aria-pressed", String(isFullscreen));
+  elements.fullscreenToggleButton.title = isFullscreen
+    ? "Wyłącz tryb pełnoekranowy"
+    : "Włącz tryb pełnoekranowy";
+}
+
+async function toggleFullscreen() {
+  const root = document.documentElement;
+
+  if (!supportsFullscreen()) {
+    setBuilderMessage("Ta przeglądarka nie obsługuje trybu pełnoekranowego.", true);
+    return;
+  }
+
+  try {
+    if (getFullscreenElement()) {
+      if (document.exitFullscreen) {
+        await document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      }
+    } else if (root.requestFullscreen) {
+      await root.requestFullscreen();
+    } else if (root.webkitRequestFullscreen) {
+      root.webkitRequestFullscreen();
+    }
+  } catch (error) {
+    setBuilderMessage("Nie udało się przełączyć trybu pełnoekranowego.", true);
+  } finally {
+    updateFullscreenButton();
+  }
+}
 
 function readJson(key, fallback) {
   try {
@@ -1068,6 +1127,10 @@ function resumeSession() {
 }
 
 function attachEvents() {
+  if (elements.fullscreenToggleButton) {
+    elements.fullscreenToggleButton.addEventListener("click", toggleFullscreen);
+  }
+
   elements.saveQuizButton.addEventListener("click", replaceActiveQuiz);
   elements.replaceQuizButton.addEventListener("click", replaceActiveQuiz);
   elements.loadExampleButton.addEventListener("click", loadExampleIntoEditor);
@@ -1082,6 +1145,8 @@ function attachEvents() {
   });
   elements.showHintButton.addEventListener("click", showHint);
   elements.nextQuestionButton.addEventListener("click", goToNextQuestion);
+  document.addEventListener("fullscreenchange", updateFullscreenButton);
+  document.addEventListener("webkitfullscreenchange", updateFullscreenButton);
 }
 
 function migrateStoredState() {
@@ -1183,6 +1248,7 @@ async function init() {
   }
 
   updateBuilderFields();
+  updateFullscreenButton();
   render();
   showScene(hasResumableSession() ? "quiz" : state.activeScene);
   saveToStorage();

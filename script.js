@@ -218,6 +218,7 @@ function createSession(quiz) {
   return {
     quizTitle: quiz.title,
     queue: ordered.slice(0, targetCount),
+    totalQuestions: targetCount,
     currentStep: 0,
     score: 0,
     streak: 0,
@@ -226,11 +227,11 @@ function createSession(quiz) {
     answeredCount: 0,
     reviewCount: 0,
     selectedAnswer: null,
+    lastAnswerCorrect: null,
     lastFeedback: "",
     lastGain: 0,
     completed: false,
-    revealHint: false,
-    repeatedItems: {}
+    revealHint: false
   };
 }
 
@@ -305,6 +306,14 @@ function getRewardLabel(session) {
   }
 
   if (session.selectedAnswer) {
+    if (session.lastAnswerCorrect) {
+      return "+" + (session.lastGain || 0) + " pkt";
+    }
+
+    return "Powtorka";
+  }
+
+  if (session.lastAnswerCorrect) {
     return "+" + (session.lastGain || 0) + " pkt";
   }
 
@@ -346,8 +355,8 @@ function celebrate() {
 function renderStatus() {
   const quiz = state.quiz;
   const session = state.session;
-  const total = session ? session.queue.length : (quiz ? quiz.items.length : 0);
-  const answered = session ? session.answeredCount : 0;
+  const total = session ? session.totalQuestions : (quiz ? quiz.items.length : 0);
+  const answered = session ? session.correctCount : 0;
   const progress = total ? Math.round((answered / total) * 100) : 0;
   const mode = quiz ? quiz.settings.stimulusMode : "standard";
 
@@ -398,11 +407,7 @@ function renderAnswers(item) {
     if (state.session.selectedAnswer) {
       if (option === state.session.selectedAnswer) {
         button.classList.add("selected");
-      }
-      if (option === item.correctAnswer) {
-        button.classList.add("correct");
-      } else if (option === state.session.selectedAnswer) {
-        button.classList.add("wrong");
+        button.classList.add(state.session.lastAnswerCorrect ? "correct" : "wrong");
       }
       button.disabled = true;
     } else {
@@ -416,7 +421,7 @@ function renderAnswers(item) {
 }
 
 function buildSummaryText(session) {
-  if (session.correctCount === session.queue.length && session.reviewCount === 0) {
+  if (session.correctCount === session.totalQuestions && session.reviewCount === 0) {
     return "Brawo. Runda zakonczona bez pomylek. Zdobywasz " + session.score + " pkt.";
   }
 
@@ -450,7 +455,7 @@ function renderQuestion() {
   }
 
   elements.quizHeading.textContent = quiz.title;
-  elements.quizDescription.textContent = quiz.description + " Runda: " + session.queue.length + " pytan.";
+  elements.quizDescription.textContent = quiz.description + " Runda: " + session.totalQuestions + " pytan.";
 
   if (session.completed) {
     elements.questionIndex.textContent = "Runda zakonczona";
@@ -481,13 +486,6 @@ function render() {
 }
 
 function enqueueReview(currentIndex) {
-  const key = String(currentIndex);
-
-  if (state.session.repeatedItems[key]) {
-    return;
-  }
-
-  state.session.repeatedItems[key] = true;
   state.session.queue.push(currentIndex);
   state.session.reviewCount += 1;
 }
@@ -496,10 +494,10 @@ function submitAnswer(option) {
   const item = getCurrentItem();
   const currentIndex = state.session.queue[state.session.currentStep];
   const isCorrect = option === item.correctAnswer;
-  const isLastQuestion = state.session.currentStep >= state.session.queue.length - 1;
   let gainedScore;
 
   state.session.selectedAnswer = option;
+  state.session.lastAnswerCorrect = isCorrect;
   state.session.answeredCount += 1;
 
   if (isCorrect) {
@@ -514,14 +512,11 @@ function submitAnswer(option) {
   } else {
     state.session.streak = 0;
     state.session.lastGain = 0;
-    state.session.lastFeedback =
-      "To jeszcze nie to. Poprawna odpowiedz to: " +
-      item.correctAnswer +
-      ".";
+    state.session.lastFeedback = "To nie ta odpowiedz. Wrocimy do tego pytania za chwile.";
     enqueueReview(currentIndex);
   }
 
-  if (isLastQuestion) {
+  if (state.session.currentStep >= state.session.queue.length - 1) {
     finishSession();
     return;
   }
@@ -533,12 +528,13 @@ function submitAnswer(option) {
 function finishSession() {
   state.session.completed = true;
   state.session.selectedAnswer = null;
+  state.session.lastAnswerCorrect = null;
   state.session.revealHint = false;
   state.history.unshift({
     quizTitle: state.quiz.title,
     score: state.session.score,
     correct: state.session.correctCount,
-    total: state.session.queue.length,
+    total: state.session.totalQuestions,
     reviewCount: state.session.reviewCount,
     stimulusMode: state.quiz.settings.stimulusMode,
     createdAt: new Date().toISOString()
@@ -560,6 +556,7 @@ function goToNextQuestion() {
 
   state.session.currentStep += 1;
   state.session.selectedAnswer = null;
+  state.session.lastAnswerCorrect = null;
   state.session.lastFeedback = "";
   state.session.lastGain = 0;
   state.session.revealHint = false;
@@ -661,6 +658,10 @@ function migrateStoredState() {
 
   if (!state.session || !Array.isArray(state.session.queue)) {
     state.session = null;
+  }
+
+  if (state.session && !Number.isInteger(state.session.totalQuestions)) {
+    state.session.totalQuestions = Math.max(1, state.session.queue.length - (state.session.reviewCount || 0));
   }
 
   if (state.quiz && !state.session) {

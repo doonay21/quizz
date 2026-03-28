@@ -131,6 +131,41 @@ function shuffleArray(items) {
   return clone;
 }
 
+function hashString(value) {
+  let hash = 2166136261;
+  let index;
+
+  for (index = 0; index < value.length; index += 1) {
+    hash ^= value.charCodeAt(index);
+    hash = Math.imul(hash, 16777619);
+  }
+
+  return hash >>> 0;
+}
+
+function getStableShuffledOptions(question, options) {
+  const seed = question + "::" + options.join("::");
+
+  return options
+    .map(function mapOption(option, index) {
+      return {
+        option: option,
+        index: index,
+        order: hashString(seed + "::" + option + "::" + index)
+      };
+    })
+    .sort(function sortOptions(left, right) {
+      if (left.order === right.order) {
+        return left.index - right.index;
+      }
+
+      return left.order - right.order;
+    })
+    .map(function pickOption(entry) {
+      return entry.option;
+    });
+}
+
 function normalizeStimulusMode(value) {
   if (value === "calm" || value === "standard" || value === "turbo") {
     return value;
@@ -192,7 +227,7 @@ function normalizeQuiz(rawQuiz, fallbackTitle, overrides) {
 
     return {
       question: question,
-      options: settingsSource.shuffleOptions ? shuffleArray(options) : options,
+      options: getStableShuffledOptions(question, options),
       correctAnswer: correctAnswer,
       hint: String(item.hint || "").trim()
     };

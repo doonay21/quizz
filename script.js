@@ -248,6 +248,7 @@ function createSession(quiz) {
     attemptCountForCurrent: 0,
     lastAnswerCorrect: null,
     lastFeedback: "",
+    lastEncouragement: "",
     lastGain: 0,
     completed: false,
     revealHint: false
@@ -326,14 +327,14 @@ function getRewardLabel(session) {
 
   if (session.selectedAnswer) {
     if (session.lastAnswerCorrect) {
-      return "+" + (session.lastGain || 0) + " pkt";
+      return session.lastEncouragement || ("+" + (session.lastGain || 0) + " pkt");
     }
 
     return "Powtorka";
   }
 
   if (session.lastAnswerCorrect) {
-    return "+" + (session.lastGain || 0) + " pkt";
+    return session.lastEncouragement || ("+" + (session.lastGain || 0) + " pkt");
   }
 
   return "Wynik: " + session.score;
@@ -557,6 +558,26 @@ function applyMistakeStreakPenalty() {
   state.session.streak = Math.max(0, state.session.streak - STREAK_PENALTY_ON_MISTAKE);
 }
 
+function getQuestionEncouragement(progress) {
+  const hits = progress ? progress.successfulReviewMoments : 0;
+
+  if (progress && progress.resolved) {
+    return "To pytanie opanowane";
+  }
+
+  if (hits > 0) {
+    return (
+      "To pytanie masz juz " +
+      hits +
+      "/" +
+      REQUIRED_MASTERY_HITS +
+      ". Jeszcze jedno trafienie i umiesz"
+    );
+  }
+
+  return "";
+}
+
 function markQuestionResolved(questionIndex) {
   const progress = getQuestionProgress(questionIndex);
 
@@ -580,6 +601,7 @@ function submitAnswer(option) {
   const wasAwaitingReinforcement = Boolean(
     questionProgress && questionProgress.needsReinforcement && masteredHits > 0
   );
+  let encouragement = "";
   let gainedScore;
 
   if (isCorrect) {
@@ -604,6 +626,8 @@ function submitAnswer(option) {
       enqueueReview(currentIndex);
     }
 
+    encouragement = getQuestionEncouragement(questionProgress);
+    state.session.lastEncouragement = encouragement;
     state.session.lastFeedback =
       (
         attemptCount > 0
@@ -613,7 +637,9 @@ function submitAnswer(option) {
             : "Poprawna odpowiedz: "
       ) +
       item.correctAnswer +
-      ". +" +
+      "." +
+      (encouragement ? " " + encouragement + "." : "") +
+      " +" +
       gainedScore +
       " pkt." +
       (state.session.streak > 1 ? " Seria daje tylko lekki bonus." : "") +
@@ -632,6 +658,7 @@ function submitAnswer(option) {
     state.session.eliminatedAnswers = [option];
     state.session.revealHint = true;
     state.session.lastAnswerCorrect = false;
+    state.session.lastEncouragement = "";
     state.session.lastGain = 0;
     state.session.lastFeedback = item.hint
       ? "To nie ta odpowiedz. Seria tylko lekko spada, sprawdz podpowiedz i sprobuj jeszcze raz."
@@ -645,6 +672,7 @@ function submitAnswer(option) {
     state.session.selectedAnswer = option;
     state.session.lastAnswerCorrect = false;
     state.session.answeredCount += 1;
+    state.session.lastEncouragement = "";
     state.session.lastGain = 0;
     state.session.lastFeedback =
       "To nadal nie ta odpowiedz. Poprawna odpowiedz: " +
@@ -668,6 +696,7 @@ function finishSession() {
   state.session.eliminatedAnswers = [];
   state.session.attemptCountForCurrent = 0;
   state.session.lastAnswerCorrect = null;
+  state.session.lastEncouragement = "";
   state.session.revealHint = false;
   state.history.unshift({
     quizTitle: state.quiz.title,
@@ -699,6 +728,7 @@ function goToNextQuestion() {
   state.session.attemptCountForCurrent = 0;
   state.session.lastAnswerCorrect = null;
   state.session.lastFeedback = "";
+  state.session.lastEncouragement = "";
   state.session.lastGain = 0;
   state.session.revealHint = false;
   saveToStorage();
@@ -815,6 +845,10 @@ function migrateStoredState() {
 
   if (state.session && !Number.isInteger(state.session.reviewCount)) {
     state.session.reviewCount = 0;
+  }
+
+  if (state.session && typeof state.session.lastEncouragement !== "string") {
+    state.session.lastEncouragement = "";
   }
 
   if (state.session && state.quiz) {

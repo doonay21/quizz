@@ -477,6 +477,18 @@ button:disabled {
   gap: 14px;
 }
 
+.quiz-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.fullscreen-button,
+#fullscreenToggleButton {
+  min-width: 148px;
+}
+
 .small-button {
   padding: 10px 14px;
 }
@@ -719,6 +731,7 @@ body[data-stimulus="turbo"] .answer-button:hover {
     min-height: 72px;
     padding: 14px 16px;
   }
+
 }
 
 @media (max-width: 760px) {
@@ -727,6 +740,7 @@ body[data-stimulus="turbo"] .answer-button:hover {
   .progress-copy,
   .history-item,
   .quiz-toolbar,
+  .quiz-toolbar-actions,
   .session-actions,
   .builder-actions,
   .card-actions {

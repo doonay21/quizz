@@ -119,12 +119,16 @@ function getFullscreenElement() {
   );
 }
 
+function getFullscreenTarget() {
+  return document.querySelector(".app-shell");
+}
+
 function supportsFullscreen() {
-  const root = document.documentElement;
+  const target = getFullscreenTarget();
 
   return Boolean(
-    root.requestFullscreen ||
-    root.webkitRequestFullscreen
+    target &&
+    (target.requestFullscreen || target.webkitRequestFullscreen)
   );
 }
 
@@ -143,9 +147,9 @@ function updateFullscreenButton() {
 }
 
 async function toggleFullscreen() {
-  const root = document.documentElement;
+  const target = getFullscreenTarget();
 
-  if (!supportsFullscreen()) {
+  if (!target || !supportsFullscreen()) {
     setBuilderMessage("Ta przeglądarka nie obsługuje trybu pełnoekranowego.", true);
     return;
   }
@@ -157,12 +161,13 @@ async function toggleFullscreen() {
       } else if (document.webkitExitFullscreen) {
         document.webkitExitFullscreen();
       }
-    } else if (root.requestFullscreen) {
-      await root.requestFullscreen();
-    } else if (root.webkitRequestFullscreen) {
-      root.webkitRequestFullscreen();
+    } else if (target.requestFullscreen) {
+      await target.requestFullscreen({ navigationUI: "hide" });
+    } else if (target.webkitRequestFullscreen) {
+      target.webkitRequestFullscreen();
     }
   } catch (error) {
+    console.error("Fullscreen error:", error);
     setBuilderMessage("Nie udało się przełączyć trybu pełnoekranowego.", true);
   } finally {
     updateFullscreenButton();

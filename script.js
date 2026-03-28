@@ -1,7 +1,8 @@
 const STORAGE_KEYS = {
   quiz: "quizownia-turbo.quiz",
   session: "quizownia-turbo.session",
-  history: "quizownia-turbo.history"
+  history: "quizownia-turbo.history",
+  ui: "quizownia-turbo.ui"
 };
 
 const STIMULUS_LABELS = {
@@ -73,6 +74,7 @@ const elements = {
   replaceQuizButton: document.querySelector("#replaceQuizButton"),
   loadExampleButton: document.querySelector("#loadExampleButton"),
   resetAllButton: document.querySelector("#resetAllButton"),
+  resumeSessionButton: document.querySelector("#resumeSessionButton"),
   restartSessionButton: document.querySelector("#restartSessionButton"),
   clearSessionButton: document.querySelector("#clearSessionButton"),
   activeQuizName: document.querySelector("#activeQuizName"),
@@ -259,6 +261,7 @@ function loadFromStorage() {
   state.quiz = readJson(STORAGE_KEYS.quiz, null);
   state.session = readJson(STORAGE_KEYS.session, null);
   state.history = readJson(STORAGE_KEYS.history, []);
+  state.activeScene = readJson(STORAGE_KEYS.ui, {}).activeScene || "builder";
 }
 
 function saveToStorage() {
@@ -273,6 +276,12 @@ function saveToStorage() {
   }
 
   localStorage.setItem(STORAGE_KEYS.history, JSON.stringify(state.history));
+  localStorage.setItem(
+    STORAGE_KEYS.ui,
+    JSON.stringify({
+      activeScene: state.activeScene
+    })
+  );
 }
 
 function setBuilderMessage(message, isError) {
@@ -284,6 +293,7 @@ function showScene(sceneName) {
   state.activeScene = sceneName;
   elements.builderScene.classList.toggle("is-active", sceneName === "builder");
   elements.quizScene.classList.toggle("is-active", sceneName === "quiz");
+  saveToStorage();
 }
 
 function applyStimulusMode(mode) {
@@ -297,6 +307,19 @@ function getCurrentItem() {
 
 function getSafeQuiz() {
   return state.quiz || normalizeQuiz(exampleQuiz, exampleQuiz.title);
+}
+
+function hasResumableSession() {
+  return Boolean(
+    state.quiz &&
+      state.session &&
+      !state.session.completed &&
+      Array.isArray(state.session.queue) &&
+      state.session.queue.length &&
+      Number.isInteger(state.session.currentStep) &&
+      state.session.currentStep >= 0 &&
+      state.session.currentStep < state.session.queue.length
+  );
 }
 
 function updateBuilderFields() {
@@ -391,6 +414,7 @@ function renderStatus() {
   elements.quizProgressLabel.textContent = answered + " / " + total;
   elements.quizProgressBar.style.width = progress + "%";
   elements.rewardPill.textContent = getRewardLabel(session);
+  elements.resumeSessionButton.disabled = !hasResumableSession();
   applyStimulusMode(mode);
 }
 
@@ -792,7 +816,6 @@ function restartSession() {
   }
 
   state.session = createSession(state.quiz);
-  saveToStorage();
   render();
   showScene("quiz");
   setBuilderMessage("Nowa runda jest gotowa.", false);
@@ -800,8 +823,8 @@ function restartSession() {
 
 function clearSessionOnly() {
   state.session = state.quiz ? createSession(state.quiz) : null;
-  saveToStorage();
   render();
+  showScene("builder");
   setBuilderMessage("Sesja zostala wyczyszczona.", false);
 }
 
@@ -813,7 +836,6 @@ function replaceActiveQuiz() {
       stimulusMode: elements.stimulusModeSelect.value
     });
     state.session = createSession(state.quiz);
-    saveToStorage();
     render();
     showScene("quiz");
     setBuilderMessage("Quiz zostal zapisany.", false);
@@ -826,9 +848,11 @@ function resetAllData() {
   localStorage.removeItem(STORAGE_KEYS.quiz);
   localStorage.removeItem(STORAGE_KEYS.session);
   localStorage.removeItem(STORAGE_KEYS.history);
+  localStorage.removeItem(STORAGE_KEYS.ui);
   state.quiz = null;
   state.session = null;
   state.history = [];
+  state.activeScene = "builder";
   updateBuilderFields();
   render();
   showScene("builder");
@@ -854,11 +878,23 @@ function showHint() {
   render();
 }
 
+function resumeSession() {
+  if (!hasResumableSession()) {
+    setBuilderMessage("Brak przerwanej sesji do wznowienia.", true);
+    return;
+  }
+
+  render();
+  showScene("quiz");
+  setBuilderMessage("Wznowiono przerwana sesje.", false);
+}
+
 function attachEvents() {
   elements.saveQuizButton.addEventListener("click", replaceActiveQuiz);
   elements.replaceQuizButton.addEventListener("click", replaceActiveQuiz);
   elements.loadExampleButton.addEventListener("click", loadExampleIntoEditor);
   elements.resetAllButton.addEventListener("click", resetAllData);
+  elements.resumeSessionButton.addEventListener("click", resumeSession);
   elements.restartSessionButton.addEventListener("click", restartSession);
   elements.clearSessionButton.addEventListener("click", clearSessionOnly);
   elements.backToBuilderButton.addEventListener("click", function backToBuilder() {
@@ -897,8 +933,20 @@ function migrateStoredState() {
     state.session.reviewCount = 0;
   }
 
+  if (state.session && typeof state.session.completed !== "boolean") {
+    state.session.completed = false;
+  }
+
+  if (state.session && typeof state.session.revealHint !== "boolean") {
+    state.session.revealHint = false;
+  }
+
   if (state.session && typeof state.session.lastEncouragement !== "string") {
     state.session.lastEncouragement = "";
+  }
+
+  if (state.session && typeof state.session.lastFeedback !== "string") {
+    state.session.lastFeedback = "";
   }
 
   if (state.session && state.quiz) {
@@ -917,6 +965,14 @@ function migrateStoredState() {
 
   if (state.quiz && !state.session) {
     state.session = createSession(state.quiz);
+  }
+
+  if (state.activeScene !== "builder" && state.activeScene !== "quiz") {
+    state.activeScene = "builder";
+  }
+
+  if (!hasResumableSession() && state.activeScene === "quiz") {
+    state.activeScene = "builder";
   }
 
   if (Array.isArray(state.history)) {
@@ -943,7 +999,7 @@ function init() {
   attachEvents();
   updateBuilderFields();
   render();
-  showScene("builder");
+  showScene(hasResumableSession() ? "quiz" : state.activeScene);
   saveToStorage();
 }
 

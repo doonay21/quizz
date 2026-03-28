@@ -661,8 +661,8 @@ function submitAnswer(option) {
     state.session.lastEncouragement = "";
     state.session.lastGain = 0;
     state.session.lastFeedback = item.hint
-      ? "To nie ta odpowiedz. Seria tylko lekko spada, sprawdz podpowiedz i sprobuj jeszcze raz."
-      : "To nie ta odpowiedz. Seria tylko lekko spada, odrzucamy te odpowiedz i masz druga probe.";
+      ? "To nie ta odpowiedz. Sprawdz podpowiedz i sprobuj jeszcze raz."
+      : "To nie ta odpowiedz. Sprobuj jeszcze raz.";
     saveToStorage();
     render();
     return;
@@ -675,9 +675,9 @@ function submitAnswer(option) {
     state.session.lastEncouragement = "";
     state.session.lastGain = 0;
     state.session.lastFeedback =
-      "To nadal nie ta odpowiedz. Poprawna odpowiedz: " +
+      "To jeszcze nie ta odpowiedz. Poprawna odpowiedz: " +
       item.correctAnswer +
-      ". Seria spada tylko o krok, a do tego pytania wrocimy za chwile.";
+      ". Wrocimy do tego pytania za chwile.";
     enqueueReview(currentIndex);
   }
 

@@ -10,6 +10,12 @@ const STIMULUS_LABELS = {
   turbo: "Turbo"
 };
 
+const REQUIRED_MASTERY_HITS = 2;
+const BASE_CORRECT_SCORE = 10;
+const STREAK_BONUS_STEP = 1;
+const MAX_STREAK_BONUS = 2;
+const STREAK_PENALTY_ON_MISTAKE = 1;
+
 const exampleQuiz = {
   title: "Kosmiczna misja",
   description: "Krotka runda z pytaniami o planetach i gwiazdach.",
@@ -208,6 +214,16 @@ function normalizeQuiz(rawQuiz, fallbackTitle, overrides) {
   };
 }
 
+function createQuestionProgress(items) {
+  return items.map(function createProgress() {
+    return {
+      resolved: false,
+      needsReinforcement: true,
+      successfulReviewMoments: 0
+    };
+  });
+}
+
 function createSession(quiz) {
   const indexes = quiz.items.map(function mapIndex(_, index) {
     return index;
@@ -226,6 +242,7 @@ function createSession(quiz) {
     correctCount: 0,
     answeredCount: 0,
     reviewCount: 0,
+    questionProgress: createQuestionProgress(quiz.items),
     selectedAnswer: null,
     eliminatedAnswers: [],
     attemptCountForCurrent: 0,
@@ -366,7 +383,7 @@ function renderStatus() {
   elements.scoreValue.textContent = String(session ? session.score : 0);
   elements.streakValue.textContent = String(session ? session.streak : 0);
   elements.bestStreakValue.textContent = String(session ? session.bestStreak : 0);
-  elements.reviewCountValue.textContent = String(session ? session.reviewCount : 0);
+  elements.reviewCountValue.textContent = String(session ? getPendingReviewCount(session) : 0);
   elements.stimulusModeValue.textContent = STIMULUS_LABELS[mode];
   elements.progressLabel.textContent = answered + " / " + total;
   elements.progressBar.style.width = progress + "%";
@@ -444,9 +461,11 @@ function buildSummaryText(session) {
     session.score +
     " pkt, " +
     session.correctCount +
-    " poprawnych odpowiedzi i " +
+    "/" +
+    session.totalQuestions +
+    " zaliczonych pytan i " +
     session.reviewCount +
-    " pytan do powtorki."
+    " dodatkowych powrotow do pytan."
   );
 }
 
@@ -506,52 +525,131 @@ function enqueueReview(currentIndex) {
   state.session.reviewCount += 1;
 }
 
+function getPendingReviewCount(session) {
+  return Math.max(0, session.queue.length - Math.max(session.totalQuestions, session.currentStep + 1));
+}
+
+function getQuestionProgress(questionIndex) {
+  if (!state.session || !Array.isArray(state.session.questionProgress)) {
+    return null;
+  }
+
+  return state.session.questionProgress[questionIndex] || null;
+}
+
+function registerMistake(questionIndex) {
+  const progress = getQuestionProgress(questionIndex);
+
+  if (!progress) {
+    return;
+  }
+
+  progress.resolved = false;
+  progress.needsReinforcement = true;
+  progress.successfulReviewMoments = 0;
+}
+
+function getCorrectAnswerScore(streak) {
+  return BASE_CORRECT_SCORE + Math.min(streak, MAX_STREAK_BONUS) * STREAK_BONUS_STEP;
+}
+
+function applyMistakeStreakPenalty() {
+  state.session.streak = Math.max(0, state.session.streak - STREAK_PENALTY_ON_MISTAKE);
+}
+
+function markQuestionResolved(questionIndex) {
+  const progress = getQuestionProgress(questionIndex);
+
+  if (!progress || progress.resolved) {
+    return;
+  }
+
+  progress.resolved = true;
+  progress.needsReinforcement = false;
+  progress.successfulReviewMoments = 0;
+  state.session.correctCount += 1;
+}
+
 function submitAnswer(option) {
   const item = getCurrentItem();
   const currentIndex = state.session.queue[state.session.currentStep];
+  const questionProgress = getQuestionProgress(currentIndex);
   const attemptCount = state.session.attemptCountForCurrent || 0;
   const isCorrect = option === item.correctAnswer;
+  const masteredHits = questionProgress ? questionProgress.successfulReviewMoments : 0;
+  const wasAwaitingReinforcement = Boolean(
+    questionProgress && questionProgress.needsReinforcement && masteredHits > 0
+  );
   let gainedScore;
 
   if (isCorrect) {
     state.session.selectedAnswer = option;
     state.session.lastAnswerCorrect = true;
     state.session.answeredCount += 1;
-    gainedScore = 12 + Math.min(state.session.streak, 3) * 2;
-    state.session.correctCount += 1;
+    gainedScore = getCorrectAnswerScore(state.session.streak);
     state.session.score += gainedScore;
     state.session.streak += 1;
     state.session.bestStreak = Math.max(state.session.bestStreak, state.session.streak);
     state.session.lastGain = gainedScore;
+
+    if (questionProgress && attemptCount === 0) {
+      questionProgress.successfulReviewMoments += 1;
+      questionProgress.needsReinforcement =
+        questionProgress.successfulReviewMoments < REQUIRED_MASTERY_HITS;
+    }
+
+    if (questionProgress && questionProgress.successfulReviewMoments >= REQUIRED_MASTERY_HITS) {
+      markQuestionResolved(currentIndex);
+    } else if (questionProgress) {
+      enqueueReview(currentIndex);
+    }
+
     state.session.lastFeedback =
-      (attemptCount > 0 ? "Poprawna odpowiedz po podpowiedzi: " : "Poprawna odpowiedz: ") +
+      (
+        attemptCount > 0
+          ? "Poprawna odpowiedz po podpowiedzi: "
+          : wasAwaitingReinforcement
+            ? "Poprawna odpowiedz w powtorce: "
+            : "Poprawna odpowiedz: "
+      ) +
       item.correctAnswer +
       ". +" +
       gainedScore +
-      " pkt.";
+      " pkt." +
+      (state.session.streak > 1 ? " Seria daje tylko lekki bonus." : "") +
+      (
+        questionProgress && questionProgress.needsReinforcement
+          ? " To pytanie wroci jeszcze, dopoki nie utrwalisz go " +
+            REQUIRED_MASTERY_HITS +
+            " poprawnymi odpowiedziami w osobnych podejsciach bez podpowiedzi."
+          : ""
+      );
     celebrate();
   } else if (attemptCount === 0) {
+    registerMistake(currentIndex);
+    applyMistakeStreakPenalty();
     state.session.attemptCountForCurrent = 1;
     state.session.eliminatedAnswers = [option];
     state.session.revealHint = true;
     state.session.lastAnswerCorrect = false;
     state.session.lastGain = 0;
     state.session.lastFeedback = item.hint
-      ? "To nie ta odpowiedz. Sprawdz podpowiedz i sprobuj jeszcze raz."
-      : "To nie ta odpowiedz. Odrzucamy te odpowiedz, masz druga probe.";
+      ? "To nie ta odpowiedz. Seria tylko lekko spada, sprawdz podpowiedz i sprobuj jeszcze raz."
+      : "To nie ta odpowiedz. Seria tylko lekko spada, odrzucamy te odpowiedz i masz druga probe.";
     saveToStorage();
     render();
     return;
   } else {
+    registerMistake(currentIndex);
+    applyMistakeStreakPenalty();
     state.session.selectedAnswer = option;
     state.session.lastAnswerCorrect = false;
     state.session.answeredCount += 1;
-    state.session.streak = 0;
     state.session.lastGain = 0;
     state.session.lastFeedback =
       "To nadal nie ta odpowiedz. Poprawna odpowiedz: " +
       item.correctAnswer +
-      ". Wrocimy do tego pytania za chwile.";
+      ". Seria spada tylko o krok, a do tego pytania wrocimy za chwile.";
     enqueueReview(currentIndex);
   }
 
@@ -713,6 +811,24 @@ function migrateStoredState() {
 
   if (state.session && !Number.isInteger(state.session.attemptCountForCurrent)) {
     state.session.attemptCountForCurrent = 0;
+  }
+
+  if (state.session && !Number.isInteger(state.session.reviewCount)) {
+    state.session.reviewCount = 0;
+  }
+
+  if (state.session && state.quiz) {
+    if (
+      !Array.isArray(state.session.questionProgress) ||
+      state.session.questionProgress.length !== state.quiz.items.length
+    ) {
+      const restoredProgress = createQuestionProgress(state.quiz.items);
+      state.session.questionProgress = restoredProgress;
+    }
+
+    state.session.correctCount = state.session.questionProgress.filter(function countResolved(progress) {
+      return Boolean(progress && progress.resolved);
+    }).length;
   }
 
   if (state.quiz && !state.session) {

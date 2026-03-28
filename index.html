@@ -17,7 +17,10 @@
           <p class="eyebrow">Panel</p>
           <h1>Quizz</h1>
         </div>
-          <p class="topbar-text">Domyślnie ładuje dane z pliku data.json, ale możesz też wkleić własny JSON.</p>
+        <button class="ghost-button small-button sound-toggle-button" data-sound-toggle type="button" aria-pressed="true">
+          Dźwięk: włączony
+        </button>
+        <p class="topbar-text">Domyślnie ładuje dane z pliku data.json, ale możesz też wkleić własny JSON.</p>
       </header>
 
       <main class="main-grid">
@@ -161,6 +164,9 @@
         <div class="quiz-toolbar">
           <div class="quiz-toolbar-actions">
             <button class="ghost-button small-button" id="backToBuilderButton" type="button">Powrót do ustawień</button>
+            <button class="ghost-button small-button sound-toggle-button" data-sound-toggle type="button" aria-pressed="true">
+              Dźwięk: włączony
+            </button>
             <button
               class="ghost-button small-button"
               id="fullscreenToggleButton"

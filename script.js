@@ -18,6 +18,49 @@ const MAX_STREAK_BONUS = 2;
 const STREAK_PENALTY_ON_MISTAKE = 1;
 const DEFAULT_QUIZ_PATH = "./data.json";
 const LAYOUT_DENSITIES = ["regular", "compact", "tight", "ultra"];
+const DEFAULT_SOUND_ENABLED = true;
+const SOUND_EVENT_CONFIG = {
+  correct: {
+    calm: { volume: 0.12, stepMs: 74, duration: 0.28 },
+    standard: { volume: 0.14, stepMs: 68, duration: 0.3 },
+    turbo: { volume: 0.17, stepMs: 62, duration: 0.32 }
+  },
+  mastered: {
+    calm: { volume: 0.17, stepMs: 80, duration: 0.56 },
+    standard: { volume: 0.2, stepMs: 72, duration: 0.6 },
+    turbo: { volume: 0.24, stepMs: 64, duration: 0.64 }
+  },
+  wrong: {
+    calm: { volume: 0.11, stepMs: 110, duration: 0.34 },
+    standard: { volume: 0.13, stepMs: 100, duration: 0.36 },
+    turbo: { volume: 0.15, stepMs: 92, duration: 0.38 }
+  },
+  hint: {
+    calm: { volume: 0.09, stepMs: 90, duration: 0.3 },
+    standard: { volume: 0.11, stepMs: 84, duration: 0.32 },
+    turbo: { volume: 0.13, stepMs: 76, duration: 0.34 }
+  },
+  next: {
+    calm: { volume: 0.07, stepMs: 70, duration: 0.18 },
+    standard: { volume: 0.08, stepMs: 62, duration: 0.2 },
+    turbo: { volume: 0.09, stepMs: 54, duration: 0.22 }
+  },
+  complete: {
+    calm: { volume: 0.17, stepMs: 88, duration: 0.78 },
+    standard: { volume: 0.2, stepMs: 76, duration: 0.82 },
+    turbo: { volume: 0.24, stepMs: 66, duration: 0.86 }
+  },
+  toggleOn: {
+    calm: { volume: 0.08, stepMs: 65, duration: 0.2 },
+    standard: { volume: 0.09, stepMs: 58, duration: 0.22 },
+    turbo: { volume: 0.1, stepMs: 52, duration: 0.24 }
+  },
+  toggleOff: {
+    calm: { volume: 0.06, stepMs: 80, duration: 0.18 },
+    standard: { volume: 0.07, stepMs: 74, duration: 0.2 },
+    turbo: { volume: 0.08, stepMs: 66, duration: 0.22 }
+  }
+};
 
 const exampleQuiz = {
   title: "Kosmiczna misja",
@@ -60,7 +103,10 @@ const state = {
   quiz: null,
   session: null,
   history: [],
-  activeScene: "builder"
+  activeScene: "builder",
+  ui: {
+    soundEnabled: DEFAULT_SOUND_ENABLED
+  }
 };
 
 const elements = {
@@ -118,10 +164,295 @@ const elements = {
   summaryScoreValue: document.querySelector("#summaryScoreValue"),
   summaryRemainingValue: document.querySelector("#summaryRemainingValue"),
   summaryComparisonText: document.querySelector("#summaryComparisonText"),
-  summaryRemainingText: document.querySelector("#summaryRemainingText")
+  summaryRemainingText: document.querySelector("#summaryRemainingText"),
+  soundToggleButtons: Array.from(document.querySelectorAll("[data-sound-toggle]"))
 };
 
 let adaptiveLayoutFrame = 0;
+let audioContext = null;
+let audioMasterGain = null;
+let audioCompressor = null;
+let audioCleanupTimer = 0;
+
+function getStoredUiState() {
+  return readJson(STORAGE_KEYS.ui, {});
+}
+
+function getCurrentStimulusMode() {
+  return state.quiz ? normalizeStimulusMode(state.quiz.settings.stimulusMode) : "calm";
+}
+
+function getSoundConfig(eventName) {
+  const eventConfig = SOUND_EVENT_CONFIG[eventName] || SOUND_EVENT_CONFIG.next;
+  return eventConfig[getCurrentStimulusMode()] || eventConfig.calm;
+}
+
+function isSoundEnabled() {
+  return Boolean(state.ui && state.ui.soundEnabled);
+}
+
+function scheduleAudioNodeCleanup() {
+  if (audioCleanupTimer) {
+    window.clearTimeout(audioCleanupTimer);
+  }
+
+  audioCleanupTimer = window.setTimeout(function cleanupAudio() {
+    if (!audioContext) {
+      return;
+    }
+
+    if (audioContext.state === "running") {
+      return;
+    }
+
+    audioContext.close().catch(function ignoreCloseError() {
+      return null;
+    });
+    audioContext = null;
+    audioMasterGain = null;
+    audioCompressor = null;
+  }, 18000);
+}
+
+function ensureAudioEngine() {
+  const AudioCtor = window.AudioContext || window.webkitAudioContext;
+
+  if (!AudioCtor) {
+    return null;
+  }
+
+  if (!audioContext) {
+    audioContext = new AudioCtor();
+    audioMasterGain = audioContext.createGain();
+    audioMasterGain.gain.value = 0.72;
+    audioCompressor = audioContext.createDynamicsCompressor();
+    audioCompressor.threshold.value = -20;
+    audioCompressor.knee.value = 22;
+    audioCompressor.ratio.value = 3;
+    audioCompressor.attack.value = 0.003;
+    audioCompressor.release.value = 0.16;
+    audioMasterGain.connect(audioCompressor);
+    audioCompressor.connect(audioContext.destination);
+  }
+
+  scheduleAudioNodeCleanup();
+  return audioContext;
+}
+
+function resumeAudioEngine() {
+  const context = ensureAudioEngine();
+
+  if (!context) {
+    return Promise.resolve(null);
+  }
+
+  if (context.state === "suspended") {
+    return context.resume().then(function onResume() {
+      scheduleAudioNodeCleanup();
+      return context;
+    }).catch(function ignoreResumeError() {
+      return null;
+    });
+  }
+
+  return Promise.resolve(context);
+}
+
+function createTone(context, options) {
+  const oscillator = context.createOscillator();
+  const gainNode = context.createGain();
+  const filterNode = context.createBiquadFilter();
+  const now = options.startTime;
+  const duration = options.duration;
+  const peakGain = options.gain;
+
+  oscillator.type = options.type;
+  oscillator.frequency.setValueAtTime(options.frequency, now);
+  filterNode.type = options.filterType || "lowpass";
+  filterNode.frequency.setValueAtTime(options.filterFrequency || 2400, now);
+  filterNode.Q.value = options.filterQ || 0.0001;
+
+  gainNode.gain.setValueAtTime(0.0001, now);
+  gainNode.gain.linearRampToValueAtTime(peakGain, now + Math.min(0.03, duration * 0.3));
+  gainNode.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+  oscillator.connect(filterNode);
+  filterNode.connect(gainNode);
+  gainNode.connect(audioMasterGain);
+  oscillator.start(now);
+  oscillator.stop(now + duration + 0.03);
+}
+
+function playSoundEvent(eventName, forcePlayback) {
+  const config = getSoundConfig(eventName);
+
+  if (!forcePlayback && !isSoundEnabled()) {
+    return;
+  }
+
+  resumeAudioEngine().then(function onReady(context) {
+    let startTime;
+    let step;
+
+    if (!context || !audioMasterGain) {
+      return;
+    }
+
+    startTime = context.currentTime + 0.01;
+    step = config.stepMs / 1000;
+
+    if (eventName === "correct") {
+      createTone(context, {
+        startTime: startTime,
+        duration: config.duration * 0.88,
+        frequency: 659.25,
+        gain: config.volume,
+        type: "triangle",
+        filterFrequency: 2200
+      });
+      createTone(context, {
+        startTime: startTime + step,
+        duration: config.duration,
+        frequency: 783.99,
+        gain: config.volume * 0.9,
+        type: "sine",
+        filterFrequency: 2500
+      });
+      return;
+    }
+
+    if (eventName === "mastered") {
+      createTone(context, {
+        startTime: startTime,
+        duration: config.duration * 0.46,
+        frequency: 523.25,
+        gain: config.volume,
+        type: "triangle",
+        filterFrequency: 2100
+      });
+      createTone(context, {
+        startTime: startTime + step,
+        duration: config.duration * 0.48,
+        frequency: 659.25,
+        gain: config.volume * 0.92,
+        type: "triangle",
+        filterFrequency: 2300
+      });
+      createTone(context, {
+        startTime: startTime + step * 2,
+        duration: config.duration * 0.52,
+        frequency: 783.99,
+        gain: config.volume * 0.9,
+        type: "triangle",
+        filterFrequency: 2500
+      });
+      createTone(context, {
+        startTime: startTime + step * 3,
+        duration: config.duration * 0.76,
+        frequency: 1046.5,
+        gain: config.volume,
+        type: "sine",
+        filterFrequency: 2900
+      });
+      return;
+    }
+
+    if (eventName === "wrong") {
+      createTone(context, {
+        startTime: startTime,
+        duration: config.duration * 0.56,
+        frequency: 329.63,
+        gain: config.volume,
+        type: "sine",
+        filterFrequency: 1200
+      });
+      createTone(context, {
+        startTime: startTime + step,
+        duration: config.duration * 0.68,
+        frequency: 246.94,
+        gain: config.volume * 0.92,
+        type: "triangle",
+        filterFrequency: 980
+      });
+      return;
+    }
+
+    if (eventName === "hint") {
+      createTone(context, {
+        startTime: startTime,
+        duration: config.duration,
+        frequency: 587.33,
+        gain: config.volume * 0.78,
+        type: "sine",
+        filterFrequency: 2600
+      });
+      createTone(context, {
+        startTime: startTime + step,
+        duration: config.duration * 0.92,
+        frequency: 880,
+        gain: config.volume,
+        type: "triangle",
+        filterFrequency: 3000
+      });
+      return;
+    }
+
+    if (eventName === "next") {
+      createTone(context, {
+        startTime: startTime,
+        duration: config.duration,
+        frequency: 493.88,
+        gain: config.volume,
+        type: "triangle",
+        filterFrequency: 1800
+      });
+      return;
+    }
+
+    if (eventName === "complete") {
+      [523.25, 659.25, 783.99, 1046.5].forEach(function playFrequency(frequency, index) {
+        createTone(context, {
+          startTime: startTime + step * index,
+          duration: config.duration * (index === 3 ? 0.72 : 0.48),
+          frequency: frequency,
+          gain: config.volume * (index === 3 ? 1 : 0.86),
+          type: index < 2 ? "triangle" : "sine",
+          filterFrequency: 2400 + index * 220
+        });
+      });
+      return;
+    }
+
+    if (eventName === "toggleOn") {
+      createTone(context, {
+        startTime: startTime,
+        duration: config.duration * 0.72,
+        frequency: 493.88,
+        gain: config.volume * 0.82,
+        type: "triangle",
+        filterFrequency: 2000
+      });
+      createTone(context, {
+        startTime: startTime + step,
+        duration: config.duration,
+        frequency: 659.25,
+        gain: config.volume,
+        type: "sine",
+        filterFrequency: 2500
+      });
+      return;
+    }
+
+    createTone(context, {
+      startTime: startTime,
+      duration: config.duration,
+      frequency: 293.66,
+      gain: config.volume,
+      type: "sine",
+      filterFrequency: 1200
+    });
+  });
+}
 
 function getFullscreenElement() {
   return (
@@ -431,7 +762,15 @@ function loadFromStorage() {
   state.quiz = readJson(STORAGE_KEYS.quiz, null);
   state.session = readJson(STORAGE_KEYS.session, null);
   state.history = readJson(STORAGE_KEYS.history, []);
-  state.activeScene = readJson(STORAGE_KEYS.ui, {}).activeScene || "builder";
+  state.ui = Object.assign(
+    {},
+    state.ui,
+    getStoredUiState()
+  );
+  state.ui.soundEnabled = typeof state.ui.soundEnabled === "boolean"
+    ? state.ui.soundEnabled
+    : DEFAULT_SOUND_ENABLED;
+  state.activeScene = state.ui.activeScene || "builder";
 }
 
 async function loadDefaultQuiz() {
@@ -461,7 +800,8 @@ function saveToStorage() {
   localStorage.setItem(
     STORAGE_KEYS.ui,
     JSON.stringify({
-      activeScene: state.activeScene
+      activeScene: state.activeScene,
+      soundEnabled: isSoundEnabled()
     })
   );
 }
@@ -613,6 +953,32 @@ function showScene(sceneName) {
   elements.quizScene.classList.toggle("is-active", sceneName === "quiz");
   saveToStorage();
   scheduleAdaptiveLayout();
+}
+
+function updateSoundToggleButtons() {
+  const enabled = isSoundEnabled();
+
+  elements.soundToggleButtons.forEach(function syncSoundButton(button) {
+    button.textContent = enabled ? "Dźwięk: włączony" : "Dźwięk: wyłączony";
+    button.setAttribute("aria-pressed", String(enabled));
+    button.classList.toggle("is-muted", !enabled);
+  });
+}
+
+function toggleSound() {
+  const nextEnabled = !isSoundEnabled();
+
+  if (nextEnabled) {
+    state.ui.soundEnabled = true;
+    updateSoundToggleButtons();
+    saveToStorage();
+    playSoundEvent("toggleOn");
+  } else {
+    playSoundEvent("toggleOff", true);
+    state.ui.soundEnabled = false;
+    updateSoundToggleButtons();
+    saveToStorage();
+  }
 }
 
 function applyStimulusMode(mode) {
@@ -1054,6 +1420,7 @@ function submitAnswer(option) {
   const questionProgress = getQuestionProgress(currentIndex);
   const attemptCount = state.session.attemptCountForCurrent || 0;
   const isCorrect = option === item.correctAnswer;
+  let resolvedNow = false;
   let encouragement = "";
   let gainedScore;
 
@@ -1075,6 +1442,7 @@ function submitAnswer(option) {
 
     if (questionProgress && questionProgress.successfulReviewMoments >= REQUIRED_MASTERY_HITS) {
       markQuestionResolved(currentIndex);
+      resolvedNow = true;
     } else if (questionProgress) {
       enqueueReview(currentIndex);
     }
@@ -1083,6 +1451,7 @@ function submitAnswer(option) {
     state.session.lastEncouragement = encouragement;
     state.session.lastFeedback = "Dobrze.";
     celebrate();
+    playSoundEvent(resolvedNow ? "mastered" : "correct");
   } else if (attemptCount === 0) {
     registerMistake(currentIndex);
     applyMistakeStreakPenalty();
@@ -1093,6 +1462,7 @@ function submitAnswer(option) {
     state.session.lastEncouragement = "";
     state.session.lastGain = 0;
     state.session.lastFeedback = "Spróbuj ponownie.";
+    playSoundEvent("wrong");
     saveToStorage();
     render();
     return;
@@ -1106,6 +1476,7 @@ function submitAnswer(option) {
     state.session.lastGain = 0;
     state.session.lastFeedback = "Jeszcze nie.";
     enqueueReview(currentIndex);
+    playSoundEvent("wrong");
   }
 
   if (state.session.currentStep >= state.session.queue.length - 1) {
@@ -1140,6 +1511,7 @@ function finishSession() {
     createdAt: new Date().toISOString()
   });
   state.history = state.history.slice(0, 12);
+  playSoundEvent("complete");
   saveToStorage();
   render();
 }
@@ -1172,6 +1544,7 @@ function goToNextQuestion() {
   state.session.lastEncouragement = "";
   state.session.lastGain = 0;
   state.session.revealHint = false;
+  playSoundEvent("next");
   saveToStorage();
   render();
 }
@@ -1267,6 +1640,7 @@ function showHint() {
   }
 
   state.session.revealHint = true;
+  playSoundEvent("hint");
   saveToStorage();
   render();
 }
@@ -1299,6 +1673,9 @@ function attachEvents() {
   elements.backToBuilderButton.addEventListener("click", function backToBuilder() {
     showScene("builder");
   });
+  elements.soundToggleButtons.forEach(function bindSoundToggle(button) {
+    button.addEventListener("click", toggleSound);
+  });
   elements.showHintButton.addEventListener("click", showHint);
   elements.nextQuestionButton.addEventListener("click", goToNextQuestion);
   document.addEventListener("fullscreenchange", updateFullscreenButton);
@@ -1311,6 +1688,16 @@ function attachEvents() {
 }
 
 function migrateStoredState() {
+  if (!state.ui || typeof state.ui !== "object") {
+    state.ui = {
+      soundEnabled: DEFAULT_SOUND_ENABLED
+    };
+  }
+
+  if (typeof state.ui.soundEnabled !== "boolean") {
+    state.ui.soundEnabled = DEFAULT_SOUND_ENABLED;
+  }
+
   if (state.quiz) {
     try {
       state.quiz = normalizeQuiz(state.quiz, state.quiz.title);
@@ -1410,6 +1797,7 @@ async function init() {
 
   updateBuilderFields();
   updateFullscreenButton();
+  updateSoundToggleButtons();
   render();
   showScene(hasResumableSession() ? "quiz" : state.activeScene);
   saveToStorage();

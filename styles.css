@@ -126,6 +126,7 @@ body::after {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 20px;
   padding: 18px 24px;
   border-radius: var(--radius-xl);
@@ -137,6 +138,10 @@ body::after {
   color: var(--muted);
   font-size: calc(var(--text-size) * 0.98);
   line-height: 1.45;
+}
+
+.topbar-text {
+  flex: 1 1 320px;
 }
 
 .eyebrow,
@@ -512,6 +517,17 @@ button:disabled {
 
 .small-button {
   padding: 10px 14px;
+}
+
+.sound-toggle-button {
+  min-width: 148px;
+  white-space: nowrap;
+}
+
+.sound-toggle-button.is-muted {
+  background: rgba(255, 240, 244, 0.96);
+  border-color: rgba(239, 91, 123, 0.25);
+  color: #8c2440;
 }
 
 .reward-pill {

@@ -848,7 +848,7 @@ function buildProgressComparison(currentStats, previousEntry) {
   const pendingDelta = currentStats.pendingCount - previousPending;
 
   if (!previousEntry) {
-    return "To pierwsza zapisana runda, więc kolejna pokaże porównanie postępu.";
+    return "To pierwsza zapisana runda. Po następnej pokażemy porównanie postępu.";
   }
 
   if (masteredDelta > 0 && pendingDelta < 0) {
@@ -876,7 +876,7 @@ function getSummaryData(session) {
   const remainingCount = getRemainingQuestionCount(session);
   const remainingText = remainingCount > 0
     ? "Do opanowania w całym zestawie zostało jeszcze " + remainingCount + " pytań."
-    : "Cały materiał z tego zestawu jest już opanowany.";
+    : "W tym zestawie nie ma już pytań do dalszej pracy.";
 
   return {
     stats: stats,
@@ -938,7 +938,7 @@ function renderQuestion() {
     elements.questionText.textContent = "Podsumowanie rundy";
     setSummaryView(summaryData);
     elements.hintText.textContent = "";
-    elements.feedbackText.textContent = session.lastFeedback || "";
+    elements.feedbackText.textContent = "";
     elements.answerGrid.innerHTML = "";
     elements.showHintButton.disabled = true;
     elements.nextQuestionButton.disabled = summaryData.remainingCount === 0;
@@ -1126,6 +1126,7 @@ function finishSession() {
   state.session.attemptCountForCurrent = 0;
   state.session.lastAnswerCorrect = null;
   state.session.lastEncouragement = "";
+  state.session.lastFeedback = "";
   state.session.revealHint = false;
   state.history.unshift({
     quizTitle: state.quiz.title,

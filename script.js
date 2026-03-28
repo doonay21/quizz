@@ -1,8 +1,8 @@
 const STORAGE_KEYS = {
-  quiz: "quizownia-turbo.quiz",
-  session: "quizownia-turbo.session",
-  history: "quizownia-turbo.history",
-  ui: "quizownia-turbo.ui"
+  quiz: "quizz.quiz",
+  session: "quizz.session",
+  history: "quizz.history",
+  ui: "quizz.ui"
 };
 
 const STIMULUS_LABELS = {

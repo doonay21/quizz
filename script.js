@@ -226,25 +226,76 @@ function createQuestionProgress(items) {
   });
 }
 
-function createSession(quiz) {
-  const indexes = quiz.items.map(function mapIndex(_, index) {
-    return index;
+function cloneQuestionProgress(quiz, sourceProgress) {
+  const fallback = createQuestionProgress(quiz.items);
+
+  if (!Array.isArray(sourceProgress) || sourceProgress.length !== quiz.items.length) {
+    return fallback;
+  }
+
+  return sourceProgress.map(function cloneProgress(progress, index) {
+    const base = fallback[index];
+
+    if (!progress || typeof progress !== "object") {
+      return base;
+    }
+
+    return {
+      resolved: Boolean(progress.resolved),
+      needsReinforcement: typeof progress.needsReinforcement === "boolean"
+        ? progress.needsReinforcement
+        : !Boolean(progress.resolved),
+      successfulReviewMoments: Number.isInteger(progress.successfulReviewMoments)
+        ? Math.max(0, progress.successfulReviewMoments)
+        : 0
+    };
   });
-  const ordered = quiz.settings.shuffleQuestions ? shuffleArray(indexes) : indexes;
-  const targetCount = Math.min(quiz.settings.sessionSize, ordered.length);
+}
+
+function countResolvedQuestions(questionProgress) {
+  if (!Array.isArray(questionProgress)) {
+    return 0;
+  }
+
+  return questionProgress.filter(function countResolved(progress) {
+    return Boolean(progress && progress.resolved);
+  }).length;
+}
+
+function getRoundQueue(quiz, questionProgress) {
+  const unresolvedIndexes = quiz.items
+    .map(function mapIndex(_, index) {
+      return index;
+    })
+    .filter(function onlyUnresolved(index) {
+      const progress = questionProgress[index];
+      return !(progress && progress.resolved);
+    });
+  const ordered = quiz.settings.shuffleQuestions ? shuffleArray(unresolvedIndexes) : unresolvedIndexes;
+
+  return ordered.slice(0, Math.min(quiz.settings.sessionSize, ordered.length));
+}
+
+function createSession(quiz, previousSession) {
+  const questionProgress = cloneQuestionProgress(
+    quiz,
+    previousSession && previousSession.questionProgress
+  );
+  const roundQueue = getRoundQueue(quiz, questionProgress);
+  const masteredCount = countResolvedQuestions(questionProgress);
 
   return {
     quizTitle: quiz.title,
-    queue: ordered.slice(0, targetCount),
-    totalQuestions: targetCount,
+    queue: roundQueue,
+    totalQuestions: roundQueue.length,
     currentStep: 0,
     score: 0,
     streak: 0,
     bestStreak: 0,
-    correctCount: 0,
+    correctCount: masteredCount,
     answeredCount: 0,
     reviewCount: 0,
-    questionProgress: createQuestionProgress(quiz.items),
+    questionProgress: questionProgress,
     selectedAnswer: null,
     eliminatedAnswers: [],
     attemptCountForCurrent: 0,
@@ -252,7 +303,7 @@ function createSession(quiz) {
     lastFeedback: "",
     lastEncouragement: "",
     lastGain: 0,
-    completed: false,
+    completed: roundQueue.length === 0,
     revealHint: false
   };
 }
@@ -345,7 +396,7 @@ function getRewardLabel(session) {
   }
 
   if (session.completed) {
-    return "Runda zakonczona";
+    return getRemainingQuestionCount(session) > 0 ? "Kolejna runda" : "Calosc opanowana";
   }
 
   if (session.selectedAnswer) {
@@ -398,7 +449,7 @@ function celebrate() {
 function renderStatus() {
   const quiz = state.quiz;
   const session = state.session;
-  const total = session ? session.totalQuestions : (quiz ? quiz.items.length : 0);
+  const total = quiz ? quiz.items.length : 0;
   const answered = session ? session.correctCount : 0;
   const progress = total ? Math.round((answered / total) * 100) : 0;
   const mode = quiz ? quiz.settings.stimulusMode : "calm";
@@ -554,6 +605,10 @@ function buildProgressComparison(currentStats, previousEntry) {
 function buildSummaryText(session) {
   const stats = getSessionMasteryStats(session);
   const previousEntry = state.history[1] || null;
+  const remainingCount = getRemainingQuestionCount(session);
+  const remainingSummary = remainingCount > 0
+    ? " Do opanowania w calym zestawie zostalo jeszcze " + remainingCount + " pytan."
+    : " Caly material z tego JSON-a jest juz opanowany.";
 
   return (
     "Koniec rundy. Opanowane pytania: " +
@@ -564,6 +619,7 @@ function buildSummaryText(session) {
     stats.pendingCount +
     ". " +
     buildProgressComparison(stats, previousEntry) +
+    remainingSummary +
     " Punkty: " +
     session.score +
     "."
@@ -589,20 +645,32 @@ function renderQuestion() {
   }
 
   elements.quizHeading.textContent = quiz.title;
-  elements.quizDescription.textContent = quiz.description + " Runda: " + session.totalQuestions + " pytan.";
+  elements.quizDescription.textContent =
+    quiz.description +
+    " Runda: " +
+    session.totalQuestions +
+    " pytan. Opanowane lacznie: " +
+    session.correctCount +
+    "/" +
+    quiz.items.length +
+    ".";
 
   if (session.completed) {
+    const remainingCount = getRemainingQuestionCount(session);
+
     elements.questionIndex.textContent = "Runda zakonczona";
     elements.questionText.textContent = buildSummaryText(session);
     elements.hintText.textContent = "";
     elements.feedbackText.textContent = session.lastFeedback || "";
     elements.answerGrid.innerHTML = "";
     elements.showHintButton.disabled = true;
-    elements.nextQuestionButton.disabled = true;
+    elements.nextQuestionButton.disabled = remainingCount === 0;
+    elements.nextQuestionButton.textContent = remainingCount > 0 ? "Kolejna runda" : "Caly material opanowany";
     return;
   }
 
   item = getCurrentItem();
+  elements.nextQuestionButton.textContent = "Nastepne pytanie";
 
   elements.questionIndex.textContent = "Pytanie " + (session.currentStep + 1);
   elements.questionText.textContent = item.question;
@@ -628,6 +696,14 @@ function enqueueReview(currentIndex) {
 
 function getPendingReviewCount(session) {
   return Math.max(0, session.queue.length - Math.max(session.totalQuestions, session.currentStep + 1));
+}
+
+function getRemainingQuestionCount(session) {
+  if (!session || !Array.isArray(session.questionProgress)) {
+    return 0;
+  }
+
+  return Math.max(0, session.questionProgress.length - countResolvedQuestions(session.questionProgress));
 }
 
 function getQuestionProgress(questionIndex) {
@@ -787,7 +863,16 @@ function finishSession() {
 }
 
 function goToNextQuestion() {
-  if (!state.session || !state.session.selectedAnswer) {
+  if (!state.session) {
+    return;
+  }
+
+  if (state.session.completed) {
+    restartSession();
+    return;
+  }
+
+  if (!state.session.selectedAnswer) {
     return;
   }
 
@@ -815,17 +900,21 @@ function restartSession() {
     return;
   }
 
-  state.session = createSession(state.quiz);
+  state.session = createSession(state.quiz, state.session);
   render();
   showScene("quiz");
-  setBuilderMessage("Nowa runda jest gotowa.", false);
+  if (state.session.totalQuestions === 0) {
+    setBuilderMessage("Caly material z aktywnego JSON-a jest juz opanowany.", false);
+  } else {
+    setBuilderMessage("Kolejna runda jest gotowa.", false);
+  }
 }
 
 function clearSessionOnly() {
-  state.session = state.quiz ? createSession(state.quiz) : null;
+  state.session = state.quiz ? createSession(state.quiz, null) : null;
   render();
   showScene("builder");
-  setBuilderMessage("Sesja zostala wyczyszczona.", false);
+  setBuilderMessage("Sesja i postep tej nauki zostaly wyczyszczone.", false);
 }
 
 function replaceActiveQuiz() {

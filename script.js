@@ -17,6 +17,7 @@ const STREAK_BONUS_STEP = 1;
 const MAX_STREAK_BONUS = 2;
 const STREAK_PENALTY_ON_MISTAKE = 1;
 const DEFAULT_QUIZ_PATH = "./data.json";
+const LAYOUT_DENSITIES = ["regular", "compact", "tight", "ultra"];
 
 const exampleQuiz = {
   title: "Kosmiczna misja",
@@ -63,8 +64,17 @@ const state = {
 };
 
 const elements = {
+  appShell: document.querySelector(".app-shell"),
   builderScene: document.querySelector("#builderScene"),
   quizScene: document.querySelector("#quizScene"),
+  builderFitFrame: document.querySelector("#builderFitFrame"),
+  builderFitContent: document.querySelector("#builderFitContent"),
+  statusFitFrame: document.querySelector("#statusFitFrame"),
+  statusFitContent: document.querySelector("#statusFitContent"),
+  quizFitFrame: document.querySelector("#quizFitFrame"),
+  quizFitContent: document.querySelector("#quizFitContent"),
+  questionContent: document.querySelector("#questionContent"),
+  schemaBox: document.querySelector("#schemaBox"),
   fullscreenToggleButton: document.querySelector("#fullscreenToggleButton"),
   backToBuilderButton: document.querySelector("#backToBuilderButton"),
   quizTitleInput: document.querySelector("#quizTitleInput"),
@@ -110,6 +120,8 @@ const elements = {
   summaryComparisonText: document.querySelector("#summaryComparisonText"),
   summaryRemainingText: document.querySelector("#summaryRemainingText")
 };
+
+let adaptiveLayoutFrame = 0;
 
 function getFullscreenElement() {
   return (
@@ -459,11 +471,148 @@ function setBuilderMessage(message, isError) {
   elements.builderMessage.style.color = isError ? "#d72659" : "#355070";
 }
 
+function setDensity(level) {
+  if (level === "regular") {
+    delete document.body.dataset.density;
+    return;
+  }
+
+  document.body.dataset.density = level;
+}
+
+function resetFitScale(element, propertyName) {
+  if (!element) {
+    return;
+  }
+
+  element.style.setProperty(propertyName, "1");
+}
+
+function getFitScale(frame, content) {
+  const safeFrameHeight = Math.max(frame.clientHeight, 1);
+  const safeFrameWidth = Math.max(frame.clientWidth, 1);
+  const safeContentHeight = Math.max(content.scrollHeight, 1);
+  const safeContentWidth = Math.max(content.scrollWidth, 1);
+  const verticalScale = safeFrameHeight / safeContentHeight;
+  const horizontalScale = safeFrameWidth / safeContentWidth;
+
+  return Math.min(1, verticalScale, horizontalScale);
+}
+
+function applyFitScale(frame, content) {
+  let scale;
+
+  if (!frame || !content) {
+    return 1;
+  }
+
+  resetFitScale(content, "--content-scale");
+  scale = getFitScale(frame, content);
+  content.style.setProperty("--content-scale", String(Math.max(0.7, scale - 0.01)));
+  return scale;
+}
+
+function getElementScale(element, propertyName) {
+  const rawValue = element ? Number.parseFloat(element.style.getPropertyValue(propertyName)) : 1;
+
+  if (!Number.isFinite(rawValue) || rawValue <= 0) {
+    return 1;
+  }
+
+  return rawValue;
+}
+
+function getActiveScene() {
+  return state.activeScene === "quiz" ? elements.quizScene : elements.builderScene;
+}
+
+function sceneFits(scene) {
+  const builderFits = state.activeScene !== "builder" || (
+    elements.builderFitFrame &&
+    elements.builderFitContent &&
+    elements.statusFitFrame &&
+    elements.statusFitContent &&
+    (elements.builderFitContent.scrollHeight * getElementScale(elements.builderFitContent, "--content-scale"))
+      <= elements.builderFitFrame.clientHeight + 2 &&
+    (elements.statusFitContent.scrollHeight * getElementScale(elements.statusFitContent, "--content-scale"))
+      <= elements.statusFitFrame.clientHeight + 2
+  );
+  const quizFits = state.activeScene !== "quiz" || (
+    elements.quizFitFrame &&
+    elements.quizFitContent &&
+    (elements.quizFitContent.scrollHeight * getElementScale(elements.quizFitContent, "--content-scale"))
+      <= elements.quizFitFrame.clientHeight + 2
+  );
+
+  if (!scene) {
+    return true;
+  }
+
+  return (
+    builderFits &&
+    quizFits &&
+    scene.scrollHeight <= scene.clientHeight + 2 &&
+    scene.scrollWidth <= scene.clientWidth + 2
+  );
+}
+
+function fitActiveSceneContent() {
+  if (state.activeScene === "quiz") {
+    applyFitScale(elements.quizFitFrame, elements.quizFitContent);
+    return;
+  }
+
+  applyFitScale(elements.builderFitFrame, elements.builderFitContent);
+  applyFitScale(elements.statusFitFrame, elements.statusFitContent);
+}
+
+function applyAdaptiveLayout() {
+  const scene = getActiveScene();
+  let levelIndex;
+  let sceneScale;
+
+  if (!scene || !elements.appShell) {
+    return;
+  }
+
+  scene.style.setProperty("--scene-scale", "1");
+
+  for (levelIndex = 0; levelIndex < LAYOUT_DENSITIES.length; levelIndex += 1) {
+    setDensity(LAYOUT_DENSITIES[levelIndex]);
+    scene.style.setProperty("--scene-scale", "1");
+    fitActiveSceneContent();
+
+    if (sceneFits(scene)) {
+      return;
+    }
+  }
+
+  fitActiveSceneContent();
+  sceneScale = Math.min(
+    1,
+    scene.clientHeight / Math.max(scene.scrollHeight, 1),
+    scene.clientWidth / Math.max(scene.scrollWidth, 1)
+  );
+  scene.style.setProperty("--scene-scale", String(Math.max(0.7, sceneScale - 0.01)));
+}
+
+function scheduleAdaptiveLayout() {
+  if (adaptiveLayoutFrame) {
+    window.cancelAnimationFrame(adaptiveLayoutFrame);
+  }
+
+  adaptiveLayoutFrame = window.requestAnimationFrame(function onFrame() {
+    adaptiveLayoutFrame = 0;
+    applyAdaptiveLayout();
+  });
+}
+
 function showScene(sceneName) {
   state.activeScene = sceneName;
   elements.builderScene.classList.toggle("is-active", sceneName === "builder");
   elements.quizScene.classList.toggle("is-active", sceneName === "quiz");
   saveToStorage();
+  scheduleAdaptiveLayout();
 }
 
 function applyStimulusMode(mode) {
@@ -818,6 +967,7 @@ function render() {
   renderStatus();
   renderHistory();
   renderQuestion();
+  scheduleAdaptiveLayout();
 }
 
 function enqueueReview(currentIndex) {
@@ -1152,6 +1302,11 @@ function attachEvents() {
   elements.nextQuestionButton.addEventListener("click", goToNextQuestion);
   document.addEventListener("fullscreenchange", updateFullscreenButton);
   document.addEventListener("webkitfullscreenchange", updateFullscreenButton);
+  window.addEventListener("resize", scheduleAdaptiveLayout);
+
+  if (elements.schemaBox) {
+    elements.schemaBox.addEventListener("toggle", scheduleAdaptiveLayout);
+  }
 }
 
 function migrateStoredState() {

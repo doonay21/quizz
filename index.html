@@ -29,36 +29,36 @@
             </div>
             <button class="ghost-button" id="loadExampleButton" type="button">Wczytaj przykład</button>
           </div>
-
-          <div class="builder-form">
-            <div class="field-group">
-              <label class="field-label" for="quizTitleInput">Nazwa zestawu</label>
-              <input id="quizTitleInput" class="text-input" type="text" placeholder="Na przykład: Kosmos">
-            </div>
-
-            <div class="field-group settings-grid">
-              <div>
-                <label class="field-label" for="sessionSizeInput">Pytania w rundzie</label>
-                <input id="sessionSizeInput" class="text-input" type="number" min="3" max="10" step="1" value="5">
+          <div class="fit-frame fit-frame-builder" id="builderFitFrame">
+            <div class="fit-content builder-form" id="builderFitContent">
+              <div class="field-group">
+                <label class="field-label" for="quizTitleInput">Nazwa zestawu</label>
+                <input id="quizTitleInput" class="text-input" type="text" placeholder="Na przykład: Kosmos">
               </div>
-              <div>
-                <label class="field-label" for="stimulusModeSelect">Tryb bodźców</label>
-                <select id="stimulusModeSelect" class="text-input">
-                  <option value="calm">Spokojny</option>
-                  <option value="standard" selected>Standard</option>
-                  <option value="turbo">Turbo</option>
-                </select>
+
+              <div class="field-group settings-grid">
+                <div>
+                  <label class="field-label" for="sessionSizeInput">Pytania w rundzie</label>
+                  <input id="sessionSizeInput" class="text-input" type="number" min="3" max="10" step="1" value="5">
+                </div>
+                <div>
+                  <label class="field-label" for="stimulusModeSelect">Tryb bodźców</label>
+                  <select id="stimulusModeSelect" class="text-input">
+                    <option value="calm">Spokojny</option>
+                    <option value="standard" selected>Standard</option>
+                    <option value="turbo">Turbo</option>
+                  </select>
+                </div>
               </div>
-            </div>
 
-            <div class="field-group field-group-fill">
-              <label class="field-label" for="quizJsonInput">JSON</label>
-              <textarea id="quizJsonInput" class="json-textarea" spellcheck="false"></textarea>
-            </div>
+              <div class="field-group field-group-fill">
+                <label class="field-label" for="quizJsonInput">JSON</label>
+                <textarea id="quizJsonInput" class="json-textarea" spellcheck="false"></textarea>
+              </div>
 
-            <details class="schema-box">
-              <summary>Format danych</summary>
-              <pre><code>{
+              <details class="schema-box" id="schemaBox">
+                <summary>Format danych</summary>
+                <pre><code>{
   "title": "Kosmos",
   "description": "Krótki quiz o planetach",
   "settings": {
@@ -76,15 +76,16 @@
     }
   ]
 }</code></pre>
-            </details>
+              </details>
 
-            <div class="builder-actions">
-              <button class="primary-button" id="saveQuizButton" type="button">Zapisz i uruchom</button>
-              <button class="secondary-button" id="replaceQuizButton" type="button">Podmień aktywny quiz</button>
-              <button class="danger-button" id="resetAllButton" type="button">Wyczyść dane</button>
+              <div class="builder-actions">
+                <button class="primary-button" id="saveQuizButton" type="button">Zapisz i uruchom</button>
+                <button class="secondary-button" id="replaceQuizButton" type="button">Podmień aktywny quiz</button>
+                <button class="danger-button" id="resetAllButton" type="button">Wyczyść dane</button>
+              </div>
+
+              <p id="builderMessage" class="builder-message" aria-live="polite"></p>
             </div>
-
-            <p id="builderMessage" class="builder-message" aria-live="polite"></p>
           </div>
         </section>
 
@@ -95,59 +96,62 @@
               <h2>Aktualny stan</h2>
             </div>
           </div>
-
-          <div class="status-grid">
-            <article class="stat-card">
-              <span>Quiz</span>
-              <strong id="activeQuizName">Brak aktywnego</strong>
-            </article>
-            <article class="stat-card">
-              <span>Punkty</span>
-              <strong id="scoreValue">0</strong>
-            </article>
-            <article class="stat-card">
-              <span>Seria</span>
-              <strong id="streakValue">0</strong>
-            </article>
-            <article class="stat-card">
-              <span>Najlepsza seria</span>
-              <strong id="bestStreakValue">0</strong>
-            </article>
-            <article class="stat-card">
-              <span>Powtórki</span>
-              <strong id="reviewCountValue">0</strong>
-            </article>
-            <article class="stat-card">
-              <span>Tryb</span>
-              <strong id="stimulusModeValue">Spokojny</strong>
-            </article>
-          </div>
-
-          <div class="progress-block">
-            <div class="progress-copy">
-              <span>Postęp</span>
-              <strong id="progressLabel">0 / 0</strong>
-            </div>
-            <div class="progress-track" aria-hidden="true">
-              <div id="progressBar" class="progress-bar"></div>
-            </div>
-          </div>
-
-          <div class="session-actions">
-            <button class="primary-button" id="resumeSessionButton" type="button">Wznów sesję</button>
-            <button class="secondary-button" id="restartSessionButton" type="button">Nowa runda</button>
-            <button class="ghost-button" id="clearSessionButton" type="button">Wyczyść sesję</button>
-          </div>
-
-          <section class="history-card">
-            <div class="panel-header compact">
-              <div>
-                <p class="panel-kicker">Historia</p>
-                <h3>Ostatnie rundy</h3>
+          <div class="fit-frame" id="statusFitFrame">
+            <div class="fit-content status-content" id="statusFitContent">
+              <div class="status-grid">
+                <article class="stat-card">
+                  <span>Quiz</span>
+                  <strong id="activeQuizName">Brak aktywnego</strong>
+                </article>
+                <article class="stat-card">
+                  <span>Punkty</span>
+                  <strong id="scoreValue">0</strong>
+                </article>
+                <article class="stat-card">
+                  <span>Seria</span>
+                  <strong id="streakValue">0</strong>
+                </article>
+                <article class="stat-card">
+                  <span>Najlepsza seria</span>
+                  <strong id="bestStreakValue">0</strong>
+                </article>
+                <article class="stat-card">
+                  <span>Powtórki</span>
+                  <strong id="reviewCountValue">0</strong>
+                </article>
+                <article class="stat-card">
+                  <span>Tryb</span>
+                  <strong id="stimulusModeValue">Spokojny</strong>
+                </article>
               </div>
+
+              <div class="progress-block">
+                <div class="progress-copy">
+                  <span>Postęp</span>
+                  <strong id="progressLabel">0 / 0</strong>
+                </div>
+                <div class="progress-track" aria-hidden="true">
+                  <div id="progressBar" class="progress-bar"></div>
+                </div>
+              </div>
+
+              <div class="session-actions">
+                <button class="primary-button" id="resumeSessionButton" type="button">Wznów sesję</button>
+                <button class="secondary-button" id="restartSessionButton" type="button">Nowa runda</button>
+                <button class="ghost-button" id="clearSessionButton" type="button">Wyczyść sesję</button>
+              </div>
+
+              <section class="history-card">
+                <div class="panel-header compact">
+                  <div>
+                    <p class="panel-kicker">Historia</p>
+                    <h3>Ostatnie rundy</h3>
+                  </div>
+                </div>
+                <ul id="historyList" class="history-list"></ul>
+              </section>
             </div>
-            <ul id="historyList" class="history-list"></ul>
-          </section>
+          </div>
         </section>
       </main>
     </section>
@@ -177,54 +181,59 @@
               <h2 id="quizHeading">Najpierw wczytaj quiz</h2>
             </div>
           </div>
+          <div class="fit-frame" id="quizFitFrame">
+            <div class="fit-content quiz-content" id="quizFitContent">
+              <p id="quizDescription" class="quiz-description">
+                Aplikacja czeka na zapisany zestaw pytań.
+              </p>
 
-          <p id="quizDescription" class="quiz-description">
-            Aplikacja czeka na zapisany zestaw pytań.
-          </p>
+              <div class="quiz-progress">
+                <div class="progress-copy">
+                  <span>Postęp</span>
+                  <strong id="quizProgressLabel">0 / 0</strong>
+                </div>
+                <div class="progress-track" aria-hidden="true">
+                  <div id="quizProgressBar" class="progress-bar"></div>
+                </div>
+              </div>
 
-          <div class="quiz-progress">
-            <div class="progress-copy">
-              <span>Postęp</span>
-              <strong id="quizProgressLabel">0 / 0</strong>
-            </div>
-            <div class="progress-track" aria-hidden="true">
-              <div id="quizProgressBar" class="progress-bar"></div>
+              <article class="question-card" id="questionCard">
+                <div class="question-content" id="questionContent">
+                  <p class="question-index" id="questionIndex">Pytanie 0</p>
+                  <h3 class="question-text" id="questionText">Tutaj pojawi się pytanie.</h3>
+                  <section class="summary-view" id="summaryView" hidden>
+                    <div class="summary-grid">
+                      <article class="summary-stat">
+                        <span>Opanowane w rundzie</span>
+                        <strong id="summaryMasteredValue">0 / 0</strong>
+                      </article>
+                      <article class="summary-stat">
+                        <span>Do dalszej pracy</span>
+                        <strong id="summaryPendingValue">0</strong>
+                      </article>
+                      <article class="summary-stat">
+                        <span>Punkty</span>
+                        <strong id="summaryScoreValue">0</strong>
+                      </article>
+                      <article class="summary-stat">
+                        <span>Pozostało w całym zestawie</span>
+                        <strong id="summaryRemainingValue">0</strong>
+                      </article>
+                    </div>
+                    <p class="summary-note" id="summaryComparisonText"></p>
+                    <p class="summary-note secondary" id="summaryRemainingText"></p>
+                  </section>
+                  <div class="answer-grid" id="answerGrid"></div>
+                  <p class="hint-text" id="hintText"></p>
+                  <p class="feedback-text" id="feedbackText" aria-live="polite"></p>
+                  <div class="card-actions">
+                    <button class="ghost-button" id="showHintButton" type="button">Pokaż podpowiedź</button>
+                    <button class="primary-button" id="nextQuestionButton" type="button">Następne pytanie</button>
+                  </div>
+                </div>
+              </article>
             </div>
           </div>
-
-          <article class="question-card" id="questionCard">
-            <p class="question-index" id="questionIndex">Pytanie 0</p>
-            <h3 class="question-text" id="questionText">Tutaj pojawi się pytanie.</h3>
-            <section class="summary-view" id="summaryView" hidden>
-              <div class="summary-grid">
-                <article class="summary-stat">
-                  <span>Opanowane w rundzie</span>
-                  <strong id="summaryMasteredValue">0 / 0</strong>
-                </article>
-                <article class="summary-stat">
-                  <span>Do dalszej pracy</span>
-                  <strong id="summaryPendingValue">0</strong>
-                </article>
-                <article class="summary-stat">
-                  <span>Punkty</span>
-                  <strong id="summaryScoreValue">0</strong>
-                </article>
-                <article class="summary-stat">
-                  <span>Pozostało w całym zestawie</span>
-                  <strong id="summaryRemainingValue">0</strong>
-                </article>
-              </div>
-              <p class="summary-note" id="summaryComparisonText"></p>
-              <p class="summary-note secondary" id="summaryRemainingText"></p>
-            </section>
-            <div class="answer-grid" id="answerGrid"></div>
-            <p class="hint-text" id="hintText"></p>
-            <p class="feedback-text" id="feedbackText" aria-live="polite"></p>
-            <div class="card-actions">
-              <button class="ghost-button" id="showHintButton" type="button">Pokaż podpowiedź</button>
-              <button class="primary-button" id="nextQuestionButton" type="button">Następne pytanie</button>
-            </div>
-          </article>
         </section>
       </div>
     </section>

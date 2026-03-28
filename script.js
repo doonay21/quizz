@@ -21,7 +21,7 @@ const exampleQuiz = {
   description: "Krotka runda z pytaniami o planetach i gwiazdach.",
   settings: {
     sessionSize: 4,
-    stimulusMode: "standard",
+    stimulusMode: "calm",
     shuffleQuestions: false,
     shuffleOptions: false
   },
@@ -130,11 +130,11 @@ function shuffleArray(items) {
 }
 
 function normalizeStimulusMode(value) {
-  if (value === "calm" || value === "turbo") {
+  if (value === "calm" || value === "standard" || value === "turbo") {
     return value;
   }
 
-  return "standard";
+  return "calm";
 }
 
 function normalizeSessionSize(value, itemCount) {
@@ -341,7 +341,7 @@ function getRewardLabel(session) {
 }
 
 function celebrate() {
-  const mode = state.quiz ? state.quiz.settings.stimulusMode : "standard";
+  const mode = state.quiz ? state.quiz.settings.stimulusMode : "calm";
   const quizPanel = elements.questionCard.closest(".quiz-panel");
   let colors;
   let pieces;
@@ -378,7 +378,7 @@ function renderStatus() {
   const total = session ? session.totalQuestions : (quiz ? quiz.items.length : 0);
   const answered = session ? session.correctCount : 0;
   const progress = total ? Math.round((answered / total) * 100) : 0;
-  const mode = quiz ? quiz.settings.stimulusMode : "standard";
+  const mode = quiz ? quiz.settings.stimulusMode : "calm";
 
   elements.activeQuizName.textContent = quiz ? quiz.title : "Brak aktywnego";
   elements.scoreValue.textContent = String(session ? session.score : 0);
@@ -407,7 +407,7 @@ function renderHistory() {
 
   state.history.slice(0, 6).forEach(function renderEntry(entry) {
     const node = elements.historyItemTemplate.content.firstElementChild.cloneNode(true);
-    const label = STIMULUS_LABELS[entry.stimulusMode] || "Standard";
+    const label = STIMULUS_LABELS[entry.stimulusMode] || "Spokojny";
     node.querySelector(".history-title").textContent = entry.quizTitle;
     node.querySelector(".history-meta").textContent =
       entry.score + " pkt • " + entry.correct + "/" + entry.total + " • " + label;
@@ -495,7 +495,7 @@ function renderQuestion() {
     elements.questionIndex.textContent = "Runda zakonczona";
     elements.questionText.textContent = buildSummaryText(session);
     elements.hintText.textContent = "";
-    elements.feedbackText.textContent = session.lastFeedback + " Mozesz rozpoczec nowa runde albo wrocic do ustawien.";
+    elements.feedbackText.textContent = session.lastFeedback || "";
     elements.answerGrid.innerHTML = "";
     elements.showHintButton.disabled = true;
     elements.nextQuestionButton.disabled = true;
@@ -507,7 +507,7 @@ function renderQuestion() {
   elements.questionIndex.textContent = "Pytanie " + (session.currentStep + 1);
   elements.questionText.textContent = item.question;
   elements.hintText.textContent = session.revealHint
-    ? "Podpowiedz: " + (item.hint || "Odrzuc zla odpowiedz i sprobuj jeszcze raz.")
+    ? (item.hint ? "Podpowiedź: " + item.hint : "")
     : "";
   elements.feedbackText.textContent = session.lastFeedback || "";
   elements.showHintButton.disabled = !item.hint || Boolean(session.selectedAnswer);
@@ -597,10 +597,6 @@ function submitAnswer(option) {
   const questionProgress = getQuestionProgress(currentIndex);
   const attemptCount = state.session.attemptCountForCurrent || 0;
   const isCorrect = option === item.correctAnswer;
-  const masteredHits = questionProgress ? questionProgress.successfulReviewMoments : 0;
-  const wasAwaitingReinforcement = Boolean(
-    questionProgress && questionProgress.needsReinforcement && masteredHits > 0
-  );
   let encouragement = "";
   let gainedScore;
 
@@ -628,28 +624,7 @@ function submitAnswer(option) {
 
     encouragement = getQuestionEncouragement(questionProgress);
     state.session.lastEncouragement = encouragement;
-    state.session.lastFeedback =
-      (
-        attemptCount > 0
-          ? "Poprawna odpowiedz po podpowiedzi: "
-          : wasAwaitingReinforcement
-            ? "Poprawna odpowiedz w powtorce: "
-            : "Poprawna odpowiedz: "
-      ) +
-      item.correctAnswer +
-      "." +
-      (encouragement ? " " + encouragement + "." : "") +
-      " +" +
-      gainedScore +
-      " pkt." +
-      (state.session.streak > 1 ? " Seria daje tylko lekki bonus." : "") +
-      (
-        questionProgress && questionProgress.needsReinforcement
-          ? " To pytanie wroci jeszcze, dopoki nie utrwalisz go " +
-            REQUIRED_MASTERY_HITS +
-            " poprawnymi odpowiedziami w osobnych podejsciach bez podpowiedzi."
-          : ""
-      );
+    state.session.lastFeedback = "Dobrze.";
     celebrate();
   } else if (attemptCount === 0) {
     registerMistake(currentIndex);
@@ -660,9 +635,7 @@ function submitAnswer(option) {
     state.session.lastAnswerCorrect = false;
     state.session.lastEncouragement = "";
     state.session.lastGain = 0;
-    state.session.lastFeedback = item.hint
-      ? "To nie ta odpowiedz. Sprawdz podpowiedz i sprobuj jeszcze raz."
-      : "To nie ta odpowiedz. Sprobuj jeszcze raz.";
+    state.session.lastFeedback = "Spróbuj ponownie.";
     saveToStorage();
     render();
     return;
@@ -674,10 +647,7 @@ function submitAnswer(option) {
     state.session.answeredCount += 1;
     state.session.lastEncouragement = "";
     state.session.lastGain = 0;
-    state.session.lastFeedback =
-      "To jeszcze nie ta odpowiedz. Poprawna odpowiedz: " +
-      item.correctAnswer +
-      ". Wrocimy do tego pytania za chwile.";
+    state.session.lastFeedback = "Jeszcze nie.";
     enqueueReview(currentIndex);
   }
 

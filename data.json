@@ -1,0 +1,270 @@
+{
+  "title": "Historia",
+  "description": "Przygotowanie do sprawdzianu z historii.",
+  "settings": {
+    "sessionSize": 4,
+    "stimulusMode": "calm",
+    "shuffleQuestions": false,
+    "shuffleOptions": false
+  },
+  "items": [
+    {
+      "question": "Którzy królowie sascy rządzili Polską po śmierci Jana III Sobieskiego?",
+      "options": ["August II Mocny i August III Sas", "Stanisław August Poniatowski i August III Sas", "August II Mocny i Jan III Sobieski", "August III Sas i Tadeusz Kościuszko"],
+      "correctAnswer": "August II Mocny i August III Sas",
+      "hint": "Chodzi o dwóch władców z dynastii saskiej."
+    },
+    {
+      "question": "Jak nazywamy lata 1697-1763 w historii Polski?",
+      "options": ["czasy saskie", "czasy jagiellońskie", "czasy stanisławowskie", "czasy napoleońskie"],
+      "correctAnswer": "czasy saskie",
+      "hint": "Nazwa pochodzi od pochodzenia dwóch królów."
+    },
+    {
+      "question": "Jaka była Rzeczpospolita w czasach saskich?",
+      "options": ["bardzo osłabła", "stała się bardzo silna", "zajęła nowe ziemie", "była największa w Europie"],
+      "correctAnswer": "bardzo osłabła",
+      "hint": "Państwo miało wtedy coraz więcej problemów."
+    },
+    {
+      "question": "Kto został królem po śmierci Augusta III?",
+      "options": ["Stanisław August Poniatowski", "August II Mocny", "Jan Henryk Dąbrowski", "Tadeusz Kościuszko"],
+      "correctAnswer": "Stanisław August Poniatowski",
+      "hint": "Jego panowanie nazywamy czasami stanisławowskimi."
+    },
+    {
+      "question": "Kim był Stanisław August Poniatowski w historii Polski?",
+      "options": ["ostatnim królem Polski", "pierwszym królem Polski", "dowódcą Legionów", "poetą"],
+      "correctAnswer": "ostatnim królem Polski",
+      "hint": "Po nim Polska straciła niepodległość."
+    },
+    {
+      "question": "Co chciał robić Stanisław August Poniatowski?",
+      "options": ["reformować państwo", "osłabić pozycję szlachty", "oddać tron Austrii", "przenieść stolicę do Krakowa"],
+      "correctAnswer": "reformować państwo",
+      "hint": "Chciał unowocześnić i wzmocnić kraj."
+    },
+    {
+      "question": "Jak nazywamy lata 1764-1795, czyli czas panowania Stanisława Augusta?",
+      "options": ["czasy stanisławowskie", "czasy saskie", "czasy piastowskie", "czasy legionowe"],
+      "correctAnswer": "czasy stanisławowskie",
+      "hint": "Nazwa pochodzi od imienia króla."
+    },
+    {
+      "question": "O co szczególnie dbał Stanisław August?",
+      "options": ["o kulturę, szkoły i sztukę", "o budowę statków", "o kopalnie soli", "o turnieje rycerskie"],
+      "correctAnswer": "o kulturę, szkoły i sztukę",
+      "hint": "Interesował się nauką i artystami."
+    },
+    {
+      "question": "Co założył Stanisław August w Warszawie?",
+      "options": ["Teatr Narodowy", "Zamek Królewski", "Uniwersytet Jagielloński", "Legiony Polskie"],
+      "correctAnswer": "Teatr Narodowy",
+      "hint": "To miejsce związane z przedstawieniami."
+    },
+    {
+      "question": "Czym były Łazienki Królewskie dla Stanisława Augusta?",
+      "options": ["letnią rezydencją", "twierdzą wojskową", "szkołą rycerską", "miejscem obrad sejmu"],
+      "correctAnswer": "letnią rezydencją",
+      "hint": "Król mieszkał tam w cieplejszej porze roku."
+    },
+    {
+      "question": "Czym były obiady czwartkowe?",
+      "options": ["spotkaniami króla z pisarzami i artystami", "ucztami dla żołnierzy", "zebraniami kupców", "lekcjami dla dzieci"],
+      "correctAnswer": "spotkaniami króla z pisarzami i artystami",
+      "hint": "Przy stole spotykali się ludzie kultury."
+    },
+    {
+      "question": "O czym rozmawiano na obiadach czwartkowych?",
+      "options": ["o literaturze, sztuce i reformach", "o polowaniach i tańcach", "o handlu morskim", "o pogodzie i modzie"],
+      "correctAnswer": "o literaturze, sztuce i reformach",
+      "hint": "Rozmowy dotyczyły ważnych spraw państwa i kultury."
+    },
+    {
+      "question": "Kim był Ignacy Krasicki?",
+      "options": ["poetą, znanym z bajek", "królem Polski", "dowódcą kosynierów", "malarzem"],
+      "correctAnswer": "poetą, znanym z bajek",
+      "hint": "Pisał krótkie utwory z morałem."
+    },
+    {
+      "question": "W którym roku miał miejsce I rozbiór Polski?",
+      "options": ["1772", "1764", "1791", "1795"],
+      "correctAnswer": "1772",
+      "hint": "To było długo przed Konstytucją 3 maja."
+    },
+    {
+      "question": "Które państwa dokonały I rozbioru Polski?",
+      "options": ["Rosja, Prusy i Austria", "Rosja, Francja i Austria", "Prusy, Turcja i Austria", "Rosja, Prusy i Szwecja"],
+      "correctAnswer": "Rosja, Prusy i Austria",
+      "hint": "Były to trzy sąsiednie mocarstwa."
+    },
+    {
+      "question": "Co stało się z Polską po I rozbiorze?",
+      "options": ["straciła część ziem", "odzyskała Pomorze", "stała się większa", "została cesarstwem"],
+      "correctAnswer": "straciła część ziem",
+      "hint": "Kraj po tym wydarzeniu był mniejszy."
+    },
+    {
+      "question": "Co robili król i patrioci po I rozbiorze?",
+      "options": ["próbowali ratować państwo reformami", "uciekli z kraju", "zlikwidowali sejm", "oddali władzę Rosji"],
+      "correctAnswer": "próbowali ratować państwo reformami",
+      "hint": "Chcieli naprawić kraj, a nie się poddać."
+    },
+    {
+      "question": "W którym roku uchwalono Konstytucję 3 maja?",
+      "options": ["1791", "1772", "1793", "1797"],
+      "correctAnswer": "1791",
+      "hint": "To było tuż przed wojną z Rosją."
+    },
+    {
+      "question": "Po co uchwalono Konstytucję 3 maja?",
+      "options": ["żeby wzmocnić państwo", "żeby oddać władzę Prusom", "żeby wprowadzić rządy absolutne króla", "żeby przenieść stolicę"],
+      "correctAnswer": "żeby wzmocnić państwo",
+      "hint": "Miała poprawić działanie sejmu i rządu."
+    },
+    {
+      "question": "Kto zaatakował Polskę w 1792 roku, by obalić Konstytucję 3 maja?",
+      "options": ["Rosja", "Austria", "Francja", "Turcja"],
+      "correctAnswer": "Rosja",
+      "hint": "Temu państwu nie podobała się silniejsza Polska."
+    },
+    {
+      "question": "Które państwa dokonały II rozbioru Polski w 1793 roku?",
+      "options": ["Rosja i Prusy", "Rosja i Austria", "Prusy i Austria", "Rosja i Francja"],
+      "correctAnswer": "Rosja i Prusy",
+      "hint": "Tym razem były to dwa państwa, bez Austrii."
+    },
+    {
+      "question": "Jaka była Polska po II rozbiorze?",
+      "options": ["mała, słaba i bez dostępu do morza", "silna i bogata", "większa niż wcześniej", "połączona z Litwą i Szwecją"],
+      "correctAnswer": "mała, słaba i bez dostępu do morza",
+      "hint": "Po tym rozbiorze kraj bardzo się skurczył."
+    },
+    {
+      "question": "Co zaczęli przygotowywać patrioci po II rozbiorze?",
+      "options": ["powstanie przeciw Rosji", "sojusz z Prusami", "podróż do Francji", "pokojowe negocjacje z Rosją"],
+      "correctAnswer": "powstanie przeciw Rosji",
+      "hint": "Nie chcieli pogodzić się z upadkiem kraju."
+    },
+    {
+      "question": "Kto ogłosił rozpoczęcie powstania 24 marca 1794 roku w Krakowie?",
+      "options": ["Tadeusz Kościuszko", "Jan Henryk Dąbrowski", "Stanisław August Poniatowski", "Ignacy Krasicki"],
+      "correctAnswer": "Tadeusz Kościuszko",
+      "hint": "To bohater walk o wolność Polski."
+    },
+    {
+      "question": "Jak inaczej nazywamy powstanie kościuszkowskie?",
+      "options": ["insurekcją kościuszkowską", "wojną północną", "konfederacją barską", "bitwą warszawską"],
+      "correctAnswer": "insurekcją kościuszkowską",
+      "hint": "To słowo obcego pochodzenia, które znajdziesz w nazwie tego zrywu."
+    },
+    {
+      "question": "Kim był Tadeusz Kościuszko?",
+      "options": ["wybitnym dowódcą i bohaterem", "królem Polski", "poetą i bajkopisarzem", "ministrem skarbu"],
+      "correctAnswer": "wybitnym dowódcą i bohaterem",
+      "hint": "Dowodził powstaniem w 1794 roku."
+    },
+    {
+      "question": "W której bitwie Polacy zwyciężyli dzięki odważnemu atakowi kosynierów?",
+      "options": ["pod Racławicami", "pod Maciejowicami", "pod Wiedniem", "pod Grunwaldem"],
+      "correctAnswer": "pod Racławicami",
+      "hint": "Ta bitwa odbyła się na początku powstania."
+    },
+    {
+      "question": "Kim byli kosynierzy?",
+      "options": ["chłopami uzbrojonymi w kosy", "żołnierzami na koniach", "marynarzami", "królewską strażą"],
+      "correctAnswer": "chłopami uzbrojonymi w kosy",
+      "hint": "Ich broń zwykle służyła do pracy na polu."
+    },
+    {
+      "question": "Co dało Polakom zwycięstwo pod Racławicami?",
+      "options": ["nadzieję, ale nie koniec wojny", "od razu pełną wygraną", "koronę dla Kościuszki", "pokój z Rosją"],
+      "correctAnswer": "nadzieję, ale nie koniec wojny",
+      "hint": "To zwycięstwo było ważne, lecz nie rozstrzygnęło wszystkiego."
+    },
+    {
+      "question": "Co stało się z Kościuszką po bitwie pod Maciejowicami w 1794 roku?",
+      "options": ["dostał się do niewoli", "został królem", "uciekł do Włoch", "założył Legiony"],
+      "correctAnswer": "dostał się do niewoli",
+      "hint": "Po tej przegranej bitwie został schwytany."
+    },
+    {
+      "question": "Co wydarzyło się w 1795 roku po upadku powstania?",
+      "options": ["III rozbiór Polski", "uchwalenie konstytucji", "powstanie Legionów", "koronacja nowego króla"],
+      "correctAnswer": "III rozbiór Polski",
+      "hint": "Po tym wydarzeniu Polska zniknęła z mapy."
+    },
+    {
+      "question": "Co zrobiło wielu Polaków po klęsce i upadku państwa?",
+      "options": ["wyjechało na emigrację", "przyłączyło się do armii rosyjskiej", "przeniosło stolicę", "rozpoczęło współpracę z zaborcami"],
+      "correctAnswer": "wyjechało na emigrację",
+      "hint": "Opuścili ojczyznę na długo albo na stałe."
+    },
+    {
+      "question": "W którym roku powstały we Włoszech Legiony Polskie?",
+      "options": ["1797", "1795", "1801", "1812"],
+      "correctAnswer": "1797",
+      "hint": "To było dwa lata po III rozbiorze."
+    },
+    {
+      "question": "Kto dowodził Legionami Polskimi?",
+      "options": ["Jan Henryk Dąbrowski", "Tadeusz Kościuszko", "Józef Wybicki", "Stanisław August Poniatowski"],
+      "correctAnswer": "Jan Henryk Dąbrowski",
+      "hint": "Jego nazwisko jest też w tytule znanego mazurka."
+    },
+    {
+      "question": "Po co tworzono Legiony Polskie?",
+      "options": ["miały być zalążkiem polskiej armii", "miały pilnować teatru", "miały rządzić Francją", "miały bronić Austrii"],
+      "correctAnswer": "miały być zalążkiem polskiej armii",
+      "hint": "Chodziło o przyszłe wojsko wolnej Polski."
+    },
+    {
+      "question": "Jakie hasło przyświecało legionistom?",
+      "options": ["wolność, równość, braterstwo", "Bóg, honor, ojczyzna", "za króla i kraj", "pokój i bogactwo"],
+      "correctAnswer": "wolność, równość, braterstwo",
+      "hint": "To hasło było ważne także we Francji."
+    },
+    {
+      "question": "Kto w Legionach mógł zostać oficerem?",
+      "options": ["każdy żołnierz", "tylko szlachcic", "tylko żołnierz z francuskim obywatelstwem", "tylko weteran wojny"],
+      "correctAnswer": "każdy żołnierz",
+      "hint": "W Legionach liczyły się umiejętności, nie tylko pochodzenie."
+    },
+    {
+      "question": "Kto napisał Pieśń Legionów Polskich we Włoszech, czyli Mazurka Dąbrowskiego?",
+      "options": ["Józef Wybicki", "Jan Henryk Dąbrowski", "Ignacy Krasicki", "Tadeusz Kościuszko"],
+      "correctAnswer": "Józef Wybicki",
+      "hint": "To nie był dowódca Legionów, lecz autor pieśni."
+    },
+    {
+      "question": "Jak zaczyna się Mazurek Dąbrowskiego?",
+      "options": ["Jeszcze Polska nie umarła, kiedy my żyjemy", "Polska nigdy się nie podda", "Marsz, marsz legiony polskie", "Kiedy ranne wstają zorze"],
+      "correctAnswer": "Jeszcze Polska nie umarła, kiedy my żyjemy",
+      "hint": "To pierwsze słowa polskiego hymnu."
+    },
+    {
+      "question": "Co stało się z Mazurkiem Dąbrowskiego po jego napisaniu?",
+      "options": ["szybko stał się popularny wśród Polaków", "został zakazany", "znali go tylko królowie", "używano go tylko w teatrze"],
+      "correctAnswer": "szybko stał się popularny wśród Polaków",
+      "hint": "Pieśń bardzo spodobała się legionistom."
+    },
+    {
+      "question": "W którym roku Mazurek Dąbrowskiego został polskim hymnem państwowym?",
+      "options": ["1927", "1797", "1918", "1939"],
+      "correctAnswer": "1927",
+      "hint": "Stało się to już w XX wieku."
+    },
+    {
+      "question": "Dlaczego w 1801 roku Legiony przestały być potrzebne Francji?",
+      "options": ["bo Francja zawarła pokój z Austrią", "bo Polska odzyskała niepodległość", "bo Dąbrowski został królem", "bo wybuchło nowe powstanie w Krakowie"],
+      "correctAnswer": "bo Francja zawarła pokój z Austrią",
+      "hint": "Po podpisaniu pokoju Francja nie potrzebowała już tych oddziałów."
+    },
+    {
+      "question": "Dokąd Napoleon wysłał wielu legionistów, gdzie większość z nich zginęła lub zmarła?",
+      "options": ["na Santo Domingo", "do Krakowa", "na Syberię", "do Anglii"],
+      "correctAnswer": "na Santo Domingo",
+      "hint": "To daleka wyspa, nie w Europie."
+    }
+  ]
+}

@@ -16,6 +16,7 @@ const BASE_CORRECT_SCORE = 10;
 const STREAK_BONUS_STEP = 1;
 const MAX_STREAK_BONUS = 2;
 const STREAK_PENALTY_ON_MISTAKE = 1;
+const DEFAULT_QUIZ_PATH = "./data.json";
 
 const exampleQuiz = {
   title: "Kosmiczna misja",
@@ -355,6 +356,18 @@ function loadFromStorage() {
   state.session = readJson(STORAGE_KEYS.session, null);
   state.history = readJson(STORAGE_KEYS.history, []);
   state.activeScene = readJson(STORAGE_KEYS.ui, {}).activeScene || "builder";
+}
+
+async function loadDefaultQuiz() {
+  const response = await fetch(DEFAULT_QUIZ_PATH, {
+    cache: "no-store"
+  });
+
+  if (!response.ok) {
+    throw new Error("Nie udało się wczytać domyślnego pliku data.json.");
+  }
+
+  return response.json();
 }
 
 function saveToStorage() {
@@ -987,19 +1000,16 @@ function replaceActiveQuiz() {
   }
 }
 
-function resetAllData() {
+async function resetAllData() {
   localStorage.removeItem(STORAGE_KEYS.quiz);
   localStorage.removeItem(STORAGE_KEYS.session);
   localStorage.removeItem(STORAGE_KEYS.history);
   localStorage.removeItem(STORAGE_KEYS.ui);
-  state.quiz = null;
-  state.session = null;
   state.history = [];
   state.activeScene = "builder";
-  updateBuilderFields();
-  render();
   showScene("builder");
-  setBuilderMessage("Dane lokalne zostały wyczyszczone.", false);
+  await restoreDefaultQuiz(true);
+  saveToStorage();
 }
 
 function loadExampleIntoEditor() {
@@ -1009,6 +1019,31 @@ function loadExampleIntoEditor() {
   elements.stimulusModeSelect.value = quiz.settings.stimulusMode;
   elements.quizJsonInput.value = JSON.stringify(exampleQuiz, null, 2);
   setBuilderMessage("Przykładowy quiz został wczytany.", false);
+}
+
+async function restoreDefaultQuiz(isAfterReset) {
+  try {
+    const rawQuiz = await loadDefaultQuiz();
+    state.quiz = normalizeQuiz(rawQuiz, rawQuiz.title);
+    state.session = createSession(state.quiz);
+    updateBuilderFields();
+    render();
+    setBuilderMessage(
+      isAfterReset
+        ? "Dane lokalne zostały wyczyszczone. Wczytano domyślny quiz z data.json."
+        : "Wczytano domyślny quiz z data.json.",
+      false
+    );
+  } catch (error) {
+    state.quiz = normalizeQuiz(exampleQuiz, exampleQuiz.title);
+    state.session = createSession(state.quiz);
+    updateBuilderFields();
+    render();
+    setBuilderMessage(
+      "Nie udało się wczytać data.json, więc użyto przykładowego quizu. " + error.message,
+      true
+    );
+  }
 }
 
 function showHint() {
@@ -1036,7 +1071,9 @@ function attachEvents() {
   elements.saveQuizButton.addEventListener("click", replaceActiveQuiz);
   elements.replaceQuizButton.addEventListener("click", replaceActiveQuiz);
   elements.loadExampleButton.addEventListener("click", loadExampleIntoEditor);
-  elements.resetAllButton.addEventListener("click", resetAllData);
+  elements.resetAllButton.addEventListener("click", function onResetClick() {
+    resetAllData();
+  });
   elements.resumeSessionButton.addEventListener("click", resumeSession);
   elements.restartSessionButton.addEventListener("click", restartSession);
   elements.clearSessionButton.addEventListener("click", clearSessionOnly);
@@ -1136,10 +1173,15 @@ function migrateStoredState() {
   }
 }
 
-function init() {
+async function init() {
   loadFromStorage();
   migrateStoredState();
   attachEvents();
+
+  if (!state.quiz) {
+    await restoreDefaultQuiz(false);
+  }
+
   updateBuilderFields();
   render();
   showScene(hasResumableSession() ? "quiz" : state.activeScene);

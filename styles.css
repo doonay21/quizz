@@ -364,7 +364,8 @@ button:disabled {
 
 .stat-card,
 .history-card,
-.question-card {
+.question-card,
+.summary-stat {
   border-radius: var(--radius-lg);
   background: var(--panel-strong);
   box-shadow: inset 0 0 0 1px rgba(20, 50, 79, 0.06);
@@ -521,6 +522,55 @@ button:disabled {
 .question-text {
   font-size: clamp(1.7rem, 3vw, 2.5rem);
   line-height: 1.12;
+}
+
+.summary-view[hidden] {
+  display: none;
+}
+
+.summary-view {
+  display: grid;
+  gap: 14px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.summary-stat {
+  padding: 16px;
+  background: linear-gradient(180deg, #ffffff, #f5faff);
+}
+
+.summary-stat span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.summary-stat strong {
+  display: block;
+  font-family: "Baloo 2", cursive;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.summary-note {
+  margin: 0;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(237, 246, 255, 0.9);
+  border: 1px solid rgba(47, 140, 255, 0.18);
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+.summary-note.secondary {
+  background: rgba(255, 246, 217, 0.95);
+  border-color: rgba(255, 212, 90, 0.4);
 }
 
 .hint-text:empty,
@@ -686,7 +736,8 @@ body[data-stimulus="turbo"] .answer-button:hover {
   .main-grid,
   .status-grid,
   .settings-grid,
-  .answer-grid {
+  .answer-grid,
+  .summary-grid {
     grid-template-columns: 1fr;
   }
 

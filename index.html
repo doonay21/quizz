@@ -184,6 +184,28 @@
           <article class="question-card" id="questionCard">
             <p class="question-index" id="questionIndex">Pytanie 0</p>
             <h3 class="question-text" id="questionText">Tutaj pojawi się pytanie.</h3>
+            <section class="summary-view" id="summaryView" hidden>
+              <div class="summary-grid">
+                <article class="summary-stat">
+                  <span>Opanowane w rundzie</span>
+                  <strong id="summaryMasteredValue">0 / 0</strong>
+                </article>
+                <article class="summary-stat">
+                  <span>Do dalszej pracy</span>
+                  <strong id="summaryPendingValue">0</strong>
+                </article>
+                <article class="summary-stat">
+                  <span>Punkty</span>
+                  <strong id="summaryScoreValue">0</strong>
+                </article>
+                <article class="summary-stat">
+                  <span>Pozostało w całym zestawie</span>
+                  <strong id="summaryRemainingValue">0</strong>
+                </article>
+              </div>
+              <p class="summary-note" id="summaryComparisonText"></p>
+              <p class="summary-note secondary" id="summaryRemainingText"></p>
+            </section>
             <div class="answer-grid" id="answerGrid"></div>
             <p class="hint-text" id="hintText"></p>
             <p class="feedback-text" id="feedbackText" aria-live="polite"></p>

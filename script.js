@@ -19,7 +19,7 @@ const STREAK_PENALTY_ON_MISTAKE = 1;
 
 const exampleQuiz = {
   title: "Kosmiczna misja",
-  description: "Krotka runda z pytaniami o planetach i gwiazdach.",
+  description: "Krótka runda z pytaniami o planetach i gwiazdach.",
   settings: {
     sessionSize: 4,
     stimulusMode: "calm",
@@ -28,28 +28,28 @@ const exampleQuiz = {
   },
   items: [
     {
-      question: "Ktora planeta jest nazywana Czerwona Planeta?",
+      question: "Która planeta jest nazywana Czerwoną Planetą?",
       options: ["Mars", "Wenus", "Jowisz", "Merkury"],
       correctAnswer: "Mars",
-      hint: "To czwarta planeta od Slonca."
+      hint: "To czwarta planeta od Słońca."
     },
     {
-      question: "Co daje Ziemi swiatlo i cieplo?",
-      options: ["Ksiezyc", "Slonce", "Saturn", "Kometa"],
-      correctAnswer: "Slonce",
-      hint: "To gwiazda w centrum naszego ukladu."
+      question: "Co daje Ziemi światło i ciepło?",
+      options: ["Księżyc", "Słońce", "Saturn", "Kometa"],
+      correctAnswer: "Słońce",
+      hint: "To gwiazda w centrum naszego układu."
     },
     {
-      question: "Ktora planeta slynie z pierscieni?",
+      question: "Która planeta słynie z pierścieni?",
       options: ["Saturn", "Neptun", "Mars", "Uran"],
       correctAnswer: "Saturn",
       hint: "Jest wielka i gazowa."
     },
     {
-      question: "Ktora planeta jest najblizej Slonca?",
+      question: "Która planeta jest najbliżej Słońca?",
       options: ["Merkury", "Wenus", "Mars", "Neptun"],
       correctAnswer: "Merkury",
-      hint: "To mala planeta bardzo blisko gwiazdy."
+      hint: "To mała planeta bardzo blisko gwiazdy."
     }
   ]
 };
@@ -99,7 +99,14 @@ const elements = {
   showHintButton: document.querySelector("#showHintButton"),
   nextQuestionButton: document.querySelector("#nextQuestionButton"),
   questionCard: document.querySelector("#questionCard"),
-  rewardPill: document.querySelector("#rewardPill")
+  rewardPill: document.querySelector("#rewardPill"),
+  summaryView: document.querySelector("#summaryView"),
+  summaryMasteredValue: document.querySelector("#summaryMasteredValue"),
+  summaryPendingValue: document.querySelector("#summaryPendingValue"),
+  summaryScoreValue: document.querySelector("#summaryScoreValue"),
+  summaryRemainingValue: document.querySelector("#summaryRemainingValue"),
+  summaryComparisonText: document.querySelector("#summaryComparisonText"),
+  summaryRemainingText: document.querySelector("#summaryRemainingText")
 };
 
 function readJson(key, fallback) {
@@ -189,11 +196,11 @@ function normalizeQuiz(rawQuiz, fallbackTitle, overrides) {
   let items;
 
   if (!source || typeof source !== "object") {
-    throw new Error("JSON musi opisywac obiekt quizu.");
+    throw new Error("JSON musi opisywać obiekt quizu.");
   }
 
   if (!Array.isArray(source.items) || source.items.length === 0) {
-    throw new Error("Quiz musi miec tablice items z co najmniej jednym pytaniem.");
+    throw new Error("Quiz musi mieć tablicę items z co najmniej jednym pytaniem.");
   }
 
   items = source.items.map(function mapItem(item, index) {
@@ -210,7 +217,7 @@ function normalizeQuiz(rawQuiz, fallbackTitle, overrides) {
     });
 
     if (!question) {
-      throw new Error("Pytanie " + (index + 1) + " nie ma tresci.");
+      throw new Error("Pytanie " + (index + 1) + " nie ma treści.");
     }
 
     if (!correctAnswer) {
@@ -222,7 +229,7 @@ function normalizeQuiz(rawQuiz, fallbackTitle, overrides) {
     }
 
     if (options.length < 2) {
-      throw new Error("Pytanie " + (index + 1) + " musi miec przynajmniej 2 odpowiedzi.");
+      throw new Error("Pytanie " + (index + 1) + " musi mieć przynajmniej 2 odpowiedzi.");
     }
 
     return {
@@ -234,8 +241,8 @@ function normalizeQuiz(rawQuiz, fallbackTitle, overrides) {
   });
 
   return {
-    title: String(source.title || fallbackTitle || "Moj quiz").trim(),
-    description: String(source.description || "Quiz zapisany lokalnie w przegladarce.").trim(),
+    title: String(source.title || fallbackTitle || "Mój quiz").trim(),
+    description: String(source.description || "Quiz zapisany lokalnie w przeglądarce.").trim(),
     settings: {
       sessionSize: normalizeSessionSize(
         typeof opts.sessionSize !== "undefined" ? opts.sessionSize : settingsSource.sessionSize,
@@ -431,7 +438,7 @@ function getRewardLabel(session) {
   }
 
   if (session.completed) {
-    return getRemainingQuestionCount(session) > 0 ? "Kolejna runda" : "Calosc opanowana";
+    return getRemainingQuestionCount(session) > 0 ? "Kolejna runda" : "Całość opanowana";
   }
 
   if (session.selectedAnswer) {
@@ -439,7 +446,7 @@ function getRewardLabel(session) {
       return session.lastEncouragement || ("+" + (session.lastGain || 0) + " pkt");
     }
 
-    return "Powtorka";
+    return "Powtórka";
   }
 
   if (session.lastAnswerCorrect) {
@@ -510,7 +517,7 @@ function renderHistory() {
   if (!state.history.length) {
     const emptyItem = document.createElement("li");
     emptyItem.className = "history-item";
-    emptyItem.innerHTML = "<strong>Brak zapisanych rund</strong><span class='history-meta'>Historia pojawi sie tutaj po ukonczeniu quizu.</span>";
+    emptyItem.innerHTML = "<strong>Brak zapisanych rund</strong><span class='history-meta'>Historia pojawi się tutaj po ukończeniu quizu.</span>";
     elements.historyList.append(emptyItem);
     return;
   }
@@ -615,50 +622,57 @@ function buildProgressComparison(currentStats, previousEntry) {
   const pendingDelta = currentStats.pendingCount - previousPending;
 
   if (!previousEntry) {
-    return "To pierwsza zapisana runda, wiec kolejna pokaze porownanie postepu.";
+    return "To pierwsza zapisana runda, więc kolejna pokaże porównanie postępu.";
   }
 
   if (masteredDelta > 0 && pendingDelta < 0) {
-    return "To postep wzgledem poprzedniej rundy: wiecej pytan opanowanych i mniej do dalszej pracy.";
+    return "To postęp względem poprzedniej rundy: więcej pytań opanowanych i mniej do dalszej pracy.";
   }
 
   if (masteredDelta > 0) {
-    return "To postep wzgledem poprzedniej rundy: opanowano o " + masteredDelta + " pytan wiecej.";
+    return "To postęp względem poprzedniej rundy: opanowano o " + masteredDelta + " pytań więcej.";
   }
 
   if (pendingDelta < 0) {
-    return "To postep wzgledem poprzedniej rundy: o " + Math.abs(pendingDelta) + " pytan mniej wymaga dalszej pracy.";
+    return "To postęp względem poprzedniej rundy: o " + Math.abs(pendingDelta) + " pytań mniej wymaga dalszej pracy.";
   }
 
   if (masteredDelta < 0 && pendingDelta > 0) {
-    return "Ta runda wypadla slabiej niz poprzednia: mniej pytan zostalo opanowanych.";
+    return "Ta runda wypadła słabiej niż poprzednia: mniej pytań zostało opanowanych.";
   }
 
   return "Wynik opanowania jest taki sam jak w poprzedniej rundzie.";
 }
 
-function buildSummaryText(session) {
+function getSummaryData(session) {
   const stats = getSessionMasteryStats(session);
   const previousEntry = state.history[1] || null;
   const remainingCount = getRemainingQuestionCount(session);
-  const remainingSummary = remainingCount > 0
-    ? " Do opanowania w calym zestawie zostalo jeszcze " + remainingCount + " pytan."
-    : " Caly material z tego JSON-a jest juz opanowany.";
+  const remainingText = remainingCount > 0
+    ? "Do opanowania w całym zestawie zostało jeszcze " + remainingCount + " pytań."
+    : "Cały materiał z tego zestawu jest już opanowany.";
 
-  return (
-    "Koniec rundy. Opanowane pytania: " +
-    stats.masteredCount +
-    "/" +
-    stats.totalCount +
-    ". Dalszej pracy wymaga: " +
-    stats.pendingCount +
-    ". " +
-    buildProgressComparison(stats, previousEntry) +
-    remainingSummary +
-    " Punkty: " +
-    session.score +
-    "."
-  );
+  return {
+    stats: stats,
+    remainingCount: remainingCount,
+    comparisonText: buildProgressComparison(stats, previousEntry),
+    remainingText: remainingText
+  };
+}
+
+function setSummaryView(summaryData) {
+  elements.summaryView.hidden = false;
+  elements.summaryMasteredValue.textContent =
+    summaryData.stats.masteredCount + " / " + summaryData.stats.totalCount;
+  elements.summaryPendingValue.textContent = String(summaryData.stats.pendingCount);
+  elements.summaryScoreValue.textContent = String(state.session.score);
+  elements.summaryRemainingValue.textContent = String(summaryData.remainingCount);
+  elements.summaryComparisonText.textContent = summaryData.comparisonText;
+  elements.summaryRemainingText.textContent = summaryData.remainingText;
+}
+
+function hideSummaryView() {
+  elements.summaryView.hidden = true;
 }
 
 function renderQuestion() {
@@ -667,10 +681,11 @@ function renderQuestion() {
   let item;
 
   if (!quiz || !session) {
+    hideSummaryView();
     elements.quizHeading.textContent = "Najpierw wczytaj quiz";
-    elements.quizDescription.textContent = "Aplikacja czeka na zapisany zestaw pytan.";
+    elements.quizDescription.textContent = "Aplikacja czeka na zapisany zestaw pytań.";
     elements.questionIndex.textContent = "Pytanie 0";
-    elements.questionText.textContent = "Tutaj pojawi sie pytanie.";
+    elements.questionText.textContent = "Tutaj pojawi się pytanie.";
     elements.hintText.textContent = "";
     elements.feedbackText.textContent = "";
     elements.answerGrid.innerHTML = "";
@@ -684,28 +699,32 @@ function renderQuestion() {
     quiz.description +
     " Runda: " +
     session.totalQuestions +
-    " pytan. Opanowane lacznie: " +
+    " pytań. Opanowane łącznie: " +
     session.correctCount +
     "/" +
     quiz.items.length +
     ".";
 
   if (session.completed) {
-    const remainingCount = getRemainingQuestionCount(session);
+    const summaryData = getSummaryData(session);
 
-    elements.questionIndex.textContent = "Runda zakonczona";
-    elements.questionText.textContent = buildSummaryText(session);
+    elements.questionIndex.textContent = "Runda zakończona";
+    elements.questionText.textContent = "Podsumowanie rundy";
+    setSummaryView(summaryData);
     elements.hintText.textContent = "";
     elements.feedbackText.textContent = session.lastFeedback || "";
     elements.answerGrid.innerHTML = "";
     elements.showHintButton.disabled = true;
-    elements.nextQuestionButton.disabled = remainingCount === 0;
-    elements.nextQuestionButton.textContent = remainingCount > 0 ? "Kolejna runda" : "Caly material opanowany";
+    elements.nextQuestionButton.disabled = summaryData.remainingCount === 0;
+    elements.nextQuestionButton.textContent = summaryData.remainingCount > 0
+      ? "Kolejna runda"
+      : "Cały materiał opanowany";
     return;
   }
 
+  hideSummaryView();
   item = getCurrentItem();
-  elements.nextQuestionButton.textContent = "Nastepne pytanie";
+  elements.nextQuestionButton.textContent = "Następne pytanie";
 
   elements.questionIndex.textContent = "Pytanie " + (session.currentStep + 1);
   elements.questionText.textContent = item.question;
@@ -778,7 +797,7 @@ function getQuestionEncouragement(progress) {
 
   if (hits > 0) {
     return (
-      "To pytanie masz juz " +
+      "To pytanie masz już " +
       hits +
       "/" +
       REQUIRED_MASTERY_HITS +
@@ -939,7 +958,7 @@ function restartSession() {
   render();
   showScene("quiz");
   if (state.session.totalQuestions === 0) {
-    setBuilderMessage("Caly material z aktywnego JSON-a jest juz opanowany.", false);
+    setBuilderMessage("Cały materiał z aktywnego JSON-a jest już opanowany.", false);
   } else {
     setBuilderMessage("Kolejna runda jest gotowa.", false);
   }
@@ -949,7 +968,7 @@ function clearSessionOnly() {
   state.session = state.quiz ? createSession(state.quiz, null) : null;
   render();
   showScene("builder");
-  setBuilderMessage("Sesja i postep tej nauki zostaly wyczyszczone.", false);
+  setBuilderMessage("Sesja i postęp tej nauki zostały wyczyszczone.", false);
 }
 
 function replaceActiveQuiz() {
@@ -962,7 +981,7 @@ function replaceActiveQuiz() {
     state.session = createSession(state.quiz);
     render();
     showScene("quiz");
-    setBuilderMessage("Quiz zostal zapisany.", false);
+    setBuilderMessage("Quiz został zapisany.", false);
   } catch (error) {
     setBuilderMessage(error.message, true);
   }
@@ -980,7 +999,7 @@ function resetAllData() {
   updateBuilderFields();
   render();
   showScene("builder");
-  setBuilderMessage("Dane lokalne zostaly wyczyszczone.", false);
+  setBuilderMessage("Dane lokalne zostały wyczyszczone.", false);
 }
 
 function loadExampleIntoEditor() {
@@ -989,7 +1008,7 @@ function loadExampleIntoEditor() {
   elements.sessionSizeInput.value = String(quiz.settings.sessionSize);
   elements.stimulusModeSelect.value = quiz.settings.stimulusMode;
   elements.quizJsonInput.value = JSON.stringify(exampleQuiz, null, 2);
-  setBuilderMessage("Przykladowy quiz zostal wczytany.", false);
+  setBuilderMessage("Przykładowy quiz został wczytany.", false);
 }
 
 function showHint() {
@@ -1010,7 +1029,7 @@ function resumeSession() {
 
   render();
   showScene("quiz");
-  setBuilderMessage("Wznowiono przerwana sesje.", false);
+  setBuilderMessage("Wznowiono przerwaną sesję.", false);
 }
 
 function attachEvents() {

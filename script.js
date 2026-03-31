@@ -2084,6 +2084,21 @@ function updateFullscreenButton() {
     : "Włącz tryb pełnoekranowy";
 }
 
+async function exitFullscreenIfActive() {
+  if (!getFullscreenElement()) {
+    return;
+  }
+
+  if (document.exitFullscreen) {
+    await document.exitFullscreen();
+    return;
+  }
+
+  if (document.webkitExitFullscreen) {
+    document.webkitExitFullscreen();
+  }
+}
+
 async function toggleFullscreen() {
   const target = getFullscreenTarget();
 
@@ -2094,11 +2109,7 @@ async function toggleFullscreen() {
 
   try {
     if (getFullscreenElement()) {
-      if (document.exitFullscreen) {
-        await document.exitFullscreen();
-      } else if (document.webkitExitFullscreen) {
-        document.webkitExitFullscreen();
-      }
+      await exitFullscreenIfActive();
     } else if (target.requestFullscreen) {
       await target.requestFullscreen({ navigationUI: "hide" });
     } else if (target.webkitRequestFullscreen) {
@@ -2672,6 +2683,15 @@ function showScene(sceneName) {
   elements.builderScene.classList.toggle("is-active", sceneName === "builder");
   elements.quizScene.classList.toggle("is-active", sceneName === "quiz");
   elements.themeScene.classList.toggle("is-active", sceneName === "theme");
+
+  if (sceneName === "builder") {
+    exitFullscreenIfActive()
+      .catch(function handleFullscreenExitError(error) {
+        console.error("Fullscreen exit error:", error);
+      })
+      .finally(updateFullscreenButton);
+  }
+
   saveToStorage();
   scheduleAdaptiveLayout();
 }

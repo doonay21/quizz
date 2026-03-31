@@ -5,6 +5,8 @@ const STORAGE_KEYS = {
   ui: "quizz.ui"
 };
 
+const THEME_STORAGE_VERSION = 1;
+
 const STIMULUS_LABELS = {
   calm: "Spokojny",
   standard: "Standard",
@@ -20,6 +22,350 @@ const DEFAULT_QUIZ_PATH = "./data.json";
 const LAYOUT_DENSITIES = ["regular", "compact", "tight", "ultra"];
 const DEFAULT_SOUND_ENABLED = true;
 const TRUE_FALSE_OPTIONS = ["Prawda", "Fałsz"];
+const DEFAULT_THEME_SELECTION = {
+  background: "sunrise",
+  surface: "cloud",
+  accent: "ocean",
+  answers: "bubbles",
+  feedback: "mint"
+};
+const THEME_OPTION_ORDER = ["background", "surface", "accent", "answers", "feedback"];
+const THEME_OPTIONS = {
+  background: {
+    label: "Tło",
+    description: "Kolory całego świata quizu",
+    options: [
+      {
+        id: "sunrise",
+        label: "Wschód słońca",
+        swatches: ["#fff6d8", "#dff4ff", "#69d5ff"],
+        vars: {
+          "--bg-top": "#fff6d8",
+          "--bg-bottom": "#dff4ff",
+          "--bg-glow-top": "rgba(255, 255, 255, 0.98)",
+          "--bg-glow-accent": "rgba(47, 140, 255, 0.18)",
+          "--bg-glow-sun": "rgba(255, 212, 90, 0.24)",
+          "--blob-a": "rgba(105, 213, 255, 0.28)",
+          "--blob-b": "rgba(255, 212, 90, 0.24)",
+          "--calm-bg-top": "#fdf8e8",
+          "--calm-bg-bottom": "#eef8ff"
+        }
+      },
+      {
+        id: "meadow",
+        label: "Łąka",
+        swatches: ["#f4ffd8", "#dfffea", "#7ad7a2"],
+        vars: {
+          "--bg-top": "#f4ffd8",
+          "--bg-bottom": "#dfffea",
+          "--bg-glow-top": "rgba(255, 255, 255, 0.98)",
+          "--bg-glow-accent": "rgba(122, 215, 162, 0.2)",
+          "--bg-glow-sun": "rgba(255, 209, 111, 0.22)",
+          "--blob-a": "rgba(108, 209, 165, 0.28)",
+          "--blob-b": "rgba(255, 209, 111, 0.22)",
+          "--calm-bg-top": "#f7ffec",
+          "--calm-bg-bottom": "#ebfff4"
+        }
+      },
+      {
+        id: "berry",
+        label: "Jagodowa chmurka",
+        swatches: ["#ffe4f2", "#e6efff", "#ff9fcd"],
+        vars: {
+          "--bg-top": "#ffe4f2",
+          "--bg-bottom": "#e6efff",
+          "--bg-glow-top": "rgba(255, 255, 255, 0.98)",
+          "--bg-glow-accent": "rgba(255, 159, 205, 0.2)",
+          "--bg-glow-sun": "rgba(135, 181, 255, 0.22)",
+          "--blob-a": "rgba(255, 159, 205, 0.24)",
+          "--blob-b": "rgba(135, 181, 255, 0.24)",
+          "--calm-bg-top": "#fff0f7",
+          "--calm-bg-bottom": "#eef3ff"
+        }
+      },
+      {
+        id: "space",
+        label: "Kosmos",
+        swatches: ["#e6ebff", "#d8f4ff", "#7d93ff"],
+        vars: {
+          "--bg-top": "#e6ebff",
+          "--bg-bottom": "#d8f4ff",
+          "--bg-glow-top": "rgba(255, 255, 255, 0.96)",
+          "--bg-glow-accent": "rgba(125, 147, 255, 0.2)",
+          "--bg-glow-sun": "rgba(114, 224, 255, 0.22)",
+          "--blob-a": "rgba(125, 147, 255, 0.24)",
+          "--blob-b": "rgba(114, 224, 255, 0.24)",
+          "--calm-bg-top": "#edf0ff",
+          "--calm-bg-bottom": "#e8f8ff"
+        }
+      }
+    ]
+  },
+  surface: {
+    label: "Karty",
+    description: "Panele, plansze i pudełka",
+    options: [
+      {
+        id: "cloud",
+        label: "Chmurki",
+        swatches: ["#ffffff", "#f8fbff", "#dfefff"],
+        vars: {
+          "--panel": "rgba(255, 255, 255, 0.94)",
+          "--panel-strong": "#ffffff",
+          "--surface-soft": "rgba(255, 255, 255, 0.88)",
+          "--surface-card-start": "#ffffff",
+          "--surface-card-end": "#f8fbff",
+          "--surface-raised-start": "#f6fbff",
+          "--surface-raised-end": "#eef7ff",
+          "--surface-summary-start": "#ffffff",
+          "--surface-summary-end": "#f5faff",
+          "--line": "rgba(20, 50, 79, 0.16)",
+          "--card-line": "rgba(20, 50, 79, 0.06)",
+          "--input-border": "rgba(20, 50, 79, 0.14)",
+          "--shadow": "0 22px 44px rgba(21, 94, 201, 0.14)"
+        }
+      },
+      {
+        id: "pearl",
+        label: "Perła",
+        swatches: ["#fffef8", "#fff7df", "#f4ead2"],
+        vars: {
+          "--panel": "rgba(255, 252, 244, 0.94)",
+          "--panel-strong": "#fffef8",
+          "--surface-soft": "rgba(255, 250, 238, 0.9)",
+          "--surface-card-start": "#fffef8",
+          "--surface-card-end": "#fff7df",
+          "--surface-raised-start": "#fffdf5",
+          "--surface-raised-end": "#fdf1d3",
+          "--surface-summary-start": "#fffef9",
+          "--surface-summary-end": "#fff6e4",
+          "--line": "rgba(96, 75, 27, 0.14)",
+          "--card-line": "rgba(96, 75, 27, 0.08)",
+          "--input-border": "rgba(96, 75, 27, 0.14)",
+          "--shadow": "0 22px 44px rgba(158, 122, 34, 0.12)"
+        }
+      },
+      {
+        id: "candy",
+        label: "Landrynka",
+        swatches: ["#fff8fc", "#fff0f7", "#ffe0ef"],
+        vars: {
+          "--panel": "rgba(255, 248, 252, 0.95)",
+          "--panel-strong": "#fff9fc",
+          "--surface-soft": "rgba(255, 245, 250, 0.92)",
+          "--surface-card-start": "#fffafe",
+          "--surface-card-end": "#fff0f7",
+          "--surface-raised-start": "#fff8fd",
+          "--surface-raised-end": "#ffeaf4",
+          "--surface-summary-start": "#fffafe",
+          "--surface-summary-end": "#fff1f7",
+          "--line": "rgba(145, 67, 113, 0.14)",
+          "--card-line": "rgba(145, 67, 113, 0.08)",
+          "--input-border": "rgba(145, 67, 113, 0.14)",
+          "--shadow": "0 22px 44px rgba(208, 103, 157, 0.14)"
+        }
+      }
+    ]
+  },
+  accent: {
+    label: "Przyciski",
+    description: "Główne akcje i pasek postępu",
+    options: [
+      {
+        id: "ocean",
+        label: "Ocean",
+        swatches: ["#2f8cff", "#155ec9", "#69d5ff"],
+        vars: {
+          "--ink": "#14324f",
+          "--muted": "#4d6482",
+          "--primary": "#2f8cff",
+          "--primary-deep": "#155ec9",
+          "--sky": "#69d5ff",
+          "--sun": "#ffd45a",
+          "--primary-button-start": "#58a8ff",
+          "--primary-button-end": "#155ec9",
+          "--primary-shadow": "rgba(21, 94, 201, 0.22)",
+          "--secondary-button-start": "#fff0a8",
+          "--secondary-button-end": "#ffd45a",
+          "--secondary-button-ink": "#5d4300",
+          "--reward-start": "#fff0ad",
+          "--reward-end": "#ffd76a",
+          "--reward-ink": "#6b4c00"
+        }
+      },
+      {
+        id: "forest",
+        label: "Las",
+        swatches: ["#38a86b", "#18744a", "#83dfab"],
+        vars: {
+          "--ink": "#163c2b",
+          "--muted": "#4d6d5d",
+          "--primary": "#38a86b",
+          "--primary-deep": "#18744a",
+          "--sky": "#83dfab",
+          "--sun": "#ffd36a",
+          "--primary-button-start": "#5dd18a",
+          "--primary-button-end": "#18744a",
+          "--primary-shadow": "rgba(24, 116, 74, 0.22)",
+          "--secondary-button-start": "#fff0a8",
+          "--secondary-button-end": "#ffd36a",
+          "--secondary-button-ink": "#5f4700",
+          "--reward-start": "#e8ffd3",
+          "--reward-end": "#a4e27a",
+          "--reward-ink": "#325d10"
+        }
+      },
+      {
+        id: "coral",
+        label: "Koral",
+        swatches: ["#ff7b7b", "#db4d67", "#ffb596"],
+        vars: {
+          "--ink": "#54233b",
+          "--muted": "#7b5c6d",
+          "--primary": "#ff7b7b",
+          "--primary-deep": "#db4d67",
+          "--sky": "#ffb596",
+          "--sun": "#ffd666",
+          "--primary-button-start": "#ff9f92",
+          "--primary-button-end": "#db4d67",
+          "--primary-shadow": "rgba(219, 77, 103, 0.22)",
+          "--secondary-button-start": "#ffe7a6",
+          "--secondary-button-end": "#ffd666",
+          "--secondary-button-ink": "#6b4300",
+          "--reward-start": "#ffd9a8",
+          "--reward-end": "#ff9c7f",
+          "--reward-ink": "#6b300d"
+        }
+      }
+    ]
+  },
+  answers: {
+    label: "Odpowiedzi",
+    description: "Wygląd kafelków odpowiedzi",
+    options: [
+      {
+        id: "bubbles",
+        label: "Bańki",
+        swatches: ["#ffffff", "#eaf5ff", "#d8ecff"],
+        vars: {
+          "--answer-start": "#ffffff",
+          "--answer-end": "#eaf5ff",
+          "--answer-hover-end": "#dff0ff",
+          "--answer-selected-end": "#d8ecff",
+          "--answer-border": "rgba(47, 140, 255, 0.22)",
+          "--answer-border-hover": "rgba(47, 140, 255, 0.52)",
+          "--answer-border-selected": "rgba(47, 140, 255, 0.95)",
+          "--answer-shadow": "rgba(47, 140, 255, 0.12)",
+          "--answer-shadow-hover": "rgba(47, 140, 255, 0.18)",
+          "--answer-shadow-selected": "rgba(47, 140, 255, 0.24)"
+        }
+      },
+      {
+        id: "lemonade",
+        label: "Lemoniada",
+        swatches: ["#fffef2", "#fff3bf", "#ffe68b"],
+        vars: {
+          "--answer-start": "#fffef2",
+          "--answer-end": "#fff3bf",
+          "--answer-hover-end": "#ffeda2",
+          "--answer-selected-end": "#ffe68b",
+          "--answer-border": "rgba(222, 172, 27, 0.3)",
+          "--answer-border-hover": "rgba(222, 172, 27, 0.52)",
+          "--answer-border-selected": "rgba(208, 149, 14, 0.9)",
+          "--answer-shadow": "rgba(222, 172, 27, 0.12)",
+          "--answer-shadow-hover": "rgba(222, 172, 27, 0.18)",
+          "--answer-shadow-selected": "rgba(222, 172, 27, 0.24)"
+        }
+      },
+      {
+        id: "strawberry",
+        label: "Truskawka",
+        swatches: ["#fff6fb", "#ffe0ef", "#ffc7df"],
+        vars: {
+          "--answer-start": "#fff6fb",
+          "--answer-end": "#ffe0ef",
+          "--answer-hover-end": "#ffd5e8",
+          "--answer-selected-end": "#ffc7df",
+          "--answer-border": "rgba(230, 92, 150, 0.26)",
+          "--answer-border-hover": "rgba(230, 92, 150, 0.5)",
+          "--answer-border-selected": "rgba(204, 58, 126, 0.92)",
+          "--answer-shadow": "rgba(230, 92, 150, 0.12)",
+          "--answer-shadow-hover": "rgba(230, 92, 150, 0.18)",
+          "--answer-shadow-selected": "rgba(230, 92, 150, 0.24)"
+        }
+      }
+    ]
+  },
+  feedback: {
+    label: "Komunikaty",
+    description: "Brawo, podpowiedzi i błędy",
+    options: [
+      {
+        id: "mint",
+        label: "Mięta",
+        swatches: ["#55cb84", "#e4fff0", "#ef5b7b"],
+        vars: {
+          "--green": "#55cb84",
+          "--green-soft": "#e4fff0",
+          "--green-deep": "#2fa965",
+          "--green-ink": "#0f5b31",
+          "--danger": "#ef5b7b",
+          "--danger-soft": "#fff0f4",
+          "--danger-deep": "#de4b6e",
+          "--danger-ink": "#8c2440",
+          "--hint-bg": "#fff6d9",
+          "--hint-border": "rgba(255, 212, 90, 0.5)",
+          "--feedback-bg": "#edf6ff",
+          "--feedback-border": "rgba(47, 140, 255, 0.22)",
+          "--message-error": "#d72659",
+          "--message-success": "#355070"
+        }
+      },
+      {
+        id: "jungle",
+        label: "Dżungla",
+        swatches: ["#3bb273", "#e5ffec", "#ff9f5a"],
+        vars: {
+          "--green": "#3bb273",
+          "--green-soft": "#e5ffec",
+          "--green-deep": "#218452",
+          "--green-ink": "#145232",
+          "--danger": "#ff9f5a",
+          "--danger-soft": "#fff0e4",
+          "--danger-deep": "#db7b2f",
+          "--danger-ink": "#824310",
+          "--hint-bg": "#eefbdd",
+          "--hint-border": "rgba(89, 176, 81, 0.36)",
+          "--feedback-bg": "#e7fff4",
+          "--feedback-border": "rgba(59, 178, 115, 0.22)",
+          "--message-error": "#bf6a24",
+          "--message-success": "#2f6d47"
+        }
+      },
+      {
+        id: "galaxy",
+        label: "Galaktyka",
+        swatches: ["#7b84ff", "#eef0ff", "#ff8fb7"],
+        vars: {
+          "--green": "#7b84ff",
+          "--green-soft": "#eef0ff",
+          "--green-deep": "#5a62da",
+          "--green-ink": "#30378f",
+          "--danger": "#ff8fb7",
+          "--danger-soft": "#fff0f7",
+          "--danger-deep": "#de5e90",
+          "--danger-ink": "#8d2854",
+          "--hint-bg": "#f5f1ff",
+          "--hint-border": "rgba(123, 132, 255, 0.34)",
+          "--feedback-bg": "#f2f4ff",
+          "--feedback-border": "rgba(123, 132, 255, 0.22)",
+          "--message-error": "#c64076",
+          "--message-success": "#4752b3"
+        }
+      }
+    ]
+  }
+};
 const SOUND_EVENT_CONFIG = {
   correct: {
     calm: { volume: 0.12, stepMs: 74, duration: 0.28 },
@@ -107,7 +453,8 @@ const state = {
   history: [],
   activeScene: "builder",
   ui: {
-    soundEnabled: DEFAULT_SOUND_ENABLED
+    soundEnabled: DEFAULT_SOUND_ENABLED,
+    themeSelection: Object.assign({}, DEFAULT_THEME_SELECTION)
   }
 };
 
@@ -115,16 +462,21 @@ const elements = {
   appShell: document.querySelector(".app-shell"),
   builderScene: document.querySelector("#builderScene"),
   quizScene: document.querySelector("#quizScene"),
+  themeScene: document.querySelector("#themeScene"),
   builderFitFrame: document.querySelector("#builderFitFrame"),
   builderFitContent: document.querySelector("#builderFitContent"),
   statusFitFrame: document.querySelector("#statusFitFrame"),
   statusFitContent: document.querySelector("#statusFitContent"),
   quizFitFrame: document.querySelector("#quizFitFrame"),
   quizFitContent: document.querySelector("#quizFitContent"),
+  themeFitFrame: document.querySelector("#themeFitFrame"),
+  themeFitContent: document.querySelector("#themeFitContent"),
   questionContent: document.querySelector("#questionContent"),
   schemaBox: document.querySelector("#schemaBox"),
   fullscreenToggleButton: document.querySelector("#fullscreenToggleButton"),
   backToBuilderButton: document.querySelector("#backToBuilderButton"),
+  openThemeEditorButton: document.querySelector("#openThemeEditorButton"),
+  closeThemeEditorButton: document.querySelector("#closeThemeEditorButton"),
   quizTitleInput: document.querySelector("#quizTitleInput"),
   sessionSizeInput: document.querySelector("#sessionSizeInput"),
   stimulusModeSelect: document.querySelector("#stimulusModeSelect"),
@@ -135,6 +487,10 @@ const elements = {
   replaceQuizButton: document.querySelector("#replaceQuizButton"),
   loadExampleButton: document.querySelector("#loadExampleButton"),
   resetAllButton: document.querySelector("#resetAllButton"),
+  saveThemeButton: document.querySelector("#saveThemeButton"),
+  resetThemeButton: document.querySelector("#resetThemeButton"),
+  themeOptionsGrid: document.querySelector("#themeOptionsGrid"),
+  themeMessage: document.querySelector("#themeMessage"),
   resumeSessionButton: document.querySelector("#resumeSessionButton"),
   restartSessionButton: document.querySelector("#restartSessionButton"),
   clearSessionButton: document.querySelector("#clearSessionButton"),
@@ -179,6 +535,74 @@ let audioCleanupTimer = 0;
 
 function getStoredUiState() {
   return readJson(STORAGE_KEYS.ui, {});
+}
+
+function normalizeThemeSelection(themeSelection) {
+  const nextSelection = {};
+
+  THEME_OPTION_ORDER.forEach(function normalizeGroup(groupKey) {
+    const group = THEME_OPTIONS[groupKey];
+    const requestedId = themeSelection && typeof themeSelection[groupKey] === "string"
+      ? themeSelection[groupKey]
+      : DEFAULT_THEME_SELECTION[groupKey];
+    const matchedOption = group.options.find(function findOption(option) {
+      return option.id === requestedId;
+    });
+
+    nextSelection[groupKey] = matchedOption
+      ? matchedOption.id
+      : DEFAULT_THEME_SELECTION[groupKey];
+  });
+
+  return nextSelection;
+}
+
+function getThemeSelection() {
+  return normalizeThemeSelection(
+    state.ui && state.ui.themeSelection
+      ? state.ui.themeSelection
+      : DEFAULT_THEME_SELECTION
+  );
+}
+
+function getThemeOption(groupKey, optionId) {
+  const group = THEME_OPTIONS[groupKey];
+
+  if (!group) {
+    return null;
+  }
+
+  return group.options.find(function findOption(option) {
+    return option.id === optionId;
+  }) || null;
+}
+
+function getMergedThemeVars(selection) {
+  const mergedVars = {
+    "--theme-version": String(THEME_STORAGE_VERSION)
+  };
+
+  THEME_OPTION_ORDER.forEach(function mergeGroup(groupKey) {
+    const option = getThemeOption(groupKey, selection[groupKey]);
+
+    if (!option) {
+      return;
+    }
+
+    Object.assign(mergedVars, option.vars);
+  });
+
+  return mergedVars;
+}
+
+function applyThemeSelection(themeSelection) {
+  const selection = normalizeThemeSelection(themeSelection);
+  const themeVars = getMergedThemeVars(selection);
+
+  state.ui.themeSelection = selection;
+  Object.keys(themeVars).forEach(function applyVar(key) {
+    document.documentElement.style.setProperty(key, themeVars[key]);
+  });
 }
 
 function getCurrentStimulusMode() {
@@ -891,14 +1315,29 @@ function saveToStorage() {
     STORAGE_KEYS.ui,
     JSON.stringify({
       activeScene: state.activeScene,
-      soundEnabled: isSoundEnabled()
+      soundEnabled: isSoundEnabled(),
+      themeSelection: getThemeSelection(),
+      themeVersion: THEME_STORAGE_VERSION
     })
   );
 }
 
 function setBuilderMessage(message, isError) {
   elements.builderMessage.textContent = message;
-  elements.builderMessage.style.color = isError ? "#d72659" : "#355070";
+  elements.builderMessage.style.color = isError
+    ? "var(--message-error)"
+    : "var(--message-success)";
+}
+
+function setThemeMessage(message, isError) {
+  if (!elements.themeMessage) {
+    return;
+  }
+
+  elements.themeMessage.textContent = message;
+  elements.themeMessage.style.color = isError
+    ? "var(--message-error)"
+    : "var(--message-success)";
 }
 
 function setDensity(level) {
@@ -953,7 +1392,15 @@ function getElementScale(element, propertyName) {
 }
 
 function getActiveScene() {
-  return state.activeScene === "quiz" ? elements.quizScene : elements.builderScene;
+  if (state.activeScene === "quiz") {
+    return elements.quizScene;
+  }
+
+  if (state.activeScene === "theme") {
+    return elements.themeScene;
+  }
+
+  return elements.builderScene;
 }
 
 function sceneFits(scene) {
@@ -973,6 +1420,12 @@ function sceneFits(scene) {
     (elements.quizFitContent.scrollHeight * getElementScale(elements.quizFitContent, "--content-scale"))
       <= elements.quizFitFrame.clientHeight + 2
   );
+  const themeFits = state.activeScene !== "theme" || (
+    elements.themeFitFrame &&
+    elements.themeFitContent &&
+    (elements.themeFitContent.scrollHeight * getElementScale(elements.themeFitContent, "--content-scale"))
+      <= elements.themeFitFrame.clientHeight + 2
+  );
 
   if (!scene) {
     return true;
@@ -981,6 +1434,7 @@ function sceneFits(scene) {
   return (
     builderFits &&
     quizFits &&
+    themeFits &&
     scene.scrollHeight <= scene.clientHeight + 2 &&
     scene.scrollWidth <= scene.clientWidth + 2
   );
@@ -991,9 +1445,6 @@ function fitActiveSceneContent() {
     applyFitScale(elements.quizFitFrame, elements.quizFitContent);
     return;
   }
-
-  applyFitScale(elements.builderFitFrame, elements.builderFitContent);
-  applyFitScale(elements.statusFitFrame, elements.statusFitContent);
 }
 
 function applyAdaptiveLayout() {
@@ -1002,6 +1453,12 @@ function applyAdaptiveLayout() {
   let sceneScale;
 
   if (!scene || !elements.appShell) {
+    return;
+  }
+
+  if (state.activeScene !== "quiz") {
+    setDensity("regular");
+    scene.style.setProperty("--scene-scale", "1");
     return;
   }
 
@@ -1039,8 +1496,10 @@ function scheduleAdaptiveLayout() {
 
 function showScene(sceneName) {
   state.activeScene = sceneName;
+  document.body.dataset.activeScene = sceneName;
   elements.builderScene.classList.toggle("is-active", sceneName === "builder");
   elements.quizScene.classList.toggle("is-active", sceneName === "quiz");
+  elements.themeScene.classList.toggle("is-active", sceneName === "theme");
   saveToStorage();
   scheduleAdaptiveLayout();
 }
@@ -1447,10 +1906,85 @@ function renderQuestion() {
   renderAnswers(prompt || item);
 }
 
+function createThemeOptionButton(groupKey, option, selectedId) {
+  const button = document.createElement("button");
+  const swatches = document.createElement("span");
+  const copy = document.createElement("span");
+  const title = document.createElement("strong");
+  const description = document.createElement("span");
+
+  button.type = "button";
+  button.className = "theme-choice-button";
+  button.setAttribute("data-theme-group", groupKey);
+  button.setAttribute("data-theme-option", option.id);
+  button.setAttribute("aria-pressed", String(option.id === selectedId));
+  button.classList.toggle("is-active", option.id === selectedId);
+
+  swatches.className = "theme-choice-swatches";
+  option.swatches.forEach(function appendSwatch(color) {
+    const swatch = document.createElement("span");
+    swatch.className = "theme-choice-swatch";
+    swatch.style.background = color;
+    swatches.append(swatch);
+  });
+
+  copy.className = "theme-choice-copy";
+  title.textContent = option.label;
+  description.textContent = option.id === selectedId ? "Wybrane" : "Kliknij, aby sprawdzić";
+  copy.append(title, description);
+  button.append(swatches, copy);
+  return button;
+}
+
+function renderThemeEditor() {
+  const selection = getThemeSelection();
+
+  if (!elements.themeOptionsGrid) {
+    return;
+  }
+
+  elements.themeOptionsGrid.innerHTML = "";
+
+  THEME_OPTION_ORDER.forEach(function renderThemeGroup(groupKey) {
+    const group = THEME_OPTIONS[groupKey];
+    const section = document.createElement("section");
+    const header = document.createElement("div");
+    const choices = document.createElement("div");
+    const title = document.createElement("h3");
+    const description = document.createElement("p");
+
+    section.className = "theme-group";
+    header.className = "theme-group-header";
+    choices.className = "theme-choice-list";
+    title.textContent = group.label;
+    description.textContent = group.description;
+    header.append(title, description);
+
+    group.options.forEach(function renderOption(option) {
+      const button = createThemeOptionButton(groupKey, option, selection[groupKey]);
+      button.addEventListener("click", function onThemeChoice() {
+        const nextSelection = Object.assign({}, getThemeSelection(), {
+          [groupKey]: option.id
+        });
+
+        applyThemeSelection(nextSelection);
+        render();
+        saveToStorage();
+        setThemeMessage("Wygląd został zmieniony. Jeśli chcesz, kliknij Zapisz wygląd.", false);
+      });
+      choices.append(button);
+    });
+
+    section.append(header, choices);
+    elements.themeOptionsGrid.append(section);
+  });
+}
+
 function render() {
   renderStatus();
   renderHistory();
   renderQuestion();
+  renderThemeEditor();
   scheduleAdaptiveLayout();
 }
 
@@ -1695,6 +2229,28 @@ function clearSessionOnly() {
   setBuilderMessage("Sesja i postęp tej nauki zostały wyczyszczone.", false);
 }
 
+function openThemeEditor() {
+  setThemeMessage("Wybierz kolory dla różnych części ekranu.", false);
+  showScene("theme");
+}
+
+function closeThemeEditor() {
+  setThemeMessage("");
+  showScene("builder");
+}
+
+function saveThemePreferences() {
+  saveToStorage();
+  setThemeMessage("Motyw zapisany. Po odświeżeniu zostanie taki sam.", false);
+}
+
+function resetThemePreferences() {
+  applyThemeSelection(DEFAULT_THEME_SELECTION);
+  render();
+  saveToStorage();
+  setThemeMessage("Przywrócono domyślny wygląd.", false);
+}
+
 function replaceActiveQuiz() {
   try {
     const parsedQuiz = JSON.parse(elements.quizJsonInput.value);
@@ -1719,6 +2275,11 @@ async function resetAllData() {
   localStorage.removeItem(STORAGE_KEYS.ui);
   state.history = [];
   state.activeScene = "builder";
+  state.ui = {
+    soundEnabled: DEFAULT_SOUND_ENABLED,
+    themeSelection: Object.assign({}, DEFAULT_THEME_SELECTION)
+  };
+  applyThemeSelection(state.ui.themeSelection);
   showScene("builder");
   await restoreDefaultQuiz(true);
   saveToStorage();
@@ -1792,6 +2353,10 @@ function attachEvents() {
   elements.resetAllButton.addEventListener("click", function onResetClick() {
     resetAllData();
   });
+  elements.openThemeEditorButton.addEventListener("click", openThemeEditor);
+  elements.closeThemeEditorButton.addEventListener("click", closeThemeEditor);
+  elements.saveThemeButton.addEventListener("click", saveThemePreferences);
+  elements.resetThemeButton.addEventListener("click", resetThemePreferences);
   elements.resumeSessionButton.addEventListener("click", resumeSession);
   elements.restartSessionButton.addEventListener("click", restartSession);
   elements.clearSessionButton.addEventListener("click", clearSessionOnly);
@@ -1815,13 +2380,16 @@ function attachEvents() {
 function migrateStoredState() {
   if (!state.ui || typeof state.ui !== "object") {
     state.ui = {
-      soundEnabled: DEFAULT_SOUND_ENABLED
+      soundEnabled: DEFAULT_SOUND_ENABLED,
+      themeSelection: Object.assign({}, DEFAULT_THEME_SELECTION)
     };
   }
 
   if (typeof state.ui.soundEnabled !== "boolean") {
     state.ui.soundEnabled = DEFAULT_SOUND_ENABLED;
   }
+
+  state.ui.themeSelection = normalizeThemeSelection(state.ui.themeSelection);
 
   if (state.quiz) {
     try {
@@ -1921,7 +2489,7 @@ function migrateStoredState() {
     state.session = createSession(state.quiz);
   }
 
-  if (state.activeScene !== "builder" && state.activeScene !== "quiz") {
+  if (state.activeScene !== "builder" && state.activeScene !== "quiz" && state.activeScene !== "theme") {
     state.activeScene = "builder";
   }
 
@@ -1950,6 +2518,7 @@ function migrateStoredState() {
 async function init() {
   loadFromStorage();
   migrateStoredState();
+  applyThemeSelection(getThemeSelection());
   attachEvents();
 
   if (!state.quiz) {

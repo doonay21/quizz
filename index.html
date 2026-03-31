@@ -17,6 +17,9 @@
           <p class="eyebrow">Panel</p>
           <h1>Quizz</h1>
         </div>
+        <button class="ghost-button small-button" id="openThemeEditorButton" type="button">
+          Zmień wygląd
+        </button>
         <button class="ghost-button small-button sound-toggle-button" data-sound-toggle type="button" aria-pressed="true">
           Dźwięk: włączony
         </button>
@@ -244,6 +247,80 @@
                   </div>
                 </div>
               </article>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="scene scene-theme" id="themeScene">
+      <div class="theme-stage">
+        <div class="quiz-toolbar">
+          <div class="quiz-toolbar-actions">
+            <button class="ghost-button small-button" id="closeThemeEditorButton" type="button">Wróć</button>
+            <button class="ghost-button small-button sound-toggle-button" data-sound-toggle type="button" aria-pressed="true">
+              Dźwięk: włączony
+            </button>
+          </div>
+          <div class="reward-pill">Mój styl</div>
+        </div>
+
+        <section class="panel theme-panel">
+          <div class="panel-header">
+            <div>
+              <p class="panel-kicker">Wygląd</p>
+              <h2>Stwórz swój motyw</h2>
+            </div>
+            <div class="builder-actions">
+              <button class="secondary-button" id="resetThemeButton" type="button">Przywróć domyślny</button>
+              <button class="primary-button" id="saveThemeButton" type="button">Zapisz wygląd</button>
+            </div>
+          </div>
+
+          <div class="fit-frame" id="themeFitFrame">
+            <div class="fit-content theme-content" id="themeFitContent">
+              <div class="theme-layout">
+                <section class="theme-preview-card">
+                  <div class="theme-preview-header">
+                    <div>
+                      <p class="panel-kicker">Podgląd</p>
+                      <h3>Tak będzie wyglądał quiz</h3>
+                    </div>
+                    <p class="theme-preview-note">Każdy wybór zmienia ekran od razu.</p>
+                  </div>
+
+                  <div class="theme-preview-board">
+                    <article class="theme-mini-panel">
+                      <p class="question-index">Pytanie 3</p>
+                      <h3 class="question-text">Który styl podoba Ci się najbardziej?</h3>
+                      <div class="theme-mini-answers">
+                        <button class="answer-button" type="button">Ten!</button>
+                        <button class="answer-button correct" type="button">Ten jest super</button>
+                        <button class="answer-button wrong" type="button">Może nie ten</button>
+                        <button class="answer-button selected" type="button">Sprawdzam</button>
+                      </div>
+                      <p class="hint-text">Podpowiedź: możesz mieszać różne zestawy.</p>
+                      <p class="feedback-text">Brawo, to zapisze się w przeglądarce.</p>
+                      <div class="card-actions">
+                        <button class="ghost-button" type="button">Spokojny</button>
+                        <button class="secondary-button" type="button">Radosny</button>
+                        <button class="primary-button" type="button">Dalej</button>
+                      </div>
+                    </article>
+                  </div>
+                </section>
+
+                <section class="theme-config-card">
+                  <div class="theme-config-copy">
+                    <p class="panel-kicker">Wybory</p>
+                    <h3>Ułóż kolory po swojemu</h3>
+                    <p class="topbar-text">Dla każdej części masz inne gotowe opcje, więc łatwo stworzyć coś własnego bez ryzyka, że tekst stanie się nieczytelny.</p>
+                  </div>
+
+                  <div id="themeOptionsGrid" class="theme-options-grid"></div>
+                  <p id="themeMessage" class="builder-message" aria-live="polite"></p>
+                </section>
+              </div>
             </div>
           </div>
         </section>

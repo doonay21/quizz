@@ -202,9 +202,7 @@ body[data-active-scene="theme"] .app-shell {
   overflow: visible;
 }
 
-body[data-active-scene="builder"] .fit-frame,
 body[data-active-scene="theme"] .fit-frame,
-body[data-active-scene="builder"] .panel,
 body[data-active-scene="theme"] .panel {
   overflow: visible;
 }
@@ -318,7 +316,8 @@ h3 {
 .builder-form {
   min-height: 0;
   display: grid;
-  flex-direction: column;
+  grid-template-rows: auto auto auto minmax(220px, 1fr) auto auto;
+  align-content: start;
   gap: 12px;
 }
 
@@ -329,7 +328,8 @@ h3 {
 
 .field-group-fill {
   min-height: 0;
-  flex: 1;
+  grid-template-rows: auto minmax(220px, 1fr);
+  align-content: stretch;
 }
 
 .settings-grid {
@@ -367,8 +367,8 @@ select.text-input {
 }
 
 .json-textarea {
-  height: 100%;
-  min-height: 0;
+  height: auto;
+  min-height: 220px;
   resize: none;
   overflow: hidden;
   font-family: Consolas, Monaco, monospace;

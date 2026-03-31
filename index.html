@@ -281,27 +281,23 @@
             <div class="fit-content theme-content" id="themeFitContent">
               <div class="theme-layout">
                 <section class="theme-preview-card">
-                  <div class="theme-preview-header">
-                    <div>
-                      <p class="panel-kicker">Podgląd</p>
-                      <h3>Tak będzie wyglądał quiz</h3>
-                    </div>
-                    <p class="theme-preview-note">Każdy wybór zmienia ekran od razu.</p>
-                  </div>
-
-                  <div class="theme-preview-board">
-                    <article class="theme-mini-panel">
-                      <p class="question-index">Pytanie 3</p>
-                      <h3 class="question-text">Który styl podoba Ci się najbardziej?</h3>
-                      <div class="theme-mini-answers">
-                        <button class="answer-button" type="button">Ten!</button>
-                        <button class="answer-button correct" type="button">Ten jest super</button>
-                        <button class="answer-button wrong" type="button">Może nie ten</button>
-                        <button class="answer-button selected" type="button">Sprawdzam</button>
+                  <div class="theme-preview-board" data-preview-part="background">
+                    <article class="theme-mini-panel" data-preview-part="surface">
+                      <p class="question-index" data-preview-part="accent">Podgląd pytania</p>
+                      <h3 class="question-text" data-preview-part="surface">Jak ma wyglądać Twój quiz?</h3>
+                      <div class="theme-mini-answers" data-preview-part="answers">
+                        <button class="answer-button" type="button">Delikatny</button>
+                        <button class="answer-button selected" type="button">Kolorowy</button>
+                        <button class="answer-button" type="button">Spokojny</button>
+                        <button class="answer-button" type="button">Wyrazisty</button>
                       </div>
-                      <p class="hint-text">Podpowiedź: możesz mieszać różne zestawy.</p>
-                      <p class="feedback-text">Brawo, to zapisze się w przeglądarce.</p>
-                      <div class="card-actions">
+                      <div class="theme-mini-answers theme-mini-answers-results" data-preview-part="answers">
+                        <button class="answer-button correct" type="button">Tak wygląda poprawna odpowiedź</button>
+                        <button class="answer-button wrong" type="button">Tak wygląda błędna odpowiedź</button>
+                      </div>
+                      <p class="hint-text" data-preview-part="feedback">Podpowiedź: możesz mieszać kolory z różnych sekcji.</p>
+                      <p class="feedback-text" data-preview-part="feedback">Tak wygląda komunikat po odpowiedzi lub zapisaniu zmian.</p>
+                      <div class="card-actions" data-preview-part="accent">
                         <button class="ghost-button" type="button">Spokojny</button>
                         <button class="secondary-button" type="button">Radosny</button>
                         <button class="primary-button" type="button">Dalej</button>
@@ -314,7 +310,7 @@
                   <div class="theme-config-copy">
                     <p class="panel-kicker">Wybory</p>
                     <h3>Ułóż kolory po swojemu</h3>
-                    <p class="topbar-text">Dla każdej części masz inne gotowe opcje, więc łatwo stworzyć coś własnego bez ryzyka, że tekst stanie się nieczytelny.</p>
+                    <p class="topbar-text">Każda sekcja steruje innym fragmentem ekranu. Po lewej zawsze widzisz aktualny efekt, a sekcja odpowiedzi obejmuje też kolory poprawnej i błędnej odpowiedzi.</p>
                   </div>
 
                   <div id="themeOptionsGrid" class="theme-options-grid"></div>

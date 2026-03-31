@@ -5,7 +5,7 @@ const STORAGE_KEYS = {
   ui: "quizz.ui"
 };
 
-const THEME_STORAGE_VERSION = 1;
+const THEME_STORAGE_VERSION = 2;
 
 const STIMULUS_LABELS = {
   calm: "Spokojny",
@@ -33,7 +33,8 @@ const THEME_OPTION_ORDER = ["background", "surface", "accent", "answers", "feedb
 const THEME_OPTIONS = {
   background: {
     label: "Tło",
-    description: "Kolory całego świata quizu",
+    description: "Duże tło za całą aplikacją",
+    previewHint: "Zmienia tło całego ekranu",
     options: [
       {
         id: "sunrise",
@@ -98,18 +99,133 @@ const THEME_OPTIONS = {
           "--calm-bg-top": "#edf0ff",
           "--calm-bg-bottom": "#e8f8ff"
         }
+      },
+      {
+        id: "lavender",
+        label: "Lawenda",
+        swatches: ["#f6ecff", "#edf5ff", "#b896ff"],
+        vars: {
+          "--bg-top": "#f6ecff",
+          "--bg-bottom": "#edf5ff",
+          "--bg-glow-top": "rgba(255, 255, 255, 0.98)",
+          "--bg-glow-accent": "rgba(184, 150, 255, 0.22)",
+          "--bg-glow-sun": "rgba(121, 218, 255, 0.18)",
+          "--blob-a": "rgba(184, 150, 255, 0.24)",
+          "--blob-b": "rgba(121, 218, 255, 0.22)",
+          "--calm-bg-top": "#fbf5ff",
+          "--calm-bg-bottom": "#f0f6ff"
+        }
+      },
+      {
+        id: "lilac",
+        label: "Bez",
+        swatches: ["#f9efff", "#f3e8ff", "#c88cff"],
+        vars: {
+          "--bg-top": "#f9efff",
+          "--bg-bottom": "#f3e8ff",
+          "--bg-glow-top": "rgba(255, 255, 255, 0.98)",
+          "--bg-glow-accent": "rgba(200, 140, 255, 0.22)",
+          "--bg-glow-sun": "rgba(255, 198, 120, 0.16)",
+          "--blob-a": "rgba(200, 140, 255, 0.24)",
+          "--blob-b": "rgba(143, 213, 255, 0.18)",
+          "--calm-bg-top": "#fcf5ff",
+          "--calm-bg-bottom": "#f6efff"
+        }
+      },
+      {
+        id: "citrus",
+        label: "Cytrusy",
+        swatches: ["#fff8d8", "#f0ffe1", "#8fdc88"],
+        vars: {
+          "--bg-top": "#fff8d8",
+          "--bg-bottom": "#f0ffe1",
+          "--bg-glow-top": "rgba(255, 255, 255, 0.98)",
+          "--bg-glow-accent": "rgba(143, 220, 136, 0.22)",
+          "--bg-glow-sun": "rgba(255, 198, 93, 0.22)",
+          "--blob-a": "rgba(143, 220, 136, 0.24)",
+          "--blob-b": "rgba(255, 198, 93, 0.2)",
+          "--calm-bg-top": "#fffbe8",
+          "--calm-bg-bottom": "#f5ffeb"
+        }
+      },
+      {
+        id: "aurora",
+        label: "Aurora",
+        swatches: ["#0f1730", "#1a2e52", "#6ef7d4"],
+        vars: {
+          "--bg-top": "#0f1730",
+          "--bg-bottom": "#1a2e52",
+          "--bg-glow-top": "rgba(137, 184, 255, 0.2)",
+          "--bg-glow-accent": "rgba(110, 247, 212, 0.18)",
+          "--bg-glow-sun": "rgba(255, 125, 193, 0.16)",
+          "--blob-a": "rgba(110, 247, 212, 0.16)",
+          "--blob-b": "rgba(125, 155, 255, 0.14)",
+          "--calm-bg-top": "#10172f",
+          "--calm-bg-bottom": "#162645"
+        }
+      },
+      {
+        id: "midnight",
+        label: "Północ",
+        swatches: ["#090b16", "#161226", "#8ea7ff"],
+        vars: {
+          "--bg-top": "#090b16",
+          "--bg-bottom": "#161226",
+          "--bg-glow-top": "rgba(99, 117, 196, 0.2)",
+          "--bg-glow-accent": "rgba(142, 167, 255, 0.18)",
+          "--bg-glow-sun": "rgba(255, 214, 102, 0.12)",
+          "--blob-a": "rgba(98, 114, 191, 0.18)",
+          "--blob-b": "rgba(255, 214, 102, 0.12)",
+          "--calm-bg-top": "#0d1020",
+          "--calm-bg-bottom": "#181933"
+        }
+      },
+      {
+        id: "eclipse",
+        label: "Zaćmienie",
+        swatches: ["#050814", "#101a31", "#58d6ff"],
+        vars: {
+          "--bg-top": "#050814",
+          "--bg-bottom": "#101a31",
+          "--bg-glow-top": "rgba(96, 133, 255, 0.14)",
+          "--bg-glow-accent": "rgba(88, 214, 255, 0.16)",
+          "--bg-glow-sun": "rgba(255, 122, 168, 0.12)",
+          "--blob-a": "rgba(88, 214, 255, 0.14)",
+          "--blob-b": "rgba(120, 140, 255, 0.12)",
+          "--calm-bg-top": "#07101f",
+          "--calm-bg-bottom": "#111c34"
+        }
+      },
+      {
+        id: "abyss",
+        label: "Otchłań",
+        swatches: ["#07141c", "#102734", "#4fd2b4"],
+        vars: {
+          "--bg-top": "#07141c",
+          "--bg-bottom": "#102734",
+          "--bg-glow-top": "rgba(70, 106, 160, 0.14)",
+          "--bg-glow-accent": "rgba(79, 210, 180, 0.16)",
+          "--bg-glow-sun": "rgba(255, 177, 102, 0.1)",
+          "--blob-a": "rgba(79, 210, 180, 0.14)",
+          "--blob-b": "rgba(80, 145, 196, 0.12)",
+          "--calm-bg-top": "#091720",
+          "--calm-bg-bottom": "#122b38"
+        }
       }
     ]
   },
   surface: {
     label: "Karty",
-    description: "Panele, plansze i pudełka",
+    description: "Panele, plansze i kolor bazowy tekstu",
+    previewHint: "Zmienia kartę z pytaniem i główny tekst",
     options: [
       {
         id: "cloud",
         label: "Chmurki",
         swatches: ["#ffffff", "#f8fbff", "#dfefff"],
         vars: {
+          "--ink": "#14324f",
+          "--muted": "#4d6482",
           "--panel": "rgba(255, 255, 255, 0.94)",
           "--panel-strong": "#ffffff",
           "--surface-soft": "rgba(255, 255, 255, 0.88)",
@@ -130,6 +246,8 @@ const THEME_OPTIONS = {
         label: "Perła",
         swatches: ["#fffef8", "#fff7df", "#f4ead2"],
         vars: {
+          "--ink": "#4f3a1f",
+          "--muted": "#7d6a4e",
           "--panel": "rgba(255, 252, 244, 0.94)",
           "--panel-strong": "#fffef8",
           "--surface-soft": "rgba(255, 250, 238, 0.9)",
@@ -150,6 +268,8 @@ const THEME_OPTIONS = {
         label: "Landrynka",
         swatches: ["#fff8fc", "#fff0f7", "#ffe0ef"],
         vars: {
+          "--ink": "#5a2b49",
+          "--muted": "#8b6580",
           "--panel": "rgba(255, 248, 252, 0.95)",
           "--panel-strong": "#fff9fc",
           "--surface-soft": "rgba(255, 245, 250, 0.92)",
@@ -164,20 +284,169 @@ const THEME_OPTIONS = {
           "--input-border": "rgba(145, 67, 113, 0.14)",
           "--shadow": "0 22px 44px rgba(208, 103, 157, 0.14)"
         }
+      },
+      {
+        id: "frost",
+        label: "Szron",
+        swatches: ["#f7fcff", "#eef8ff", "#d9ebff"],
+        vars: {
+          "--ink": "#183a58",
+          "--muted": "#5a7895",
+          "--panel": "rgba(246, 251, 255, 0.93)",
+          "--panel-border": "rgba(255, 255, 255, 0.88)",
+          "--panel-strong": "#fafdff",
+          "--surface-soft": "rgba(244, 250, 255, 0.86)",
+          "--surface-card-start": "#fbfeff",
+          "--surface-card-end": "#eef8ff",
+          "--surface-raised-start": "#f8fcff",
+          "--surface-raised-end": "#e6f2ff",
+          "--surface-summary-start": "#fcfeff",
+          "--surface-summary-end": "#edf6ff",
+          "--line": "rgba(58, 95, 138, 0.14)",
+          "--card-line": "rgba(58, 95, 138, 0.08)",
+          "--input-border": "rgba(58, 95, 138, 0.14)",
+          "--field-bg": "rgba(255, 255, 255, 0.92)",
+          "--field-bg-soft": "rgba(244, 250, 255, 0.78)",
+          "--ghost-bg": "rgba(250, 253, 255, 0.96)",
+          "--ghost-border": "rgba(58, 95, 138, 0.12)",
+          "--ghost-inset": "rgba(255, 255, 255, 0.5)",
+          "--progress-track-bg": "rgba(52, 89, 132, 0.08)",
+          "--theme-swatch-border": "rgba(255, 255, 255, 0.9)",
+          "--shadow": "0 22px 44px rgba(80, 136, 196, 0.16)"
+        }
+      },
+      {
+        id: "slate",
+        label: "Grafit",
+        swatches: ["#16213d", "#223056", "#8bb9ff"],
+        vars: {
+          "--ink": "#eef4ff",
+          "--muted": "#b9c6e2",
+          "--panel": "rgba(14, 21, 39, 0.88)",
+          "--panel-border": "rgba(148, 179, 255, 0.18)",
+          "--panel-strong": "#16213d",
+          "--surface-soft": "rgba(22, 33, 61, 0.82)",
+          "--surface-card-start": "#1a2746",
+          "--surface-card-end": "#223056",
+          "--surface-raised-start": "#1b294b",
+          "--surface-raised-end": "#26365f",
+          "--surface-summary-start": "#172241",
+          "--surface-summary-end": "#223058",
+          "--line": "rgba(187, 206, 255, 0.18)",
+          "--card-line": "rgba(192, 213, 255, 0.08)",
+          "--input-border": "rgba(174, 198, 255, 0.22)",
+          "--field-bg": "rgba(9, 15, 29, 0.78)",
+          "--field-bg-soft": "rgba(16, 24, 44, 0.72)",
+          "--ghost-bg": "rgba(18, 29, 54, 0.92)",
+          "--ghost-border": "rgba(174, 198, 255, 0.18)",
+          "--ghost-inset": "rgba(255, 255, 255, 0.05)",
+          "--progress-track-bg": "rgba(219, 229, 255, 0.12)",
+          "--theme-swatch-border": "rgba(255, 255, 255, 0.28)",
+          "--shadow": "0 24px 50px rgba(3, 8, 20, 0.4)"
+        }
+      },
+      {
+        id: "cocoa",
+        label: "Kakao",
+        swatches: ["#2b1d1a", "#3f2b24", "#f0b277"],
+        vars: {
+          "--ink": "#fff1e6",
+          "--muted": "#d7b9a3",
+          "--panel": "rgba(33, 23, 20, 0.88)",
+          "--panel-border": "rgba(255, 203, 155, 0.16)",
+          "--panel-strong": "#2b1d1a",
+          "--surface-soft": "rgba(48, 34, 29, 0.82)",
+          "--surface-card-start": "#32221e",
+          "--surface-card-end": "#3f2b24",
+          "--surface-raised-start": "#34231f",
+          "--surface-raised-end": "#472f28",
+          "--surface-summary-start": "#2e201d",
+          "--surface-summary-end": "#3d2a24",
+          "--line": "rgba(255, 219, 193, 0.16)",
+          "--card-line": "rgba(255, 224, 201, 0.08)",
+          "--input-border": "rgba(255, 201, 159, 0.2)",
+          "--field-bg": "rgba(23, 15, 12, 0.78)",
+          "--field-bg-soft": "rgba(32, 21, 18, 0.72)",
+          "--ghost-bg": "rgba(46, 32, 27, 0.92)",
+          "--ghost-border": "rgba(255, 201, 159, 0.18)",
+          "--ghost-inset": "rgba(255, 255, 255, 0.05)",
+          "--progress-track-bg": "rgba(255, 228, 203, 0.12)",
+          "--theme-swatch-border": "rgba(255, 247, 239, 0.24)",
+          "--shadow": "0 24px 50px rgba(14, 7, 5, 0.4)"
+        }
+      },
+      {
+        id: "obsidian",
+        label: "Obsydian",
+        swatches: ["#0f172a", "#17233d", "#8bc5ff"],
+        vars: {
+          "--ink": "#edf4ff",
+          "--muted": "#b2c1db",
+          "--panel": "rgba(10, 16, 30, 0.9)",
+          "--panel-border": "rgba(144, 184, 255, 0.18)",
+          "--panel-strong": "#10192e",
+          "--surface-soft": "rgba(17, 25, 46, 0.84)",
+          "--surface-card-start": "#13203a",
+          "--surface-card-end": "#1a2948",
+          "--surface-raised-start": "#152440",
+          "--surface-raised-end": "#1c2d4e",
+          "--surface-summary-start": "#111d36",
+          "--surface-summary-end": "#1a2946",
+          "--line": "rgba(190, 214, 255, 0.18)",
+          "--card-line": "rgba(190, 214, 255, 0.08)",
+          "--input-border": "rgba(167, 199, 255, 0.24)",
+          "--field-bg": "rgba(7, 12, 25, 0.78)",
+          "--field-bg-soft": "rgba(12, 20, 36, 0.72)",
+          "--ghost-bg": "rgba(17, 28, 50, 0.94)",
+          "--ghost-border": "rgba(167, 199, 255, 0.18)",
+          "--ghost-inset": "rgba(255, 255, 255, 0.05)",
+          "--progress-track-bg": "rgba(220, 232, 255, 0.12)",
+          "--theme-swatch-border": "rgba(255, 255, 255, 0.26)",
+          "--shadow": "0 24px 52px rgba(2, 6, 18, 0.44)"
+        }
+      },
+      {
+        id: "pine-night",
+        label: "Nocny las",
+        swatches: ["#13231f", "#1c332d", "#8ce0c4"],
+        vars: {
+          "--ink": "#eefcf8",
+          "--muted": "#b7d6cd",
+          "--panel": "rgba(11, 24, 21, 0.9)",
+          "--panel-border": "rgba(140, 224, 196, 0.16)",
+          "--panel-strong": "#142621",
+          "--surface-soft": "rgba(21, 38, 33, 0.84)",
+          "--surface-card-start": "#173029",
+          "--surface-card-end": "#204038",
+          "--surface-raised-start": "#19352d",
+          "--surface-raised-end": "#24453c",
+          "--surface-summary-start": "#152b25",
+          "--surface-summary-end": "#1f3c34",
+          "--line": "rgba(194, 242, 226, 0.16)",
+          "--card-line": "rgba(194, 242, 226, 0.08)",
+          "--input-border": "rgba(140, 224, 196, 0.22)",
+          "--field-bg": "rgba(8, 18, 16, 0.78)",
+          "--field-bg-soft": "rgba(12, 25, 22, 0.72)",
+          "--ghost-bg": "rgba(23, 42, 37, 0.94)",
+          "--ghost-border": "rgba(140, 224, 196, 0.18)",
+          "--ghost-inset": "rgba(255, 255, 255, 0.05)",
+          "--progress-track-bg": "rgba(220, 255, 244, 0.1)",
+          "--theme-swatch-border": "rgba(240, 255, 250, 0.24)",
+          "--shadow": "0 24px 52px rgba(2, 10, 8, 0.42)"
+        }
       }
     ]
   },
   accent: {
-    label: "Przyciski",
-    description: "Główne akcje i pasek postępu",
+    label: "Akcje",
+    description: "Przyciski, wyróżnienia i pasek postępu",
+    previewHint: "Zmienia przyciski i akcenty",
     options: [
       {
         id: "ocean",
         label: "Ocean",
         swatches: ["#2f8cff", "#155ec9", "#69d5ff"],
         vars: {
-          "--ink": "#14324f",
-          "--muted": "#4d6482",
           "--primary": "#2f8cff",
           "--primary-deep": "#155ec9",
           "--sky": "#69d5ff",
@@ -198,8 +467,6 @@ const THEME_OPTIONS = {
         label: "Las",
         swatches: ["#38a86b", "#18744a", "#83dfab"],
         vars: {
-          "--ink": "#163c2b",
-          "--muted": "#4d6d5d",
           "--primary": "#38a86b",
           "--primary-deep": "#18744a",
           "--sky": "#83dfab",
@@ -220,8 +487,6 @@ const THEME_OPTIONS = {
         label: "Koral",
         swatches: ["#ff7b7b", "#db4d67", "#ffb596"],
         vars: {
-          "--ink": "#54233b",
-          "--muted": "#7b5c6d",
           "--primary": "#ff7b7b",
           "--primary-deep": "#db4d67",
           "--sky": "#ffb596",
@@ -236,12 +501,189 @@ const THEME_OPTIONS = {
           "--reward-end": "#ff9c7f",
           "--reward-ink": "#6b300d"
         }
+      },
+      {
+        id: "lavender-pop",
+        label: "Lawendowy błysk",
+        swatches: ["#8a63ff", "#5a33d1", "#c2b2ff"],
+        vars: {
+          "--primary": "#8a63ff",
+          "--primary-deep": "#5a33d1",
+          "--sky": "#c2b2ff",
+          "--sun": "#ffd36a",
+          "--primary-button-start": "#a282ff",
+          "--primary-button-end": "#5a33d1",
+          "--primary-shadow": "rgba(90, 51, 209, 0.24)",
+          "--secondary-button-start": "#fff0b0",
+          "--secondary-button-end": "#ffd36a",
+          "--secondary-button-ink": "#5e4400",
+          "--secondary-shadow": "rgba(255, 211, 106, 0.24)",
+          "--reward-start": "#f1e2ff",
+          "--reward-end": "#c7a9ff",
+          "--reward-ink": "#4b2d8f",
+          "--reward-shadow": "rgba(138, 99, 255, 0.2)"
+        }
+      },
+      {
+        id: "ember",
+        label: "Żar",
+        swatches: ["#ff8a4c", "#d65a22", "#ffc06f"],
+        vars: {
+          "--primary": "#ff8a4c",
+          "--primary-deep": "#d65a22",
+          "--sky": "#ffc06f",
+          "--sun": "#ffe08a",
+          "--primary-button-start": "#ffab72",
+          "--primary-button-end": "#d65a22",
+          "--primary-shadow": "rgba(214, 90, 34, 0.24)",
+          "--secondary-button-start": "#fff1b8",
+          "--secondary-button-end": "#ffe08a",
+          "--secondary-button-ink": "#6b4a10",
+          "--secondary-shadow": "rgba(255, 214, 120, 0.24)",
+          "--reward-start": "#ffe4bf",
+          "--reward-end": "#ffb274",
+          "--reward-ink": "#6c3714",
+          "--reward-shadow": "rgba(255, 138, 76, 0.22)"
+        }
+      },
+      {
+        id: "moonlight",
+        label: "Blask księżyca",
+        swatches: ["#7ab8ff", "#4f86ff", "#93e4ff"],
+        vars: {
+          "--primary": "#7ab8ff",
+          "--primary-deep": "#4f86ff",
+          "--sky": "#93e4ff",
+          "--sun": "#ffd970",
+          "--primary-button-start": "#8dc5ff",
+          "--primary-button-end": "#4f86ff",
+          "--primary-shadow": "rgba(79, 134, 255, 0.28)",
+          "--secondary-button-start": "#344675",
+          "--secondary-button-end": "#516ca8",
+          "--secondary-button-ink": "#eef4ff",
+          "--secondary-shadow": "rgba(79, 134, 255, 0.2)",
+          "--reward-start": "#24345f",
+          "--reward-end": "#4967a4",
+          "--reward-ink": "#eef4ff",
+          "--reward-shadow": "rgba(79, 134, 255, 0.24)"
+        }
+      },
+      {
+        id: "neon",
+        label: "Neon",
+        swatches: ["#5ef2c0", "#16b989", "#79d2ff"],
+        vars: {
+          "--primary": "#5ef2c0",
+          "--primary-deep": "#16b989",
+          "--sky": "#79d2ff",
+          "--sun": "#ffe36f",
+          "--primary-button-start": "#7ff6ce",
+          "--primary-button-end": "#16b989",
+          "--primary-shadow": "rgba(22, 185, 137, 0.28)",
+          "--secondary-button-start": "#29485a",
+          "--secondary-button-end": "#3a6580",
+          "--secondary-button-ink": "#eefcf9",
+          "--secondary-shadow": "rgba(121, 210, 255, 0.18)",
+          "--reward-start": "#1b4d4c",
+          "--reward-end": "#267c77",
+          "--reward-ink": "#edfffb",
+          "--reward-shadow": "rgba(22, 185, 137, 0.22)"
+        }
+      },
+      {
+        id: "starlight",
+        label: "Gwiezdny chłód",
+        swatches: ["#7fd0ff", "#4b78ff", "#8ef1ff"],
+        vars: {
+          "--primary": "#7fd0ff",
+          "--primary-deep": "#4b78ff",
+          "--sky": "#8ef1ff",
+          "--sun": "#ffd56f",
+          "--primary-button-start": "#9bdeff",
+          "--primary-button-end": "#4b78ff",
+          "--primary-shadow": "rgba(75, 120, 255, 0.28)",
+          "--secondary-button-start": "#2f3f67",
+          "--secondary-button-end": "#465c93",
+          "--secondary-button-ink": "#f0f6ff",
+          "--secondary-shadow": "rgba(92, 141, 255, 0.22)",
+          "--reward-start": "#1f3258",
+          "--reward-end": "#355991",
+          "--reward-ink": "#eef5ff",
+          "--reward-shadow": "rgba(75, 120, 255, 0.24)"
+        }
+      },
+      {
+        id: "ruby-night",
+        label: "Rubinowa noc",
+        swatches: ["#ff7aa5", "#d84678", "#ffb37e"],
+        vars: {
+          "--primary": "#ff7aa5",
+          "--primary-deep": "#d84678",
+          "--sky": "#ffb37e",
+          "--sun": "#ffd978",
+          "--primary-button-start": "#ff9cbc",
+          "--primary-button-end": "#d84678",
+          "--primary-shadow": "rgba(216, 70, 120, 0.28)",
+          "--secondary-button-start": "#4a2d44",
+          "--secondary-button-end": "#6e4264",
+          "--secondary-button-ink": "#fff1f7",
+          "--secondary-shadow": "rgba(255, 122, 165, 0.2)",
+          "--reward-start": "#5b2f2b",
+          "--reward-end": "#92513d",
+          "--reward-ink": "#fff5ec",
+          "--reward-shadow": "rgba(255, 179, 126, 0.2)"
+        }
+      },
+      {
+        id: "violet-dream",
+        label: "Fioletowy blask",
+        swatches: ["#c587ff", "#8c4dff", "#ead1ff"],
+        vars: {
+          "--primary": "#c587ff",
+          "--primary-deep": "#8c4dff",
+          "--sky": "#ead1ff",
+          "--sun": "#ffd97d",
+          "--primary-button-start": "#d8acff",
+          "--primary-button-end": "#8c4dff",
+          "--primary-shadow": "rgba(140, 77, 255, 0.24)",
+          "--secondary-button-start": "#fff1bc",
+          "--secondary-button-end": "#ffd97d",
+          "--secondary-button-ink": "#5d4400",
+          "--secondary-shadow": "rgba(255, 217, 125, 0.22)",
+          "--reward-start": "#f5e7ff",
+          "--reward-end": "#d3adff",
+          "--reward-ink": "#51258f",
+          "--reward-shadow": "rgba(197, 135, 255, 0.22)"
+        }
+      },
+      {
+        id: "plum-night",
+        label: "Śliwkowa noc",
+        swatches: ["#b88cff", "#6a36d9", "#2d214f"],
+        vars: {
+          "--primary": "#b88cff",
+          "--primary-deep": "#6a36d9",
+          "--sky": "#d8beff",
+          "--sun": "#ffc97f",
+          "--primary-button-start": "#c7a0ff",
+          "--primary-button-end": "#6a36d9",
+          "--primary-shadow": "rgba(106, 54, 217, 0.28)",
+          "--secondary-button-start": "#352654",
+          "--secondary-button-end": "#52397f",
+          "--secondary-button-ink": "#f7efff",
+          "--secondary-shadow": "rgba(184, 140, 255, 0.18)",
+          "--reward-start": "#2d214f",
+          "--reward-end": "#4d3890",
+          "--reward-ink": "#f4eeff",
+          "--reward-shadow": "rgba(106, 54, 217, 0.24)"
+        }
       }
     ]
   },
   answers: {
     label: "Odpowiedzi",
-    description: "Wygląd kafelków odpowiedzi",
+    description: "Kafelki odpowiedzi oraz stany poprawna i błędna",
+    previewHint: "Zmienia zwykłe, zaznaczone, poprawne i błędne odpowiedzi",
     options: [
       {
         id: "bubbles",
@@ -257,7 +699,17 @@ const THEME_OPTIONS = {
           "--answer-border-selected": "rgba(47, 140, 255, 0.95)",
           "--answer-shadow": "rgba(47, 140, 255, 0.12)",
           "--answer-shadow-hover": "rgba(47, 140, 255, 0.18)",
-          "--answer-shadow-selected": "rgba(47, 140, 255, 0.24)"
+          "--answer-shadow-selected": "rgba(47, 140, 255, 0.24)",
+          "--answer-correct-start": "#ffffff",
+          "--answer-correct-end": "#e4fff0",
+          "--answer-correct-border": "#2fa965",
+          "--answer-correct-ink": "#0f5b31",
+          "--answer-correct-shadow": "rgba(85, 203, 132, 0.22)",
+          "--answer-wrong-start": "#ffffff",
+          "--answer-wrong-end": "#fff0f4",
+          "--answer-wrong-border": "#de4b6e",
+          "--answer-wrong-ink": "#8c2440",
+          "--answer-wrong-shadow": "rgba(239, 91, 123, 0.18)"
         }
       },
       {
@@ -274,7 +726,17 @@ const THEME_OPTIONS = {
           "--answer-border-selected": "rgba(208, 149, 14, 0.9)",
           "--answer-shadow": "rgba(222, 172, 27, 0.12)",
           "--answer-shadow-hover": "rgba(222, 172, 27, 0.18)",
-          "--answer-shadow-selected": "rgba(222, 172, 27, 0.24)"
+          "--answer-shadow-selected": "rgba(222, 172, 27, 0.24)",
+          "--answer-correct-start": "#fffef2",
+          "--answer-correct-end": "#ecffcc",
+          "--answer-correct-border": "#8bb739",
+          "--answer-correct-ink": "#496110",
+          "--answer-correct-shadow": "rgba(139, 183, 57, 0.22)",
+          "--answer-wrong-start": "#fffef2",
+          "--answer-wrong-end": "#ffe3c6",
+          "--answer-wrong-border": "#d98832",
+          "--answer-wrong-ink": "#7a4313",
+          "--answer-wrong-shadow": "rgba(217, 136, 50, 0.2)"
         }
       },
       {
@@ -291,14 +753,160 @@ const THEME_OPTIONS = {
           "--answer-border-selected": "rgba(204, 58, 126, 0.92)",
           "--answer-shadow": "rgba(230, 92, 150, 0.12)",
           "--answer-shadow-hover": "rgba(230, 92, 150, 0.18)",
-          "--answer-shadow-selected": "rgba(230, 92, 150, 0.24)"
+          "--answer-shadow-selected": "rgba(230, 92, 150, 0.24)",
+          "--answer-correct-start": "#fff6fb",
+          "--answer-correct-end": "#dff7e9",
+          "--answer-correct-border": "#43a86b",
+          "--answer-correct-ink": "#165533",
+          "--answer-correct-shadow": "rgba(67, 168, 107, 0.22)",
+          "--answer-wrong-start": "#fff6fb",
+          "--answer-wrong-end": "#ffd6e6",
+          "--answer-wrong-border": "#cf5288",
+          "--answer-wrong-ink": "#7a214d",
+          "--answer-wrong-shadow": "rgba(207, 82, 136, 0.22)"
+        }
+      },
+      {
+        id: "lagoon",
+        label: "Laguna",
+        swatches: ["#f2fffc", "#d8fff4", "#b6f5eb"],
+        vars: {
+          "--answer-start": "#f2fffc",
+          "--answer-end": "#d8fff4",
+          "--answer-hover-end": "#c9fbef",
+          "--answer-selected-end": "#b6f5eb",
+          "--answer-border": "rgba(62, 195, 166, 0.26)",
+          "--answer-border-hover": "rgba(62, 195, 166, 0.48)",
+          "--answer-border-selected": "rgba(27, 163, 136, 0.9)",
+          "--answer-shadow": "rgba(62, 195, 166, 0.12)",
+          "--answer-shadow-hover": "rgba(62, 195, 166, 0.18)",
+          "--answer-shadow-selected": "rgba(62, 195, 166, 0.24)",
+          "--answer-correct-start": "#f2fffc",
+          "--answer-correct-end": "#d8fff4",
+          "--answer-correct-border": "#1ba388",
+          "--answer-correct-ink": "#115445",
+          "--answer-correct-shadow": "rgba(27, 163, 136, 0.22)",
+          "--answer-wrong-start": "#f2fffc",
+          "--answer-wrong-end": "#ffe1ea",
+          "--answer-wrong-border": "#d95b82",
+          "--answer-wrong-ink": "#7f2447",
+          "--answer-wrong-shadow": "rgba(217, 91, 130, 0.22)"
+        }
+      },
+      {
+        id: "velvet",
+        label: "Aksamit",
+        swatches: ["#1d2850", "#2a3a72", "#7c96ff"],
+        vars: {
+          "--answer-start": "#1d2850",
+          "--answer-end": "#2a3a72",
+          "--answer-hover-end": "#314485",
+          "--answer-selected-end": "#3a52a2",
+          "--answer-border": "rgba(150, 174, 255, 0.3)",
+          "--answer-border-hover": "rgba(150, 174, 255, 0.56)",
+          "--answer-border-selected": "rgba(178, 196, 255, 0.94)",
+          "--answer-shadow": "rgba(8, 13, 32, 0.24)",
+          "--answer-shadow-hover": "rgba(8, 13, 32, 0.3)",
+          "--answer-shadow-selected": "rgba(8, 13, 32, 0.36)",
+          "--answer-correct-start": "#182544",
+          "--answer-correct-end": "#214f45",
+          "--answer-correct-border": "#62d8bb",
+          "--answer-correct-ink": "#d9fff4",
+          "--answer-correct-shadow": "rgba(8, 13, 32, 0.32)",
+          "--answer-wrong-start": "#241a33",
+          "--answer-wrong-end": "#5e2645",
+          "--answer-wrong-border": "#ff96be",
+          "--answer-wrong-ink": "#ffe5ef",
+          "--answer-wrong-shadow": "rgba(8, 13, 32, 0.32)"
+        }
+      },
+      {
+        id: "ember-grid",
+        label: "Rozżarzone",
+        swatches: ["#3a241d", "#59352a", "#ff9d6c"],
+        vars: {
+          "--answer-start": "#3a241d",
+          "--answer-end": "#59352a",
+          "--answer-hover-end": "#6a4031",
+          "--answer-selected-end": "#85503d",
+          "--answer-border": "rgba(255, 173, 129, 0.28)",
+          "--answer-border-hover": "rgba(255, 173, 129, 0.5)",
+          "--answer-border-selected": "rgba(255, 197, 164, 0.92)",
+          "--answer-shadow": "rgba(18, 10, 7, 0.24)",
+          "--answer-shadow-hover": "rgba(18, 10, 7, 0.3)",
+          "--answer-shadow-selected": "rgba(18, 10, 7, 0.36)",
+          "--answer-correct-start": "#233323",
+          "--answer-correct-end": "#446842",
+          "--answer-correct-border": "#9fdd8d",
+          "--answer-correct-ink": "#efffe8",
+          "--answer-correct-shadow": "rgba(18, 10, 7, 0.3)",
+          "--answer-wrong-start": "#3a1e27",
+          "--answer-wrong-end": "#7a3345",
+          "--answer-wrong-border": "#ffb0c2",
+          "--answer-wrong-ink": "#fff0f4",
+          "--answer-wrong-shadow": "rgba(18, 10, 7, 0.3)"
+        }
+      },
+      {
+        id: "nightfall",
+        label: "Zmrok",
+        swatches: ["#162241", "#23335f", "#87c8ff"],
+        vars: {
+          "--answer-start": "#162241",
+          "--answer-end": "#23335f",
+          "--answer-hover-end": "#2b3f75",
+          "--answer-selected-end": "#35508f",
+          "--answer-border": "rgba(142, 194, 255, 0.28)",
+          "--answer-border-hover": "rgba(142, 194, 255, 0.52)",
+          "--answer-border-selected": "rgba(181, 219, 255, 0.92)",
+          "--answer-shadow": "rgba(5, 10, 24, 0.24)",
+          "--answer-shadow-hover": "rgba(5, 10, 24, 0.3)",
+          "--answer-shadow-selected": "rgba(5, 10, 24, 0.36)",
+          "--answer-correct-start": "#172d2d",
+          "--answer-correct-end": "#1f554c",
+          "--answer-correct-border": "#6de6c2",
+          "--answer-correct-ink": "#e6fff7",
+          "--answer-correct-shadow": "rgba(5, 10, 24, 0.32)",
+          "--answer-wrong-start": "#2a1b32",
+          "--answer-wrong-end": "#683052",
+          "--answer-wrong-border": "#ffa4c8",
+          "--answer-wrong-ink": "#fff0f6",
+          "--answer-wrong-shadow": "rgba(5, 10, 24, 0.32)"
+        }
+      },
+      {
+        id: "deep-forest",
+        label: "Głęboki las",
+        swatches: ["#183027", "#25453a", "#8fe0bc"],
+        vars: {
+          "--answer-start": "#183027",
+          "--answer-end": "#25453a",
+          "--answer-hover-end": "#2d5748",
+          "--answer-selected-end": "#38715e",
+          "--answer-border": "rgba(151, 234, 198, 0.26)",
+          "--answer-border-hover": "rgba(151, 234, 198, 0.48)",
+          "--answer-border-selected": "rgba(196, 247, 222, 0.92)",
+          "--answer-shadow": "rgba(5, 14, 11, 0.24)",
+          "--answer-shadow-hover": "rgba(5, 14, 11, 0.3)",
+          "--answer-shadow-selected": "rgba(5, 14, 11, 0.36)",
+          "--answer-correct-start": "#163226",
+          "--answer-correct-end": "#2d6847",
+          "--answer-correct-border": "#9aefaf",
+          "--answer-correct-ink": "#f0fff2",
+          "--answer-correct-shadow": "rgba(5, 14, 11, 0.3)",
+          "--answer-wrong-start": "#351f24",
+          "--answer-wrong-end": "#774049",
+          "--answer-wrong-border": "#ffb0bc",
+          "--answer-wrong-ink": "#fff1f3",
+          "--answer-wrong-shadow": "rgba(5, 14, 11, 0.3)"
         }
       }
     ]
   },
   feedback: {
-    label: "Komunikaty",
-    description: "Brawo, podpowiedzi i błędy",
+    label: "Komunikaty tekstowe",
+    description: "Podpowiedzi, pola informacji i teksty statusu",
+    previewHint: "Zmienia podpowiedzi, pola informacji i komunikaty zapisu",
     options: [
       {
         id: "mint",
@@ -361,6 +969,111 @@ const THEME_OPTIONS = {
           "--feedback-border": "rgba(123, 132, 255, 0.22)",
           "--message-error": "#c64076",
           "--message-success": "#4752b3"
+        }
+      },
+      {
+        id: "sunset",
+        label: "Zachód",
+        swatches: ["#ff9f6e", "#fff0de", "#ff7297"],
+        vars: {
+          "--green": "#ff9f6e",
+          "--green-soft": "#fff0de",
+          "--green-deep": "#dd7447",
+          "--green-ink": "#7a3d20",
+          "--danger": "#ff7297",
+          "--danger-soft": "#ffe9f0",
+          "--danger-deep": "#dc4c74",
+          "--danger-ink": "#8d244a",
+          "--hint-bg": "#fff4d8",
+          "--hint-border": "rgba(255, 188, 107, 0.42)",
+          "--feedback-bg": "#fff2ea",
+          "--feedback-border": "rgba(255, 140, 94, 0.24)",
+          "--message-error": "#c2456d",
+          "--message-success": "#9c552a"
+        }
+      },
+      {
+        id: "polar",
+        label: "Polarna",
+        swatches: ["#59c6da", "#e9fbff", "#6a95ff"],
+        vars: {
+          "--green": "#59c6da",
+          "--green-soft": "#e9fbff",
+          "--green-deep": "#2595aa",
+          "--green-ink": "#13576b",
+          "--danger": "#6a95ff",
+          "--danger-soft": "#ecf1ff",
+          "--danger-deep": "#4169dc",
+          "--danger-ink": "#233d87",
+          "--hint-bg": "#eefaff",
+          "--hint-border": "rgba(89, 198, 218, 0.34)",
+          "--feedback-bg": "#ebf6ff",
+          "--feedback-border": "rgba(106, 149, 255, 0.24)",
+          "--message-error": "#3a5bc9",
+          "--message-success": "#227b91"
+        }
+      },
+      {
+        id: "nocturne",
+        label: "Nokturn",
+        swatches: ["#62e6c6", "#18333a", "#ff8ca8"],
+        vars: {
+          "--green": "#62e6c6",
+          "--green-soft": "#112f31",
+          "--green-deep": "#2fb494",
+          "--green-ink": "#d6fff5",
+          "--danger": "#ff8ca8",
+          "--danger-soft": "#341522",
+          "--danger-deep": "#f06587",
+          "--danger-ink": "#ffe2e9",
+          "--hint-bg": "#282b48",
+          "--hint-border": "rgba(154, 166, 255, 0.32)",
+          "--feedback-bg": "#152b39",
+          "--feedback-border": "rgba(98, 230, 198, 0.22)",
+          "--message-error": "#ffb2c6",
+          "--message-success": "#8df3da"
+        }
+      },
+      {
+        id: "signal",
+        label: "Sygnał",
+        swatches: ["#7bd5ff", "#1a2f48", "#ff9f87"],
+        vars: {
+          "--green": "#7bd5ff",
+          "--green-soft": "#142538",
+          "--green-deep": "#4da8db",
+          "--green-ink": "#eaf7ff",
+          "--danger": "#ff9f87",
+          "--danger-soft": "#3a211f",
+          "--danger-deep": "#ed7c63",
+          "--danger-ink": "#fff0eb",
+          "--hint-bg": "#213650",
+          "--hint-border": "rgba(123, 213, 255, 0.3)",
+          "--feedback-bg": "#16283d",
+          "--feedback-border": "rgba(123, 213, 255, 0.24)",
+          "--message-error": "#ffc3b4",
+          "--message-success": "#9be4ff"
+        }
+      },
+      {
+        id: "afterglow",
+        label: "Poświata",
+        swatches: ["#ffc274", "#3a2331", "#ff87b2"],
+        vars: {
+          "--green": "#ffc274",
+          "--green-soft": "#3c2b1e",
+          "--green-deep": "#e09840",
+          "--green-ink": "#fff4e6",
+          "--danger": "#ff87b2",
+          "--danger-soft": "#391b2b",
+          "--danger-deep": "#e3618f",
+          "--danger-ink": "#ffeaf2",
+          "--hint-bg": "#42324f",
+          "--hint-border": "rgba(255, 194, 116, 0.3)",
+          "--feedback-bg": "#2d223c",
+          "--feedback-border": "rgba(255, 135, 178, 0.22)",
+          "--message-error": "#ffbfd5",
+          "--message-success": "#ffd59a"
         }
       }
     ]
@@ -455,7 +1168,8 @@ const state = {
   ui: {
     soundEnabled: DEFAULT_SOUND_ENABLED,
     themeSelection: Object.assign({}, DEFAULT_THEME_SELECTION)
-  }
+  },
+  themeDraftSelection: null
 };
 
 const elements = {
@@ -532,6 +1246,16 @@ let audioContext = null;
 let audioMasterGain = null;
 let audioCompressor = null;
 let audioCleanupTimer = 0;
+const THEME_VAR_KEYS = Array.from(
+  new Set(
+    THEME_OPTION_ORDER.flatMap(function collectGroupVars(groupKey) {
+      return THEME_OPTIONS[groupKey].options.flatMap(function collectOptionVars(option) {
+        return Object.keys(option.vars);
+      });
+    })
+  )
+);
+let defaultThemeVarsCache = null;
 
 function getStoredUiState() {
   return readJson(STORAGE_KEYS.ui, {});
@@ -565,6 +1289,22 @@ function getThemeSelection() {
   );
 }
 
+function getThemeDraftSelection() {
+  return normalizeThemeSelection(
+    state.themeDraftSelection || getThemeSelection()
+  );
+}
+
+function isThemeEditorOpen() {
+  return state.activeScene === "theme";
+}
+
+function getDisplayedThemeSelection() {
+  return isThemeEditorOpen()
+    ? getThemeDraftSelection()
+    : getThemeSelection();
+}
+
 function getThemeOption(groupKey, optionId) {
   const group = THEME_OPTIONS[groupKey];
 
@@ -595,11 +1335,27 @@ function getMergedThemeVars(selection) {
   return mergedVars;
 }
 
+function getDefaultThemeVars() {
+  if (defaultThemeVarsCache) {
+    return defaultThemeVarsCache;
+  }
+
+  const computedStyle = getComputedStyle(document.documentElement);
+
+  defaultThemeVarsCache = THEME_VAR_KEYS.reduce(function collectDefaults(defaults, key) {
+    defaults[key] = computedStyle.getPropertyValue(key).trim();
+    return defaults;
+  }, {
+    "--theme-version": String(THEME_STORAGE_VERSION)
+  });
+
+  return defaultThemeVarsCache;
+}
+
 function applyThemeSelection(themeSelection) {
   const selection = normalizeThemeSelection(themeSelection);
-  const themeVars = getMergedThemeVars(selection);
+  const themeVars = Object.assign({}, getDefaultThemeVars(), getMergedThemeVars(selection));
 
-  state.ui.themeSelection = selection;
   Object.keys(themeVars).forEach(function applyVar(key) {
     document.documentElement.style.setProperty(key, themeVars[key]);
   });
@@ -1930,14 +2686,27 @@ function createThemeOptionButton(groupKey, option, selectedId) {
 
   copy.className = "theme-choice-copy";
   title.textContent = option.label;
-  description.textContent = option.id === selectedId ? "Wybrane" : "Kliknij, aby sprawdzić";
+  description.textContent = option.id === selectedId ? "Wybrane teraz" : "Podmień w podglądzie";
   copy.append(title, description);
   button.append(swatches, copy);
   return button;
 }
 
+function setThemePreviewFocus(groupKey) {
+  if (!elements.themeScene) {
+    return;
+  }
+
+  if (groupKey) {
+    elements.themeScene.setAttribute("data-theme-preview-focus", groupKey);
+    return;
+  }
+
+  elements.themeScene.removeAttribute("data-theme-preview-focus");
+}
+
 function renderThemeEditor() {
-  const selection = getThemeSelection();
+  const selection = getDisplayedThemeSelection();
 
   if (!elements.themeOptionsGrid) {
     return;
@@ -1952,25 +2721,44 @@ function renderThemeEditor() {
     const choices = document.createElement("div");
     const title = document.createElement("h3");
     const description = document.createElement("p");
+    const hint = document.createElement("p");
 
     section.className = "theme-group";
+    section.setAttribute("data-preview-target", groupKey);
     header.className = "theme-group-header";
     choices.className = "theme-choice-list";
     title.textContent = group.label;
     description.textContent = group.description;
-    header.append(title, description);
+    hint.className = "theme-group-selection";
+    hint.textContent = "Teraz: " + (getThemeOption(groupKey, selection[groupKey]) || { label: "Domyślne" }).label + ". " + group.previewHint;
+    header.append(title, description, hint);
+
+    section.addEventListener("mouseenter", function onThemeGroupEnter() {
+      setThemePreviewFocus(groupKey);
+    });
+    section.addEventListener("mouseleave", function onThemeGroupLeave() {
+      setThemePreviewFocus("");
+    });
+    section.addEventListener("focusin", function onThemeGroupFocus() {
+      setThemePreviewFocus(groupKey);
+    });
+    section.addEventListener("focusout", function onThemeGroupBlur(event) {
+      if (!section.contains(event.relatedTarget)) {
+        setThemePreviewFocus("");
+      }
+    });
 
     group.options.forEach(function renderOption(option) {
       const button = createThemeOptionButton(groupKey, option, selection[groupKey]);
       button.addEventListener("click", function onThemeChoice() {
-        const nextSelection = Object.assign({}, getThemeSelection(), {
+        const nextSelection = Object.assign({}, getThemeDraftSelection(), {
           [groupKey]: option.id
         });
 
+        state.themeDraftSelection = nextSelection;
         applyThemeSelection(nextSelection);
         render();
-        saveToStorage();
-        setThemeMessage("Wygląd został zmieniony. Jeśli chcesz, kliknij Zapisz wygląd.", false);
+        setThemeMessage("Podgląd został zmieniony. Kliknij Zapisz wygląd, aby zachować motyw.", false);
       });
       choices.append(button);
     });
@@ -2230,25 +3018,35 @@ function clearSessionOnly() {
 }
 
 function openThemeEditor() {
-  setThemeMessage("Wybierz kolory dla różnych części ekranu.", false);
+  state.themeDraftSelection = getThemeSelection();
+  applyThemeSelection(state.themeDraftSelection);
   showScene("theme");
+  render();
+  setThemeMessage("Wybierz kolory dla różnych części ekranu.", false);
 }
 
 function closeThemeEditor() {
-  setThemeMessage("");
+  state.themeDraftSelection = null;
+  applyThemeSelection(getThemeSelection());
   showScene("builder");
+  render();
+  setThemeMessage("");
 }
 
 function saveThemePreferences() {
+  state.ui.themeSelection = getThemeDraftSelection();
+  state.themeDraftSelection = Object.assign({}, state.ui.themeSelection);
+  applyThemeSelection(state.ui.themeSelection);
   saveToStorage();
   setThemeMessage("Motyw zapisany. Po odświeżeniu zostanie taki sam.", false);
+  render();
 }
 
 function resetThemePreferences() {
-  applyThemeSelection(DEFAULT_THEME_SELECTION);
+  state.themeDraftSelection = Object.assign({}, DEFAULT_THEME_SELECTION);
+  applyThemeSelection(state.themeDraftSelection);
   render();
-  saveToStorage();
-  setThemeMessage("Przywrócono domyślny wygląd.", false);
+  setThemeMessage("Przywrócono domyślny wygląd w podglądzie. Kliknij Zapisz wygląd, aby go zachować.", false);
 }
 
 function replaceActiveQuiz() {
@@ -2384,6 +3182,8 @@ function migrateStoredState() {
       themeSelection: Object.assign({}, DEFAULT_THEME_SELECTION)
     };
   }
+
+  state.themeDraftSelection = null;
 
   if (typeof state.ui.soundEnabled !== "boolean") {
     state.ui.soundEnabled = DEFAULT_SOUND_ENABLED;

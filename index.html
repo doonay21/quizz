@@ -153,6 +153,22 @@
                 <button class="ghost-button" id="clearSessionButton" type="button">Wyczyść sesję</button>
               </div>
 
+              <section class="history-card sound-settings-card">
+                <div class="panel-header compact">
+                  <div>
+                    <p class="panel-kicker">Dźwięki</p>
+                    <h3>Ustawienia brzmień</h3>
+                  </div>
+                </div>
+                <p class="sound-settings-note">Wybierz dźwięki dla różnych sytuacji i sprawdź je od razu przyciskiem odsłuchu.</p>
+                <div class="sound-volume-row">
+                  <label class="field-label" for="soundVolumeInput">Głośność efektów</label>
+                  <input id="soundVolumeInput" class="sound-volume-range" type="range" min="0" max="100" step="5" value="72">
+                  <strong id="soundVolumeValue" class="sound-volume-value">72%</strong>
+                </div>
+                <div id="soundSettingsGrid" class="sound-settings-grid"></div>
+              </section>
+
               <section class="history-card">
                 <div class="panel-header compact">
                   <div>

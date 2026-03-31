@@ -21,7 +21,469 @@ const STREAK_PENALTY_ON_MISTAKE = 1;
 const DEFAULT_QUIZ_PATH = "./data.json";
 const LAYOUT_DENSITIES = ["regular", "compact", "tight", "ultra"];
 const DEFAULT_SOUND_ENABLED = true;
+const DEFAULT_SOUND_VOLUME = 0.72;
 const TRUE_FALSE_OPTIONS = ["Prawda", "Fałsz"];
+const SOUND_GROUP_ORDER = ["correct", "wrong", "hint", "next", "complete", "toggle"];
+const SOUND_GROUP_META = {
+  correct: {
+    label: "Dobra odpowiedź",
+    previewEvent: "correct"
+  },
+  wrong: {
+    label: "Błąd",
+    previewEvent: "wrong"
+  },
+  hint: {
+    label: "Podpowiedź",
+    previewEvent: "hint"
+  },
+  next: {
+    label: "Przejście dalej",
+    previewEvent: "next"
+  },
+  complete: {
+    label: "Sukces i koniec rundy",
+    previewEvent: "complete"
+  },
+  toggle: {
+    label: "Włączanie dźwięku",
+    previewEvent: "toggleOn"
+  }
+};
+const DEFAULT_SOUND_SELECTION = {
+  correct: "sparkle",
+  wrong: "soft_boop",
+  hint: "bell",
+  next: "pop",
+  complete: "fanfare",
+  toggle: "switch"
+};
+const SOUND_VARIANTS = {
+  correct: {
+    sparkle: {
+      label: "Iskierki",
+      description: "Jasny, lekki dźwięk zwycięstwa.",
+      events: {
+        correct: [
+          { step: 0, duration: 0.88, frequency: 659.25, gain: 1, type: "triangle", filterFrequency: 2200 },
+          { step: 1, duration: 1, frequency: 783.99, gain: 0.9, type: "sine", filterFrequency: 2500 }
+        ]
+      }
+    },
+    bell: {
+      label: "Dzwoneczek",
+      description: "Miękki i czytelny sygnał poprawnej odpowiedzi.",
+      events: {
+        correct: [
+          { step: 0, duration: 0.92, frequency: 783.99, gain: 0.86, type: "sine", filterFrequency: 3200 },
+          { step: 1, duration: 0.86, frequency: 1046.5, gain: 0.62, type: "triangle", filterFrequency: 3400 }
+        ]
+      }
+    },
+    xylophone: {
+      label: "Ksylofon",
+      description: "Krótki, wesoły podskok dźwięków.",
+      events: {
+        correct: [
+          { step: 0, duration: 0.66, frequency: 587.33, gain: 0.92, type: "triangle", filterFrequency: 2100 },
+          { step: 1, duration: 0.62, frequency: 783.99, gain: 0.82, type: "triangle", filterFrequency: 2300 },
+          { step: 2, duration: 0.58, frequency: 987.77, gain: 0.72, type: "triangle", filterFrequency: 2500 }
+        ]
+      }
+    },
+    rocket: {
+      label: "Rakieta",
+      description: "Dźwięk rośnie w górę jak start rakiety.",
+      events: {
+        correct: [
+          { step: 0, duration: 0.58, frequency: 440, gain: 0.78, type: "sawtooth", filterFrequency: 1800 },
+          { step: 1, duration: 0.66, frequency: 659.25, gain: 0.9, type: "triangle", filterFrequency: 2200 },
+          { step: 2, duration: 0.74, frequency: 987.77, gain: 0.82, type: "sine", filterFrequency: 2800 }
+        ]
+      }
+    },
+    bubble: {
+      label: "Bąbelek",
+      description: "Delikatne, pluskające potwierdzenie.",
+      events: {
+        correct: [
+          { step: 0, duration: 0.68, frequency: 523.25, gain: 0.72, type: "sine", filterFrequency: 2400 },
+          { step: 1, duration: 0.56, frequency: 659.25, gain: 0.6, type: "sine", filterFrequency: 2800 },
+          { step: 2, duration: 0.48, frequency: 880, gain: 0.5, type: "triangle", filterFrequency: 3200 }
+        ]
+      }
+    },
+    arcade: {
+      label: "Arcade",
+      description: "Trochę bardziej growy i energiczny.",
+      events: {
+        correct: [
+          { step: 0, duration: 0.52, frequency: 523.25, gain: 0.86, type: "square", filterFrequency: 1900 },
+          { step: 1, duration: 0.52, frequency: 659.25, gain: 0.8, type: "square", filterFrequency: 2100 },
+          { step: 2, duration: 0.7, frequency: 783.99, gain: 0.72, type: "triangle", filterFrequency: 2300 }
+        ]
+      }
+    }
+  },
+  wrong: {
+    soft_boop: {
+      label: "Miękkie boop",
+      description: "Łagodny sygnał pomyłki, bez ostrego brzmienia.",
+      events: {
+        wrong: [
+          { step: 0, duration: 0.56, frequency: 329.63, gain: 1, type: "sine", filterFrequency: 1200 },
+          { step: 1, duration: 0.68, frequency: 246.94, gain: 0.92, type: "triangle", filterFrequency: 980 }
+        ]
+      }
+    },
+    pillow: {
+      label: "Poduszka",
+      description: "Bardzo spokojne i przytłumione brzmienie.",
+      events: {
+        wrong: [
+          { step: 0, duration: 0.72, frequency: 293.66, gain: 0.82, type: "sine", filterFrequency: 900 },
+          { step: 1, duration: 0.8, frequency: 220, gain: 0.74, type: "sine", filterFrequency: 760 }
+        ]
+      }
+    },
+    woodblock: {
+      label: "Drewniany stuk",
+      description: "Krótki, wyraźny sygnał bez przeciągania.",
+      events: {
+        wrong: [
+          { step: 0, duration: 0.34, frequency: 261.63, gain: 0.84, type: "square", filterFrequency: 1100 },
+          { step: 1, duration: 0.4, frequency: 220, gain: 0.72, type: "square", filterFrequency: 900 }
+        ]
+      }
+    },
+    robot: {
+      label: "Robocik",
+      description: "Lekko elektroniczne, ale nadal delikatne.",
+      events: {
+        wrong: [
+          { step: 0, duration: 0.42, frequency: 369.99, gain: 0.76, type: "square", filterFrequency: 1500 },
+          { step: 1, duration: 0.52, frequency: 277.18, gain: 0.78, type: "triangle", filterFrequency: 1200 },
+          { step: 2, duration: 0.6, frequency: 220, gain: 0.68, type: "sine", filterFrequency: 980 }
+        ]
+      }
+    },
+    slide: {
+      label: "Zjazd",
+      description: "Spokojne zejście tonu w dół.",
+      events: {
+        wrong: [
+          { step: 0, duration: 0.34, frequency: 392, gain: 0.72, type: "triangle", filterFrequency: 1400 },
+          { step: 1, duration: 0.44, frequency: 293.66, gain: 0.72, type: "triangle", filterFrequency: 1100 },
+          { step: 2, duration: 0.54, frequency: 220, gain: 0.68, type: "sine", filterFrequency: 900 }
+        ]
+      }
+    },
+    low_bell: {
+      label: "Niski dzwonek",
+      description: "Bardziej dźwięczny, ale nieprzykry.",
+      events: {
+        wrong: [
+          { step: 0, duration: 0.62, frequency: 261.63, gain: 0.84, type: "triangle", filterFrequency: 1500 },
+          { step: 1, duration: 0.74, frequency: 196, gain: 0.74, type: "sine", filterFrequency: 1100 }
+        ]
+      }
+    }
+  },
+  hint: {
+    bell: {
+      label: "Mały dzwonek",
+      description: "Lekki sygnał zachęcający do spojrzenia na podpowiedź.",
+      events: {
+        hint: [
+          { step: 0, duration: 1, frequency: 587.33, gain: 0.78, type: "sine", filterFrequency: 2600 },
+          { step: 1, duration: 0.92, frequency: 880, gain: 1, type: "triangle", filterFrequency: 3000 }
+        ]
+      }
+    },
+    glimmer: {
+      label: "Błysk",
+      description: "Jasne, krótkie mrugnięcie dźwiękowe.",
+      events: {
+        hint: [
+          { step: 0, duration: 0.5, frequency: 783.99, gain: 0.72, type: "triangle", filterFrequency: 2800 },
+          { step: 1, duration: 0.44, frequency: 987.77, gain: 0.66, type: "sine", filterFrequency: 3200 }
+        ]
+      }
+    },
+    owl: {
+      label: "Sówka",
+      description: "Miękki, ciekawski sygnał do pomocy.",
+      events: {
+        hint: [
+          { step: 0, duration: 0.62, frequency: 440, gain: 0.72, type: "sine", filterFrequency: 1800 },
+          { step: 1, duration: 0.76, frequency: 587.33, gain: 0.74, type: "triangle", filterFrequency: 2200 }
+        ]
+      }
+    },
+    plink: {
+      label: "Plink",
+      description: "Krótki i bardzo lekki sygnał.",
+      events: {
+        hint: [
+          { step: 0, duration: 0.42, frequency: 659.25, gain: 0.66, type: "triangle", filterFrequency: 2600 },
+          { step: 1, duration: 0.4, frequency: 987.77, gain: 0.52, type: "triangle", filterFrequency: 3200 }
+        ]
+      }
+    },
+    radar: {
+      label: "Radar",
+      description: "Trochę bardziej elektroniczny i nowoczesny.",
+      events: {
+        hint: [
+          { step: 0, duration: 0.5, frequency: 523.25, gain: 0.62, type: "square", filterFrequency: 2000 },
+          { step: 1, duration: 0.5, frequency: 783.99, gain: 0.58, type: "square", filterFrequency: 2400 }
+        ]
+      }
+    },
+    chime: {
+      label: "Dzwonki",
+      description: "Delikatna mini-melodyjka pomocy.",
+      events: {
+        hint: [
+          { step: 0, duration: 0.5, frequency: 523.25, gain: 0.58, type: "sine", filterFrequency: 2400 },
+          { step: 1, duration: 0.54, frequency: 659.25, gain: 0.6, type: "triangle", filterFrequency: 2700 },
+          { step: 2, duration: 0.58, frequency: 783.99, gain: 0.58, type: "sine", filterFrequency: 3000 }
+        ]
+      }
+    }
+  },
+  next: {
+    pop: {
+      label: "Pop",
+      description: "Szybkie kliknięcie przejścia dalej.",
+      events: {
+        next: [
+          { step: 0, duration: 1, frequency: 493.88, gain: 1, type: "triangle", filterFrequency: 1800 }
+        ]
+      }
+    },
+    tick: {
+      label: "Tick",
+      description: "Krótki i bardzo neutralny sygnał.",
+      events: {
+        next: [
+          { step: 0, duration: 0.66, frequency: 659.25, gain: 0.7, type: "square", filterFrequency: 1800 }
+        ]
+      }
+    },
+    hop: {
+      label: "Hop",
+      description: "Mały podskok dźwięku przy zmianie pytania.",
+      events: {
+        next: [
+          { step: 0, duration: 0.62, frequency: 440, gain: 0.62, type: "triangle", filterFrequency: 1600 },
+          { step: 1, duration: 0.58, frequency: 587.33, gain: 0.58, type: "sine", filterFrequency: 2000 }
+        ]
+      }
+    },
+    swish: {
+      label: "Świst",
+      description: "Lżejsze przejście z odrobiną ruchu.",
+      events: {
+        next: [
+          { step: 0, duration: 0.76, frequency: 392, gain: 0.62, type: "sawtooth", filterFrequency: 1500 },
+          { step: 1, duration: 0.5, frequency: 523.25, gain: 0.48, type: "triangle", filterFrequency: 1900 }
+        ]
+      }
+    },
+    blip: {
+      label: "Blip",
+      description: "Trochę bardziej cyfrowy sygnał.",
+      events: {
+        next: [
+          { step: 0, duration: 0.52, frequency: 587.33, gain: 0.62, type: "square", filterFrequency: 1700 },
+          { step: 1, duration: 0.44, frequency: 698.46, gain: 0.52, type: "square", filterFrequency: 2000 }
+        ]
+      }
+    },
+    leaf: {
+      label: "Listek",
+      description: "Bardzo miękki dźwięk przewijania dalej.",
+      events: {
+        next: [
+          { step: 0, duration: 0.82, frequency: 392, gain: 0.58, type: "sine", filterFrequency: 1600 }
+        ]
+      }
+    }
+  },
+  complete: {
+    fanfare: {
+      label: "Fanfara",
+      description: "Klasyczne, radosne zakończenie rundy.",
+      events: {
+        mastered: [
+          { step: 0, duration: 0.46, frequency: 523.25, gain: 1, type: "triangle", filterFrequency: 2100 },
+          { step: 1, duration: 0.48, frequency: 659.25, gain: 0.92, type: "triangle", filterFrequency: 2300 },
+          { step: 2, duration: 0.52, frequency: 783.99, gain: 0.9, type: "triangle", filterFrequency: 2500 },
+          { step: 3, duration: 0.76, frequency: 1046.5, gain: 1, type: "sine", filterFrequency: 2900 }
+        ],
+        complete: [
+          { step: 0, duration: 0.48, frequency: 523.25, gain: 0.86, type: "triangle", filterFrequency: 2400 },
+          { step: 1, duration: 0.48, frequency: 659.25, gain: 0.86, type: "triangle", filterFrequency: 2620 },
+          { step: 2, duration: 0.48, frequency: 783.99, gain: 0.86, type: "sine", filterFrequency: 2840 },
+          { step: 3, duration: 0.72, frequency: 1046.5, gain: 1, type: "sine", filterFrequency: 3060 }
+        ]
+      }
+    },
+    stars: {
+      label: "Gwiazdy",
+      description: "Błyszczące, wysokie świętowanie.",
+      events: {
+        mastered: [
+          { step: 0, duration: 0.34, frequency: 783.99, gain: 0.72, type: "sine", filterFrequency: 3200 },
+          { step: 1, duration: 0.34, frequency: 987.77, gain: 0.68, type: "triangle", filterFrequency: 3400 },
+          { step: 2, duration: 0.52, frequency: 1318.51, gain: 0.58, type: "sine", filterFrequency: 3600 }
+        ],
+        complete: [
+          { step: 0, duration: 0.34, frequency: 783.99, gain: 0.66, type: "sine", filterFrequency: 3200 },
+          { step: 1, duration: 0.34, frequency: 987.77, gain: 0.64, type: "triangle", filterFrequency: 3400 },
+          { step: 2, duration: 0.34, frequency: 1174.66, gain: 0.62, type: "triangle", filterFrequency: 3600 },
+          { step: 3, duration: 0.62, frequency: 1567.98, gain: 0.6, type: "sine", filterFrequency: 3800 }
+        ]
+      }
+    },
+    rainbow: {
+      label: "Tęcza",
+      description: "Bardziej melodyjne i miękkie zakończenie.",
+      events: {
+        mastered: [
+          { step: 0, duration: 0.44, frequency: 493.88, gain: 0.8, type: "triangle", filterFrequency: 2200 },
+          { step: 1, duration: 0.48, frequency: 659.25, gain: 0.8, type: "triangle", filterFrequency: 2400 },
+          { step: 2, duration: 0.72, frequency: 987.77, gain: 0.74, type: "sine", filterFrequency: 2800 }
+        ],
+        complete: [
+          { step: 0, duration: 0.4, frequency: 440, gain: 0.72, type: "triangle", filterFrequency: 2100 },
+          { step: 1, duration: 0.4, frequency: 587.33, gain: 0.72, type: "triangle", filterFrequency: 2300 },
+          { step: 2, duration: 0.46, frequency: 783.99, gain: 0.72, type: "triangle", filterFrequency: 2500 },
+          { step: 3, duration: 0.68, frequency: 1174.66, gain: 0.72, type: "sine", filterFrequency: 2900 }
+        ]
+      }
+    },
+    march: {
+      label: "Marsz",
+      description: "Mocniejszy, bardziej pewny sukces.",
+      events: {
+        mastered: [
+          { step: 0, duration: 0.4, frequency: 392, gain: 0.78, type: "square", filterFrequency: 1800 },
+          { step: 1, duration: 0.4, frequency: 523.25, gain: 0.76, type: "square", filterFrequency: 2000 },
+          { step: 2, duration: 0.62, frequency: 659.25, gain: 0.72, type: "triangle", filterFrequency: 2200 }
+        ],
+        complete: [
+          { step: 0, duration: 0.36, frequency: 392, gain: 0.76, type: "square", filterFrequency: 1800 },
+          { step: 1, duration: 0.36, frequency: 493.88, gain: 0.74, type: "square", filterFrequency: 1960 },
+          { step: 2, duration: 0.36, frequency: 587.33, gain: 0.72, type: "square", filterFrequency: 2120 },
+          { step: 3, duration: 0.68, frequency: 783.99, gain: 0.72, type: "triangle", filterFrequency: 2400 }
+        ]
+      }
+    },
+    harp: {
+      label: "Harfa",
+      description: "Delikatne, płynące brzmienie świętowania.",
+      events: {
+        mastered: [
+          { step: 0, duration: 0.38, frequency: 523.25, gain: 0.68, type: "sine", filterFrequency: 2600 },
+          { step: 1, duration: 0.42, frequency: 659.25, gain: 0.66, type: "sine", filterFrequency: 2800 },
+          { step: 2, duration: 0.52, frequency: 783.99, gain: 0.64, type: "sine", filterFrequency: 3000 },
+          { step: 3, duration: 0.74, frequency: 1174.66, gain: 0.58, type: "triangle", filterFrequency: 3200 }
+        ],
+        complete: [
+          { step: 0, duration: 0.32, frequency: 523.25, gain: 0.6, type: "sine", filterFrequency: 2600 },
+          { step: 1, duration: 0.36, frequency: 659.25, gain: 0.58, type: "sine", filterFrequency: 2800 },
+          { step: 2, duration: 0.4, frequency: 783.99, gain: 0.56, type: "sine", filterFrequency: 3000 },
+          { step: 3, duration: 0.44, frequency: 987.77, gain: 0.54, type: "triangle", filterFrequency: 3200 },
+          { step: 4, duration: 0.74, frequency: 1318.51, gain: 0.5, type: "triangle", filterFrequency: 3400 }
+        ]
+      }
+    },
+    rocket: {
+      label: "Start",
+      description: "Rosnący, ekscytujący finał rundy.",
+      events: {
+        mastered: [
+          { step: 0, duration: 0.36, frequency: 440, gain: 0.72, type: "sawtooth", filterFrequency: 1700 },
+          { step: 1, duration: 0.44, frequency: 659.25, gain: 0.74, type: "triangle", filterFrequency: 2200 },
+          { step: 2, duration: 0.62, frequency: 987.77, gain: 0.72, type: "sine", filterFrequency: 2800 }
+        ],
+        complete: [
+          { step: 0, duration: 0.34, frequency: 392, gain: 0.66, type: "sawtooth", filterFrequency: 1600 },
+          { step: 1, duration: 0.38, frequency: 523.25, gain: 0.68, type: "triangle", filterFrequency: 2000 },
+          { step: 2, duration: 0.44, frequency: 783.99, gain: 0.72, type: "triangle", filterFrequency: 2400 },
+          { step: 3, duration: 0.72, frequency: 1174.66, gain: 0.74, type: "sine", filterFrequency: 3000 }
+        ]
+      }
+    }
+  },
+  toggle: {
+    switch: {
+      label: "Przełącznik",
+      description: "Prosty sygnał włączenia i wyłączenia dźwięków.",
+      events: {
+        toggleOn: [
+          { step: 0, duration: 0.72, frequency: 493.88, gain: 0.82, type: "triangle", filterFrequency: 2000 },
+          { step: 1, duration: 1, frequency: 659.25, gain: 1, type: "sine", filterFrequency: 2500 }
+        ],
+        toggleOff: [
+          { step: 0, duration: 1, frequency: 293.66, gain: 1, type: "sine", filterFrequency: 1200 }
+        ]
+      }
+    },
+    click: {
+      label: "Klik",
+      description: "Krótki i bardzo neutralny.",
+      events: {
+        toggleOn: [
+          { step: 0, duration: 0.5, frequency: 659.25, gain: 0.68, type: "square", filterFrequency: 1700 }
+        ],
+        toggleOff: [
+          { step: 0, duration: 0.58, frequency: 246.94, gain: 0.6, type: "square", filterFrequency: 1200 }
+        ]
+      }
+    },
+    bubble: {
+      label: "Bąbelek",
+      description: "Miękkie, zabawne przełączanie.",
+      events: {
+        toggleOn: [
+          { step: 0, duration: 0.56, frequency: 523.25, gain: 0.58, type: "sine", filterFrequency: 2200 },
+          { step: 1, duration: 0.44, frequency: 783.99, gain: 0.48, type: "triangle", filterFrequency: 2600 }
+        ],
+        toggleOff: [
+          { step: 0, duration: 0.62, frequency: 329.63, gain: 0.54, type: "sine", filterFrequency: 1500 }
+        ]
+      }
+    },
+    bell: {
+      label: "Dzwonek",
+      description: "Łagodny sygnał włączania i wyciszania.",
+      events: {
+        toggleOn: [
+          { step: 0, duration: 0.64, frequency: 587.33, gain: 0.62, type: "triangle", filterFrequency: 2200 },
+          { step: 1, duration: 0.74, frequency: 880, gain: 0.56, type: "sine", filterFrequency: 2800 }
+        ],
+        toggleOff: [
+          { step: 0, duration: 0.76, frequency: 261.63, gain: 0.58, type: "triangle", filterFrequency: 1300 }
+        ]
+      }
+    },
+    soft_tap: {
+      label: "Lekki stuk",
+      description: "Bardzo subtelne przełączenie ustawień.",
+      events: {
+        toggleOn: [
+          { step: 0, duration: 0.42, frequency: 493.88, gain: 0.52, type: "triangle", filterFrequency: 1800 }
+        ],
+        toggleOff: [
+          { step: 0, duration: 0.48, frequency: 293.66, gain: 0.48, type: "triangle", filterFrequency: 1200 }
+        ]
+      }
+    }
+  }
+};
 const DEFAULT_THEME_SELECTION = {
   background: "sunrise",
   surface: "cloud",
@@ -1167,6 +1629,8 @@ const state = {
   activeScene: "builder",
   ui: {
     soundEnabled: DEFAULT_SOUND_ENABLED,
+    soundVolume: DEFAULT_SOUND_VOLUME,
+    soundSelection: Object.assign({}, DEFAULT_SOUND_SELECTION),
     themeSelection: Object.assign({}, DEFAULT_THEME_SELECTION)
   },
   themeDraftSelection: null
@@ -1238,6 +1702,9 @@ const elements = {
   summaryRemainingValue: document.querySelector("#summaryRemainingValue"),
   summaryComparisonText: document.querySelector("#summaryComparisonText"),
   summaryRemainingText: document.querySelector("#summaryRemainingText"),
+  soundVolumeInput: document.querySelector("#soundVolumeInput"),
+  soundVolumeValue: document.querySelector("#soundVolumeValue"),
+  soundSettingsGrid: document.querySelector("#soundSettingsGrid"),
   soundToggleButtons: Array.from(document.querySelectorAll("[data-sound-toggle]"))
 };
 
@@ -1365,6 +1832,34 @@ function getCurrentStimulusMode() {
   return state.quiz ? normalizeStimulusMode(state.quiz.settings.stimulusMode) : "calm";
 }
 
+function normalizeSoundSelection(soundSelection) {
+  return SOUND_GROUP_ORDER.reduce(function collectSelection(selection, groupKey) {
+    const groupOptions = SOUND_VARIANTS[groupKey] || {};
+    const requestedId = soundSelection && typeof soundSelection[groupKey] === "string"
+      ? soundSelection[groupKey]
+      : DEFAULT_SOUND_SELECTION[groupKey];
+
+    selection[groupKey] = Object.prototype.hasOwnProperty.call(groupOptions, requestedId)
+      ? requestedId
+      : DEFAULT_SOUND_SELECTION[groupKey];
+    return selection;
+  }, {});
+}
+
+function getSoundSelection() {
+  return normalizeSoundSelection(state.ui && state.ui.soundSelection);
+}
+
+function getSoundVolume() {
+  const rawVolume = state.ui ? Number(state.ui.soundVolume) : DEFAULT_SOUND_VOLUME;
+
+  if (!Number.isFinite(rawVolume)) {
+    return DEFAULT_SOUND_VOLUME;
+  }
+
+  return clamp(rawVolume, 0, 1);
+}
+
 function getSoundConfig(eventName) {
   const eventConfig = SOUND_EVENT_CONFIG[eventName] || SOUND_EVENT_CONFIG.next;
   return eventConfig[getCurrentStimulusMode()] || eventConfig.calm;
@@ -1372,6 +1867,14 @@ function getSoundConfig(eventName) {
 
 function isSoundEnabled() {
   return Boolean(state.ui && state.ui.soundEnabled);
+}
+
+function setAudioMasterVolume() {
+  if (!audioMasterGain || !audioContext) {
+    return;
+  }
+
+  audioMasterGain.gain.setValueAtTime(getSoundVolume(), audioContext.currentTime);
 }
 
 function scheduleAudioNodeCleanup() {
@@ -1407,7 +1910,7 @@ function ensureAudioEngine() {
   if (!audioContext) {
     audioContext = new AudioCtor();
     audioMasterGain = audioContext.createGain();
-    audioMasterGain.gain.value = 0.72;
+    audioMasterGain.gain.value = getSoundVolume();
     audioCompressor = audioContext.createDynamicsCompressor();
     audioCompressor.threshold.value = -20;
     audioCompressor.knee.value = 22;
@@ -1418,6 +1921,7 @@ function ensureAudioEngine() {
     audioCompressor.connect(audioContext.destination);
   }
 
+  setAudioMasterVolume();
   scheduleAudioNodeCleanup();
   return audioContext;
 }
@@ -1466,6 +1970,50 @@ function createTone(context, options) {
   oscillator.stop(now + duration + 0.03);
 }
 
+function getSoundVariant(eventName) {
+  const selection = getSoundSelection();
+  let groupKey = "next";
+  let variantId;
+  let groupOptions;
+
+  if (eventName === "correct") {
+    groupKey = "correct";
+  } else if (eventName === "wrong") {
+    groupKey = "wrong";
+  } else if (eventName === "hint") {
+    groupKey = "hint";
+  } else if (eventName === "mastered" || eventName === "complete") {
+    groupKey = "complete";
+  } else if (eventName === "toggleOn" || eventName === "toggleOff") {
+    groupKey = "toggle";
+  }
+
+  variantId = selection[groupKey];
+  groupOptions = SOUND_VARIANTS[groupKey] || {};
+  return groupOptions[variantId] || groupOptions[DEFAULT_SOUND_SELECTION[groupKey]] || null;
+}
+
+function playTonePattern(context, startTime, step, config, pattern) {
+  if (!Array.isArray(pattern) || !pattern.length) {
+    return false;
+  }
+
+  pattern.forEach(function playPatternTone(tone) {
+    createTone(context, {
+      startTime: startTime + step * (tone.step || 0),
+      duration: config.duration * (tone.duration || 1),
+      frequency: tone.frequency,
+      gain: config.volume * (tone.gain || 1),
+      type: tone.type || "sine",
+      filterFrequency: tone.filterFrequency,
+      filterType: tone.filterType,
+      filterQ: tone.filterQ
+    });
+  });
+
+  return true;
+}
+
 function playSoundEvent(eventName, forcePlayback) {
   const config = getSoundConfig(eventName);
 
@@ -1483,156 +2031,20 @@ function playSoundEvent(eventName, forcePlayback) {
 
     startTime = context.currentTime + 0.01;
     step = config.stepMs / 1000;
+    const variant = getSoundVariant(eventName);
+    const pattern = variant && variant.events ? variant.events[eventName] : null;
 
-    if (eventName === "correct") {
-      createTone(context, {
-        startTime: startTime,
-        duration: config.duration * 0.88,
-        frequency: 659.25,
-        gain: config.volume,
-        type: "triangle",
-        filterFrequency: 2200
-      });
-      createTone(context, {
-        startTime: startTime + step,
-        duration: config.duration,
-        frequency: 783.99,
-        gain: config.volume * 0.9,
-        type: "sine",
-        filterFrequency: 2500
-      });
-      return;
-    }
-
-    if (eventName === "mastered") {
-      createTone(context, {
-        startTime: startTime,
-        duration: config.duration * 0.46,
-        frequency: 523.25,
-        gain: config.volume,
-        type: "triangle",
-        filterFrequency: 2100
-      });
-      createTone(context, {
-        startTime: startTime + step,
-        duration: config.duration * 0.48,
-        frequency: 659.25,
-        gain: config.volume * 0.92,
-        type: "triangle",
-        filterFrequency: 2300
-      });
-      createTone(context, {
-        startTime: startTime + step * 2,
-        duration: config.duration * 0.52,
-        frequency: 783.99,
-        gain: config.volume * 0.9,
-        type: "triangle",
-        filterFrequency: 2500
-      });
-      createTone(context, {
-        startTime: startTime + step * 3,
-        duration: config.duration * 0.76,
-        frequency: 1046.5,
-        gain: config.volume,
-        type: "sine",
-        filterFrequency: 2900
-      });
-      return;
-    }
-
-    if (eventName === "wrong") {
-      createTone(context, {
-        startTime: startTime,
-        duration: config.duration * 0.56,
-        frequency: 329.63,
-        gain: config.volume,
-        type: "sine",
-        filterFrequency: 1200
-      });
-      createTone(context, {
-        startTime: startTime + step,
-        duration: config.duration * 0.68,
-        frequency: 246.94,
-        gain: config.volume * 0.92,
-        type: "triangle",
-        filterFrequency: 980
-      });
-      return;
-    }
-
-    if (eventName === "hint") {
-      createTone(context, {
-        startTime: startTime,
-        duration: config.duration,
-        frequency: 587.33,
-        gain: config.volume * 0.78,
-        type: "sine",
-        filterFrequency: 2600
-      });
-      createTone(context, {
-        startTime: startTime + step,
-        duration: config.duration * 0.92,
-        frequency: 880,
-        gain: config.volume,
-        type: "triangle",
-        filterFrequency: 3000
-      });
-      return;
-    }
-
-    if (eventName === "next") {
-      createTone(context, {
-        startTime: startTime,
-        duration: config.duration,
-        frequency: 493.88,
-        gain: config.volume,
-        type: "triangle",
-        filterFrequency: 1800
-      });
-      return;
-    }
-
-    if (eventName === "complete") {
-      [523.25, 659.25, 783.99, 1046.5].forEach(function playFrequency(frequency, index) {
-        createTone(context, {
-          startTime: startTime + step * index,
-          duration: config.duration * (index === 3 ? 0.72 : 0.48),
-          frequency: frequency,
-          gain: config.volume * (index === 3 ? 1 : 0.86),
-          type: index < 2 ? "triangle" : "sine",
-          filterFrequency: 2400 + index * 220
-        });
-      });
-      return;
-    }
-
-    if (eventName === "toggleOn") {
-      createTone(context, {
-        startTime: startTime,
-        duration: config.duration * 0.72,
-        frequency: 493.88,
-        gain: config.volume * 0.82,
-        type: "triangle",
-        filterFrequency: 2000
-      });
-      createTone(context, {
-        startTime: startTime + step,
-        duration: config.duration,
-        frequency: 659.25,
-        gain: config.volume,
-        type: "sine",
-        filterFrequency: 2500
-      });
+    if (playTonePattern(context, startTime, step, config, pattern)) {
       return;
     }
 
     createTone(context, {
       startTime: startTime,
       duration: config.duration,
-      frequency: 293.66,
+      frequency: 493.88,
       gain: config.volume,
-      type: "sine",
-      filterFrequency: 1200
+      type: "triangle",
+      filterFrequency: 1800
     });
   });
 }
@@ -2040,6 +2452,8 @@ function loadFromStorage() {
   state.ui.soundEnabled = typeof state.ui.soundEnabled === "boolean"
     ? state.ui.soundEnabled
     : DEFAULT_SOUND_ENABLED;
+  state.ui.soundVolume = getSoundVolume();
+  state.ui.soundSelection = getSoundSelection();
   state.activeScene = state.ui.activeScene || "builder";
 }
 
@@ -2072,6 +2486,8 @@ function saveToStorage() {
     JSON.stringify({
       activeScene: state.activeScene,
       soundEnabled: isSoundEnabled(),
+      soundVolume: getSoundVolume(),
+      soundSelection: getSoundSelection(),
       themeSelection: getThemeSelection(),
       themeVersion: THEME_STORAGE_VERSION
     })
@@ -2286,6 +2702,36 @@ function toggleSound() {
   }
 }
 
+function updateSoundVolume(event) {
+  const nextVolume = clamp(Number(event.target.value) / 100, 0, 1);
+
+  state.ui.soundVolume = nextVolume;
+  setAudioMasterVolume();
+  renderSoundSettings();
+  saveToStorage();
+}
+
+function updateSoundVariant(groupKey, variantId) {
+  if (!SOUND_VARIANTS[groupKey] || !Object.prototype.hasOwnProperty.call(SOUND_VARIANTS[groupKey], variantId)) {
+    return;
+  }
+
+  state.ui.soundSelection = Object.assign({}, getSoundSelection(), {
+    [groupKey]: variantId
+  });
+  saveToStorage();
+  renderSoundSettings();
+  playSoundEvent(SOUND_GROUP_META[groupKey].previewEvent, true);
+}
+
+function previewSoundGroup(groupKey) {
+  if (!SOUND_GROUP_META[groupKey]) {
+    return;
+  }
+
+  playSoundEvent(SOUND_GROUP_META[groupKey].previewEvent, true);
+}
+
 function applyStimulusMode(mode) {
   document.body.dataset.stimulus = normalizeStimulusMode(mode);
 }
@@ -2453,6 +2899,62 @@ function renderHistory() {
       entry.score +
       " pkt";
     elements.historyList.append(node);
+  });
+}
+
+function renderSoundSettings() {
+  const selection = getSoundSelection();
+  const volume = Math.round(getSoundVolume() * 100);
+
+  if (elements.soundVolumeInput) {
+    elements.soundVolumeInput.value = String(volume);
+  }
+
+  if (elements.soundVolumeValue) {
+    elements.soundVolumeValue.textContent = volume + "%";
+  }
+
+  if (!elements.soundSettingsGrid) {
+    return;
+  }
+
+  elements.soundSettingsGrid.innerHTML = "";
+
+  SOUND_GROUP_ORDER.forEach(function renderSoundGroup(groupKey) {
+    const variantId = selection[groupKey];
+    const variant = SOUND_VARIANTS[groupKey][variantId];
+    const row = document.createElement("div");
+    const copy = document.createElement("div");
+    const title = document.createElement("strong");
+    const description = document.createElement("span");
+    const select = document.createElement("select");
+    const previewButton = document.createElement("button");
+
+    row.className = "sound-choice-row";
+    copy.className = "sound-choice-copy";
+    title.textContent = SOUND_GROUP_META[groupKey].label;
+    description.textContent = variant ? variant.description : "";
+    copy.append(title, description);
+
+    select.className = "text-input sound-choice-select";
+    select.setAttribute("data-sound-group", groupKey);
+
+    Object.keys(SOUND_VARIANTS[groupKey]).forEach(function appendSoundOption(optionId) {
+      const option = SOUND_VARIANTS[groupKey][optionId];
+      const optionNode = document.createElement("option");
+      optionNode.value = optionId;
+      optionNode.textContent = option.label;
+      optionNode.selected = optionId === variantId;
+      select.append(optionNode);
+    });
+
+    previewButton.type = "button";
+    previewButton.className = "ghost-button sound-preview-button";
+    previewButton.textContent = "Odsłuch";
+    previewButton.setAttribute("data-sound-preview", groupKey);
+
+    row.append(copy, select, previewButton);
+    elements.soundSettingsGrid.append(row);
   });
 }
 
@@ -2770,6 +3272,7 @@ function renderThemeEditor() {
 
 function render() {
   renderStatus();
+  renderSoundSettings();
   renderHistory();
   renderQuestion();
   renderThemeEditor();
@@ -3075,6 +3578,8 @@ async function resetAllData() {
   state.activeScene = "builder";
   state.ui = {
     soundEnabled: DEFAULT_SOUND_ENABLED,
+    soundVolume: DEFAULT_SOUND_VOLUME,
+    soundSelection: Object.assign({}, DEFAULT_SOUND_SELECTION),
     themeSelection: Object.assign({}, DEFAULT_THEME_SELECTION)
   };
   applyThemeSelection(state.ui.themeSelection);
@@ -3164,6 +3669,31 @@ function attachEvents() {
   elements.soundToggleButtons.forEach(function bindSoundToggle(button) {
     button.addEventListener("click", toggleSound);
   });
+  if (elements.soundVolumeInput) {
+    elements.soundVolumeInput.addEventListener("input", updateSoundVolume);
+    elements.soundVolumeInput.addEventListener("change", updateSoundVolume);
+  }
+  if (elements.soundSettingsGrid) {
+    elements.soundSettingsGrid.addEventListener("change", function onSoundSettingsChange(event) {
+      const select = event.target.closest("[data-sound-group]");
+
+      if (!select) {
+        return;
+      }
+
+      updateSoundVariant(select.getAttribute("data-sound-group"), select.value);
+    });
+
+    elements.soundSettingsGrid.addEventListener("click", function onSoundPreviewClick(event) {
+      const button = event.target.closest("[data-sound-preview]");
+
+      if (!button) {
+        return;
+      }
+
+      previewSoundGroup(button.getAttribute("data-sound-preview"));
+    });
+  }
   elements.showHintButton.addEventListener("click", showHint);
   elements.nextQuestionButton.addEventListener("click", goToNextQuestion);
   document.addEventListener("fullscreenchange", updateFullscreenButton);
@@ -3179,6 +3709,8 @@ function migrateStoredState() {
   if (!state.ui || typeof state.ui !== "object") {
     state.ui = {
       soundEnabled: DEFAULT_SOUND_ENABLED,
+      soundVolume: DEFAULT_SOUND_VOLUME,
+      soundSelection: Object.assign({}, DEFAULT_SOUND_SELECTION),
       themeSelection: Object.assign({}, DEFAULT_THEME_SELECTION)
     };
   }
@@ -3188,6 +3720,9 @@ function migrateStoredState() {
   if (typeof state.ui.soundEnabled !== "boolean") {
     state.ui.soundEnabled = DEFAULT_SOUND_ENABLED;
   }
+
+  state.ui.soundVolume = getSoundVolume();
+  state.ui.soundSelection = getSoundSelection();
 
   state.ui.themeSelection = normalizeThemeSelection(state.ui.themeSelection);
 

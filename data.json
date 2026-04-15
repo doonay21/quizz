@@ -5,2218 +5,2219 @@
     "sessionSize": 4,
     "stimulusMode": "standard",
     "trueFalsePercent": 0,
-    "shuffleQuestions": false,
-    "shuffleOptions": false
+    "shuffleQuestions": true,
+    "shuffleOptions": true
   },
   "items": [{
-"question": "Co umożliwia układ pokarmowy?",
-"options": [
-"Przyjmowanie pokarmu, jego trawienie i wchłanianie składników odżywczych do krwi",
-"Oddychanie i mówienie",
-"Poruszanie rękami i nogami",
-"Widzenie i słyszenie"
-],
-"correctAnswer": "Przyjmowanie pokarmu, jego trawienie i wchłanianie składników odżywczych do krwi",
-"hint": "Pomyśl, co dzieje się z jedzeniem po jego zjedzeniu."
-},
-{
-"question": "Który zestaw to składniki pokarmowe?",
-"options": [
-"Cukry, białka, witaminy i woda",
-"Cukry, białka, tłuszcze, witaminy, sole mineralne i woda",
-"Białka, tłuszcze, kości, zęby i woda",
-"Cukry, mięśnie, tłuszcze, witaminy i sole mineralne"
-],
-"correctAnswer": "Cukry, białka, tłuszcze, witaminy, sole mineralne i woda",
-"hint": "W poprawnej odpowiedzi są wszystkie ważne składniki jedzenia i picia."
-},
-{
-"question": "Co jest głównym źródłem energii dla organizmu?",
-"options": [
-"Witaminy",
-"Cukry",
-"Woda",
-"Sole mineralne"
-],
-"correctAnswer": "Cukry",
-"hint": "To składnik pokarmowy obecny m.in. w pieczywie i ryżu."
-},
-{
-"question": "Do czego organizm potrzebuje energii?",
-"options": [
-"Tylko do biegania i skakania",
-"Tylko do snu",
-"Do wzrostu, nauki, pracy i wszystkich czynności organizmu",
-"Tylko do trawienia"
-],
-"correctAnswer": "Do wzrostu, nauki, pracy i wszystkich czynności organizmu",
-"hint": "Energia jest potrzebna nie tylko podczas ruchu."
-},
-{
-"question": "Jaką rolę pełnią tłuszcze?",
-"options": [
-"Dostarczają energii, pomagają wchłaniać niektóre witaminy i chronią organizm przed utratą ciepła",
-"Są tylko materiałem budulcowym",
-"Regulują pracę organizmu, ale nie dają energii",
-"Służą tylko do gaszenia pragnienia"
-],
-"correctAnswer": "Dostarczają energii, pomagają wchłaniać niektóre witaminy i chronią organizm przed utratą ciepła",
-"hint": "Pomyśl o energii, witaminach i ochronie przed zimnem."
-},
-{
-"question": "Czym są białka dla organizmu?",
-"options": [
-"Głównym źródłem energii",
-"Podstawowym budulcem komórek ciała",
-"Ochroną przed utratą ciepła",
-"Składnikiem napojów"
-],
-"correctAnswer": "Podstawowym budulcem komórek ciała",
-"hint": "To składnik potrzebny do budowy ciała."
-},
-{
-"question": "Które zdanie o witaminach jest prawdziwe?",
-"options": [
-"Witaminy są podstawowym budulcem komórek",
-"Witaminy są głównym źródłem energii",
-"Witaminy regulują pracę organizmu, ale nie dostarczają energii ani materiału budulcowego",
-"Witaminy chronią organizm przed utratą ciepła"
-],
-"correctAnswer": "Witaminy regulują pracę organizmu, ale nie dostarczają energii ani materiału budulcowego",
-"hint": "Witaminy pomagają organizmowi działać, ale nie budują go i nie dają energii."
-},
-{
-"question": "Jaką rolę pełnią sole mineralne?",
-"options": [
-"Budują organizm i pomagają w jego prawidłowym funkcjonowaniu",
-"Są tylko źródłem energii",
-"Pomagają tylko w widzeniu o zmierzchu",
-"Służą wyłącznie do gaszenia pragnienia"
-],
-"correctAnswer": "Budują organizm i pomagają w jego prawidłowym funkcjonowaniu",
-"hint": "Pomyśl o budowie ciała i jego sprawnym działaniu."
-},
-{
-"question": "Dlaczego wapń i magnez są ważne?",
-"options": [
-"Bo zwiększają odporność organizmu",
-"Bo są potrzebne do widzenia o zmierzchu",
-"Bo są ważne dla kości, zębów i pracy mięśni",
-"Bo chronią organizm przed utratą ciepła"
-],
-"correctAnswer": "Bo są ważne dla kości, zębów i pracy mięśni",
-"hint": "Pomyśl o twardych częściach ciała i ruchu."
-},
-{
-"question": "Które zdanie o wodzie jest prawdziwe?",
-"options": [
-"Woda stanowi mniej niż jedną czwartą masy ciała",
-"Woda nie jest potrzebna do życia",
-"Woda stanowi ponad połowę masy ciała człowieka i jest niezbędna do życia",
-"Woda służy tylko do gaszenia pragnienia"
-],
-"correctAnswer": "Woda stanowi ponad połowę masy ciała człowieka i jest niezbędna do życia",
-"hint": "To bardzo ważny składnik naszego ciała."
-},
-{
-"question": "Ile wody dziennie powinien pić człowiek?",
-"options": [
-"Około 1,5 litra lub więcej",
-"Tylko pół szklanki",
-"Mniej niż 1 litr",
-"Tylko wtedy, gdy jest gorąco"
-],
-"correctAnswer": "Około 1,5 litra lub więcej",
-"hint": "To mniej więcej sześć szklanek."
-},
-{
-"question": "Skąd organizm może czerpać wodę?",
-"options": [
-"Tylko z napojów",
-"Tylko z owoców",
-"Tylko z warzyw",
-"Z napojów oraz z soczystych warzyw i owoców"
-],
-"correctAnswer": "Z napojów oraz z soczystych warzyw i owoców",
-"hint": "Woda jest nie tylko w szklance."
-},
-{
-"question": "W czym pomaga witamina A?",
-"options": [
-"W prawidłowym rozwoju kości i zębów",
-"W krzepnięciu krwi",
-"W zwiększaniu odporności",
-"W widzeniu o zmierzchu"
-],
-"correctAnswer": "W widzeniu o zmierzchu",
-"hint": "Chodzi o widzenie, gdy robi się ciemniej."
-},
-{
-"question": "Za co odpowiada witamina C?",
-"options": [
-"Za zwiększanie odporności organizmu",
-"Za widzenie o zmierzchu",
-"Za budowę komórek ciała",
-"Za ochronę przed utratą ciepła"
-],
-"correctAnswer": "Za zwiększanie odporności organizmu",
-"hint": "Pomyśl o obronie organizmu przed chorobami."
-},
-{
-"question": "Za co odpowiada witamina D?",
-"options": [
-"Za krzepnięcie krwi",
-"Za prawidłowy rozwój kości i zębów",
-"Za wytwarzanie składników krwi",
-"Za główne źródło energii"
-],
-"correctAnswer": "Za prawidłowy rozwój kości i zębów",
-"hint": "Ta witamina jest ważna dla mocnych kości i zębów."
-},
-{
-"question": "W czym bierze udział witamina K?",
-"options": [
-"W widzeniu o zmierzchu",
-"W krzepnięciu krwi",
-"W ochronie przed utratą ciepła",
-"W trawieniu pokarmu"
-],
-"correctAnswer": "W krzepnięciu krwi",
-"hint": "Pomyśl o tym, co pomaga zatrzymać krwawienie."
-},
-{
-"question": "W czym uczestniczy witamina B12?",
-"options": [
-"W zwiększaniu odporności organizmu",
-"W prawidłowym rozwoju kości i zębów",
-"W wytwarzaniu składników krwi",
-"W widzeniu o zmierzchu"
-],
-"correctAnswer": "W wytwarzaniu składników krwi",
-"hint": "Ta witamina jest związana z krwią."
-},
-{
-"question": "Które produkty są źródłem białka?",
-"options": [
-"Pieczywo, ryż i ziemniaki",
-"Oleje roślinne, masło i ryby",
-"Mięso, jaja, mleko i rośliny strączkowe",
-"Soczyste warzywa i owoce"
-],
-"correctAnswer": "Mięso, jaja, mleko i rośliny strączkowe",
-"hint": "Pomyśl o produktach, które pomagają budować ciało."
-},
-{
-"question": "Które produkty są źródłem cukrów?",
-"options": [
-"Mięso, jaja i mleko",
-"Pieczywo, kasze, makarony, ryż i ziemniaki",
-"Oleje roślinne, masło i ryby",
-"Masło, mleko i jaja"
-],
-"correctAnswer": "Pieczywo, kasze, makarony, ryż i ziemniaki",
-"hint": "To produkty zbożowe i ziemniaki."
-},
-{
-"question": "Które produkty są źródłem tłuszczów?",
-"options": [
-"Oleje roślinne, masło i ryby",
-"Pieczywo, kasze i ryż",
-"Mięso, jaja, mleko i rośliny strączkowe",
-"Soczyste warzywa i owoce"
-],
-"correctAnswer": "Oleje roślinne, masło i ryby",
-"hint": "Pomyśl o oleju i maśle."
-},
-{
-"question": "Które narządy tworzą przewód pokarmowy?",
-"options": [
-"Jama ustna, gardło, przełyk, żołądek, jelito cienkie i jelito grube",
-"Jama ustna, tchawica, płuca, żołądek i jelito grube",
-"Ślinianki, wątroba, trzustka i serce",
-"Gardło, oskrzela, żołądek i jelito cienkie"
-],
-"correctAnswer": "Jama ustna, gardło, przełyk, żołądek, jelito cienkie i jelito grube",
-"hint": "Pomyśl o drodze, jaką pokonuje pokarm w organizmie."
-},
-{
-"question": "Które narządy wspomagają układ pokarmowy?",
-"options": [
-"Płuca, nerki i serce",
-"Ślinianki, wątroba i trzustka",
-"Gardło, przełyk i żołądek",
-"Jelito cienkie, jelito grube i odbyt"
-],
-"correctAnswer": "Ślinianki, wątroba i trzustka",
-"hint": "To narządy, które pomagają w trawieniu, ale nie są częścią przewodu pokarmowego."
-},
-{
-"question": "Co to jest trawienie?",
-"options": [
-"Przesuwanie pokarmu do żołądka",
-"Usuwanie resztek pokarmu z organizmu",
-"Rozkład składników pokarmowych na bardzo małe cząstki",
-"Mieszanie pokarmu tylko w jamie ustnej"
-],
-"correctAnswer": "Rozkład składników pokarmowych na bardzo małe cząstki",
-"hint": "Chodzi o rozbijanie jedzenia na bardzo małe części."
-},
-{
-"question": "Co uczestniczy w trawieniu?",
-"options": [
-"Kości",
-"Enzymy trawienne",
-"Mięśnie rąk",
-"Paznokcie"
-],
-"correctAnswer": "Enzymy trawienne",
-"hint": "To specjalne substancje pomagające rozkładać pokarm."
-},
-{
-"question": "Co dzieje się w jamie ustnej na początku trawienia?",
-"options": [
-"Pokarm trafia od razu do jelita cienkiego",
-"Krew rozprowadza składniki do komórek",
-"Kał zaczyna się formować",
-"Zęby rozdrabniają pokarm, a ślina go nawilża i zaczyna trawić cukry"
-],
-"correctAnswer": "Zęby rozdrabniają pokarm, a ślina go nawilża i zaczyna trawić cukry",
-"hint": "Pomyśl o roli zębów i śliny podczas jedzenia."
-},
-{
-"question": "Ile zębów stałych ma człowiek?",
-"options": [
-"28",
-"30",
-"32",
-"36"
-],
-"correctAnswer": "32",
-"hint": "To liczba większa niż 30."
-},
-{
-"question": "Jaką rolę mają różne rodzaje zębów?",
-"options": [
-"Odcinają, rozrywają i miażdżą pokarm",
-"Tylko połykania pokarmu",
-"Tylko nawilżają pokarm",
-"Transportują pokarm do żołądka"
-],
-"correctAnswer": "Odcinają, rozrywają i miażdżą pokarm",
-"hint": "Różne zęby pomagają przygotować jedzenie do dalszego trawienia."
-},
-{
-"question": "Dlaczego gardło jest wyjątkowe?",
-"options": [
-"Bo znajduje się tylko w układzie oddechowym",
-"Bo jest wspólną częścią układu pokarmowego i oddechowego",
-"Bo trawi tłuszcze",
-"Bo magazynuje żółć"
-],
-"correctAnswer": "Bo jest wspólną częścią układu pokarmowego i oddechowego",
-"hint": "Przez gardło przechodzi nie tylko pokarm."
-},
-{
-"question": "Jaką funkcję pełni przełyk?",
-"options": [
-"Miesza pokarm z sokami trawiennymi",
-"Wchłania składniki odżywcze do krwi",
-"Transportuje pokarm do żołądka",
-"Formuje kał"
-],
-"correctAnswer": "Transportuje pokarm do żołądka",
-"hint": "To narząd, który przesuwa jedzenie dalej po połknięciu."
-},
-{
-"question": "Co dzieje się z pokarmem w żołądku?",
-"options": [
-"Jest mieszany i częściowo trawiony",
-"Jest usuwany z organizmu",
-"Trafia prosto do krwi",
-"Zamienia się w kał"
-],
-"correctAnswer": "Jest mieszany i częściowo trawiony",
-"hint": "W żołądku pokarm nie kończy jeszcze całej drogi."
-},
-{
-"question": "Co dzieje się w jelicie cienkim?",
-"options": [
-"Formuje się kał",
-"Pokarm jest tylko przechowywany",
-"Zachodzi końcowy etap trawienia oraz wchłanianie składników pokarmowych do krwi",
-"Pokarm jest tylko nawilżany"
-],
-"correctAnswer": "Zachodzi końcowy etap trawienia oraz wchłanianie składników pokarmowych do krwi",
-"hint": "To bardzo ważne miejsce dla końca trawienia i wchłaniania."
-},
-{
-"question": "Co robi krew ze strawionymi składnikami pokarmowymi?",
-"options": [
-"Usuwa je z organizmu",
-"Rozprowadza je do wszystkich komórek ciała",
-"Magazynuje je w żołądku",
-"Zamienia je w tłuszcze"
-],
-"correctAnswer": "Rozprowadza je do wszystkich komórek ciała",
-"hint": "Pomyśl, jak składniki odżywcze docierają do całego ciała."
-},
-{
-"question": "Co dzieje się z niestrawionymi resztkami pokarmu?",
-"options": [
-"Wracają do żołądka",
-"Trafiają do jelita grubego, gdzie formuje się kał",
-"Od razu trafiają do krwi",
-"Zostają w jamie ustnej"
-],
-"correctAnswer": "Trafiają do jelita grubego, gdzie formuje się kał",
-"hint": "Chodzi o dalszą drogę tego, czego organizm już nie wykorzysta."
-},
-{
-"question": "Przez co kał jest usuwany z organizmu?",
-"options": [
-"Przez gardło",
-"Przez przełyk",
-"Przez odbyt",
-"Przez żołądek"
-],
-"correctAnswer": "Przez odbyt",
-"hint": "To ostatni odcinek drogi pokarmu."
-},
-{
-"question": "Który narząd jest największy w układzie pokarmowym?",
-"options": [
-"Trzustka",
-"Żołądek",
-"Wątroba",
-"Jelito grube"
-],
-"correctAnswer": "Wątroba",
-"hint": "Ten narząd pomaga też unieszkodliwiać niektóre trujące substancje."
-},
-{
-"question": "Jaką pracę wykonuje wątroba?",
-"options": [
-"Rozdrabnia pokarm zębami",
-"Unieszkodliwia niektóre trujące substancje i wytwarza żółć potrzebną do trawienia tłuszczów",
-"Transportuje pokarm do żołądka",
-"Formuje kał"
-],
-"correctAnswer": "Unieszkodliwia niektóre trujące substancje i wytwarza żółć potrzebną do trawienia tłuszczów",
-"hint": "Pomyśl o żółci i ochronie organizmu przed niektórymi szkodliwymi substancjami."
-},
-{
-"question": "Co dzieje się z żółcią w organizmie?",
-"options": [
-"Trafia do początkowego odcinka jelita cienkiego, a jej nadmiar magazynuje woreczek żółciowy",
-"Trafia do płuc, a jej nadmiar magazynuje żołądek",
-"Trafia do jelita grubego, a jej nadmiar magazynuje trzustka",
-"Trafia do przełyku, a jej nadmiar magazynuje gardło"
-],
-"correctAnswer": "Trafia do początkowego odcinka jelita cienkiego, a jej nadmiar magazynuje woreczek żółciowy",
-"hint": "W poprawnej odpowiedzi są dwa miejsca: jelito cienkie i woreczek żółciowy."
-},
-{
-"question": "Co wytwarza trzustka?",
-"options": [
-"Ślinę trawiącą białka",
-"Sok trzustkowy zawierający enzymy trawiące cukry, tłuszcze i białka",
-"Żółć potrzebną do trawienia tłuszczów",
-"Krew rozprowadzającą składniki pokarmowe"
-],
-"correctAnswer": "Sok trzustkowy zawierający enzymy trawiące cukry, tłuszcze i białka",
-"hint": "To sok z enzymami, który pomaga trawić różne składniki pokarmowe."
-},
-{
-"question": "Dlaczego warto myć ręce przed jedzeniem?",
-"options": [
-"Bo wtedy pokarm szybciej trafia do żołądka",
-"Bo zmniejsza to ryzyko chorób układu pokarmowego",
-"Bo ręce pomagają trawić cukry",
-"Bo dzięki temu powstaje więcej śliny"
-],
-"correctAnswer": "Bo zmniejsza to ryzyko chorób układu pokarmowego",
-"hint": "Chodzi o ochronę zdrowia."
-},
-{
-"question": "Jakie produkty ułatwiają przesuwanie treści pokarmowej?",
-"options": [
-"Masło, oleje i ryby",
-"Mięso, jaja i mleko",
-"Warzywa, owoce i pieczywo gruboziarniste",
-"Cukier, sól i woda"
-],
-"correctAnswer": "Warzywa, owoce i pieczywo gruboziarniste",
-"hint": "Pomyśl o produktach roślinnych i pieczywie z grubszego przemiału."
-},
-{
-"question": "Dlaczego warto dokładnie gryźć pokarm?",
-"options": [
-"Bo wtedy pokarm szybciej znika z talerza",
-"Bo to ułatwia trawienie",
-"Bo dzięki temu serce bije wolniej",
-"Bo pokarm staje się zimniejszy"
-],
-"correctAnswer": "Bo to ułatwia trawienie",
-"hint": "Pomyśl, co pomaga układowi pokarmowemu lepiej poradzić sobie z jedzeniem."
-},
-{
-"question": "Co sprzyja prawidłowej pracy układu pokarmowego?",
-"options": [
-"Regularne posiłki",
-"Jedzenie tylko raz dziennie",
-"Bardzo szybkie połykanie pokarmu",
-"Pomijanie śniadania"
-],
-"correctAnswer": "Regularne posiłki",
-"hint": "Chodzi o jedzenie o stałych porach."
-},
-{
-"question": "Co tworzy układ krwionośny?",
-"options": [
-"Płuca i oskrzela",
-"Kości i mięśnie",
-"Serce i naczynia krwionośne",
-"Żołądek i jelita"
-],
-"correctAnswer": "Serce i naczynia krwionośne",
-"hint": "Pomyśl o narządzie, który pompuje krew, i drogach, którymi ona płynie."
-},
-{
-"question": "Dokąd dociera krew w organizmie?",
-"options": [
-"Tylko do serca",
-"Tylko do nóg i rąk",
-"Tylko do głowy",
-"Do wszystkich komórek ciała"
-],
-"correctAnswer": "Do wszystkich komórek ciała",
-"hint": "Krew musi dotrzeć wszędzie, nie tylko do jednego narządu."
-},
-{
-"question": "Co układ krwionośny dostarcza komórkom?",
-"options": [
-"Tlen i składniki pokarmowe",
-"Tylko wodę",
-"Tylko ciepło",
-"Dwutlenek węgla i sól"
-],
-"correctAnswer": "Tlen i składniki pokarmowe",
-"hint": "Pomyśl, czego komórki potrzebują do życia."
-},
-{
-"question": "Co układ krwionośny odprowadza z komórek?",
-"options": [
-"Tylko tlen",
-"Substancje zbędne i szkodliwe, m.in. dwutlenek węgla",
-"Tylko składniki pokarmowe",
-"Witaminy i wodę"
-],
-"correctAnswer": "Substancje zbędne i szkodliwe, m.in. dwutlenek węgla",
-"hint": "Chodzi o to, co organizmowi nie jest już potrzebne."
-},
-{
-"question": "Jakie są rodzaje naczyń krwionośnych?",
-"options": [
-"Tętnice, żyły i naczynia włosowate",
-"Kości, mięśnie i stawy",
-"Płuca, oskrzela i tchawica",
-"Żołądek, jelita i wątroba"
-],
-"correctAnswer": "Tętnice, żyły i naczynia włosowate",
-"hint": "Są trzy rodzaje dróg, którymi płynie krew."
-},
-{
-"question": "W jakim kierunku płynie krew tętnicami?",
-"options": [
-"Z komórek ciała do serca",
-"Z serca do komórek ciała",
-"Tylko wokół serca",
-"Tylko do płuc"
-],
-"correctAnswer": "Z serca do komórek ciała",
-"hint": "Pomyśl, od czego zaczyna się droga krwi w tętnicach."
-},
-{
-"question": "W jakim kierunku płynie krew żyłami?",
-"options": [
-"Z serca do komórek ciała",
-"Tylko do nóg",
-"Z komórek ciała do serca",
-"Tylko do głowy"
-],
-"correctAnswer": "Z komórek ciała do serca",
-"hint": "To droga powrotna krwi."
-},
-{
-"question": "Jakie są naczynia włosowate?",
-"options": [
-"Najgrubsze i najkrótsze",
-"Najcieńsze i oplatają komórki narządów",
-"Najszersze i prowadzą krew tylko z serca",
-"Takie same jak żyły"
-],
-"correctAnswer": "Najcieńsze i oplatają komórki narządów",
-"hint": "To bardzo drobne naczynia znajdujące się blisko komórek."
-},
-{
-"question": "Jaką pracę wykonuje serce?",
-"options": [
-"Pracuje tylko podczas biegania",
-"Trawi pokarm",
-"Pracuje nieustannie i wprawia krew w ruch",
-"Oczyszcza powietrze w płucach"
-],
-"correctAnswer": "Pracuje nieustannie i wprawia krew w ruch",
-"hint": "Pomyśl o narządzie, który bez przerwy pompuje krew."
-},
-{
-"question": "Jaką wielkość ma serce dorosłego człowieka?",
-"options": [
-"Wielkość głowy",
-"Wielkość stopy",
-"Wielkość pięści",
-"Wielkość jabłka"
-],
-"correctAnswer": "Wielkość pięści",
-"hint": "Porównaj serce do części swojego ciała."
-},
-{
-"question": "Ile razy na minutę bije serce dorosłego człowieka w spoczynku?",
-"options": [
-"Około 20 razy",
-"Około 40 razy",
-"Około 70 razy",
-"Około 120 razy"
-],
-"correctAnswer": "Około 70 razy",
-"hint": "To liczba większa niż 60, ale dużo mniejsza niż 100."
-},
-{
-"question": "Czym jest tętno?",
-"options": [
-"Pracą płuc podczas oddychania",
-"Falą krwi wyczuwalną w niektórych tętnicach",
-"Szmerem słyszanym w uszach",
-"Ruchem mięśni ręki"
-],
-"correctAnswer": "Falą krwi wyczuwalną w niektórych tętnicach",
-"hint": "To coś, co można wyczuć pod palcami."
-},
-{
-"question": "Gdzie można badać tętno?",
-"options": [
-"Na czole",
-"Po wewnętrznej stronie nadgarstka",
-"Na kolanie",
-"Na plecach"
-],
-"correctAnswer": "Po wewnętrznej stronie nadgarstka",
-"hint": "To miejsce blisko dłoni."
-},
-{
-"question": "W czym układ krwionośny uczestniczy oprócz transportu krwi?",
-"options": [
-"W utrzymywaniu stałej temperatury ciała",
-"W gryzieniu pokarmu",
-"W poruszaniu kośćmi",
-"W słyszeniu dźwięków"
-],
-"correctAnswer": "W utrzymywaniu stałej temperatury ciała",
-"hint": "Chodzi o to, by ciało nie było ani za zimne, ani za gorące."
-},
-{
-"question": "Co dzieje się z naczyniami krwionośnymi w skórze, gdy jest gorąco?",
-"options": [
-"Kurczą się całkowicie",
-"Znikają",
-"Rozszerzają się",
-"Zamieniają się w żyły"
-],
-"correctAnswer": "Rozszerzają się",
-"hint": "Pomyśl, co pomaga oddać więcej ciepła."
-},
-{
-"question": "Co dzieje się z naczyniami krwionośnymi, gdy jest zimno?",
-"options": [
-"Rozszerzają się, by oddać więcej ciepła",
-"Zwężają się, co ogranicza utratę ciepła",
-"Przestają działać",
-"Napełniają się powietrzem"
-],
-"correctAnswer": "Zwężają się, co ogranicza utratę ciepła",
-"hint": "Organizm wtedy stara się zatrzymać ciepło."
-},
-{
-"question": "Co jest ważne dla zdrowia układu krwionośnego?",
-"options": [
-"Brak ruchu i jedzenie dużej ilości soli",
-"Tylko picie bardzo zimnej wody",
-"Ruch, ograniczanie soli i tłuszczów zwierzęcych oraz unikanie dymu papierosowego",
-"Jedzenie o dowolnej porze i brak odpoczynku"
-],
-"correctAnswer": "Ruch, ograniczanie soli i tłuszczów zwierzęcych oraz unikanie dymu papierosowego",
-"hint": "Pomyśl o zdrowych nawykach dla serca i naczyń krwionośnych."
-},
-{
-"question": "Gdzie zachodzi oddychanie?",
-"options": [
-"Tylko w płucach",
-"Tylko w sercu",
-"We wszystkich komórkach organizmu",
-"Tylko w mięśniach"
-],
-"correctAnswer": "We wszystkich komórkach organizmu",
-"hint": "Nie chodzi tylko o jeden narząd, ale o całe ciało."
-},
-{
-"question": "Co umożliwia oddychanie?",
-"options": [
-"Uwalnianie energii z pokarmu",
-"Budowanie kości i zębów",
-"Tylko poruszanie mięśniami",
-"Trawienie pokarmu"
-],
-"correctAnswer": "Uwalnianie energii z pokarmu",
-"hint": "Pomyśl, co organizm zyskuje dzięki oddychaniu."
-},
-{
-"question": "Co jest potrzebne do oddychania, a co wtedy powstaje?",
-"options": [
-"Potrzebna jest woda, a powstaje tlen",
-"Potrzebny jest tlen, a powstaje dwutlenek węgla",
-"Potrzebny jest dwutlenek węgla, a powstaje tlen",
-"Potrzebne są witaminy, a powstaje para wodna"
-],
-"correctAnswer": "Potrzebny jest tlen, a powstaje dwutlenek węgla",
-"hint": "Pomyśl o gazie wdychanym i gazie wydychanym."
-},
-{
-"question": "Z czego składa się układ oddechowy?",
-"options": [
-"Z serca i naczyń krwionośnych",
-"Z dróg oddechowych i płuc",
-"Z kości i mięśni",
-"Z jamy ustnej i żołądka"
-],
-"correctAnswer": "Z dróg oddechowych i płuc",
-"hint": "W poprawnej odpowiedzi są dwie główne części tego układu."
-},
-{
-"question": "Na czym polega wymiana gazowa?",
-"options": [
-"Na ogrzewaniu i oczyszczaniu powietrza",
-"Na pobieraniu tlenu i usuwaniu dwutlenku węgla",
-"Na zamianie tlenu w wodę",
-"Na zatrzymywaniu powietrza w gardle"
-],
-"correctAnswer": "Na pobieraniu tlenu i usuwaniu dwutlenku węgla",
-"hint": "Chodzi o dwa gazy: jeden pobieramy, drugi usuwamy."
-},
-{
-"question": "Którą drogą przepływa powietrze w czasie oddychania?",
-"options": [
-"Jama nosowa, gardło, krtań, tchawica i oskrzela",
-"Gardło, jama nosowa, tchawica, krtań i oskrzela",
-"Jama nosowa, krtań, gardło, oskrzela i tchawica",
-"Tchawica, krtań, gardło, jama nosowa i oskrzela"
-],
-"correctAnswer": "Jama nosowa, gardło, krtań, tchawica i oskrzela",
-"hint": "Zacznij od nosa i idź po kolei dalej."
-},
-{
-"question": "Co dzieje się z powietrzem w drogach oddechowych?",
-"options": [
-"Jest tylko ochładzane",
-"Jest ogrzewane, nawilżane i oczyszczane",
-"Jest zamieniane w dwutlenek węgla",
-"Jest zatrzymywane w tchawicy"
-],
-"correctAnswer": "Jest ogrzewane, nawilżane i oczyszczane",
-"hint": "Pomyśl o trzech ważnych zmianach, które przygotowują powietrze dla płuc."
-},
-{
-"question": "Jak organizm usuwa część zanieczyszczeń z dróg oddechowych?",
-"options": [
-"Tylko przez połykanie",
-"Tylko przez wydychanie",
-"Przez kaszel i kichanie",
-"Przez pocenie się"
-],
-"correctAnswer": "Przez kaszel i kichanie",
-"hint": "To odruchy, które pomagają oczyścić drogi oddechowe."
-},
-{
-"question": "Jaką funkcję pełni krtań?",
-"options": [
-"Jest narządem głosu",
-"Pompuje krew",
-"Trawi pokarm",
-"Buduje kości"
-],
-"correctAnswer": "Jest narządem głosu",
-"hint": "Ten narząd ma związek z mówieniem."
-},
-{
-"question": "Co znajduje się w krtani i drga podczas przepływu powietrza?",
-"options": [
-"Rzęski",
-"Pęcherzyki płucne",
-"Struny głosowe",
-"Naczynia włosowate"
-],
-"correctAnswer": "Struny głosowe",
-"hint": "To dzięki nim możemy wydawać dźwięki."
-},
-{
-"question": "Na co rozgałęzia się tchawica?",
-"options": [
-"Na dwa gardła",
-"Na dwa płuca",
-"Na dwa pęcherzyki",
-"Na dwa oskrzela"
-],
-"correctAnswer": "Na dwa oskrzela",
-"hint": "To dwa przewody prowadzące do płuc."
-},
-{
-"question": "Gdzie kończą się oskrzela?",
-"options": [
-"W gardle",
-"W pęcherzykach płucnych",
-"W jamie nosowej",
-"W krtani"
-],
-"correctAnswer": "W pęcherzykach płucnych",
-"hint": "To małe struktury znajdujące się w płucach."
-},
-{
-"question": "Z czego zbudowane są płuca?",
-"options": [
-"Z samych oskrzeli",
-"Z milionów pęcherzyków płucnych",
-"Z chrząstek i kości",
-"Z jednej dużej komory"
-],
-"correctAnswer": "Z milionów pęcherzyków płucnych",
-"hint": "Chodzi o bardzo dużą liczbę małych części."
-},
-{
-"question": "Czym są oplecione pęcherzyki płucne?",
-"options": [
-"Mięśniami",
-"Kośćmi",
-"Siecią naczyń włosowatych",
-"Strunami głosowymi"
-],
-"correctAnswer": "Siecią naczyń włosowatych",
-"hint": "To bardzo cienkie naczynia krwionośne."
-},
-{
-"question": "Co dzieje się w płucach podczas wymiany gazowej?",
-"options": [
-"Tlen przenika do krwi, a dwutlenek węgla z krwi do pęcherzyków płucnych",
-"Dwutlenek węgla przenika do krwi, a tlen do pęcherzyków płucnych",
-"Tlen i dwutlenek węgla zostają w płucach",
-"Krew zamienia się w powietrze"
-],
-"correctAnswer": "Tlen przenika do krwi, a dwutlenek węgla z krwi do pęcherzyków płucnych",
-"hint": "Pomyśl, który gaz trafia do krwi, a który jest z niej usuwany."
-},
-{
-"question": "Dokąd krew roznosi tlen?",
-"options": [
-"Tylko do płuc",
-"Do komórek ciała",
-"Tylko do kości",
-"Do gardła"
-],
-"correctAnswer": "Do komórek ciała",
-"hint": "Tlen jest potrzebny w całym organizmie."
-},
-{
-"question": "Co dzieje się z dwutlenkiem węgla?",
-"options": [
-"Jest roznoszony do komórek ciała",
-"Zostaje na stałe w krwi",
-"Trafia z krwią do płuc i jest usuwany podczas wydechu",
-"Zamienia się w tlen"
-],
-"correctAnswer": "Trafia z krwią do płuc i jest usuwany podczas wydechu",
-"hint": "Pomyśl, co wydostaje się z organizmu przy wydychaniu."
-},
-{
-"question": "Dlaczego oddychanie nosem jest korzystniejsze niż ustami?",
-"options": [
-"Bo szybciej dostarcza jedzenie do żołądka",
-"Bo lepiej oczyszcza, ogrzewa i nawilża powietrze",
-"Bo wzmacnia kości",
-"Bo zatrzymuje całe powietrze w gardle"
-],
-"correctAnswer": "Bo lepiej oczyszcza, ogrzewa i nawilża powietrze",
-"hint": "Pomyśl o tym, jak nos przygotowuje powietrze dla płuc."
-},
-{
-"question": "Co pomaga chronić układ oddechowy?",
-"options": [
-"Wietrzenie pomieszczeń i unikanie dymu tytoniowego",
-"Jedzenie tylko słodkich potraw",
-"Oddychanie wyłącznie ustami",
-"Przebywanie w zadymionych miejscach"
-],
-"correctAnswer": "Wietrzenie pomieszczeń i unikanie dymu tytoniowego",
-"hint": "Chodzi o świeże powietrze i unikanie szkodliwego dymu."
-},
-{
-"question": "Co tworzy układ ruchu?",
-"options": [
-"Płuca i drogi oddechowe",
-"Szkielet i mięśnie szkieletowe",
-"Serce i krew",
-"Żołądek i jelita"
-],
-"correctAnswer": "Szkielet i mięśnie szkieletowe",
-"hint": "Pomyśl o kościach i mięśniach."
-},
-{
-"question": "Co umożliwia układ ruchu?",
-"options": [
-"Trawienie pokarmu",
-"Wytwarzanie składników krwi",
-"Ruch ciała",
-"Krzepnięcie krwi"
-],
-"correctAnswer": "Ruch ciała",
-"hint": "Dzięki temu układowi możemy się poruszać."
-},
-{
-"question": "Z ilu kości składa się szkielet dorosłego człowieka?",
-"options": [
-"Z mniej niż 100 kości",
-"Z dokładnie 150 kości",
-"Z ponad 200 kości",
-"Z około 50 kości"
-],
-"correctAnswer": "Z ponad 200 kości",
-"hint": "To liczba większa niż 200."
-},
-{
-"question": "Czym różnią się kości?",
-"options": [
-"Tylko kolorem",
-"Kształtem i wielkością",
-"Tylko ciężarem",
-"Smakiem i zapachem"
-],
-"correctAnswer": "Kształtem i wielkością",
-"hint": "Pomyśl o tym, jak wyglądają różne kości."
-},
-{
-"question": "Jak są połączone niektóre kości w szkielecie?",
-"options": [
-"Wszystkie tylko ruchomo",
-"Wszystkie tylko nieruchomo",
-"Niektóre nieruchomo, a inne ruchomo",
-"Tylko za pomocą mięśni"
-],
-"correctAnswer": "Niektóre nieruchomo, a inne ruchomo",
-"hint": "Nie wszystkie kości łączą się tak samo."
-},
-{
-"question": "Jak nazywają się ruchome połączenia kości?",
-"options": [
-"Ścięgna",
-"Mięśnie",
-"Stawy",
-"Żebra"
-],
-"correctAnswer": "Stawy",
-"hint": "Dzięki nim możesz poruszać ręką lub nogą."
-},
-{
-"question": "Co umożliwiają niektóre stawy?",
-"options": [
-"Tylko ochronę narządów",
-"Ruch obrotowy albo zginanie i prostowanie kończyn",
-"Tylko wzrost kości",
-"Powstawanie składników krwi"
-],
-"correctAnswer": "Ruch obrotowy albo zginanie i prostowanie kończyn",
-"hint": "Pomyśl o obracaniu i zginaniu ręki lub nogi."
-},
-{
-"question": "Co wyróżnia się w szkielecie człowieka?",
-"options": [
-"Czaszkę, kręgosłup, klatkę piersiową oraz kości kończyn górnych i dolnych",
-"Tylko czaszkę i kończyny",
-"Tylko kręgosłup i mięśnie",
-"Serce, płuca i żołądek"
-],
-"correctAnswer": "Czaszkę, kręgosłup, klatkę piersiową oraz kości kończyn górnych i dolnych",
-"hint": "W poprawnej odpowiedzi są główne części szkieletu."
-},
-{
-"question": "Jaką rolę pełni szkielet?",
-"options": [
-"Tylko pomaga oddychać",
-"Nadaje ciału kształt, stanowi jego rusztowanie i chroni narządy wewnętrzne",
-"Tylko umożliwia trawienie",
-"Służy tylko do poruszania palcami"
-],
-"correctAnswer": "Nadaje ciału kształt, stanowi jego rusztowanie i chroni narządy wewnętrzne",
-"hint": "Pomyśl o kształcie ciała, podporze i ochronie."
-},
-{
-"question": "Co chroni czaszka?",
-"options": [
-"Serce",
-"Płuca",
-"Mózg",
-"Żołądek"
-],
-"correctAnswer": "Mózg",
-"hint": "To narząd znajdujący się w głowie."
-},
-{
-"question": "Co chroni klatka piersiowa?",
-"options": [
-"Serce i płuca",
-"Mózg i oczy",
-"Żołądek i jelita",
-"Kości i stawy"
-],
-"correctAnswer": "Serce i płuca",
-"hint": "Chodzi o ważne narządy w klatce piersiowej."
-},
-{
-"question": "Co znajduje się w niektórych kościach i wytwarza składniki krwi?",
-"options": [
-"Tłuszcz",
-"Czerwony szpik kostny",
-"Powietrze",
-"Enzymy"
-],
-"correctAnswer": "Czerwony szpik kostny",
-"hint": "To część kości związana z powstawaniem krwi."
-},
-{
-"question": "Za pomocą czego mięśnie szkieletowe są przytwierdzone do kości?",
-"options": [
-"Stawów",
-"Żeber",
-"Ścięgien",
-"Kręgów"
-],
-"correctAnswer": "Ścięgien",
-"hint": "To one łączą mięśnie z kośćmi."
-},
-{
-"question": "Ile mięśni szkieletowych ma człowiek?",
-"options": [
-"Mniej niż 100",
-"Dokładnie 200",
-"Ponad 400",
-"Około 50"
-],
-"correctAnswer": "Ponad 400",
-"hint": "To liczba większa niż 400."
-},
-{
-"question": "Jak działają mięśnie szkieletowe?",
-"options": [
-"Zawsze niezależnie od człowieka",
-"Zależnie od woli człowieka",
-"Tylko podczas snu",
-"Tylko przy jedzeniu"
-],
-"correctAnswer": "Zależnie od woli człowieka",
-"hint": "Możesz świadomie nimi poruszać."
-},
-{
-"question": "Które mięśnie pracują niezależnie od woli człowieka?",
-"options": [
-"Tylko mięśnie nóg",
-"Mięśnie serca, naczyń krwionośnych i przewodu pokarmowego",
-"Tylko mięśnie rąk",
-"Wszystkie mięśnie szkieletowe"
-],
-"correctAnswer": "Mięśnie serca, naczyń krwionośnych i przewodu pokarmowego",
-"hint": "To mięśnie, które działają nawet wtedy, gdy o tym nie myślisz."
-},
-{
-"question": "Co robią mięśnie przewodu pokarmowego?",
-"options": [
-"Chronią mózg",
-"Przesuwają pokarm i mieszają go z enzymami",
-"Pomagają widzieć",
-"Wytwarzają kości"
-],
-"correctAnswer": "Przesuwają pokarm i mieszają go z enzymami",
-"hint": "Pomyśl o tym, co dzieje się z jedzeniem w układzie pokarmowym."
-},
-{
-"question": "Co umożliwia mięsień sercowy?",
-"options": [
-"Ruch krwi",
-"Zginanie nóg",
-"Obracanie głowy",
-"Chronienie płuc"
-],
-"correctAnswer": "Ruch krwi",
-"hint": "Ten mięsień pracuje w sercu."
-},
-{
-"question": "Co wzmacniają systematyczne ćwiczenia?",
-"options": [
-"Tylko włosy i paznokcie",
-"Kości, stawy i mięśnie",
-"Tylko zęby",
-"Wyłącznie skórę"
-],
-"correctAnswer": "Kości, stawy i mięśnie",
-"hint": "Chodzi o części układu ruchu."
-},
-{
-"question": "W czym pomaga odpowiednie obuwie?",
-"options": [
-"W ochronie stóp i układu ruchu",
-"Tylko w szybszym bieganiu",
-"W lepszym widzeniu",
-"W trawieniu pokarmu"
-],
-"correctAnswer": "W ochronie stóp i układu ruchu",
-"hint": "Dobre buty pomagają dbać o nogi i ciało."
-},
-{
-"question": "Dlaczego plecak jest lepszy niż torba na jedno ramię?",
-"options": [
-"Bo jest zawsze lżejszy",
-"Bo równomiernie obciąża kręgosłup",
-"Bo mieści mniej rzeczy",
-"Bo chroni serce i płuca"
-],
-"correctAnswer": "Bo równomiernie obciąża kręgosłup",
-"hint": "Pomyśl o rozłożeniu ciężaru na plecach."
-},
-{
-"question": "Jak lepiej podnosić ciężkie przedmioty?",
-"options": [
-"Schylając się szybko",
-"Jedną ręką",
-"Kucając",
-"Zawsze na prostych nogach"
-],
-"correctAnswer": "Kucając",
-"hint": "To sposób lepszy niż schylanie się."
-},
-{
-"question": "Co pomaga w prawidłowym wzroście kości?",
-"options": [
-"Produkty bogate w wapń, fosfor i witaminę D",
-"Produkty bogate tylko w cukry",
-"Produkty bogate tylko w wodę",
-"Produkty bogate tylko w witaminę C"
-],
-"correctAnswer": "Produkty bogate w wapń, fosfor i witaminę D",
-"hint": "Pomyśl o składnikach ważnych dla mocnych i rosnących kości."
-},
-{
-"question": "Co robi układ nerwowy?",
-"options": [
-"Tylko porusza mięśniami",
-"Odbiera, analizuje i przekazuje informacje",
-"Tylko trawi pokarm",
-"Tylko pompuje krew"
-],
-"correctAnswer": "Odbiera, analizuje i przekazuje informacje",
-"hint": "Chodzi o informacje docierające do organizmu i wysyłane dalej."
-},
-{
-"question": "Za co odpowiada układ nerwowy w organizmie?",
-"options": [
-"Za pracę całego organizmu",
-"Tylko za oddychanie",
-"Tylko za trawienie",
-"Tylko za wzrost kości"
-],
-"correctAnswer": "Za pracę całego organizmu",
-"hint": "To układ, który kieruje działaniem całego ciała."
-},
-{
-"question": "Z czego składa się układ nerwowy?",
-"options": [
-"Z serca, płuc i żołądka",
-"Z mięśni, kości i stawów",
-"Z mózgowia, rdzenia kręgowego i nerwów",
-"Z oczu, uszu i nosa"
-],
-"correctAnswer": "Z mózgowia, rdzenia kręgowego i nerwów",
-"hint": "W poprawnej odpowiedzi są trzy części układu nerwowego."
-},
-{
-"question": "Jaka jest największa część mózgowia?",
-"options": [
-"Rdzeń kręgowy",
-"Nerw",
-"Mózg",
-"Źrenica"
-],
-"correctAnswer": "Mózg",
-"hint": "To najważniejsza i największa część mózgowia."
-},
-{
-"question": "Co robi mózg z informacjami z narządów zmysłów?",
-"options": [
-"Ukrywa je",
-"Analizuje je",
-"Zamienia je w kości",
-"Wysyła je do oka"
-],
-"correctAnswer": "Analizuje je",
-"hint": "Pomyśl, co dzieje się z informacjami po ich odebraniu."
-},
-{
-"question": "Czym kieruje mózg?",
-"options": [
-"Pracą mięśni szkieletowych",
-"Tylko pracą serca",
-"Tylko pracą oka",
-"Tylko pracą skóry"
-],
-"correctAnswer": "Pracą mięśni szkieletowych",
-"hint": "Chodzi o mięśnie pomagające nam się poruszać."
-},
-{
-"question": "Co umożliwia mózg?",
-"options": [
-"Tylko widzenie",
-"Myślenie, uczenie się i zapamiętywanie",
-"Tylko słyszenie",
-"Tylko oddychanie"
-],
-"correctAnswer": "Myślenie, uczenie się i zapamiętywanie",
-"hint": "Pomyśl o czynnościach związanych z nauką i pamięcią."
-},
-{
-"question": "Jaką rolę pełni rdzeń kręgowy?",
-"options": [
-"Chroni oko przed kurzem",
-"Łączy mózgowie z innymi częściami ciała i przewodzi informacje",
-"Skupia światło na siatkówce",
-"Odbiera zapachy"
-],
-"correctAnswer": "Łączy mózgowie z innymi częściami ciała i przewodzi informacje",
-"hint": "To część, która łączy i przekazuje dalej."
-},
-{
-"question": "Co robią nerwy?",
-"options": [
-"Przekazują informacje z narządów zmysłów do mózgu i rdzenia kręgowego oraz polecenia do mięśni i narządów",
-"Tylko budują kości",
-"Tylko oczyszczają oko",
-"Tylko magazynują energię"
-],
-"correctAnswer": "Przekazują informacje z narządów zmysłów do mózgu i rdzenia kręgowego oraz polecenia do mięśni i narządów",
-"hint": "Nerwy działają jak drogi przesyłania informacji w ciele."
-},
-{
-"question": "Za co jeszcze odpowiada układ nerwowy?",
-"options": [
-"Za emocje, równowagę i koordynację ruchów",
-"Tylko za wzrost włosów",
-"Tylko za kolor oczu",
-"Tylko za trawienie cukrów"
-],
-"correctAnswer": "Za emocje, równowagę i koordynację ruchów",
-"hint": "Pomyśl o uczuciach i sprawnym poruszaniu się."
-},
-{
-"question": "Czym jest kora mózgowa?",
-"options": [
-"Wewnętrzną, gładką warstwą mózgu",
-"Zewnętrzną, silnie pofałdowaną warstwą mózgu",
-"Najmniejszą częścią oka",
-"Rodzajem nerwu"
-],
-"correctAnswer": "Zewnętrzną, silnie pofałdowaną warstwą mózgu",
-"hint": "Chodzi o warstwę na zewnątrz mózgu."
-},
-{
-"question": "Co robią narządy zmysłów?",
-"options": [
-"Budują kości",
-"Odbierają informacje z otoczenia i przekazują je do układu nerwowego",
-"Pompują krew",
-"Trawią pokarm"
-],
-"correctAnswer": "Odbierają informacje z otoczenia i przekazują je do układu nerwowego",
-"hint": "To dzięki nim dowiadujemy się, co dzieje się wokół nas."
-},
-{
-"question": "Który zestaw to narządy zmysłów?",
-"options": [
-"Oczy, uszy, nos, język i skóra",
-"Serce, płuca, żołądek i nerki",
-"Mózg, rdzeń kręgowy i nerwy",
-"Kości, mięśnie, stawy i skóra"
-],
-"correctAnswer": "Oczy, uszy, nos, język i skóra",
-"hint": "Pomyśl o częściach ciała, które pomagają odbierać bodźce."
-},
-{
-"question": "Jakie informacje dostarcza oko?",
-"options": [
-"O smaku i zapachu",
-"O barwie, kształcie, ruchu i odległości przedmiotów",
-"Tylko o temperaturze",
-"Tylko o dźwiękach"
-],
-"correctAnswer": "O barwie, kształcie, ruchu i odległości przedmiotów",
-"hint": "Chodzi o to, co możemy zobaczyć."
-},
-{
-"question": "Jaka jest główna część oka?",
-"options": [
-"Powieka",
-"Rzęsy",
-"Gałka oczna",
-"Źrenica"
-],
-"correctAnswer": "Gałka oczna",
-"hint": "To największa i najważniejsza część oka."
-},
-{
-"question": "Co robią łzy i powieki?",
-"options": [
-"Przekazują dźwięki do mózgu",
-"Oczyszczają oraz nawilżają powierzchnię oka",
-"Skupiają światło na siatkówce",
-"Chronią kości przed urazami"
-],
-"correctAnswer": "Oczyszczają oraz nawilżają powierzchnię oka",
-"hint": "Pomagają oku być czystym i nie wysychać."
-},
-{
-"question": "Przed czym rzęsy chronią oko?",
-"options": [
-"Przed hałasem",
-"Przed pyłem i kurzem",
-"Przed zimnem",
-"Przed jasnym światłem"
-],
-"correctAnswer": "Przed pyłem i kurzem",
-"hint": "To drobinki, które mogą wpaść do oka."
-},
-{
-"question": "Przez co światło wpada do oka?",
-"options": [
-"Przez soczewkę",
-"Przez siatkówkę",
-"Przez źrenicę",
-"Przez rzęsy"
-],
-"correctAnswer": "Przez źrenicę",
-"hint": "To otwór, przez który do oka dostaje się światło."
-},
-{
-"question": "Jaką rolę pełni soczewka w oku?",
-"options": [
-"Chroni oko przed kurzem",
-"Zmienia bieg promieni świetlnych i skupia je na siatkówce",
-"Nawilża powierzchnię oka",
-"Odbiera zapachy z otoczenia"
-],
-"correctAnswer": "Zmienia bieg promieni świetlnych i skupia je na siatkówce",
-"hint": "Pomyśl o tym, co pomaga dobrze skupić obraz w oku."
-},
-{
-"question": "Jaki obraz przedmiotu powstaje na siatkówce?",
-"options": [
-"Powiększony",
-"Kolorowy",
-"Odwrócony",
-"Rozmazany"
-],
-"correctAnswer": "Odwrócony",
-"hint": "Pomyśl, jak wygląda obraz w oku, zanim zajmie się nim mózg."
-},
-{
-"question": "Co robi mózg z obrazem powstałym na siatkówce?",
-"options": [
-"Przetwarza go, dzięki czemu widzimy go prawidłowo",
-"Zmniejsza go i ukrywa",
-"Przesyła go do ucha",
-"Zamienia go w dźwięk"
-],
-"correctAnswer": "Przetwarza go, dzięki czemu widzimy go prawidłowo",
-"hint": "Chodzi o to, dlaczego nie widzimy świata do góry nogami."
-},
-{
-"question": "W jakiej postaci ucho odbiera dźwięki?",
-"options": [
-"W postaci światła",
-"W postaci drgań powietrza",
-"W postaci kolorów",
-"W postaci smaku"
-],
-"correctAnswer": "W postaci drgań powietrza",
-"hint": "Dźwięk to coś, co porusza się w powietrzu."
-},
-{
-"question": "Jaką rolę pełni małżowina uszna?",
-"options": [
-"Pomaga rozpoznawać smaki",
-"Zbiera dźwięki i kieruje je do wnętrza ucha",
-"Chroni oczy przed światłem",
-"Odbiera ból i ciepło"
-],
-"correctAnswer": "Zbiera dźwięki i kieruje je do wnętrza ucha",
-"hint": "Pomyśl, co dzieje się z dźwiękiem, zanim trafi głębiej do ucha."
-},
-{
-"question": "Dokąd są przekazywane informacje dźwiękowe?",
-"options": [
-"Do nosa",
-"Do skóry",
-"Do żołądka",
-"Do mózgu"
-],
-"correctAnswer": "Do mózgu",
-"hint": "To tam dźwięki są rozpoznawane i rozumiane."
-},
-{
-"question": "Co dzięki pracy mózgu potrafimy rozróżniać w dźwiękach?",
-"options": [
-"Kolor, kształt i wielkość",
-"Wysokość, głośność i kierunek dźwięków",
-"Smak, zapach i temperaturę",
-"Tylko głośność"
-],
-"correctAnswer": "Wysokość, głośność i kierunek dźwięków",
-"hint": "Pomyśl, co możemy powiedzieć o dźwięku, którego słuchamy."
-},
-{
-"question": "Dlaczego ucho pomaga utrzymywać równowagę?",
-"options": [
-"Bo odbiera informacje o położeniu głowy",
-"Bo rozpoznaje smak jedzenia",
-"Bo widzi ruch ciała",
-"Bo mierzy temperaturę skóry"
-],
-"correctAnswer": "Bo odbiera informacje o położeniu głowy",
-"hint": "Chodzi o to, skąd organizm wie, jak ustawiona jest głowa."
-},
-{
-"question": "Na co reagują narząd węchu i narząd smaku?",
-"options": [
-"Na światło i ciemność",
-"Na ruch powietrza",
-"Na cząstki substancji obecnych w otoczeniu",
-"Na nacisk kości"
-],
-"correctAnswer": "Na cząstki substancji obecnych w otoczeniu",
-"hint": "Pomyśl o tym, co musi dotrzeć do nosa lub języka, aby coś poczuć."
-},
-{
-"question": "Co znajduje się w nosie i pozwala rozpoznawać zapachy?",
-"options": [
-"Kubki smakowe",
-"Ciałka czuciowe",
-"Komórki węchowe",
-"Błona bębenkowa"
-],
-"correctAnswer": "Komórki węchowe",
-"hint": "To specjalne komórki odpowiedzialne za węch."
-},
-{
-"question": "Co znajduje się na języku?",
-"options": [
-"Komórki węchowe",
-"Kubki smakowe",
-"Małżowiny uszne",
-"Ciałka wzrokowe"
-],
-"correctAnswer": "Kubki smakowe",
-"hint": "To one pomagają odczuwać smaki."
-},
-{
-"question": "Jakie smaki odczuwamy dzięki kubkom smakowym?",
-"options": [
-"Jasny, ciemny, cichy i głośny",
-"Miękki, twardy, ciepły i zimny",
-"Słodki, słony, gorzki i kwaśny",
-"Lekki, ciężki, szybki i wolny"
-],
-"correctAnswer": "Słodki, słony, gorzki i kwaśny",
-"hint": "Pomyśl o podstawowych smakach jedzenia."
-},
-{
-"question": "Przy czym współpracują węch i smak?",
-"options": [
-"Przy ocenie jakości jedzenia",
-"Przy utrzymywaniu równowagi",
-"Przy widzeniu po ciemku",
-"Przy odbieraniu bólu"
-],
-"correctAnswer": "Przy ocenie jakości jedzenia",
-"hint": "Chodzi o to, jak oceniamy to, co jemy."
-},
-{
-"question": "Co odbierają ciałka czuciowe znajdujące się w skórze?",
-"options": [
-"Dotyk, ciepło i zimno",
-"Dźwięki i zapachy",
-"Tylko ból",
-"Smak i równowagę"
-],
-"correctAnswer": "Dotyk, ciepło i zimno",
-"hint": "Pomyśl, co możesz poczuć skórą, gdy czegoś dotykasz."
-},
-{
-"question": "Za co odpowiadają zakończenia nerwowe w skórze?",
-"options": [
-"Za odczuwanie bólu",
-"Za widzenie obrazu",
-"Za rozpoznawanie zapachów",
-"Za słyszenie dźwięków"
-],
-"correctAnswer": "Za odczuwanie bólu",
-"hint": "To dzięki nim czujemy, że coś nas boli."
-},
-{
-"question": "Gdzie znajduje się najwięcej receptorów dotyku?",
-"options": [
-"Na plecach",
-"Na palcach rąk",
-"Na łokciach",
-"Na kolanach"
-],
-"correctAnswer": "Na palcach rąk",
-"hint": "Tą częścią ciała bardzo dokładnie badamy przedmioty."
-},
-{
-"question": "Ile snu na dobę pomaga utrzymać układ nerwowy w dobrej kondycji?",
-"options": [
-"Około 3 godzin",
-"Około 6 godzin",
-"Około 9 godzin",
-"Około 12 godzin"
-],
-"correctAnswer": "Około 9 godzin",
-"hint": "To mniej więcej tyle, ile trwa długa noc."
-},
-{
-"question": "W czym pomaga wypoczynek?",
-"options": [
-"W lepszym widzeniu o zmierzchu",
-"W radzeniu sobie ze stresem",
-"W rozpoznawaniu smaków",
-"W zwiększaniu ilości woskowiny"
-],
-"correctAnswer": "W radzeniu sobie ze stresem",
-"hint": "Pomyśl, co pomaga się uspokoić i poczuć lepiej."
-},
-{
-"question": "Co może uszkadzać słuch?",
-"options": [
-"Czytanie przy lampce",
-"Zbyt głośna muzyka i hałas",
-"Picie wody",
-"Spanie około 9 godzin"
-],
-"correctAnswer": "Zbyt głośna muzyka i hałas",
-"hint": "Chodzi o bardzo mocne dźwięki."
-},
-{
-"question": "Co może zatykać ucho?",
-"options": [
-"Nadmiar woskowiny",
-"Zbyt dużo światła",
-"Brak snu",
-"Kwaśny smak"
-],
-"correctAnswer": "Nadmiar woskowiny",
-"hint": "To coś, co naturalnie znajduje się w uchu, ale w dużej ilości szkodzi."
-},
-{
-"question": "Co chroni wzrok podczas czytania i nauki?",
-"options": [
-"Słuchanie cichej muzyki",
-"Mycie rąk",
-"Dobre oświetlenie",
-"Jedzenie słodkich owoców"
-],
-"correctAnswer": "Dobre oświetlenie",
-"hint": "Pomyśl, w jakich warunkach oczom jest najwygodniej pracować."
-},
-{
-"question": "W jakiej odległości od oczu powinien znajdować się tekst podczas czytania?",
-"options": [
-"Około 10 cm",
-"Około 30 cm",
-"Około 60 cm",
-"Jak najbliżej oczu"
-],
-"correctAnswer": "Około 30 cm",
-"hint": "To mniej więcej długość szkolnej linijki."
-},
-{
-"question": "Przed czym chronią oczy okulary z filtrem?",
-"options": [
-"Przed kurzem w klasie",
-"Przed silnym promieniowaniem słonecznym",
-"Przed czytaniem małych liter",
-"Przed zmęczeniem nóg"
-],
-"correctAnswer": "Przed silnym promieniowaniem słonecznym",
-"hint": "Pomyśl o bardzo jasnym słońcu."
-},
-{
-"question": "Czym między innymi różnią się ciała kobiety i mężczyzny?",
-"options": [
-"Kolorem oczu",
-"Długością włosów",
-"Budową narządów rozrodczych",
-"Liczbą palców u rąk"
-],
-"correctAnswer": "Budową narządów rozrodczych",
-"hint": "Chodzi o część ciała związaną z rozmnażaniem."
-},
-{
-"question": "Które narządy tworzą żeński układ rozrodczy?",
-"options": [
-"Jajniki, jajowody, macica i pochwa",
-"Jądra, nasieniowody i prącie",
-"Serce, płuca i żołądek",
-"Mózg, rdzeń kręgowy i nerwy"
-],
-"correctAnswer": "Jajniki, jajowody, macica i pochwa",
-"hint": "W poprawnej odpowiedzi są cztery narządy."
-},
-{
-"question": "Gdzie powstają komórki jajowe?",
-"options": [
-"W macicy",
-"W jajowodach",
-"W jajnikach",
-"W pochwie"
-],
-"correctAnswer": "W jajnikach",
-"hint": "To pierwszy narząd wymieniany w żeńskim układzie rozrodczym."
-},
-{
-"question": "Jak często zwykle dojrzewa komórka jajowa?",
-"options": [
-"Co około 7 dni",
-"Co około 14 dni",
-"Co około 28 dni",
-"Raz w roku"
-],
-"correctAnswer": "Co około 28 dni",
-"hint": "To mniej więcej raz w miesiącu."
-},
-{
-"question": "Dokąd trafia komórka jajowa z jajnika?",
-"options": [
-"Do macicy",
-"Do pochwy",
-"Do jajowodu",
-"Do cewki moczowej"
-],
-"correctAnswer": "Do jajowodu",
-"hint": "To narząd znajdujący się między jajnikiem a macicą."
-},
-{
-"question": "Czym jest macica?",
-"options": [
-"Narządem, w którym może rozwijać się nowy organizm",
-"Miejscem, w którym powstają plemniki",
-"Narządem łączącym oczy z mózgiem",
-"Miejscem, w którym dojrzewa tekst do czytania"
-],
-"correctAnswer": "Narządem, w którym może rozwijać się nowy organizm",
-"hint": "To miejsce rozwoju nowego organizmu."
-},
-{
-"question": "Jaką funkcję pełni pochwa?",
-"options": [
-"Łączy jajnik z jajowodem",
-"Łączy macicę ze środowiskiem zewnętrznym",
-"Wytwarza komórki jajowe",
-"Jest miejscem powstawania plemników"
-],
-"correctAnswer": "Łączy macicę ze środowiskiem zewnętrznym",
-"hint": "Pomyśl, co łączy wnętrze ciała z zewnątrz."
-},
-{
-"question": "Które narządy tworzą męski układ rozrodczy?",
-"options": [
-"Jajniki, jajowody i macica",
-"Płuca, serce i żołądek",
-"Jądra, nasieniowody i prącie",
-"Mózg, oczy i uszy"
-],
-"correctAnswer": "Jądra, nasieniowody i prącie",
-"hint": "W poprawnej odpowiedzi są trzy narządy."
-},
-{
-"question": "Gdzie powstają plemniki?",
-"options": [
-"W nasieniowodach",
-"W prąciu",
-"W jądrach",
-"W cewce moczowej"
-],
-"correctAnswer": "W jądrach",
-"hint": "To narząd należący do męskiego układu rozrodczego."
-},
-{
-"question": "Jak powstają plemniki?",
-"options": [
-"Tylko raz w miesiącu",
-"Stale i w dużych ilościach",
-"Tylko w dzieciństwie",
-"Tylko po wysiłku fizycznym"
-],
-"correctAnswer": "Stale i w dużych ilościach",
-"hint": "Plemniki nie powstają od czasu do czasu, ale cały czas."
-},
-{
-"question": "Gdzie znajdują się jądra?",
-"options": [
-"W jamie brzusznej",
-"W worku mosznowym poza jamą brzuszną",
-"W macicy",
-"W jajowodach"
-],
-"correctAnswer": "W worku mosznowym poza jamą brzuszną",
-"hint": "Chodzi o miejsce położone poza jamą brzuszną."
-},
-{
-"question": "Dlaczego niższa temperatura w worku mosznowym jest ważna?",
-"options": [
-"Pomaga w czytaniu tekstu",
-"Sprzyja prawidłowemu rozwojowi plemników",
-"Chroni oczy przed słońcem",
-"Przyspiesza trawienie"
-],
-"correctAnswer": "Sprzyja prawidłowemu rozwojowi plemników",
-"hint": "Chodzi o warunki potrzebne do rozwoju plemników."
-},
-{
-"question": "Jaką drogą przemieszczają się plemniki do cewki moczowej?",
-"options": [
-"Przez jajowody",
-"Przez nasieniowody",
-"Przez macicę",
-"Przez pochwę"
-],
-"correctAnswer": "Przez nasieniowody",
-"hint": "Nazwa tego narządu zawiera słowo „nasienie”."
-},
-{
-"question": "Co umożliwia ruch plemnika?",
-"options": [
-"Skrzydło",
-"Nóżka",
-"Wić",
-"Płetwa"
-],
-"correctAnswer": "Wić",
-"hint": "To cienka część ciała plemnika, dzięki której może się poruszać."
-},
-{
-"question": "Jaka jest funkcja żeńskiego układu rozrodczego?",
-"options": [
-"Wytwarzanie plemników i ich przemieszczanie",
-"Wytwarzanie komórek jajowych i zapewnienie miejsca do rozwoju nowego organizmu",
-"Tylko ochrona organizmu przed zimnem",
-"Tylko trawienie pokarmu"
-],
-"correctAnswer": "Wytwarzanie komórek jajowych i zapewnienie miejsca do rozwoju nowego organizmu",
-"hint": "Pomyśl o komórkach jajowych i miejscu rozwoju nowego organizmu."
-},
-{
-"question": "Jaka jest funkcja męskiego układu rozrodczego?",
-"options": [
-"Wytwarzanie komórek jajowych",
-"Zapewnienie miejsca do rozwoju nowego organizmu",
-"Wytwarzanie plemników i wprowadzanie ich do narządów rozrodczych kobiety",
-"Regulowanie pracy całego organizmu"
-],
-"correctAnswer": "Wytwarzanie plemników i wprowadzanie ich do narządów rozrodczych kobiety",
-"hint": "Chodzi o plemniki i ich przekazanie."
-},
-{
-"question": "Co to jest zapłodnienie?",
-"options": [
-"Połączenie komórki jajowej z plemnikiem",
-"Dojrzewanie komórki jajowej",
-"Przemieszczanie się plemników przez nasieniowody",
-"Rozwój nowego organizmu w macicy"
-],
-"correctAnswer": "Połączenie komórki jajowej z plemnikiem",
-"hint": "To moment spotkania dwóch komórek rozrodczych."
-},
-{
-"question": "Gdzie zwykle dochodzi do zapłodnienia?",
-"options": [
-"W macicy",
-"W pochwie",
-"W jajniku",
-"W jajowodzie"
-],
-"correctAnswer": "W jajowodzie",
-"hint": "To tam trafia komórka jajowa z jajnika."
-},
-{
-"question": "Co dzieje się podczas zapłodnienia?",
-"options": [
-"Do komórki jajowej wnika wiele plemników",
-"Tylko jeden plemnik wnika do wnętrza komórki jajowej",
-"Komórka jajowa wnika do plemnika",
-"Żaden plemnik nie dociera do komórki jajowej"
-],
-"correctAnswer": "Tylko jeden plemnik wnika do wnętrza komórki jajowej",
-"hint": "Do komórki jajowej dociera ich wiele, ale tylko jeden ma decydującą rolę."
-},
-{
-"question": "Dokąd przemieszcza się zapłodniona komórka jajowa?",
-"options": [
-"Do pochwy",
-"Do jajnika",
-"Do macicy",
-"Do pęcherza moczowego"
-],
-"correctAnswer": "Do macicy",
-"hint": "To miejsce, w którym może rozwijać się nowy organizm."
-},
-{
-"question": "Dzięki czemu nowy organizm rośnie i rozwija się w macicy?",
-"options": [
-"Dzięki silnie ukrwionej tkance wyściełającej ścianę macicy",
-"Dzięki powietrzu w macicy",
-"Dzięki kościom miednicy",
-"Dzięki mięśniom brzucha"
-],
-"correctAnswer": "Dzięki silnie ukrwionej tkance wyściełającej ścianę macicy",
-"hint": "Pomyśl o tkance, która wyściela wnętrze macicy."
-},
-{
-"question": "Co dzieje się z komórką jajową, jeśli nie dojdzie do zapłodnienia?",
-"options": [
-"Zamienia się w zarodek",
-"Przemieszcza się do macicy i rośnie",
-"Obumiera",
-"Dzieli się na dwie części"
-],
-"correctAnswer": "Obumiera",
-"hint": "Gdy nie połączy się z plemnikiem, nie rozwija się dalej."
-},
-{
-"question": "Co dzieje się, gdy nie dojdzie do zapłodnienia?",
-"options": [
-"Dziecko zaczyna rozwijać się w macicy",
-"Złuszcza się błona wyściełająca macicę i pojawia się miesiączka",
-"Komórka jajowa rośnie coraz szybciej",
-"Macica przestaje pracować"
-],
-"correctAnswer": "Złuszcza się błona wyściełająca macicę i pojawia się miesiączka",
-"hint": "Chodzi o zmianę w macicy, która pojawia się regularnie."
-},
-{
-"question": "Jak często zwykle występuje miesiączka?",
-"options": [
-"Co około 7 dni",
-"Co około 14 dni",
-"Co około 28 dni",
-"Raz w roku"
-],
-"correctAnswer": "Co około 28 dni",
-"hint": "To mniej więcej raz w miesiącu."
-},
-{
-"question": "Kiedy mówimy, że kobieta jest w ciąży?",
-"options": [
-"Gdy dziecko rozwija się w jej macicy",
-"Gdy pojawia się miesiączka",
-"Gdy komórka jajowa obumiera",
-"Gdy kończy się dojrzewanie"
-],
-"correctAnswer": "Gdy dziecko rozwija się w jej macicy",
-"hint": "Chodzi o czas rozwoju dziecka przed narodzinami."
-},
-{
-"question": "Jak rozwija się dziecko w czasie ciąży?",
-"options": [
-"Bardzo wolno",
-"Tylko w ostatnim miesiącu",
-"Bardzo szybko",
-"Wcale się nie zmienia"
-],
-"correctAnswer": "Bardzo szybko",
-"hint": "W tym czasie zachodzi wiele zmian w krótkim czasie."
-},
-{
-"question": "Co jest prawdą pod koniec trzeciego miesiąca ciąży?",
-"options": [
-"Dziecko ma już wykształcone wszystkie narządy wewnętrzne",
-"Dziecko ma już około 50 cm długości",
-"Dziecko oddycha samodzielnie",
-"Pojawia się odruch ssania"
-],
-"correctAnswer": "Dziecko ma już wykształcone wszystkie narządy wewnętrzne",
-"hint": "To informacja o narządach dziecka."
-},
-{
-"question": "Co pojawia się u dziecka w szóstym miesiącu ciąży?",
-"options": [
-"Umiejętność chodzenia",
-"Odruch ssania",
-"Samodzielne oddychanie",
-"Wszystkie zęby"
-],
-"correctAnswer": "Odruch ssania",
-"hint": "To ważny odruch potrzebny po narodzinach."
-},
-{
-"question": "Jakie wymiary ma dziecko pod koniec ciąży?",
-"options": [
-"Około 20 cm długości i 1 kg masy",
-"Około 35 cm długości i 2 kg masy",
-"Około 50 cm długości i około 3 kg masy",
-"Około 70 cm długości i 5 kg masy"
-],
-"correctAnswer": "Około 50 cm długości i około 3 kg masy",
-"hint": "Pomyśl o typowej długości i masie noworodka pod koniec ciąży."
-},
-{
-"question": "Co dzieje się podczas porodu?",
-"options": [
-"Dziecko wraca do macicy",
-"Dziecko opuszcza macicę i wydostaje się przez pochwę",
-"Dziecko przestaje się rozwijać",
-"Komórka jajowa przemieszcza się do macicy"
-],
-"correctAnswer": "Dziecko opuszcza macicę i wydostaje się przez pochwę",
-"hint": "Chodzi o moment przyjścia dziecka na świat."
-},
-{
-"question": "Co dzieje się z dzieckiem po porodzie?",
-"options": [
-"Oddycha samodzielnie i odżywia się mlekiem matki",
-"Nadal oddycha dzięki macicy",
-"Nie potrzebuje pokarmu",
-"Od razu zaczyna chodzić"
-],
-"correctAnswer": "Oddycha samodzielnie i odżywia się mlekiem matki",
-"hint": "Pomyśl o dwóch ważnych zmianach po narodzinach."
-},
-{
-"question": "Kiedy mogą urodzić się bliźnięta jednojajowe?",
-"options": [
-"Gdy do komórki jajowej wnikną dwa plemniki",
-"Gdy zapłodniona komórka jajowa podzieli się na dwie rozwijające się części",
-"Gdy w macicy rozwijają się dwa różne organizmy z dwóch komórek jajowych",
-"Gdy miesiączka występuje co 28 dni"
-],
-"correctAnswer": "Gdy zapłodniona komórka jajowa podzieli się na dwie rozwijające się części",
-"hint": "Chodzi o podział jednej zapłodnionej komórki."
-},
-{
-"question": "Dlaczego higiena intymna jest ważna?",
-"options": [
-"Pomaga zapobiegać chorobom narządów płciowych",
-"Sprawia, że dojrzewanie trwa krócej",
-"Powoduje szybszy wzrost",
-"Zatrzymuje miesiączkę"
-],
-"correctAnswer": "Pomaga zapobiegać chorobom narządów płciowych",
-"hint": "Pomyśl o ochronie zdrowia."
-},
-{
-"question": "Co należy robić każdego dnia dla higieny intymnej?",
-"options": [
-"Codziennie myć okolice intymne i zmieniać bieliznę",
-"Myć okolice intymne tylko raz w tygodniu",
-"Zmieniać bieliznę tylko po kąpieli",
-"Używać mokrego ręcznika przez cały dzień"
-],
-"correctAnswer": "Codziennie myć okolice intymne i zmieniać bieliznę",
-"hint": "W poprawnej odpowiedzi są dwie codzienne czynności."
-},
-{
-"question": "Co należy zrobić z mokrym kostiumem kąpielowym?",
-"options": [
-"Nosić go do końca dnia",
-"Szybko zmienić go na suchy",
-"Położyć na słońcu i znów założyć",
-"Przepłukać go w wodzie i zostawić na sobie"
-],
-"correctAnswer": "Szybko zmienić go na suchy",
-"hint": "Chodzi o to, by ciało nie pozostawało długo w wilgoci."
-},
-{
-"question": "Czemu sprzyja wilgoć?",
-"options": [
-"Rozwojowi bakterii i grzybów",
-"Lepszemu oddychaniu skóry",
-"Szybszemu wysychaniu ubrań",
-"Wzmocnieniu kości"
-],
-"correctAnswer": "Rozwojowi bakterii i grzybów",
-"hint": "To dlatego mokrych rzeczy nie powinno się długo nosić."
-},
-{
-"question": "Jak należy zachowywać się w toaletach publicznych?",
-"options": [
-"Siadać bezpośrednio na desce sedesowej",
-"Nie siadać bezpośrednio na desce sedesowej",
-"Dotykać wszystkich powierzchni rękami",
-"Chodzić boso po podłodze"
-],
-"correctAnswer": "Nie siadać bezpośrednio na desce sedesowej",
-"hint": "Chodzi o zachowanie ostrożności i higieny."
-},
-{
-"question": "Czym jest dojrzewanie?",
-"options": [
-"Okresem gwałtownych zmian fizycznych i psychicznych",
-"Czasem, gdy organizm się nie zmienia",
-"Tylko okresem szybkiego wzrostu włosów",
-"Chwilą narodzin dziecka"
-],
-"correctAnswer": "Okresem gwałtownych zmian fizycznych i psychicznych",
-"hint": "To czas wielu zmian w ciele i zachowaniu."
-},
-{
-"question": "Co dzieje się z narządami rozrodczymi w okresie dojrzewania?",
-"options": [
-"Przestają się rozwijać",
-"Dojrzewają",
-"Zmniejszają się",
-"Zamieniają się w kości"
-],
-"correctAnswer": "Dojrzewają",
-"hint": "Pomyśl, jak zmieniają się narządy związane z rozmnażaniem."
-},
-{
-"question": "Ile zwykle trwa okres dojrzewania?",
-"options": [
-"Kilka dni",
-"Kilka tygodni",
-"Kilka miesięcy",
-"Kilka lat"
-],
-"correctAnswer": "Kilka lat",
-"hint": "To nie jest krótki etap, tylko proces trwający dłużej."
-},
-{
-"question": "Około którego roku życia zwykle zaczynają dojrzewać dziewczęta?",
-"options": [
-"Około 8. roku życia",
-"Około 10. roku życia",
-"Około 12. roku życia",
-"Około 15. roku życia"
-],
-"correctAnswer": "Około 10. roku życia",
-"hint": "Chodzi o wiek podany dla dziewcząt, a nie dla chłopców."
-},
-{
-"question": "Około którego roku życia zwykle zaczynają dojrzewać chłopcy?",
-"options": [
-"Około 10. roku życia",
-"Około 11. roku życia",
-"Około 12. roku życia",
-"Około 14. roku życia"
-],
-"correctAnswer": "Około 12. roku życia",
-"hint": "Chłopcy zwykle zaczynają dojrzewać trochę później niż dziewczęta."
-},
-{
-"question": "Która zmiana jest wspólna dla dziewcząt i chłopców w okresie dojrzewania?",
-"options": [
-"Pojawienie się pierwszej miesiączki",
-"Poszerzenie bioder",
-"Szybki wzrost ciała i pojawienie się owłosienia pod pachami oraz w okolicach narządów płciowych",
-"Obniżenie głosu"
-],
-"correctAnswer": "Szybki wzrost ciała i pojawienie się owłosienia pod pachami oraz w okolicach narządów płciowych",
-"hint": "Szukaj zmiany, która dotyczy i dziewcząt, i chłopców."
-},
-{
-"question": "Co dzieje się ze skórą w okresie dojrzewania?",
-"options": [
-"Skóra wydziela mniej potu i tłuszczu",
-"Skóra przestaje się pocić",
-"Zwiększa się wydzielanie potu i substancji tłuszczowych przez skórę",
-"Skóra staje się całkiem sucha"
-],
-"correctAnswer": "Zwiększa się wydzielanie potu i substancji tłuszczowych przez skórę",
-"hint": "Pomyśl o poceniu się i tłustej skórze."
-},
-{
-"question": "Co może powodować nadmierne wydzielanie łoju?",
-"options": [
-"Wypryski i trądzik młodzieńczy",
-"Lepsze widzenie",
-"Szybszy wzrost kości",
-"Zmianę koloru oczu"
-],
-"correctAnswer": "Wypryski i trądzik młodzieńczy",
-"hint": "Chodzi o problem, który często pojawia się na skórze twarzy."
-},
-{
-"question": "Jakie zmiany zachodzą u dziewcząt w okresie dojrzewania?",
-"options": [
-"Poszerzają się barki i obniża się głos",
-"Poszerzają się biodra i rozwijają piersi",
-"Pojawia się zarost i polucje",
-"Zmniejszają się biodra i barki"
-],
-"correctAnswer": "Poszerzają się biodra i rozwijają piersi",
-"hint": "To zmiany typowe dla dziewcząt."
-},
-{
-"question": "Co oznacza pojawienie się pierwszej miesiączki u dziewcząt?",
-"options": [
-"Rozpoczęcie wytwarzania komórek jajowych",
-"Zakończenie dojrzewania",
-"Początek szybkiego wzrostu ciała",
-"Zmniejszenie wydzielania potu"
-],
-"correctAnswer": "Rozpoczęcie wytwarzania komórek jajowych",
-"hint": "To znak, że organizm zaczyna wytwarzać ważne komórki rozrodcze."
-},
-{
-"question": "Jaka może być miesiączka na początku dojrzewania?",
-"options": [
-"Zawsze regularna i bez żadnych dolegliwości",
-"Nieregularna i może powodować dolegliwości",
-"Tylko jednodniowa",
-"Codzienna"
-],
-"correctAnswer": "Nieregularna i może powodować dolegliwości",
-"hint": "Na początku organizm dopiero się przyzwyczaja do tych zmian."
-},
-{
-"question": "Która zmiana jest typowa dla chłopców w okresie dojrzewania?",
-"options": [
-"Poszerzają się biodra i rozwijają piersi",
-"Pojawia się pierwsza miesiączka",
-"Poszerzają się barki, pojawia się zarost i obniża się głos",
-"Zmniejsza się owłosienie"
-],
-"correctAnswer": "Poszerzają się barki, pojawia się zarost i obniża się głos",
-"hint": "Pomyśl o barkach, głosie i włosach na twarzy."
-},
-{
-"question": "Co zaczynają wytwarzać jądra u chłopców?",
-"options": [
-"Komórki jajowe",
-"Plemniki",
-"Witaminy",
-"Krew"
-],
-"correctAnswer": "Plemniki",
-"hint": "To męskie komórki rozrodcze."
-},
-{
-"question": "Co to są polucje?",
-"options": [
-"Bolesne skurcze mięśni",
-"Mimowolne wydostawanie się plemników podczas snu",
-"Zmiany nastroju po południu",
-"Nadmierne wydzielanie potu"
-],
-"correctAnswer": "Mimowolne wydostawanie się plemników podczas snu",
-"hint": "Chodzi o zjawisko występujące u chłopców podczas snu."
-},
-{
-"question": "Jakie zmiany psychiczne mogą pojawiać się w okresie dojrzewania?",
-"options": [
-"Tylko większa siła mięśni",
-"Wahania nastroju, większa wrażliwość i potrzeba akceptacji",
-"Zawsze taki sam nastrój każdego dnia",
-"Brak potrzeby kontaktu z innymi"
-],
-"correctAnswer": "Wahania nastroju, większa wrażliwość i potrzeba akceptacji",
-"hint": "Pomyśl o uczuciach i relacjach z innymi."
-},
-{
-"question": "Z czym wiąże się dojrzałość psychiczna?",
-"options": [
-"Z umiejętnością samodzielnego podejmowania decyzji i brania za nie odpowiedzialności",
-"Z bardzo szybkim wzrostem ciała",
-"Z pojawieniem się owłosienia",
-"Z obniżeniem głosu"
-],
-"correctAnswer": "Z umiejętnością samodzielnego podejmowania decyzji i brania za nie odpowiedzialności",
-"hint": "Chodzi o mądre wybory i ponoszenie ich skutków."
-},
-{
-"question": "O co trzeba szczególnie dbać w okresie dojrzewania?",
-"options": [
-"Tylko o czystość włosów",
-"Tylko o czystość rąk",
-"O codzienną higienę całego ciała",
-"Tylko o czystość butów"
-],
-"correctAnswer": "O codzienną higienę całego ciała",
-"hint": "To dotyczy nie jednego miejsca, ale całego ciała."
-},
-{
-"question": "Co pomaga zapobiegać przykremu zapachowi ciała?",
-"options": [
-"Czysta odzież i dezodorant stosowany na umytą, suchą skórę",
-"Tylko częsta zmiana butów",
-"Samo używanie perfum",
-"Mycie twarzy samą wodą"
-],
-"correctAnswer": "Czysta odzież i dezodorant stosowany na umytą, suchą skórę",
-"hint": "Pomyśl o ubraniu i właściwym użyciu dezodorantu."
-},
-{
-"question": "Czym należy myć cerę trądzikową?",
-"options": [
-"Tylko bardzo gorącą wodą",
-"Mocnymi środkami czyszczącymi",
-"Samym mydłem do prania",
-"Łagodnymi środkami"
-],
-"correctAnswer": "Łagodnymi środkami",
-"hint": "Skóra z trądzikiem potrzebuje delikatnej pielęgnacji."
-},
-{
-"question": "Dlaczego nie wolno samodzielnie wyciskać wyprysków?",
-"options": [
-"Bo mogą zniknąć za szybko",
-"Bo grozi to zakażeniem skóry",
-"Bo wtedy skóra przestaje się pocić",
-"Bo powoduje szybszy wzrost włosów"
-],
-"correctAnswer": "Bo grozi to zakażeniem skóry",
-"hint": "Chodzi o niebezpieczeństwo dla skóry."
-},
-{
-"question": "Do jakiego lekarza warto zgłosić się przy nasilonym trądziku?",
-"options": [
-"Do okulisty",
-"Do dermatologa",
-"Do dentysty",
-"Do kardiologa"
-],
-"correctAnswer": "Do dermatologa",
-"hint": "To lekarz zajmujący się skórą."
-},
-{
-"question": "Dla kogo szczególnie ważna jest dieta bogata w żelazo?",
-"options": [
-"Dla wszystkich tylko zimą",
-"Szczególnie dla dziewcząt miesiączkujących",
-"Tylko dla chłopców",
-"Tylko dla małych dzieci"
-],
-"correctAnswer": "Szczególnie dla dziewcząt miesiączkujących",
-"hint": "Pomyśl, komu ta dieta jest szczególnie potrzebna według podanej informacji."
-}]
+      "question": "Która odpowiedź najlepiej opisuje funkcje układu pokarmowego?",
+      "options": [
+        "Przyjmowanie pokarmu, jego trawienie i wchłanianie składników odżywczych do krwi",
+        "Tylko przyjmowanie pokarmu",
+        "Przyjmowanie pokarmu i jego trawienie",
+        "Trawienie i usuwanie resztek pokarmu z organizmu"
+      ],
+      "correctAnswer": "Przyjmowanie pokarmu, jego trawienie i wchłanianie składników odżywczych do krwi",
+      "hint": "Pomyśl, co dzieje się z jedzeniem po jego zjedzeniu."
+    },
+    {
+      "question": "Który zestaw to składniki pokarmowe?",
+      "options": [
+        "Cukry, białka, tłuszcze, witaminy i woda",
+        "Cukry, białka, tłuszcze, witaminy, sole mineralne i woda",
+        "Cukry, białka, tłuszcze, sole mineralne i woda",
+        "Białka, tłuszcze, witaminy, sole mineralne i woda"
+      ],
+      "correctAnswer": "Cukry, białka, tłuszcze, witaminy, sole mineralne i woda",
+      "hint": "W poprawnej odpowiedzi są wszystkie ważne składniki jedzenia i picia."
+    },
+    {
+      "question": "Co jest głównym źródłem energii dla organizmu?",
+      "options": [
+        "Witaminy",
+        "Cukry",
+        "Woda",
+        "Sole mineralne"
+      ],
+      "correctAnswer": "Cukry",
+      "hint": "To składnik pokarmowy obecny m.in. w pieczywie i ryżu."
+    },
+    {
+      "question": "Która odpowiedź najlepiej opisuje, do czego organizm potrzebuje energii?",
+      "options": [
+        "Do wykonywania ruchów ciała",
+        "Do utrzymywania ciepła ciała",
+        "Do wzrostu, nauki, pracy i wszystkich czynności organizmu",
+        "Do trawienia i pracy narządów"
+      ],
+      "correctAnswer": "Do wzrostu, nauki, pracy i wszystkich czynności organizmu",
+      "hint": "Energia jest potrzebna nie tylko podczas ruchu."
+    },
+    {
+      "question": "Która odpowiedź najlepiej opisuje rolę tłuszczów?",
+      "options": [
+        "Dostarczają energii, pomagają wchłaniać niektóre witaminy i chronią organizm przed utratą ciepła",
+        "Są materiałem zapasowym i chronią przed utratą ciepła, ale nie pomagają wchłaniać witamin",
+        "Regulują pracę organizmu, ale nie dostarczają energii",
+        "Są głównym budulcem komórek ciała"
+      ],
+      "correctAnswer": "Dostarczają energii, pomagają wchłaniać niektóre witaminy i chronią organizm przed utratą ciepła",
+      "hint": "Pomyśl o energii, witaminach i ochronie przed zimnem."
+    },
+    {
+      "question": "Czym są białka dla organizmu?",
+      "options": [
+        "Głównym źródłem energii",
+        "Podstawowym budulcem komórek ciała",
+        "Ochroną przed utratą ciepła",
+        "Składnikiem napojów"
+      ],
+      "correctAnswer": "Podstawowym budulcem komórek ciała",
+      "hint": "To składnik potrzebny do budowy ciała."
+    },
+    {
+      "question": "Które zdanie o witaminach jest prawdziwe?",
+      "options": [
+        "Witaminy są podstawowym budulcem komórek",
+        "Witaminy są głównym źródłem energii",
+        "Witaminy regulują pracę organizmu, ale nie dostarczają energii ani materiału budulcowego",
+        "Witaminy chronią organizm przed utratą ciepła"
+      ],
+      "correctAnswer": "Witaminy regulują pracę organizmu, ale nie dostarczają energii ani materiału budulcowego",
+      "hint": "Witaminy pomagają organizmowi działać, ale nie budują go i nie dają energii."
+    },
+    {
+      "question": "Jaką rolę pełnią sole mineralne?",
+      "options": [
+        "Budują organizm i pomagają w jego prawidłowym funkcjonowaniu",
+        "Są głównie źródłem energii dla organizmu",
+        "Regulują pracę organizmu, ale nie uczestniczą w budowie ciała",
+        "Są potrzebne wyłącznie do gaszenia pragnienia"
+      ],
+      "correctAnswer": "Budują organizm i pomagają w jego prawidłowym funkcjonowaniu",
+      "hint": "Pomyśl o budowie ciała i jego sprawnym działaniu."
+    },
+    {
+      "question": "Dlaczego wapń i magnez są ważne?",
+      "options": [
+        "Bo zwiększają odporność organizmu",
+        "Bo są potrzebne do widzenia o zmierzchu",
+        "Bo są ważne dla kości, zębów i pracy mięśni",
+        "Bo chronią organizm przed utratą ciepła"
+      ],
+      "correctAnswer": "Bo są ważne dla kości, zębów i pracy mięśni",
+      "hint": "Pomyśl o twardych częściach ciała i ruchu."
+    },
+    {
+      "question": "Które zdanie o wodzie jest prawdziwe?",
+      "options": [
+        "Woda stanowi mniej niż jedną czwartą masy ciała",
+        "Woda nie jest potrzebna do życia",
+        "Woda stanowi ponad połowę masy ciała człowieka i jest niezbędna do życia",
+        "Woda służy tylko do gaszenia pragnienia"
+      ],
+      "correctAnswer": "Woda stanowi ponad połowę masy ciała człowieka i jest niezbędna do życia",
+      "hint": "To bardzo ważny składnik naszego ciała."
+    },
+    {
+      "question": "Ile wody dziennie powinien pić człowiek?",
+      "options": [
+        "Około 1,5 litra lub więcej",
+        "Tylko pół szklanki",
+        "Mniej niż 1 litr",
+        "Tylko wtedy, gdy jest gorąco"
+      ],
+      "correctAnswer": "Około 1,5 litra lub więcej",
+      "hint": "Pomyśl o ilości, która jest potrzebna organizmowi każdego dnia, nie tylko w upał."
+    },
+    {
+      "question": "Skąd organizm może czerpać wodę?",
+      "options": [
+        "Tylko z napojów",
+        "Tylko z owoców",
+        "Tylko z warzyw",
+        "Z napojów oraz z soczystych warzyw i owoców"
+      ],
+      "correctAnswer": "Z napojów oraz z soczystych warzyw i owoców",
+      "hint": "Woda jest nie tylko w szklance."
+    },
+    {
+      "question": "W czym pomaga witamina A?",
+      "options": [
+        "W prawidłowym rozwoju kości i zębów",
+        "W krzepnięciu krwi",
+        "W zwiększaniu odporności",
+        "W widzeniu o zmierzchu"
+      ],
+      "correctAnswer": "W widzeniu o zmierzchu",
+      "hint": "Chodzi o widzenie, gdy robi się ciemniej."
+    },
+    {
+      "question": "Za co odpowiada witamina C?",
+      "options": [
+        "Za zwiększanie odporności organizmu",
+        "Za widzenie o zmierzchu",
+        "Za budowę komórek ciała",
+        "Za ochronę przed utratą ciepła"
+      ],
+      "correctAnswer": "Za zwiększanie odporności organizmu",
+      "hint": "Pomyśl o obronie organizmu przed chorobami."
+    },
+    {
+      "question": "Za co odpowiada witamina D?",
+      "options": [
+        "Za krzepnięcie krwi",
+        "Za prawidłowy rozwój kości i zębów",
+        "Za wytwarzanie składników krwi",
+        "Za główne źródło energii"
+      ],
+      "correctAnswer": "Za prawidłowy rozwój kości i zębów",
+      "hint": "Ta witamina jest ważna dla mocnych kości i zębów."
+    },
+    {
+      "question": "W czym bierze udział witamina K?",
+      "options": [
+        "W widzeniu o zmierzchu",
+        "W krzepnięciu krwi",
+        "W ochronie przed utratą ciepła",
+        "W trawieniu pokarmu"
+      ],
+      "correctAnswer": "W krzepnięciu krwi",
+      "hint": "Pomyśl o tym, co pomaga zatrzymać krwawienie."
+    },
+    {
+      "question": "W czym uczestniczy witamina B12?",
+      "options": [
+        "W zwiększaniu odporności organizmu",
+        "W prawidłowym rozwoju kości i zębów",
+        "W wytwarzaniu składników krwi",
+        "W widzeniu o zmierzchu"
+      ],
+      "correctAnswer": "W wytwarzaniu składników krwi",
+      "hint": "Ta witamina jest związana z krwią."
+    },
+    {
+      "question": "Które produkty są źródłem białka?",
+      "options": [
+        "Pieczywo, ryż i ziemniaki",
+        "Oleje roślinne, masło i ryby",
+        "Mięso, jaja, mleko i rośliny strączkowe",
+        "Soczyste warzywa i owoce"
+      ],
+      "correctAnswer": "Mięso, jaja, mleko i rośliny strączkowe",
+      "hint": "Pomyśl o produktach, które pomagają budować ciało."
+    },
+    {
+      "question": "Które produkty są źródłem cukrów?",
+      "options": [
+        "Mięso, ryby i jaja",
+        "Pieczywo, kasze, makarony, ryż i ziemniaki",
+        "Oleje roślinne, masło i orzechy",
+        "Mleko, sery i jogurty"
+      ],
+      "correctAnswer": "Pieczywo, kasze, makarony, ryż i ziemniaki",
+      "hint": "To produkty zbożowe i ziemniaki."
+    },
+    {
+      "question": "Które produkty są źródłem tłuszczów?",
+      "options": [
+        "Oleje roślinne, masło i ryby",
+        "Pieczywo, kasze i ryż",
+        "Mięso, jaja, mleko i rośliny strączkowe",
+        "Soczyste warzywa i owoce"
+      ],
+      "correctAnswer": "Oleje roślinne, masło i ryby",
+      "hint": "Pomyśl o oleju i maśle."
+    },
+    {
+      "question": "Które narządy tworzą przewód pokarmowy?",
+      "options": [
+        "Jama ustna, gardło, przełyk, żołądek, jelito cienkie i jelito grube",
+        "Jama ustna, gardło, tchawica, żołądek, jelito cienkie i jelito grube",
+        "Jama ustna, gardło, przełyk, żołądek, wątroba i jelito cienkie",
+        "Ślinianki, gardło, przełyk, żołądek, jelito cienkie i jelito grube"
+      ],
+      "correctAnswer": "Jama ustna, gardło, przełyk, żołądek, jelito cienkie i jelito grube",
+      "hint": "Pomyśl o drodze, jaką pokonuje pokarm w organizmie."
+    },
+    {
+      "question": "Które narządy wspomagają układ pokarmowy?",
+      "options": [
+        "Ślinianki, wątroba i żołądek",
+        "Ślinianki, wątroba i trzustka",
+        "Wątroba, trzustka i jelito cienkie",
+        "Ślinianki, trzustka i przełyk"
+      ],
+      "correctAnswer": "Ślinianki, wątroba i trzustka",
+      "hint": "To narządy, które pomagają w trawieniu, ale nie są częścią przewodu pokarmowego."
+    },
+    {
+      "question": "Co to jest trawienie?",
+      "options": [
+        "Przesuwanie pokarmu do żołądka",
+        "Usuwanie resztek pokarmu z organizmu",
+        "Rozkład składników pokarmowych na bardzo małe cząstki",
+        "Mieszanie pokarmu tylko w jamie ustnej"
+      ],
+      "correctAnswer": "Rozkład składników pokarmowych na bardzo małe cząstki",
+      "hint": "Chodzi o rozbijanie jedzenia na bardzo małe części."
+    },
+    {
+      "question": "Co bezpośrednio rozkłada składniki pokarmowe podczas trawienia?",
+      "options": [
+        "Kości",
+        "Enzymy trawienne",
+        "Mięśnie rąk",
+        "Paznokcie"
+      ],
+      "correctAnswer": "Enzymy trawienne",
+      "hint": "To specjalne substancje pomagające rozkładać pokarm."
+    },
+    {
+      "question": "Co dzieje się w jamie ustnej na początku trawienia?",
+      "options": [
+        "Pokarm trafia od razu do jelita cienkiego",
+        "Krew rozprowadza składniki do komórek",
+        "Kał zaczyna się formować",
+        "Zęby rozdrabniają pokarm, a ślina go nawilża i zaczyna trawić cukry"
+      ],
+      "correctAnswer": "Zęby rozdrabniają pokarm, a ślina go nawilża i zaczyna trawić cukry",
+      "hint": "Pomyśl o roli zębów i śliny podczas jedzenia."
+    },
+    {
+      "question": "Ile zębów stałych ma człowiek?",
+      "options": [
+        "28",
+        "30",
+        "32",
+        "36"
+      ],
+      "correctAnswer": "32",
+      "hint": "Uwzględnij także zęby mądrości."
+    },
+    {
+      "question": "Jaką rolę mają różne rodzaje zębów?",
+      "options": [
+        "Odcinają, rozrywają i miażdżą pokarm",
+        "Służą tylko do połykania pokarmu",
+        "Tylko rozdrabniają pokarm na bardzo małe części",
+        "Transportują pokarm do żołądka"
+      ],
+      "correctAnswer": "Odcinają, rozrywają i miażdżą pokarm",
+      "hint": "Różne zęby pomagają przygotować jedzenie do dalszego trawienia."
+    },
+    {
+      "question": "Dlaczego gardło jest wyjątkowe?",
+      "options": [
+        "Bo znajduje się tylko w układzie oddechowym",
+        "Bo jest wspólną częścią układu pokarmowego i oddechowego",
+        "Bo trawi tłuszcze",
+        "Bo magazynuje żółć"
+      ],
+      "correctAnswer": "Bo jest wspólną częścią układu pokarmowego i oddechowego",
+      "hint": "Przez gardło przechodzi nie tylko pokarm."
+    },
+    {
+      "question": "Jaką funkcję pełni przełyk?",
+      "options": [
+        "Miesza pokarm z sokami trawiennymi",
+        "Wchłania składniki odżywcze do krwi",
+        "Transportuje pokarm do żołądka",
+        "Formuje kał"
+      ],
+      "correctAnswer": "Transportuje pokarm do żołądka",
+      "hint": "To narząd, który przesuwa jedzenie dalej po połknięciu."
+    },
+    {
+      "question": "Co dzieje się z pokarmem w żołądku?",
+      "options": [
+        "Jest mieszany i częściowo trawiony",
+        "Jest usuwany z organizmu",
+        "Trafia prosto do krwi",
+        "Zamienia się w kał"
+      ],
+      "correctAnswer": "Jest mieszany i częściowo trawiony",
+      "hint": "W żołądku pokarm nie kończy jeszcze całej drogi."
+    },
+    {
+      "question": "Co dzieje się w jelicie cienkim?",
+      "options": [
+        "Formuje się kał",
+        "Pokarm jest tylko przechowywany",
+        "Zachodzi końcowy etap trawienia oraz wchłanianie składników pokarmowych do krwi",
+        "Pokarm jest tylko nawilżany"
+      ],
+      "correctAnswer": "Zachodzi końcowy etap trawienia oraz wchłanianie składników pokarmowych do krwi",
+      "hint": "To bardzo ważne miejsce dla końca trawienia i wchłaniania."
+    },
+    {
+      "question": "Co robi krew ze strawionymi składnikami pokarmowymi?",
+      "options": [
+        "Usuwa je z organizmu",
+        "Rozprowadza je do wszystkich komórek ciała",
+        "Magazynuje je w żołądku",
+        "Zamienia je w tłuszcze"
+      ],
+      "correctAnswer": "Rozprowadza je do wszystkich komórek ciała",
+      "hint": "Pomyśl, jak składniki odżywcze docierają do całego ciała."
+    },
+    {
+      "question": "Co dzieje się z niestrawionymi resztkami pokarmu?",
+      "options": [
+        "Wracają do żołądka",
+        "Trafiają do jelita grubego, gdzie formuje się kał",
+        "Od razu trafiają do krwi",
+        "Zostają w jamie ustnej"
+      ],
+      "correctAnswer": "Trafiają do jelita grubego, gdzie formuje się kał",
+      "hint": "Chodzi o dalszą drogę tego, czego organizm już nie wykorzysta."
+    },
+    {
+      "question": "Przez co kał jest usuwany z organizmu?",
+      "options": [
+        "Przez gardło",
+        "Przez przełyk",
+        "Przez odbyt",
+        "Przez żołądek"
+      ],
+      "correctAnswer": "Przez odbyt",
+      "hint": "To ostatni odcinek drogi pokarmu."
+    },
+    {
+      "question": "Który narząd jest największy w układzie pokarmowym?",
+      "options": [
+        "Trzustka",
+        "Żołądek",
+        "Wątroba",
+        "Jelito grube"
+      ],
+      "correctAnswer": "Wątroba",
+      "hint": "Ten narząd pomaga też unieszkodliwiać niektóre trujące substancje."
+    },
+    {
+      "question": "Jaką pracę wykonuje wątroba?",
+      "options": [
+        "Rozdrabnia pokarm zębami",
+        "Unieszkodliwia niektóre trujące substancje i wytwarza żółć potrzebną do trawienia tłuszczów",
+        "Transportuje pokarm do żołądka",
+        "Formuje kał"
+      ],
+      "correctAnswer": "Unieszkodliwia niektóre trujące substancje i wytwarza żółć potrzebną do trawienia tłuszczów",
+      "hint": "Pomyśl o żółci i ochronie organizmu przed niektórymi szkodliwymi substancjami."
+    },
+    {
+      "question": "Co dzieje się z żółcią w organizmie?",
+      "options": [
+        "Trafia do początkowego odcinka jelita cienkiego, a jej nadmiar magazynuje woreczek żółciowy",
+        "Trafia do żołądka, a jej nadmiar magazynuje trzustka",
+        "Trafia do początkowego odcinka jelita cienkiego, ale nie jest nigdzie magazynowana",
+        "Trafia do jelita grubego, a jej nadmiar magazynuje woreczek żółciowy"
+      ],
+      "correctAnswer": "Trafia do początkowego odcinka jelita cienkiego, a jej nadmiar magazynuje woreczek żółciowy",
+      "hint": "Pomyśl, gdzie żółć pomaga w trawieniu i jaki narząd może ją przechowywać."
+    },
+    {
+      "question": "Co wytwarza trzustka?",
+      "options": [
+        "Ślinę pomagającą trawić cukry",
+        "Sok trzustkowy zawierający enzymy trawiące cukry, tłuszcze i białka",
+        "Żółć potrzebną do trawienia tłuszczów",
+        "Substancję rozprowadzającą składniki pokarmowe po organizmie"
+      ],
+      "correctAnswer": "Sok trzustkowy zawierający enzymy trawiące cukry, tłuszcze i białka",
+      "hint": "To sok z enzymami, który pomaga trawić różne składniki pokarmowe."
+    },
+    {
+      "question": "Dlaczego warto myć ręce przed jedzeniem?",
+      "options": [
+        "Bo wtedy pokarm szybciej trafia do żołądka",
+        "Bo zmniejsza to ryzyko chorób układu pokarmowego",
+        "Bo ręce pomagają trawić cukry",
+        "Bo dzięki temu powstaje więcej śliny"
+      ],
+      "correctAnswer": "Bo zmniejsza to ryzyko chorób układu pokarmowego",
+      "hint": "Chodzi o ochronę zdrowia."
+    },
+    {
+      "question": "Jakie produkty ułatwiają przesuwanie treści pokarmowej?",
+      "options": [
+        "Masło, oleje i smalec",
+        "Mięso, jaja i sery",
+        "Warzywa, owoce i pieczywo gruboziarniste",
+        "Słodycze, białe pieczywo i słodkie napoje"
+      ],
+      "correctAnswer": "Warzywa, owoce i pieczywo gruboziarniste",
+      "hint": "Pomyśl o produktach roślinnych i pieczywie z grubszego przemiału."
+    },
+    {
+      "question": "Dlaczego warto dokładnie gryźć pokarm?",
+      "options": [
+        "Bo wtedy pokarm szybciej znika z talerza",
+        "Bo to ułatwia trawienie",
+        "Bo dzięki temu serce bije wolniej",
+        "Bo pokarm staje się zimniejszy"
+      ],
+      "correctAnswer": "Bo to ułatwia trawienie",
+      "hint": "Pomyśl, co pomaga układowi pokarmowemu lepiej poradzić sobie z jedzeniem."
+    },
+    {
+      "question": "Co sprzyja prawidłowej pracy układu pokarmowego?",
+      "options": [
+        "Regularne posiłki",
+        "Jedzenie tylko raz dziennie",
+        "Bardzo szybkie połykanie pokarmu",
+        "Pomijanie śniadania"
+      ],
+      "correctAnswer": "Regularne posiłki",
+      "hint": "Chodzi o jedzenie o stałych porach."
+    },
+    {
+      "question": "Co tworzy układ krwionośny?",
+      "options": [
+        "Serce, płuca i naczynia krwionośne",
+        "Serce, płuca i oskrzela",
+        "Serce i naczynia krwionośne",
+        "Serce, kości i mięśnie"
+      ],
+      "correctAnswer": "Serce i naczynia krwionośne",
+      "hint": "Pomyśl o narządzie, który pompuje krew, i drogach, którymi ona płynie."
+    },
+    {
+      "question": "Dokąd dociera krew w organizmie?",
+      "options": [
+        "Tylko do serca",
+        "Tylko do nóg i rąk",
+        "Tylko do głowy",
+        "Do wszystkich komórek ciała"
+      ],
+      "correctAnswer": "Do wszystkich komórek ciała",
+      "hint": "Krew musi dotrzeć wszędzie, nie tylko do jednego narządu."
+    },
+    {
+      "question": "Co układ krwionośny dostarcza komórkom?",
+      "options": [
+        "Tlen i składniki pokarmowe",
+        "Tylko wodę",
+        "Tylko ciepło",
+        "Dwutlenek węgla i sól"
+      ],
+      "correctAnswer": "Tlen i składniki pokarmowe",
+      "hint": "Pomyśl, czego komórki potrzebują do życia."
+    },
+    {
+      "question": "Co układ krwionośny odprowadza z komórek?",
+      "options": [
+        "Tylko tlen",
+        "Substancje zbędne i szkodliwe, m.in. dwutlenek węgla",
+        "Tylko składniki pokarmowe",
+        "Witaminy i wodę"
+      ],
+      "correctAnswer": "Substancje zbędne i szkodliwe, m.in. dwutlenek węgla",
+      "hint": "Chodzi o to, co organizmowi nie jest już potrzebne."
+    },
+    {
+      "question": "Jakie są rodzaje naczyń krwionośnych?",
+      "options": [
+        "Tętnice, żyły i naczynia włosowate",
+        "Tętnice, oskrzela i naczynia włosowate",
+        "Żyły, nerwy i naczynia włosowate",
+        "Tętnice, żyły i oskrzela"
+      ],
+      "correctAnswer": "Tętnice, żyły i naczynia włosowate",
+      "hint": "Są trzy rodzaje dróg, którymi płynie krew."
+    },
+    {
+      "question": "W jakim kierunku płynie krew tętnicami?",
+      "options": [
+        "Z komórek ciała do serca",
+        "Z serca do komórek ciała",
+        "Tylko wokół serca",
+        "Tylko do płuc"
+      ],
+      "correctAnswer": "Z serca do komórek ciała",
+      "hint": "Pomyśl, od czego zaczyna się droga krwi w tętnicach."
+    },
+    {
+      "question": "W jakim kierunku płynie krew żyłami?",
+      "options": [
+        "Z serca do komórek ciała",
+        "Tylko do nóg",
+        "Z komórek ciała do serca",
+        "Tylko do głowy"
+      ],
+      "correctAnswer": "Z komórek ciała do serca",
+      "hint": "To droga powrotna krwi."
+    },
+    {
+      "question": "Jakie są naczynia włosowate?",
+      "options": [
+        "Najgrubsze i najkrótsze",
+        "Najcieńsze i oplatają komórki narządów",
+        "Najszersze i prowadzą krew tylko z serca",
+        "Takie same jak żyły"
+      ],
+      "correctAnswer": "Najcieńsze i oplatają komórki narządów",
+      "hint": "To bardzo drobne naczynia znajdujące się blisko komórek."
+    },
+    {
+      "question": "Jaką pracę wykonuje serce?",
+      "options": [
+        "Pracuje tylko podczas biegania",
+        "Trawi pokarm",
+        "Pracuje nieustannie i wprawia krew w ruch",
+        "Oczyszcza powietrze w płucach"
+      ],
+      "correctAnswer": "Pracuje nieustannie i wprawia krew w ruch",
+      "hint": "Pomyśl o narządzie, który bez przerwy pompuje krew."
+    },
+    {
+      "question": "Jaką wielkość ma serce dorosłego człowieka?",
+      "options": [
+        "Wielkość głowy",
+        "Wielkość stopy",
+        "Wielkość pięści",
+        "Wielkość jabłka"
+      ],
+      "correctAnswer": "Wielkość pięści",
+      "hint": "Porównaj serce do części swojego ciała."
+    },
+    {
+      "question": "Ile razy na minutę bije serce dorosłego człowieka w spoczynku?",
+      "options": [
+        "Około 20 razy",
+        "Około 40 razy",
+        "Około 70 razy",
+        "Około 120 razy"
+      ],
+      "correctAnswer": "Około 70 razy",
+      "hint": "Pomyśl o typowym tętnie dorosłego człowieka podczas odpoczynku."
+    },
+    {
+      "question": "Czym jest tętno?",
+      "options": [
+        "Pracą płuc podczas oddychania",
+        "Falą krwi wyczuwalną w niektórych tętnicach",
+        "Szmerem słyszanym w uszach",
+        "Ruchem mięśni ręki"
+      ],
+      "correctAnswer": "Falą krwi wyczuwalną w niektórych tętnicach",
+      "hint": "To coś, co można wyczuć pod palcami."
+    },
+    {
+      "question": "Gdzie można badać tętno?",
+      "options": [
+        "Na czole",
+        "Po wewnętrznej stronie nadgarstka",
+        "Na kolanie",
+        "Na plecach"
+      ],
+      "correctAnswer": "Po wewnętrznej stronie nadgarstka",
+      "hint": "To miejsce blisko dłoni."
+    },
+    {
+      "question": "W czym układ krwionośny uczestniczy oprócz transportu krwi?",
+      "options": [
+        "W utrzymywaniu stałej temperatury ciała",
+        "W gryzieniu pokarmu",
+        "W poruszaniu kośćmi",
+        "W słyszeniu dźwięków"
+      ],
+      "correctAnswer": "W utrzymywaniu stałej temperatury ciała",
+      "hint": "Chodzi o to, by ciało nie było ani za zimne, ani za gorące."
+    },
+    {
+      "question": "Co dzieje się z naczyniami krwionośnymi w skórze, gdy jest gorąco?",
+      "options": [
+        "Kurczą się całkowicie",
+        "Znikają",
+        "Rozszerzają się",
+        "Zamieniają się w żyły"
+      ],
+      "correctAnswer": "Rozszerzają się",
+      "hint": "Pomyśl, co pomaga oddać więcej ciepła."
+    },
+    {
+      "question": "Co dzieje się z naczyniami krwionośnymi, gdy jest zimno?",
+      "options": [
+        "Rozszerzają się, by oddać więcej ciepła",
+        "Zwężają się, co ogranicza utratę ciepła",
+        "Przestają działać",
+        "Napełniają się powietrzem"
+      ],
+      "correctAnswer": "Zwężają się, co ogranicza utratę ciepła",
+      "hint": "Organizm wtedy stara się zatrzymać ciepło."
+    },
+    {
+      "question": "Co jest ważne dla zdrowia układu krwionośnego?",
+      "options": [
+        "Brak ruchu i jedzenie dużej ilości soli",
+        "Tylko picie bardzo zimnej wody",
+        "Ruch, mniej soli i tłuszczów zwierzęcych oraz unikanie dymu papierosowego",
+        "Jedzenie o dowolnej porze i brak odpoczynku"
+      ],
+      "correctAnswer": "Ruch, mniej soli i tłuszczów zwierzęcych oraz unikanie dymu papierosowego",
+      "hint": "Pomyśl o zdrowych nawykach dla serca i naczyń krwionośnych."
+    },
+    {
+      "question": "Gdzie zachodzi oddychanie komórkowe?",
+      "options": [
+        "Tylko w płucach",
+        "Tylko w sercu",
+        "We wszystkich komórkach organizmu",
+        "Tylko w mięśniach"
+      ],
+      "correctAnswer": "We wszystkich komórkach organizmu",
+      "hint": "Nie chodzi tylko o jeden narząd, ale o całe ciało."
+    },
+    {
+      "question": "Co umożliwia oddychanie komórkowe?",
+      "options": [
+        "Uwalnianie energii z pokarmu",
+        "Budowanie kości i zębów",
+        "Tylko poruszanie mięśniami",
+        "Trawienie pokarmu"
+      ],
+      "correctAnswer": "Uwalnianie energii z pokarmu",
+      "hint": "Pomyśl, co organizm zyskuje dzięki oddychaniu komórkowemu."
+    },
+    {
+      "question": "Co jest potrzebne do oddychania, a co wtedy powstaje?",
+      "options": [
+        "Potrzebna jest woda, a powstaje tlen",
+        "Potrzebny jest tlen, a powstaje dwutlenek węgla",
+        "Potrzebny jest dwutlenek węgla, a powstaje tlen",
+        "Potrzebne są witaminy, a powstaje para wodna"
+      ],
+      "correctAnswer": "Potrzebny jest tlen, a powstaje dwutlenek węgla",
+      "hint": "Pomyśl o gazie wdychanym i gazie wydychanym."
+    },
+    {
+      "question": "Z czego składa się układ oddechowy?",
+      "options": [
+        "Z serca i naczyń krwionośnych",
+        "Z dróg oddechowych i płuc",
+        "Z kości i mięśni",
+        "Z jamy ustnej i żołądka"
+      ],
+      "correctAnswer": "Z dróg oddechowych i płuc",
+      "hint": "Pomyśl o drogach, którymi płynie powietrze, i o narządach, w których zachodzi wymiana gazowa."
+    },
+    {
+      "question": "Na czym polega wymiana gazowa?",
+      "options": [
+        "Na ogrzewaniu i oczyszczaniu powietrza",
+        "Na pobieraniu tlenu i usuwaniu dwutlenku węgla",
+        "Na zamianie tlenu w wodę",
+        "Na zatrzymywaniu powietrza w gardle"
+      ],
+      "correctAnswer": "Na pobieraniu tlenu i usuwaniu dwutlenku węgla",
+      "hint": "Chodzi o dwa gazy: jeden pobieramy, drugi usuwamy."
+    },
+    {
+      "question": "Którą drogą przepływa powietrze w czasie oddychania?",
+      "options": [
+        "Jama nosowa, gardło, krtań, tchawica i oskrzela",
+        "Gardło, jama nosowa, tchawica, krtań i oskrzela",
+        "Jama nosowa, krtań, gardło, oskrzela i tchawica",
+        "Tchawica, krtań, gardło, jama nosowa i oskrzela"
+      ],
+      "correctAnswer": "Jama nosowa, gardło, krtań, tchawica i oskrzela",
+      "hint": "Zacznij od nosa i idź po kolei dalej."
+    },
+    {
+      "question": "Co dzieje się z powietrzem w drogach oddechowych?",
+      "options": [
+        "Jest tylko ochładzane",
+        "Jest ogrzewane, nawilżane i oczyszczane",
+        "Jest zamieniane w dwutlenek węgla",
+        "Jest zatrzymywane w tchawicy"
+      ],
+      "correctAnswer": "Jest ogrzewane, nawilżane i oczyszczane",
+      "hint": "Pomyśl o trzech ważnych zmianach, które przygotowują powietrze dla płuc."
+    },
+    {
+      "question": "Jak organizm usuwa część zanieczyszczeń z dróg oddechowych?",
+      "options": [
+        "Tylko przez połykanie",
+        "Tylko przez wydychanie",
+        "Przez kaszel i kichanie",
+        "Przez pocenie się"
+      ],
+      "correctAnswer": "Przez kaszel i kichanie",
+      "hint": "To odruchy, które pomagają oczyścić drogi oddechowe."
+    },
+    {
+      "question": "Jaką funkcję pełni krtań?",
+      "options": [
+        "Jest narządem głosu",
+        "Pompuje krew do płuc",
+        "Ogrzewa powietrze w jamie nosowej",
+        "Rozdrabnia pokarm"
+      ],
+      "correctAnswer": "Jest narządem głosu",
+      "hint": "Ten narząd ma związek z mówieniem."
+    },
+    {
+      "question": "Co znajduje się w krtani i drga podczas przepływu powietrza?",
+      "options": [
+        "Rzęski",
+        "Pęcherzyki płucne",
+        "Struny głosowe",
+        "Naczynia włosowate"
+      ],
+      "correctAnswer": "Struny głosowe",
+      "hint": "To dzięki nim możemy wydawać dźwięki."
+    },
+    {
+      "question": "Na co rozgałęzia się tchawica?",
+      "options": [
+        "Na dwa gardła",
+        "Na dwa płuca",
+        "Na dwa pęcherzyki",
+        "Na dwa oskrzela"
+      ],
+      "correctAnswer": "Na dwa oskrzela",
+      "hint": "To dwa przewody prowadzące do płuc."
+    },
+    {
+      "question": "Gdzie kończą się oskrzela?",
+      "options": [
+        "W gardle",
+        "W pęcherzykach płucnych",
+        "W jamie nosowej",
+        "W krtani"
+      ],
+      "correctAnswer": "W pęcherzykach płucnych",
+      "hint": "To małe struktury znajdujące się w płucach."
+    },
+    {
+      "question": "Z czego zbudowane są płuca?",
+      "options": [
+        "Z samych oskrzeli",
+        "Z milionów pęcherzyków płucnych",
+        "Z chrząstek i kości",
+        "Z jednej dużej komory"
+      ],
+      "correctAnswer": "Z milionów pęcherzyków płucnych",
+      "hint": "Chodzi o bardzo dużą liczbę małych części."
+    },
+    {
+      "question": "Czym są oplecione pęcherzyki płucne?",
+      "options": [
+        "Siecią mięśni",
+        "Siecią nerwów",
+        "Siecią naczyń włosowatych",
+        "Siecią chrząstek"
+      ],
+      "correctAnswer": "Siecią naczyń włosowatych",
+      "hint": "To bardzo cienkie naczynia krwionośne."
+    },
+    {
+      "question": "Co dzieje się w płucach podczas wymiany gazowej?",
+      "options": [
+        "Tlen przenika do krwi, a dwutlenek węgla z krwi do pęcherzyków płucnych",
+        "Dwutlenek węgla przenika do krwi, a tlen do pęcherzyków płucnych",
+        "Tlen i dwutlenek węgla zostają w płucach",
+        "Krew zamienia się w powietrze"
+      ],
+      "correctAnswer": "Tlen przenika do krwi, a dwutlenek węgla z krwi do pęcherzyków płucnych",
+      "hint": "Pomyśl, który gaz trafia do krwi, a który jest z niej usuwany."
+    },
+    {
+      "question": "Dokąd krew roznosi tlen?",
+      "options": [
+        "Tylko do płuc",
+        "Do komórek ciała",
+        "Tylko do kości",
+        "Do gardła"
+      ],
+      "correctAnswer": "Do komórek ciała",
+      "hint": "Tlen jest potrzebny w całym organizmie."
+    },
+    {
+      "question": "Co dzieje się z dwutlenkiem węgla?",
+      "options": [
+        "Jest roznoszony do komórek ciała",
+        "Zostaje na stałe w krwi",
+        "Trafia z krwią do płuc i jest usuwany podczas wydechu",
+        "Zamienia się w tlen"
+      ],
+      "correctAnswer": "Trafia z krwią do płuc i jest usuwany podczas wydechu",
+      "hint": "Pomyśl, co wydostaje się z organizmu przy wydychaniu."
+    },
+    {
+      "question": "Dlaczego oddychanie nosem jest korzystniejsze niż ustami?",
+      "options": [
+        "Bo szybciej dostarcza jedzenie do żołądka",
+        "Bo lepiej oczyszcza, ogrzewa i nawilża powietrze",
+        "Bo wzmacnia kości",
+        "Bo zatrzymuje całe powietrze w gardle"
+      ],
+      "correctAnswer": "Bo lepiej oczyszcza, ogrzewa i nawilża powietrze",
+      "hint": "Pomyśl o tym, jak nos przygotowuje powietrze dla płuc."
+    },
+    {
+      "question": "Co pomaga chronić układ oddechowy?",
+      "options": [
+        "Wietrzenie pomieszczeń i unikanie dymu tytoniowego",
+        "Jedzenie tylko słodkich potraw",
+        "Oddychanie wyłącznie ustami",
+        "Przebywanie w zadymionych miejscach"
+      ],
+      "correctAnswer": "Wietrzenie pomieszczeń i unikanie dymu tytoniowego",
+      "hint": "Chodzi o świeże powietrze i unikanie szkodliwego dymu."
+    },
+    {
+      "question": "Co tworzy układ ruchu?",
+      "options": [
+        "Mięśnie i stawy",
+        "Szkielet i mięśnie szkieletowe",
+        "Kości i narządy wewnętrzne",
+        "Szkielet i układ krwionośny"
+      ],
+      "correctAnswer": "Szkielet i mięśnie szkieletowe",
+      "hint": "Pomyśl o kościach i mięśniach."
+    },
+    {
+      "question": "Co umożliwia układ ruchu?",
+      "options": [
+        "Trawienie pokarmu",
+        "Wytwarzanie składników krwi",
+        "Ruch ciała",
+        "Krzepnięcie krwi"
+      ],
+      "correctAnswer": "Ruch ciała",
+      "hint": "Dzięki temu układowi możemy się poruszać."
+    },
+    {
+      "question": "Z ilu kości składa się szkielet dorosłego człowieka?",
+      "options": [
+        "Z mniej niż 100 kości",
+        "Z dokładnie 150 kości",
+        "Z ponad 200 kości",
+        "Z około 50 kości"
+      ],
+      "correctAnswer": "Z ponad 200 kości",
+      "hint": "To liczba liczona w setkach, większa niż liczba kości w jednej kończynie."
+    },
+    {
+      "question": "Czym różnią się kości?",
+      "options": [
+        "Tylko długością",
+        "Kształtem i wielkością",
+        "Tylko grubością",
+        "Wyłącznie miejscem położenia"
+      ],
+      "correctAnswer": "Kształtem i wielkością",
+      "hint": "Pomyśl o tym, jak wyglądają różne kości."
+    },
+    {
+      "question": "Jak są połączone niektóre kości w szkielecie?",
+      "options": [
+        "Wszystkie tylko ruchomo",
+        "Wszystkie tylko nieruchomo",
+        "Niektóre nieruchomo, a inne ruchomo",
+        "Tylko za pomocą mięśni"
+      ],
+      "correctAnswer": "Niektóre nieruchomo, a inne ruchomo",
+      "hint": "Nie wszystkie kości łączą się tak samo."
+    },
+    {
+      "question": "Jak nazywają się ruchome połączenia kości?",
+      "options": [
+        "Ścięgna",
+        "Mięśnie",
+        "Stawy",
+        "Żebra"
+      ],
+      "correctAnswer": "Stawy",
+      "hint": "Dzięki nim możesz poruszać ręką lub nogą."
+    },
+    {
+      "question": "Co umożliwiają niektóre stawy?",
+      "options": [
+        "Tylko ochronę narządów",
+        "Ruch obrotowy albo zginanie i prostowanie kończyn",
+        "Tylko wzrost kości",
+        "Powstawanie składników krwi"
+      ],
+      "correctAnswer": "Ruch obrotowy albo zginanie i prostowanie kończyn",
+      "hint": "Pomyśl o obracaniu i zginaniu ręki lub nogi."
+    },
+    {
+      "question": "Co wyróżnia się w szkielecie człowieka?",
+      "options": [
+        "Czaszkę, kręgosłup, klatkę piersiową oraz kości kończyn górnych i dolnych",
+        "Czaszkę, kręgosłup i narządy wewnętrzne",
+        "Klatkę piersiową, miednicę i mięśnie",
+        "Czaszkę, klatkę piersiową oraz kości kończyn górnych"
+      ],
+      "correctAnswer": "Czaszkę, kręgosłup, klatkę piersiową oraz kości kończyn górnych i dolnych",
+      "hint": "Pomyśl o najważniejszych częściach szkieletu: głowie, tułowiu i kończynach."
+    },
+    {
+      "question": "Jaką rolę pełni szkielet?",
+      "options": [
+        "Tylko pomaga oddychać",
+        "Nadaje ciału kształt, stanowi jego rusztowanie i chroni narządy wewnętrzne",
+        "Tylko umożliwia trawienie",
+        "Służy tylko do poruszania palcami"
+      ],
+      "correctAnswer": "Nadaje ciału kształt, stanowi jego rusztowanie i chroni narządy wewnętrzne",
+      "hint": "Pomyśl o kształcie ciała, podporze i ochronie."
+    },
+    {
+      "question": "Co chroni czaszka?",
+      "options": [
+        "Serce",
+        "Płuca",
+        "Mózg",
+        "Żołądek"
+      ],
+      "correctAnswer": "Mózg",
+      "hint": "To narząd znajdujący się w głowie."
+    },
+    {
+      "question": "Co chroni klatka piersiowa?",
+      "options": [
+        "Serce i płuca",
+        "Mózg i oczy",
+        "Żołądek i jelita",
+        "Kości i stawy"
+      ],
+      "correctAnswer": "Serce i płuca",
+      "hint": "Chodzi o ważne narządy w klatce piersiowej."
+    },
+    {
+      "question": "Co znajduje się w niektórych kościach i wytwarza składniki krwi?",
+      "options": [
+        "Tłuszcz",
+        "Czerwony szpik kostny",
+        "Powietrze",
+        "Enzymy"
+      ],
+      "correctAnswer": "Czerwony szpik kostny",
+      "hint": "To część kości związana z powstawaniem krwi."
+    },
+    {
+      "question": "Za pomocą czego mięśnie szkieletowe są przytwierdzone do kości?",
+      "options": [
+        "Stawów",
+        "Żeber",
+        "Ścięgien",
+        "Kręgów"
+      ],
+      "correctAnswer": "Ścięgien",
+      "hint": "To one łączą mięśnie z kośćmi."
+    },
+    {
+      "question": "Ile mięśni szkieletowych ma człowiek?",
+      "options": [
+        "Mniej niż 100",
+        "Dokładnie 200",
+        "Ponad 400",
+        "Około 50"
+      ],
+      "correctAnswer": "Ponad 400",
+      "hint": "To liczba znacznie większa niż liczba kości."
+    },
+    {
+      "question": "Jak działają mięśnie szkieletowe?",
+      "options": [
+        "Zawsze niezależnie od człowieka",
+        "Zależnie od woli człowieka",
+        "Tylko podczas snu",
+        "Tylko przy jedzeniu"
+      ],
+      "correctAnswer": "Zależnie od woli człowieka",
+      "hint": "Możesz świadomie nimi poruszać."
+    },
+    {
+      "question": "Które mięśnie pracują niezależnie od woli człowieka?",
+      "options": [
+        "Tylko mięśnie nóg",
+        "Mięśnie serca, naczyń krwionośnych i przewodu pokarmowego",
+        "Tylko mięśnie rąk",
+        "Wszystkie mięśnie szkieletowe"
+      ],
+      "correctAnswer": "Mięśnie serca, naczyń krwionośnych i przewodu pokarmowego",
+      "hint": "To mięśnie, które działają nawet wtedy, gdy o tym nie myślisz."
+    },
+    {
+      "question": "Co robią mięśnie przewodu pokarmowego?",
+      "options": [
+        "Chronią mózg",
+        "Przesuwają pokarm i mieszają go z enzymami",
+        "Pomagają widzieć",
+        "Wytwarzają kości"
+      ],
+      "correctAnswer": "Przesuwają pokarm i mieszają go z enzymami",
+      "hint": "Pomyśl o tym, co dzieje się z jedzeniem w układzie pokarmowym."
+    },
+    {
+      "question": "Co umożliwia mięsień sercowy?",
+      "options": [
+        "Przepływ krwi",
+        "Zginanie nóg",
+        "Obracanie głowy",
+        "Chronienie płuc"
+      ],
+      "correctAnswer": "Przepływ krwi",
+      "hint": "Ten mięsień pracuje w sercu."
+    },
+    {
+      "question": "Co wzmacniają systematyczne ćwiczenia?",
+      "options": [
+        "Tylko włosy i paznokcie",
+        "Kości, stawy i mięśnie",
+        "Tylko zęby",
+        "Wyłącznie skórę"
+      ],
+      "correctAnswer": "Kości, stawy i mięśnie",
+      "hint": "Chodzi o części układu ruchu."
+    },
+    {
+      "question": "W czym pomaga odpowiednie obuwie?",
+      "options": [
+        "W ochronie stóp i układu ruchu",
+        "Tylko w szybszym bieganiu",
+        "Tylko w utrzymaniu ciepła stóp",
+        "Wyłącznie w wygodniejszym chodzeniu po domu"
+      ],
+      "correctAnswer": "W ochronie stóp i układu ruchu",
+      "hint": "Dobre buty pomagają dbać o nogi i ciało."
+    },
+    {
+      "question": "Dlaczego plecak jest lepszy niż torba na jedno ramię?",
+      "options": [
+        "Bo jest zawsze lżejszy",
+        "Bo równomiernie obciąża kręgosłup",
+        "Bo mieści mniej rzeczy",
+        "Bo chroni serce i płuca"
+      ],
+      "correctAnswer": "Bo równomiernie obciąża kręgosłup",
+      "hint": "Pomyśl o rozłożeniu ciężaru na plecach."
+    },
+    {
+      "question": "Jak lepiej podnosić ciężkie przedmioty?",
+      "options": [
+        "Schylając się szybko",
+        "Jedną ręką",
+        "Kucając",
+        "Zawsze na prostych nogach"
+      ],
+      "correctAnswer": "Kucając",
+      "hint": "To sposób lepszy niż schylanie się."
+    },
+    {
+      "question": "Co pomaga w prawidłowym wzroście kości?",
+      "options": [
+        "Produkty bogate w wapń, fosfor i witaminę D",
+        "Produkty bogate tylko w cukry",
+        "Produkty bogate tylko w wodę",
+        "Produkty bogate tylko w witaminę C"
+      ],
+      "correctAnswer": "Produkty bogate w wapń, fosfor i witaminę D",
+      "hint": "Pomyśl o składnikach ważnych dla mocnych i rosnących kości."
+    },
+    {
+      "question": "Co robi układ nerwowy?",
+      "options": [
+        "Tylko porusza mięśniami",
+        "Odbiera, analizuje i przekazuje informacje",
+        "Tylko trawi pokarm",
+        "Tylko pompuje krew"
+      ],
+      "correctAnswer": "Odbiera, analizuje i przekazuje informacje",
+      "hint": "Chodzi o informacje docierające do organizmu i wysyłane dalej."
+    },
+    {
+      "question": "Za co odpowiada układ nerwowy w organizmie?",
+      "options": [
+        "Za pracę całego organizmu",
+        "Tylko za oddychanie",
+        "Tylko za trawienie",
+        "Tylko za wzrost kości"
+      ],
+      "correctAnswer": "Za pracę całego organizmu",
+      "hint": "To układ, który kieruje działaniem całego ciała."
+    },
+    {
+      "question": "Z czego składa się układ nerwowy?",
+      "options": [
+        "Z serca, płuc i żołądka",
+        "Z mięśni, kości i stawów",
+        "Z mózgowia, rdzenia kręgowego i nerwów",
+        "Z oczu, uszu i nosa"
+      ],
+      "correctAnswer": "Z mózgowia, rdzenia kręgowego i nerwów",
+      "hint": "Pomyśl o ośrodku sterowania, drodze biegnącej wzdłuż kręgosłupa i sieci przewodów w całym ciele."
+    },
+    {
+      "question": "Jaka jest największa część mózgowia?",
+      "options": [
+        "Rdzeń kręgowy",
+        "Nerw",
+        "Mózg",
+        "Móżdżek"
+      ],
+      "correctAnswer": "Mózg",
+      "hint": "To najważniejsza i największa część mózgowia."
+    },
+    {
+      "question": "Co robi mózg z informacjami z narządów zmysłów?",
+      "options": [
+        "Ukrywa je",
+        "Analizuje je",
+        "Zamienia je w kości",
+        "Wysyła je do oka"
+      ],
+      "correctAnswer": "Analizuje je",
+      "hint": "Pomyśl, co dzieje się z informacjami po ich odebraniu."
+    },
+    {
+      "question": "Czym kieruje mózg?",
+      "options": [
+        "Pracą mięśni szkieletowych",
+        "Tylko pracą serca",
+        "Tylko pracą oka",
+        "Tylko pracą skóry"
+      ],
+      "correctAnswer": "Pracą mięśni szkieletowych",
+      "hint": "Chodzi o mięśnie pomagające nam się poruszać."
+    },
+    {
+      "question": "Co umożliwia mózg?",
+      "options": [
+        "Tylko widzenie",
+        "Myślenie, uczenie się i zapamiętywanie",
+        "Tylko słyszenie",
+        "Tylko oddychanie"
+      ],
+      "correctAnswer": "Myślenie, uczenie się i zapamiętywanie",
+      "hint": "Pomyśl o czynnościach związanych z nauką i pamięcią."
+    },
+    {
+      "question": "Jaką rolę pełni rdzeń kręgowy?",
+      "options": [
+        "Odbiera światło i tworzy obraz",
+        "Łączy mózgowie z innymi częściami ciała i przewodzi informacje",
+        "Oczyszcza powietrze z pyłu",
+        "Wytwarza składniki krwi"
+      ],
+      "correctAnswer": "Łączy mózgowie z innymi częściami ciała i przewodzi informacje",
+      "hint": "To część, która łączy i przekazuje dalej."
+    },
+    {
+      "question": "Co robią nerwy?",
+      "options": [
+        "Przekazują informacje z narządów zmysłów do mózgu i rdzenia kręgowego oraz polecenia do mięśni i narządów",
+        "Tylko budują kości",
+        "Tylko oczyszczają oko",
+        "Tylko magazynują energię"
+      ],
+      "correctAnswer": "Przekazują informacje z narządów zmysłów do mózgu i rdzenia kręgowego oraz polecenia do mięśni i narządów",
+      "hint": "Nerwy działają jak drogi przesyłania informacji w ciele."
+    },
+    {
+      "question": "Za co jeszcze odpowiada układ nerwowy?",
+      "options": [
+        "Za emocje, równowagę i koordynację ruchów",
+        "Tylko za wzrost włosów",
+        "Tylko za kolor oczu",
+        "Tylko za trawienie cukrów"
+      ],
+      "correctAnswer": "Za emocje, równowagę i koordynację ruchów",
+      "hint": "Pomyśl o uczuciach i sprawnym poruszaniu się."
+    },
+    {
+      "question": "Czym jest kora mózgowa?",
+      "options": [
+        "Wewnętrzną, gładką warstwą mózgu",
+        "Zewnętrzną, silnie pofałdowaną warstwą mózgu",
+        "Najmniejszą częścią oka",
+        "Rodzajem nerwu"
+      ],
+      "correctAnswer": "Zewnętrzną, silnie pofałdowaną warstwą mózgu",
+      "hint": "Chodzi o warstwę na zewnątrz mózgu."
+    },
+    {
+      "question": "Co robią narządy zmysłów?",
+      "options": [
+        "Budują kości",
+        "Odbierają informacje z otoczenia i przekazują je do układu nerwowego",
+        "Pompują krew",
+        "Trawią pokarm"
+      ],
+      "correctAnswer": "Odbierają informacje z otoczenia i przekazują je do układu nerwowego",
+      "hint": "To dzięki nim dowiadujemy się, co dzieje się wokół nas."
+    },
+    {
+      "question": "Który zestaw to narządy zmysłów?",
+      "options": [
+        "Oczy, uszy, nos, język i skóra",
+        "Oczy, uszy, nos, język i mózg",
+        "Oczy, uszy, język, skóra i płuca",
+        "Oczy, nos, skóra, nerwy i język"
+      ],
+      "correctAnswer": "Oczy, uszy, nos, język i skóra",
+      "hint": "Pomyśl o częściach ciała, które pomagają odbierać bodźce."
+    },
+    {
+      "question": "Jakie informacje dostarcza oko?",
+      "options": [
+        "O smaku i zapachu",
+        "O barwie, kształcie, ruchu i odległości przedmiotów",
+        "Tylko o temperaturze",
+        "Tylko o dźwiękach"
+      ],
+      "correctAnswer": "O barwie, kształcie, ruchu i odległości przedmiotów",
+      "hint": "Chodzi o to, co możemy zobaczyć."
+    },
+    {
+      "question": "Jaka jest główna część oka?",
+      "options": [
+        "Powieka",
+        "Rzęsy",
+        "Gałka oczna",
+        "Źrenica"
+      ],
+      "correctAnswer": "Gałka oczna",
+      "hint": "To największa i najważniejsza część oka."
+    },
+    {
+      "question": "Co robią łzy i powieki?",
+      "options": [
+        "Przekazują dźwięki do mózgu",
+        "Oczyszczają oraz nawilżają powierzchnię oka",
+        "Skupiają światło na siatkówce",
+        "Chronią kości przed urazami"
+      ],
+      "correctAnswer": "Oczyszczają oraz nawilżają powierzchnię oka",
+      "hint": "Pomagają oku być czystym i nie wysychać."
+    },
+    {
+      "question": "Przed czym rzęsy chronią oko?",
+      "options": [
+        "Przed hałasem",
+        "Przed pyłem i kurzem",
+        "Przed zimnem",
+        "Przed jasnym światłem"
+      ],
+      "correctAnswer": "Przed pyłem i kurzem",
+      "hint": "To drobinki, które mogą wpaść do oka."
+    },
+    {
+      "question": "Przez co światło wpada do oka?",
+      "options": [
+        "Przez soczewkę",
+        "Przez siatkówkę",
+        "Przez źrenicę",
+        "Przez rzęsy"
+      ],
+      "correctAnswer": "Przez źrenicę",
+      "hint": "To otwór, przez który do oka dostaje się światło."
+    },
+    {
+      "question": "Jaką rolę pełni soczewka w oku?",
+      "options": [
+        "Chroni oko przed kurzem",
+        "Zmienia bieg promieni świetlnych i skupia je na siatkówce",
+        "Nawilża powierzchnię oka",
+        "Odbiera zapachy z otoczenia"
+      ],
+      "correctAnswer": "Zmienia bieg promieni świetlnych i skupia je na siatkówce",
+      "hint": "Pomyśl o tym, co pomaga dobrze skupić obraz w oku."
+    },
+    {
+      "question": "Jaki obraz przedmiotu powstaje na siatkówce?",
+      "options": [
+        "Powiększony",
+        "Kolorowy",
+        "Odwrócony",
+        "Rozmazany"
+      ],
+      "correctAnswer": "Odwrócony",
+      "hint": "Pomyśl, jak wygląda obraz w oku, zanim zajmie się nim mózg."
+    },
+    {
+      "question": "Co robi mózg z obrazem powstałym na siatkówce?",
+      "options": [
+        "Przetwarza go, dzięki czemu widzimy go prawidłowo",
+        "Zmniejsza go i ukrywa",
+        "Przesyła go do ucha",
+        "Zamienia go w dźwięk"
+      ],
+      "correctAnswer": "Przetwarza go, dzięki czemu widzimy go prawidłowo",
+      "hint": "Chodzi o to, dlaczego nie widzimy świata do góry nogami."
+    },
+    {
+      "question": "W jakiej postaci ucho odbiera dźwięki?",
+      "options": [
+        "W postaci światła",
+        "W postaci drgań powietrza",
+        "W postaci kolorów",
+        "W postaci smaku"
+      ],
+      "correctAnswer": "W postaci drgań powietrza",
+      "hint": "Dźwięk to coś, co porusza się w powietrzu."
+    },
+    {
+      "question": "Jaką rolę pełni małżowina uszna?",
+      "options": [
+        "Pomaga rozpoznawać smaki",
+        "Zbiera dźwięki i kieruje je do wnętrza ucha",
+        "Chroni oczy przed światłem",
+        "Odbiera ból i ciepło"
+      ],
+      "correctAnswer": "Zbiera dźwięki i kieruje je do wnętrza ucha",
+      "hint": "Pomyśl, co dzieje się z dźwiękiem, zanim trafi głębiej do ucha."
+    },
+    {
+      "question": "Dokąd są przekazywane informacje dźwiękowe?",
+      "options": [
+        "Do nosa",
+        "Do skóry",
+        "Do żołądka",
+        "Do mózgu"
+      ],
+      "correctAnswer": "Do mózgu",
+      "hint": "To tam dźwięki są rozpoznawane i rozumiane."
+    },
+    {
+      "question": "Co dzięki pracy mózgu potrafimy rozróżniać w dźwiękach?",
+      "options": [
+        "Kolor, kształt i wielkość",
+        "Wysokość, głośność i kierunek dźwięków",
+        "Smak, zapach i temperaturę",
+        "Tylko głośność"
+      ],
+      "correctAnswer": "Wysokość, głośność i kierunek dźwięków",
+      "hint": "Pomyśl, co możemy powiedzieć o dźwięku, którego słuchamy."
+    },
+    {
+      "question": "Dlaczego ucho pomaga utrzymywać równowagę?",
+      "options": [
+        "Bo odbiera informacje o położeniu głowy",
+        "Bo rozpoznaje smak jedzenia",
+        "Bo widzi ruch ciała",
+        "Bo mierzy temperaturę skóry"
+      ],
+      "correctAnswer": "Bo odbiera informacje o położeniu głowy",
+      "hint": "Chodzi o to, skąd organizm wie, jak ustawiona jest głowa."
+    },
+    {
+      "question": "Na co reagują narząd węchu i narząd smaku?",
+      "options": [
+        "Na światło i ciemność",
+        "Na ruch powietrza",
+        "Na cząstki substancji obecnych w otoczeniu",
+        "Na nacisk kości"
+      ],
+      "correctAnswer": "Na cząstki substancji obecnych w otoczeniu",
+      "hint": "Pomyśl o tym, co musi dotrzeć do nosa lub języka, aby coś poczuć."
+    },
+    {
+      "question": "Co znajduje się w nosie i pozwala rozpoznawać zapachy?",
+      "options": [
+        "Kubki smakowe",
+        "Ciałka czuciowe",
+        "Komórki węchowe",
+        "Błona bębenkowa"
+      ],
+      "correctAnswer": "Komórki węchowe",
+      "hint": "To specjalne komórki odpowiedzialne za węch."
+    },
+    {
+      "question": "Co znajduje się na języku?",
+      "options": [
+        "Komórki węchowe",
+        "Kubki smakowe",
+        "Małżowiny uszne",
+        "Ciałka wzrokowe"
+      ],
+      "correctAnswer": "Kubki smakowe",
+      "hint": "To one pomagają odczuwać smaki."
+    },
+    {
+      "question": "Jakie smaki odczuwamy dzięki kubkom smakowym?",
+      "options": [
+        "Jasny, ciemny, cichy i głośny",
+        "Miękki, twardy, ciepły i zimny",
+        "Słodki, słony, gorzki i kwaśny",
+        "Lekki, ciężki, szybki i wolny"
+      ],
+      "correctAnswer": "Słodki, słony, gorzki i kwaśny",
+      "hint": "Pomyśl o podstawowych smakach jedzenia."
+    },
+    {
+      "question": "Przy czym współpracują węch i smak?",
+      "options": [
+        "Przy ocenie jakości jedzenia",
+        "Przy utrzymywaniu równowagi",
+        "Przy widzeniu po ciemku",
+        "Przy odbieraniu bólu"
+      ],
+      "correctAnswer": "Przy ocenie jakości jedzenia",
+      "hint": "Chodzi o to, jak oceniamy to, co jemy."
+    },
+    {
+      "question": "Co odbierają ciałka czuciowe znajdujące się w skórze?",
+      "options": [
+        "Dotyk, ciepło i zimno",
+        "Dźwięki i zapachy",
+        "Tylko ból",
+        "Smak i równowagę"
+      ],
+      "correctAnswer": "Dotyk, ciepło i zimno",
+      "hint": "Pomyśl, co możesz poczuć skórą, gdy czegoś dotykasz."
+    },
+    {
+      "question": "Za co odpowiadają zakończenia nerwowe w skórze?",
+      "options": [
+        "Za odczuwanie bólu",
+        "Za widzenie obrazu",
+        "Za rozpoznawanie zapachów",
+        "Za słyszenie dźwięków"
+      ],
+      "correctAnswer": "Za odczuwanie bólu",
+      "hint": "To dzięki nim czujemy, że coś nas boli."
+    },
+    {
+      "question": "Gdzie znajduje się najwięcej receptorów dotyku?",
+      "options": [
+        "Na plecach",
+        "Na palcach rąk",
+        "Na łokciach",
+        "Na kolanach"
+      ],
+      "correctAnswer": "Na palcach rąk",
+      "hint": "Tą częścią ciała bardzo dokładnie badamy przedmioty."
+    },
+    {
+      "question": "Ile snu na dobę potrzebuje zwykle uczeń w wieku szkolnym, aby układ nerwowy dobrze funkcjonował?",
+      "options": [
+        "Około 3 godzin",
+        "Około 6 godzin",
+        "Około 9 godzin",
+        "Około 12 godzin"
+      ],
+      "correctAnswer": "Około 9 godzin",
+      "hint": "To mniej więcej tyle, ile trwa długa noc."
+    },
+    {
+      "question": "W czym pomaga wypoczynek?",
+      "options": [
+        "W zwiększaniu ostrości wzroku",
+        "W radzeniu sobie ze stresem",
+        "W szybszym wzroście kości",
+        "W lepszym rozpoznawaniu smaków"
+      ],
+      "correctAnswer": "W radzeniu sobie ze stresem",
+      "hint": "Pomyśl, co pomaga się uspokoić i poczuć lepiej."
+    },
+    {
+      "question": "Co może uszkadzać słuch?",
+      "options": [
+        "Czytanie przy lampce",
+        "Zbyt głośna muzyka i hałas",
+        "Picie wody",
+        "Spanie około 9 godzin"
+      ],
+      "correctAnswer": "Zbyt głośna muzyka i hałas",
+      "hint": "Chodzi o bardzo mocne dźwięki."
+    },
+    {
+      "question": "Co może zatykać ucho?",
+      "options": [
+        "Nadmiar woskowiny",
+        "Zbyt dużo światła",
+        "Brak snu",
+        "Kwaśny smak"
+      ],
+      "correctAnswer": "Nadmiar woskowiny",
+      "hint": "To coś, co naturalnie znajduje się w uchu, ale w dużej ilości szkodzi."
+    },
+    {
+      "question": "Co chroni wzrok podczas czytania i nauki?",
+      "options": [
+        "Słuchanie cichej muzyki",
+        "Mycie rąk",
+        "Dobre oświetlenie",
+        "Jedzenie słodkich owoców"
+      ],
+      "correctAnswer": "Dobre oświetlenie",
+      "hint": "Pomyśl, w jakich warunkach oczom jest najwygodniej pracować."
+    },
+    {
+      "question": "W jakiej odległości od oczu powinien znajdować się tekst podczas czytania?",
+      "options": [
+        "Około 10 cm",
+        "Około 30 cm",
+        "Około 60 cm",
+        "Jak najbliżej oczu"
+      ],
+      "correctAnswer": "Około 30 cm",
+      "hint": "To odległość pozwalająca wygodnie czytać bez zbliżania tekstu do twarzy."
+    },
+    {
+      "question": "Przed czym chronią oczy okulary z filtrem?",
+      "options": [
+        "Przed kurzem w klasie",
+        "Przed silnym promieniowaniem słonecznym",
+        "Przed czytaniem małych liter",
+        "Przed zmęczeniem nóg"
+      ],
+      "correctAnswer": "Przed silnym promieniowaniem słonecznym",
+      "hint": "Pomyśl o bardzo jasnym słońcu."
+    },
+    {
+      "question": "Czym między innymi różnią się ciała kobiety i mężczyzny?",
+      "options": [
+        "Kolorem oczu",
+        "Długością włosów",
+        "Budową narządów rozrodczych",
+        "Liczbą palców u rąk"
+      ],
+      "correctAnswer": "Budową narządów rozrodczych",
+      "hint": "Chodzi o część ciała związaną z rozmnażaniem."
+    },
+    {
+      "question": "Które narządy tworzą żeński układ rozrodczy?",
+      "options": [
+        "Jajniki, jajowody, macica i pochwa",
+        "Jajniki, jajowody, macica i pęcherz moczowy",
+        "Jajniki, macica, pochwa i cewka moczowa",
+        "Jajniki, jajowody, nasieniowody i macica"
+      ],
+      "correctAnswer": "Jajniki, jajowody, macica i pochwa",
+      "hint": "Pomyśl o narządach, które wytwarzają komórki jajowe, przewodzą je i umożliwiają rozwój nowego organizmu."
+    },
+    {
+      "question": "Gdzie powstają komórki jajowe?",
+      "options": [
+        "W macicy",
+        "W jajowodach",
+        "W jajnikach",
+        "W pochwie"
+      ],
+      "correctAnswer": "W jajnikach",
+      "hint": "Pomyśl o narządzie, który wytwarza żeńskie komórki rozrodcze."
+    },
+    {
+      "question": "Jak często zwykle dojrzewa komórka jajowa?",
+      "options": [
+        "Co około 7 dni",
+        "Co około 14 dni",
+        "Co około 28 dni",
+        "Raz w roku"
+      ],
+      "correctAnswer": "Co około 28 dni",
+      "hint": "Pomyśl o rytmie związanym z cyklem miesiączkowym."
+    },
+    {
+      "question": "Dokąd trafia komórka jajowa z jajnika?",
+      "options": [
+        "Do macicy",
+        "Do pochwy",
+        "Do jajowodu",
+        "Do cewki moczowej"
+      ],
+      "correctAnswer": "Do jajowodu",
+      "hint": "To narząd znajdujący się między jajnikiem a macicą."
+    },
+    {
+      "question": "Czym jest macica?",
+      "options": [
+        "Narządem, w którym może rozwijać się nowy organizm",
+        "Narządem, w którym powstają komórki jajowe",
+        "Przewodem, którym komórka jajowa przemieszcza się do macicy",
+        "Narządem łączącym macicę ze środowiskiem zewnętrznym"
+      ],
+      "correctAnswer": "Narządem, w którym może rozwijać się nowy organizm",
+      "hint": "To miejsce rozwoju nowego organizmu."
+    },
+    {
+      "question": "Jaką funkcję pełni pochwa?",
+      "options": [
+        "Łączy jajnik z jajowodem",
+        "Łączy macicę ze środowiskiem zewnętrznym",
+        "Wytwarza komórki jajowe",
+        "Jest miejscem powstawania plemników"
+      ],
+      "correctAnswer": "Łączy macicę ze środowiskiem zewnętrznym",
+      "hint": "Pomyśl, co łączy wnętrze ciała z zewnątrz."
+    },
+    {
+      "question": "Które narządy tworzą męski układ rozrodczy?",
+      "options": [
+        "Jądra, pęcherz moczowy i prącie",
+        "Jądra, nasieniowody i macica",
+        "Jądra, nasieniowody i prącie",
+        "Jajniki, nasieniowody i prącie"
+      ],
+      "correctAnswer": "Jądra, nasieniowody i prącie",
+      "hint": "Pomyśl o narządach, które wytwarzają plemniki i umożliwiają ich przemieszczanie."
+    },
+    {
+      "question": "Gdzie powstają plemniki?",
+      "options": [
+        "W nasieniowodach",
+        "W prąciu",
+        "W jądrach",
+        "W cewce moczowej"
+      ],
+      "correctAnswer": "W jądrach",
+      "hint": "To narząd należący do męskiego układu rozrodczego."
+    },
+    {
+      "question": "Jak często powstają plemniki?",
+      "options": [
+        "Tylko raz w miesiącu",
+        "Stale i w dużych ilościach",
+        "Tylko w dzieciństwie",
+        "Tylko po wysiłku fizycznym"
+      ],
+      "correctAnswer": "Stale i w dużych ilościach",
+      "hint": "Plemniki nie powstają od czasu do czasu, ale cały czas."
+    },
+    {
+      "question": "Gdzie znajdują się jądra?",
+      "options": [
+        "W jamie brzusznej",
+        "W worku mosznowym poza jamą brzuszną",
+        "W macicy",
+        "W jajowodach"
+      ],
+      "correctAnswer": "W worku mosznowym poza jamą brzuszną",
+      "hint": "Chodzi o miejsce położone poza jamą brzuszną."
+    },
+    {
+      "question": "Dlaczego niższa temperatura w worku mosznowym jest ważna?",
+      "options": [
+        "Pomaga w czytaniu tekstu",
+        "Sprzyja prawidłowemu rozwojowi plemników",
+        "Chroni oczy przed słońcem",
+        "Przyspiesza trawienie"
+      ],
+      "correctAnswer": "Sprzyja prawidłowemu rozwojowi plemników",
+      "hint": "Chodzi o warunki potrzebne do rozwoju plemników."
+    },
+    {
+      "question": "Jaką drogą przemieszczają się plemniki do cewki moczowej?",
+      "options": [
+        "Przez jajowody",
+        "Przez nasieniowody",
+        "Przez macicę",
+        "Przez pochwę"
+      ],
+      "correctAnswer": "Przez nasieniowody",
+      "hint": "Nazwa tego narządu zawiera słowo „nasienie”."
+    },
+    {
+      "question": "Co umożliwia ruch plemnika?",
+      "options": [
+        "Skrzydło",
+        "Nóżka",
+        "Wić",
+        "Płetwa"
+      ],
+      "correctAnswer": "Wić",
+      "hint": "To cienka część ciała plemnika, dzięki której może się poruszać."
+    },
+    {
+      "question": "Jaka jest funkcja żeńskiego układu rozrodczego?",
+      "options": [
+        "Wytwarzanie plemników i ich przemieszczanie",
+        "Wytwarzanie komórek jajowych i zapewnienie miejsca do rozwoju nowego organizmu",
+        "Tylko ochrona organizmu przed zimnem",
+        "Tylko trawienie pokarmu"
+      ],
+      "correctAnswer": "Wytwarzanie komórek jajowych i zapewnienie miejsca do rozwoju nowego organizmu",
+      "hint": "Pomyśl o komórkach jajowych i miejscu rozwoju nowego organizmu."
+    },
+    {
+      "question": "Jaka jest funkcja męskiego układu rozrodczego?",
+      "options": [
+        "Wytwarzanie komórek jajowych",
+        "Zapewnienie miejsca do rozwoju nowego organizmu",
+        "Wytwarzanie plemników i wprowadzanie ich do narządów rozrodczych kobiety",
+        "Regulowanie pracy całego organizmu"
+      ],
+      "correctAnswer": "Wytwarzanie plemników i wprowadzanie ich do narządów rozrodczych kobiety",
+      "hint": "Chodzi o plemniki i ich przekazanie."
+    },
+    {
+      "question": "Co to jest zapłodnienie?",
+      "options": [
+        "Połączenie komórki jajowej z plemnikiem",
+        "Dojrzewanie komórki jajowej",
+        "Przemieszczanie się plemników przez nasieniowody",
+        "Rozwój nowego organizmu w macicy"
+      ],
+      "correctAnswer": "Połączenie komórki jajowej z plemnikiem",
+      "hint": "To moment spotkania dwóch komórek rozrodczych."
+    },
+    {
+      "question": "Gdzie zwykle dochodzi do zapłodnienia?",
+      "options": [
+        "W macicy",
+        "W pochwie",
+        "W jajniku",
+        "W jajowodzie"
+      ],
+      "correctAnswer": "W jajowodzie",
+      "hint": "To tam trafia komórka jajowa z jajnika."
+    },
+    {
+      "question": "Co dzieje się podczas zapłodnienia?",
+      "options": [
+        "Do komórki jajowej wnika wiele plemników",
+        "Tylko jeden plemnik wnika do wnętrza komórki jajowej",
+        "Komórka jajowa wnika do plemnika",
+        "Żaden plemnik nie dociera do komórki jajowej"
+      ],
+      "correctAnswer": "Tylko jeden plemnik wnika do wnętrza komórki jajowej",
+      "hint": "Do komórki jajowej dociera ich wiele, ale tylko jeden ma decydującą rolę."
+    },
+    {
+      "question": "Dokąd przemieszcza się zapłodniona komórka jajowa?",
+      "options": [
+        "Do pochwy",
+        "Do jajnika",
+        "Do macicy",
+        "Do pęcherza moczowego"
+      ],
+      "correctAnswer": "Do macicy",
+      "hint": "To miejsce, w którym może rozwijać się nowy organizm."
+    },
+    {
+      "question": "Dzięki czemu nowy organizm rośnie i rozwija się w macicy?",
+      "options": [
+        "Dzięki silnie ukrwionej tkance wyściełającej ścianę macicy",
+        "Dzięki powietrzu w macicy",
+        "Dzięki kościom miednicy",
+        "Dzięki mięśniom brzucha"
+      ],
+      "correctAnswer": "Dzięki silnie ukrwionej tkance wyściełającej ścianę macicy",
+      "hint": "Pomyśl o tkance, która wyściela wnętrze macicy."
+    },
+    {
+      "question": "Co dzieje się z komórką jajową, jeśli nie dojdzie do zapłodnienia?",
+      "options": [
+        "Zamienia się w zarodek",
+        "Przemieszcza się do macicy i rośnie",
+        "Obumiera",
+        "Dzieli się na dwie części"
+      ],
+      "correctAnswer": "Obumiera",
+      "hint": "Gdy nie połączy się z plemnikiem, nie rozwija się dalej."
+    },
+    {
+      "question": "Co dzieje się, gdy nie dojdzie do zapłodnienia?",
+      "options": [
+        "Dziecko zaczyna rozwijać się w macicy",
+        "Złuszcza się błona wyściełająca macicę i pojawia się miesiączka",
+        "Komórka jajowa rośnie coraz szybciej",
+        "Macica przestaje pracować"
+      ],
+      "correctAnswer": "Złuszcza się błona wyściełająca macicę i pojawia się miesiączka",
+      "hint": "Chodzi o zmianę w macicy, która pojawia się regularnie."
+    },
+    {
+      "question": "Jak często zwykle występuje miesiączka?",
+      "options": [
+        "Co około 7 dni",
+        "Co około 14 dni",
+        "Co około 28 dni",
+        "Raz w roku"
+      ],
+      "correctAnswer": "Co około 28 dni",
+      "hint": "To mniej więcej raz w miesiącu."
+    },
+    {
+      "question": "Kiedy mówimy, że kobieta jest w ciąży?",
+      "options": [
+        "Gdy dziecko rozwija się w jej macicy",
+        "Gdy pojawia się miesiączka",
+        "Gdy komórka jajowa obumiera",
+        "Gdy kończy się dojrzewanie"
+      ],
+      "correctAnswer": "Gdy dziecko rozwija się w jej macicy",
+      "hint": "Chodzi o czas rozwoju dziecka przed narodzinami."
+    },
+    {
+      "question": "Jak szybko rozwija się dziecko w czasie ciąży?",
+      "options": [
+        "Bardzo wolno",
+        "Tylko w ostatnim miesiącu",
+        "Bardzo szybko",
+        "Wcale się nie zmienia"
+      ],
+      "correctAnswer": "Bardzo szybko",
+      "hint": "W tym czasie zachodzi wiele zmian w krótkim czasie."
+    },
+    {
+      "question": "Co jest prawdą pod koniec trzeciego miesiąca ciąży?",
+      "options": [
+        "Dziecko ma już wykształcone wszystkie narządy wewnętrzne",
+        "Dziecko ma już około 50 cm długości",
+        "Dziecko oddycha samodzielnie",
+        "Pojawia się odruch ssania"
+      ],
+      "correctAnswer": "Dziecko ma już wykształcone wszystkie narządy wewnętrzne",
+      "hint": "To informacja o narządach dziecka."
+    },
+    {
+      "question": "Co pojawia się u dziecka w szóstym miesiącu ciąży?",
+      "options": [
+        "Umiejętność chodzenia",
+        "Odruch ssania",
+        "Samodzielne oddychanie",
+        "Wszystkie zęby"
+      ],
+      "correctAnswer": "Odruch ssania",
+      "hint": "To ważny odruch potrzebny po narodzinach."
+    },
+    {
+      "question": "Jaką długość i masę ma dziecko pod koniec ciąży?",
+      "options": [
+        "Około 20 cm długości i 1 kg masy",
+        "Około 35 cm długości i 2 kg masy",
+        "Około 50 cm długości i około 3 kg masy",
+        "Około 70 cm długości i 5 kg masy"
+      ],
+      "correctAnswer": "Około 50 cm długości i około 3 kg masy",
+      "hint": "Pomyśl o typowej długości i masie noworodka pod koniec ciąży."
+    },
+    {
+      "question": "Co dzieje się podczas porodu?",
+      "options": [
+        "Dziecko wraca do macicy",
+        "Dziecko opuszcza macicę i wydostaje się przez pochwę",
+        "Dziecko przestaje się rozwijać",
+        "Komórka jajowa przemieszcza się do macicy"
+      ],
+      "correctAnswer": "Dziecko opuszcza macicę i wydostaje się przez pochwę",
+      "hint": "Chodzi o moment przyjścia dziecka na świat."
+    },
+    {
+      "question": "Co dzieje się z dzieckiem po porodzie?",
+      "options": [
+        "Oddycha samodzielnie i odżywia się mlekiem matki",
+        "Nadal oddycha dzięki macicy",
+        "Nie potrzebuje pokarmu",
+        "Od razu zaczyna chodzić"
+      ],
+      "correctAnswer": "Oddycha samodzielnie i odżywia się mlekiem matki",
+      "hint": "Pomyśl o dwóch ważnych zmianach po narodzinach."
+    },
+    {
+      "question": "Kiedy mogą urodzić się bliźnięta jednojajowe?",
+      "options": [
+        "Gdy do komórki jajowej wnikną dwa plemniki",
+        "Gdy zapłodniona komórka jajowa podzieli się na dwie rozwijające się części",
+        "Gdy w macicy rozwijają się dwa różne organizmy z dwóch komórek jajowych",
+        "Gdy miesiączka występuje co 28 dni"
+      ],
+      "correctAnswer": "Gdy zapłodniona komórka jajowa podzieli się na dwie rozwijające się części",
+      "hint": "Chodzi o podział jednej zapłodnionej komórki."
+    },
+    {
+      "question": "Dlaczego higiena intymna jest ważna?",
+      "options": [
+        "Pomaga zapobiegać chorobom narządów płciowych",
+        "Sprawia, że dojrzewanie trwa krócej",
+        "Powoduje szybszy wzrost",
+        "Zatrzymuje miesiączkę"
+      ],
+      "correctAnswer": "Pomaga zapobiegać chorobom narządów płciowych",
+      "hint": "Pomyśl o ochronie zdrowia."
+    },
+    {
+      "question": "Co należy robić każdego dnia dla higieny intymnej?",
+      "options": [
+        "Codziennie myć okolice intymne i zmieniać bieliznę",
+        "Myć okolice intymne tylko raz w tygodniu",
+        "Zmieniać bieliznę tylko po kąpieli",
+        "Używać mokrego ręcznika przez cały dzień"
+      ],
+      "correctAnswer": "Codziennie myć okolice intymne i zmieniać bieliznę",
+      "hint": "Pomyśl o codziennym dbaniu o czystość i świeżą bieliznę."
+    },
+    {
+      "question": "Co należy zrobić z mokrym kostiumem kąpielowym?",
+      "options": [
+        "Nosić go do końca dnia",
+        "Szybko zmienić go na suchy",
+        "Położyć na słońcu i znów założyć",
+        "Przepłukać go w wodzie i zostawić na sobie"
+      ],
+      "correctAnswer": "Szybko zmienić go na suchy",
+      "hint": "Chodzi o to, by ciało nie pozostawało długo w wilgoci."
+    },
+    {
+      "question": "Czemu sprzyja wilgoć?",
+      "options": [
+        "Rozwojowi bakterii i grzybów",
+        "Lepszemu oddychaniu skóry",
+        "Szybszemu wysychaniu ubrań",
+        "Wzmocnieniu kości"
+      ],
+      "correctAnswer": "Rozwojowi bakterii i grzybów",
+      "hint": "To dlatego mokrych rzeczy nie powinno się długo nosić."
+    },
+    {
+      "question": "Co jest jedną z zasad higieny w toalecie publicznej?",
+      "options": [
+        "Siadać bezpośrednio na desce sedesowej",
+        "Nie siadać bezpośrednio na desce sedesowej",
+        "Dotykać wszystkich powierzchni rękami",
+        "Chodzić boso po podłodze"
+      ],
+      "correctAnswer": "Nie siadać bezpośrednio na desce sedesowej",
+      "hint": "Chodzi o zachowanie ostrożności i higieny."
+    },
+    {
+      "question": "Czym jest dojrzewanie?",
+      "options": [
+        "Okresem gwałtownych zmian fizycznych i psychicznych",
+        "Czasem, gdy organizm się nie zmienia",
+        "Tylko okresem szybkiego wzrostu włosów",
+        "Chwilą narodzin dziecka"
+      ],
+      "correctAnswer": "Okresem gwałtownych zmian fizycznych i psychicznych",
+      "hint": "To czas wielu zmian w ciele i zachowaniu."
+    },
+    {
+      "question": "Co dzieje się z narządami rozrodczymi w okresie dojrzewania?",
+      "options": [
+        "Przestają się rozwijać",
+        "Dojrzewają",
+        "Zmniejszają się",
+        "Zamieniają się w kości"
+      ],
+      "correctAnswer": "Dojrzewają",
+      "hint": "Pomyśl, jak zmieniają się narządy związane z rozmnażaniem."
+    },
+    {
+      "question": "Ile zwykle trwa okres dojrzewania?",
+      "options": [
+        "Kilka dni",
+        "Kilka tygodni",
+        "Kilka miesięcy",
+        "Kilka lat"
+      ],
+      "correctAnswer": "Kilka lat",
+      "hint": "To nie jest krótki etap, tylko proces trwający dłużej."
+    },
+    {
+      "question": "Około którego roku życia zwykle zaczynają dojrzewać dziewczęta?",
+      "options": [
+        "Około 8. roku życia",
+        "Około 10. roku życia",
+        "Około 12. roku życia",
+        "Około 15. roku życia"
+      ],
+      "correctAnswer": "Około 10. roku życia",
+      "hint": "Chodzi o wiek podany dla dziewcząt, a nie dla chłopców."
+    },
+    {
+      "question": "Około którego roku życia zwykle zaczynają dojrzewać chłopcy?",
+      "options": [
+        "Około 10. roku życia",
+        "Około 11. roku życia",
+        "Około 12. roku życia",
+        "Około 14. roku życia"
+      ],
+      "correctAnswer": "Około 12. roku życia",
+      "hint": "Chłopcy zwykle zaczynają dojrzewać trochę później niż dziewczęta."
+    },
+    {
+      "question": "Która zmiana jest wspólna dla dziewcząt i chłopców w okresie dojrzewania?",
+      "options": [
+        "Pojawienie się pierwszej miesiączki",
+        "Poszerzenie bioder",
+        "Szybki wzrost ciała i pojawienie się owłosienia pod pachami oraz w okolicach narządów płciowych",
+        "Obniżenie głosu"
+      ],
+      "correctAnswer": "Szybki wzrost ciała i pojawienie się owłosienia pod pachami oraz w okolicach narządów płciowych",
+      "hint": "Szukaj zmiany, która dotyczy i dziewcząt, i chłopców."
+    },
+    {
+      "question": "Co dzieje się ze skórą w okresie dojrzewania?",
+      "options": [
+        "Skóra wydziela mniej potu i tłuszczu",
+        "Skóra przestaje się pocić",
+        "Zwiększa się wydzielanie potu i substancji tłuszczowych przez skórę",
+        "Skóra staje się całkiem sucha"
+      ],
+      "correctAnswer": "Zwiększa się wydzielanie potu i substancji tłuszczowych przez skórę",
+      "hint": "Pomyśl o poceniu się i tłustej skórze."
+    },
+    {
+      "question": "Co może powodować nadmierne wydzielanie łoju?",
+      "options": [
+        "Wypryski i trądzik młodzieńczy",
+        "Lepsze widzenie",
+        "Szybszy wzrost kości",
+        "Zmianę koloru oczu"
+      ],
+      "correctAnswer": "Wypryski i trądzik młodzieńczy",
+      "hint": "Chodzi o problem, który często pojawia się na skórze twarzy."
+    },
+    {
+      "question": "Jakie zmiany zachodzą u dziewcząt w okresie dojrzewania?",
+      "options": [
+        "Poszerzają się barki i obniża się głos",
+        "Poszerzają się biodra i rozwijają piersi",
+        "Pojawia się zarost i polucje",
+        "Zmniejszają się biodra i barki"
+      ],
+      "correctAnswer": "Poszerzają się biodra i rozwijają piersi",
+      "hint": "To zmiany typowe dla dziewcząt."
+    },
+    {
+      "question": "Co oznacza pojawienie się pierwszej miesiączki u dziewcząt?",
+      "options": [
+        "Rozpoczęcie wytwarzania komórek jajowych",
+        "Zakończenie dojrzewania",
+        "Początek szybkiego wzrostu ciała",
+        "Zmniejszenie wydzielania potu"
+      ],
+      "correctAnswer": "Rozpoczęcie wytwarzania komórek jajowych",
+      "hint": "To znak, że organizm zaczyna wytwarzać ważne komórki rozrodcze."
+    },
+    {
+      "question": "Jaka może być miesiączka na początku dojrzewania?",
+      "options": [
+        "Zawsze regularna i bez żadnych dolegliwości",
+        "Nieregularna i może powodować dolegliwości",
+        "Tylko jednodniowa",
+        "Codzienna"
+      ],
+      "correctAnswer": "Nieregularna i może powodować dolegliwości",
+      "hint": "Na początku organizm dopiero się przyzwyczaja do tych zmian."
+    },
+    {
+      "question": "Która zmiana jest typowa dla chłopców w okresie dojrzewania?",
+      "options": [
+        "Poszerzają się biodra i rozwijają piersi",
+        "Pojawia się pierwsza miesiączka",
+        "Poszerzają się barki, pojawia się zarost i obniża się głos",
+        "Zmniejsza się owłosienie"
+      ],
+      "correctAnswer": "Poszerzają się barki, pojawia się zarost i obniża się głos",
+      "hint": "Pomyśl o barkach, głosie i włosach na twarzy."
+    },
+    {
+      "question": "Co zaczynają wytwarzać jądra u chłopców?",
+      "options": [
+        "Komórki jajowe",
+        "Plemniki",
+        "Witaminy",
+        "Krew"
+      ],
+      "correctAnswer": "Plemniki",
+      "hint": "To męskie komórki rozrodcze."
+    },
+    {
+      "question": "Co to są polucje?",
+      "options": [
+        "Bolesne skurcze mięśni",
+        "Mimowolne wydostawanie się plemników podczas snu",
+        "Zmiany nastroju po południu",
+        "Nadmierne wydzielanie potu"
+      ],
+      "correctAnswer": "Mimowolne wydostawanie się plemników podczas snu",
+      "hint": "Chodzi o zjawisko występujące u chłopców podczas snu."
+    },
+    {
+      "question": "Jakie zmiany psychiczne mogą pojawiać się w okresie dojrzewania?",
+      "options": [
+        "Tylko większa siła mięśni",
+        "Wahania nastroju, większa wrażliwość i potrzeba akceptacji",
+        "Zawsze taki sam nastrój każdego dnia",
+        "Brak potrzeby kontaktu z innymi"
+      ],
+      "correctAnswer": "Wahania nastroju, większa wrażliwość i potrzeba akceptacji",
+      "hint": "Pomyśl o uczuciach i relacjach z innymi."
+    },
+    {
+      "question": "Z czym wiąże się dojrzałość psychiczna?",
+      "options": [
+        "Z umiejętnością samodzielnego podejmowania decyzji i brania za nie odpowiedzialności",
+        "Z bardzo szybkim wzrostem ciała",
+        "Z pojawieniem się owłosienia",
+        "Z obniżeniem głosu"
+      ],
+      "correctAnswer": "Z umiejętnością samodzielnego podejmowania decyzji i brania za nie odpowiedzialności",
+      "hint": "Chodzi o mądre wybory i ponoszenie ich skutków."
+    },
+    {
+      "question": "O co trzeba szczególnie dbać w okresie dojrzewania?",
+      "options": [
+        "Tylko o czystość włosów",
+        "Tylko o czystość rąk",
+        "O codzienną higienę całego ciała",
+        "Tylko o czystość butów"
+      ],
+      "correctAnswer": "O codzienną higienę całego ciała",
+      "hint": "To dotyczy nie jednego miejsca, ale całego ciała."
+    },
+    {
+      "question": "Co pomaga zapobiegać przykremu zapachowi ciała?",
+      "options": [
+        "Czysta odzież i dezodorant stosowany na umytą, suchą skórę",
+        "Tylko częsta zmiana butów",
+        "Samo używanie perfum",
+        "Mycie twarzy samą wodą"
+      ],
+      "correctAnswer": "Czysta odzież i dezodorant stosowany na umytą, suchą skórę",
+      "hint": "Pomyśl o ubraniu i właściwym użyciu dezodorantu."
+    },
+    {
+      "question": "Czym należy myć cerę trądzikową?",
+      "options": [
+        "Tylko bardzo gorącą wodą",
+        "Mocnymi środkami czyszczącymi",
+        "Samym mydłem do prania",
+        "Łagodnymi środkami"
+      ],
+      "correctAnswer": "Łagodnymi środkami",
+      "hint": "Skóra z trądzikiem potrzebuje delikatnej pielęgnacji."
+    },
+    {
+      "question": "Dlaczego nie wolno samodzielnie wyciskać wyprysków?",
+      "options": [
+        "Bo mogą zniknąć za szybko",
+        "Bo grozi to zakażeniem skóry",
+        "Bo wtedy skóra przestaje się pocić",
+        "Bo powoduje szybszy wzrost włosów"
+      ],
+      "correctAnswer": "Bo grozi to zakażeniem skóry",
+      "hint": "Chodzi o niebezpieczeństwo dla skóry."
+    },
+    {
+      "question": "Do jakiego lekarza warto zgłosić się przy nasilonym trądziku?",
+      "options": [
+        "Do okulisty",
+        "Do dermatologa",
+        "Do dentysty",
+        "Do kardiologa"
+      ],
+      "correctAnswer": "Do dermatologa",
+      "hint": "To lekarz zajmujący się skórą."
+    },
+    {
+      "question": "Dla kogo szczególnie ważna jest dieta bogata w żelazo?",
+      "options": [
+        "Dla wszystkich tylko zimą",
+        "Szczególnie dla dziewcząt miesiączkujących",
+        "Tylko dla chłopców",
+        "Tylko dla małych dzieci"
+      ],
+      "correctAnswer": "Szczególnie dla dziewcząt miesiączkujących",
+      "hint": "Pomyśl, komu ta dieta jest szczególnie potrzebna według podanej informacji."
+    }
+  ]
 }

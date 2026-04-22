@@ -119,17 +119,6 @@
       "hint": "To bardzo ważny składnik naszego ciała."
     },
     {
-      "question": "Ile wody dziennie powinien pić człowiek?",
-      "options": [
-        "Około 1,5 litra lub więcej",
-        "Tylko pół szklanki",
-        "Mniej niż 1 litr",
-        "Tylko wtedy, gdy jest gorąco"
-      ],
-      "correctAnswer": "Około 1,5 litra lub więcej",
-      "hint": "Pomyśl o ilości, która jest potrzebna organizmowi każdego dnia, nie tylko w upał."
-    },
-    {
       "question": "W czym pomaga witamina A?",
       "options": [
         "W prawidłowym rozwoju kości i zębów",
@@ -306,17 +295,6 @@
       "hint": "Przez gardło przechodzi nie tylko pokarm."
     },
     {
-      "question": "Jaką funkcję pełni przełyk?",
-      "options": [
-        "Miesza pokarm z sokami trawiennymi",
-        "Wchłania składniki odżywcze do krwi",
-        "Transportuje pokarm do żołądka",
-        "Formuje kał"
-      ],
-      "correctAnswer": "Transportuje pokarm do żołądka",
-      "hint": "To narząd, który przesuwa jedzenie dalej po połknięciu."
-    },
-    {
       "question": "Co dzieje się z pokarmem w żołądku?",
       "options": [
         "Jest mieszany i częściowo trawiony",
@@ -348,17 +326,6 @@
       ],
       "correctAnswer": "Rozprowadza je do wszystkich komórek ciała",
       "hint": "Pomyśl, jak składniki odżywcze docierają do całego ciała."
-    },
-    {
-      "question": "Co dzieje się z niestrawionymi resztkami pokarmu?",
-      "options": [
-        "Wracają do żołądka",
-        "Trafiają do jelita grubego, gdzie formuje się kał",
-        "Od razu trafiają do krwi",
-        "Zostają w jamie ustnej"
-      ],
-      "correctAnswer": "Trafiają do jelita grubego, gdzie formuje się kał",
-      "hint": "Chodzi o dalszą drogę tego, czego organizm już nie wykorzysta."
     },
     {
       "question": "Który narząd jest największy w układzie pokarmowym?",
@@ -524,17 +491,6 @@
       ],
       "correctAnswer": "Pracuje nieustannie i wprawia krew w ruch",
       "hint": "Pomyśl o narządzie, który bez przerwy pompuje krew."
-    },
-    {
-      "question": "Jaką wielkość ma serce dorosłego człowieka?",
-      "options": [
-        "Wielkość głowy",
-        "Wielkość stopy",
-        "Wielkość pięści",
-        "Wielkość jabłka"
-      ],
-      "correctAnswer": "Wielkość pięści",
-      "hint": "Porównaj serce do części swojego ciała."
     },
     {
       "question": "Ile razy na minutę bije serce dorosłego człowieka w spoczynku?",
@@ -713,17 +669,6 @@
       "hint": "Ten narząd ma związek z mówieniem."
     },
     {
-      "question": "Co znajduje się w krtani i drga podczas przepływu powietrza?",
-      "options": [
-        "Rzęski",
-        "Pęcherzyki płucne",
-        "Struny głosowe",
-        "Naczynia włosowate"
-      ],
-      "correctAnswer": "Struny głosowe",
-      "hint": "To dzięki nim możemy wydawać dźwięki."
-    },
-    {
       "question": "Na co rozgałęzia się tchawica?",
       "options": [
         "Na dwa gardła",
@@ -744,28 +689,6 @@
       ],
       "correctAnswer": "W pęcherzykach płucnych",
       "hint": "To małe struktury znajdujące się w płucach."
-    },
-    {
-      "question": "Z czego zbudowane są płuca?",
-      "options": [
-        "Z samych oskrzeli",
-        "Z milionów pęcherzyków płucnych",
-        "Z chrząstek i kości",
-        "Z jednej dużej komory"
-      ],
-      "correctAnswer": "Z milionów pęcherzyków płucnych",
-      "hint": "Chodzi o bardzo dużą liczbę małych części."
-    },
-    {
-      "question": "Czym są oplecione pęcherzyki płucne?",
-      "options": [
-        "Siecią mięśni",
-        "Siecią nerwów",
-        "Siecią naczyń włosowatych",
-        "Siecią chrząstek"
-      ],
-      "correctAnswer": "Siecią naczyń włosowatych",
-      "hint": "To bardzo cienkie naczynia krwionośne."
     },
     {
       "question": "Co dzieje się w płucach podczas wymiany gazowej?",
@@ -801,28 +724,6 @@
       "hint": "Pomyśl, co wydostaje się z organizmu przy wydychaniu."
     },
     {
-      "question": "Dlaczego oddychanie nosem jest korzystniejsze niż ustami?",
-      "options": [
-        "Bo szybciej dostarcza jedzenie do żołądka",
-        "Bo lepiej oczyszcza, ogrzewa i nawilża powietrze",
-        "Bo wzmacnia kości",
-        "Bo zatrzymuje całe powietrze w gardle"
-      ],
-      "correctAnswer": "Bo lepiej oczyszcza, ogrzewa i nawilża powietrze",
-      "hint": "Pomyśl o tym, jak nos przygotowuje powietrze dla płuc."
-    },
-    {
-      "question": "Co pomaga chronić układ oddechowy?",
-      "options": [
-        "Wietrzenie pomieszczeń i unikanie dymu tytoniowego",
-        "Jedzenie tylko słodkich potraw",
-        "Oddychanie wyłącznie ustami",
-        "Przebywanie w zadymionych miejscach"
-      ],
-      "correctAnswer": "Wietrzenie pomieszczeń i unikanie dymu tytoniowego",
-      "hint": "Chodzi o świeże powietrze i unikanie szkodliwego dymu."
-    },
-    {
       "question": "Co tworzy układ ruchu?",
       "options": [
         "Mięśnie i stawy",
@@ -832,17 +733,6 @@
       ],
       "correctAnswer": "Szkielet i mięśnie szkieletowe",
       "hint": "Pomyśl o kościach i mięśniach."
-    },
-    {
-      "question": "Co umożliwia układ ruchu?",
-      "options": [
-        "Trawienie pokarmu",
-        "Wytwarzanie składników krwi",
-        "Ruch ciała",
-        "Krzepnięcie krwi"
-      ],
-      "correctAnswer": "Ruch ciała",
-      "hint": "Dzięki temu układowi możemy się poruszać."
     },
     {
       "question": "Z ilu kości składa się szkielet dorosłego człowieka?",
@@ -878,17 +768,6 @@
       "hint": "Nie wszystkie kości łączą się tak samo."
     },
     {
-      "question": "Jak nazywają się ruchome połączenia kości?",
-      "options": [
-        "Ścięgna",
-        "Mięśnie",
-        "Stawy",
-        "Żebra"
-      ],
-      "correctAnswer": "Stawy",
-      "hint": "Dzięki nim możesz poruszać ręką lub nogą."
-    },
-    {
       "question": "Co umożliwiają niektóre stawy?",
       "options": [
         "Tylko ochronę narządów",
@@ -920,17 +799,6 @@
       ],
       "correctAnswer": "Nadaje ciału kształt, stanowi jego rusztowanie i chroni narządy wewnętrzne",
       "hint": "Pomyśl o kształcie ciała, podporze i ochronie."
-    },
-    {
-      "question": "Co chroni czaszka?",
-      "options": [
-        "Serce",
-        "Płuca",
-        "Mózg",
-        "Żołądek"
-      ],
-      "correctAnswer": "Mózg",
-      "hint": "To narząd znajdujący się w głowie."
     },
     {
       "question": "Co chroni klatka piersiowa?",
@@ -1010,17 +878,6 @@
       "hint": "Pomyśl o tym, co dzieje się z jedzeniem w układzie pokarmowym."
     },
     {
-      "question": "Co umożliwia mięsień sercowy?",
-      "options": [
-        "Przepływ krwi",
-        "Zginanie nóg",
-        "Obracanie głowy",
-        "Chronienie płuc"
-      ],
-      "correctAnswer": "Przepływ krwi",
-      "hint": "Ten mięsień pracuje w sercu."
-    },
-    {
       "question": "Co wzmacniają systematyczne ćwiczenia?",
       "options": [
         "Tylko włosy i paznokcie",
@@ -1030,17 +887,6 @@
       ],
       "correctAnswer": "Kości, stawy i mięśnie",
       "hint": "Chodzi o części układu ruchu."
-    },
-    {
-      "question": "W czym pomaga odpowiednie obuwie?",
-      "options": [
-        "W ochronie stóp i układu ruchu",
-        "Tylko w szybszym bieganiu",
-        "Tylko w utrzymaniu ciepła stóp",
-        "Wyłącznie w wygodniejszym chodzeniu po domu"
-      ],
-      "correctAnswer": "W ochronie stóp i układu ruchu",
-      "hint": "Dobre buty pomagają dbać o nogi i ciało."
     },
     {
       "question": "Co pomaga w prawidłowym wzroście kości?",
@@ -1065,17 +911,6 @@
       "hint": "Chodzi o informacje docierające do organizmu i wysyłane dalej."
     },
     {
-      "question": "Za co odpowiada układ nerwowy w organizmie?",
-      "options": [
-        "Za pracę całego organizmu",
-        "Tylko za oddychanie",
-        "Tylko za trawienie",
-        "Tylko za wzrost kości"
-      ],
-      "correctAnswer": "Za pracę całego organizmu",
-      "hint": "To układ, który kieruje działaniem całego ciała."
-    },
-    {
       "question": "Z czego składa się układ nerwowy?",
       "options": [
         "Z serca, płuc i żołądka",
@@ -1096,17 +931,6 @@
       ],
       "correctAnswer": "Mózg",
       "hint": "To najważniejsza i największa część mózgowia."
-    },
-    {
-      "question": "Co robi mózg z informacjami z narządów zmysłów?",
-      "options": [
-        "Ukrywa je",
-        "Analizuje je",
-        "Zamienia je w kości",
-        "Wysyła je do oka"
-      ],
-      "correctAnswer": "Analizuje je",
-      "hint": "Pomyśl, co dzieje się z informacjami po ich odebraniu."
     },
     {
       "question": "Co umożliwia mózg?",
@@ -1197,17 +1021,6 @@
       "hint": "Chodzi o to, co możemy zobaczyć."
     },
     {
-      "question": "Jaka jest główna część oka?",
-      "options": [
-        "Powieka",
-        "Rzęsy",
-        "Gałka oczna",
-        "Źrenica"
-      ],
-      "correctAnswer": "Gałka oczna",
-      "hint": "To największa i najważniejsza część oka."
-    },
-    {
       "question": "Co robią łzy i powieki?",
       "options": [
         "Przekazują dźwięki do mózgu",
@@ -1217,17 +1030,6 @@
       ],
       "correctAnswer": "Oczyszczają oraz nawilżają powierzchnię oka",
       "hint": "Pomagają oku być czystym i nie wysychać."
-    },
-    {
-      "question": "Przez co światło wpada do oka?",
-      "options": [
-        "Przez soczewkę",
-        "Przez siatkówkę",
-        "Przez źrenicę",
-        "Przez rzęsy"
-      ],
-      "correctAnswer": "Przez źrenicę",
-      "hint": "To otwór, przez który do oka dostaje się światło."
     },
     {
       "question": "Jaką rolę pełni soczewka w oku?",
@@ -1272,17 +1074,6 @@
       ],
       "correctAnswer": "W postaci drgań powietrza",
       "hint": "Dźwięk to coś, co porusza się w powietrzu."
-    },
-    {
-      "question": "Jaką rolę pełni małżowina uszna?",
-      "options": [
-        "Pomaga rozpoznawać smaki",
-        "Zbiera dźwięki i kieruje je do wnętrza ucha",
-        "Chroni oczy przed światłem",
-        "Odbiera ból i ciepło"
-      ],
-      "correctAnswer": "Zbiera dźwięki i kieruje je do wnętrza ucha",
-      "hint": "Pomyśl, co dzieje się z dźwiękiem, zanim trafi głębiej do ucha."
     },
     {
       "question": "Dokąd są przekazywane informacje dźwiękowe?",
@@ -1351,17 +1142,6 @@
       "hint": "To one pomagają odczuwać smaki."
     },
     {
-      "question": "Jakie smaki odczuwamy dzięki kubkom smakowym?",
-      "options": [
-        "Jasny, ciemny, cichy i głośny",
-        "Miękki, twardy, ciepły i zimny",
-        "Słodki, słony, gorzki i kwaśny",
-        "Lekki, ciężki, szybki i wolny"
-      ],
-      "correctAnswer": "Słodki, słony, gorzki i kwaśny",
-      "hint": "Pomyśl o podstawowych smakach jedzenia."
-    },
-    {
       "question": "Przy czym współpracują węch i smak?",
       "options": [
         "Przy ocenie jakości jedzenia",
@@ -1395,17 +1175,6 @@
       "hint": "To dzięki nim czujemy, że coś nas boli."
     },
     {
-      "question": "Gdzie znajduje się najwięcej receptorów dotyku?",
-      "options": [
-        "Na plecach",
-        "Na palcach rąk",
-        "Na łokciach",
-        "Na kolanach"
-      ],
-      "correctAnswer": "Na palcach rąk",
-      "hint": "Tą częścią ciała bardzo dokładnie badamy przedmioty."
-    },
-    {
       "question": "Ile snu na dobę potrzebuje zwykle uczeń w wieku szkolnym, aby układ nerwowy dobrze funkcjonował?",
       "options": [
         "Około 3 godzin",
@@ -1415,39 +1184,6 @@
       ],
       "correctAnswer": "Około 9 godzin",
       "hint": "To mniej więcej tyle, ile trwa długa noc."
-    },
-    {
-      "question": "W czym pomaga wypoczynek?",
-      "options": [
-        "W zwiększaniu ostrości wzroku",
-        "W radzeniu sobie ze stresem",
-        "W szybszym wzroście kości",
-        "W lepszym rozpoznawaniu smaków"
-      ],
-      "correctAnswer": "W radzeniu sobie ze stresem",
-      "hint": "Pomyśl, co pomaga się uspokoić i poczuć lepiej."
-    },
-    {
-      "question": "W jakiej odległości od oczu powinien znajdować się tekst podczas czytania?",
-      "options": [
-        "Około 10 cm",
-        "Około 30 cm",
-        "Około 60 cm",
-        "Jak najbliżej oczu"
-      ],
-      "correctAnswer": "Około 30 cm",
-      "hint": "To odległość pozwalająca wygodnie czytać bez zbliżania tekstu do twarzy."
-    },
-    {
-      "question": "Przed czym chronią oczy okulary z filtrem?",
-      "options": [
-        "Przed kurzem w klasie",
-        "Przed silnym promieniowaniem słonecznym",
-        "Przed czytaniem małych liter",
-        "Przed zmęczeniem nóg"
-      ],
-      "correctAnswer": "Przed silnym promieniowaniem słonecznym",
-      "hint": "Pomyśl o bardzo jasnym słońcu."
     }
   ]
 }

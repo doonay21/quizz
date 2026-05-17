@@ -1,6 +1,6 @@
 {
-  "title": "Przyroda",
-  "description": "Przygotowanie do sprawdzianu z przyrody.",
+  "title": "Historia 2",
+  "description": "Przygotowanie do sprawdzianu z historii.",
   "settings": {
     "sessionSize": 4,
     "stimulusMode": "standard",
@@ -10,686 +10,686 @@
   },
   "items": [
 	{
-	  "question": "Czym między innymi różnią się ciała kobiety i mężczyzny?",
-	  "options": [
-		"Kolorem oczu",
-		"Długością włosów",
-		"Budową narządów rozrodczych",
-		"Liczbą palców u rąk"
-	  ],
-	  "correctAnswer": "Budową narządów rozrodczych",
-	  "hint": "Chodzi o część ciała związaną z rozmnażaniem."
+	"question": "Kiedy wybuchła I wojna światowa?",
+	"options": [
+	"Pod koniec lipca 1914 roku",
+	"Na początku lutego 1919 roku",
+	"Latem 1920 roku",
+	"Pod koniec roku 1917"
+	],
+	"correctAnswer": "Pod koniec lipca 1914 roku",
+	"hint": "Było to w Europie, kilka lat przed odzyskaniem przez Polskę niepodległości."
 	},
 	{
-	  "question": "Które narządy tworzą żeński układ rozrodczy?",
-	  "options": [
-		"Jajniki, jajowody, macica i pochwa",
-		"Jajniki, jajowody, macica i pęcherz moczowy",
-		"Jajniki, macica, pochwa i cewka moczowa",
-		"Jajniki, jajowody, nasieniowody i macica"
-	  ],
-	  "correctAnswer": "Jajniki, jajowody, macica i pochwa",
-	  "hint": "Pomyśl o narządach, które wytwarzają komórki jajowe, przewodzą je i umożliwiają rozwój nowego organizmu."
+	"question": "Które państwa tworzyły ententę?",
+	"options": [
+	"Niemcy i Austro-Węgry",
+	"Rosja, Francja i Anglia",
+	"Polska, Francja i Anglia",
+	"Rosja i Austro-Węgry"
+	],
+	"correctAnswer": "Rosja, Francja i Anglia",
+	"hint": "Ententa walczyła przeciwko Niemcom i Austro-Węgrom."
 	},
 	{
-	  "question": "Gdzie powstają komórki jajowe?",
-	  "options": [
-		"W macicy",
-		"W jajowodach",
-		"W jajnikach",
-		"W pochwie"
-	  ],
-	  "correctAnswer": "W jajnikach",
-	  "hint": "Pomyśl o narządzie, który wytwarza żeńskie komórki rozrodcze."
+	"question": "Jaka była najważniejsza przyczyna I wojny światowej?",
+	"options": [
+	"Spór o odbudowę polskiej armii",
+	"Chęć przejęcia władzy przez komunistów",
+	"Rywalizacja mocarstw o główną rolę w Europie i na świecie",
+	"Nieudana wyprawa do Kielc"
+	],
+	"correctAnswer": "Rywalizacja mocarstw o główną rolę w Europie i na świecie",
+	"hint": "Chodziło o walkę silnych państw o wpływy i znaczenie."
 	},
 	{
-	  "question": "Jak często zwykle dojrzewa komórka jajowa?",
-	  "options": [
-		"Co około 7 dni",
-		"Co około 14 dni",
-		"Co około 28 dni",
-		"Raz w roku"
-	  ],
-	  "correctAnswer": "Co około 28 dni",
-	  "hint": "Pomyśl o rytmie związanym z cyklem miesiączkowym."
+	"question": "Dlaczego I wojna światowa była wyjątkowo krwawa?",
+	"options": [
+	"Ponieważ trwała tylko kilka miesięcy",
+	"Ponieważ użyto nowych broni, np. gazów trujących i czołgów",
+	"Ponieważ walczono wyłącznie na morzu",
+	"Ponieważ nie brały w niej udziału wielkie państwa"
+	],
+	"correctAnswer": "Ponieważ użyto nowych broni, np. gazów trujących i czołgów",
+	"hint": "Nowe rodzaje broni sprawiły, że walki były bardzo groźne."
 	},
 	{
-	  "question": "Dokąd trafia komórka jajowa z jajnika?",
-	  "options": [
-		"Do macicy",
-		"Do pochwy",
-		"Do jajowodu",
-		"Do cewki moczowej"
-	  ],
-	  "correctAnswer": "Do jajowodu",
-	  "hint": "To narząd znajdujący się między jajnikiem a macicą."
+	"question": "Co dał Polakom konflikt między zaborcami?",
+	"options": [
+	"Szansę na odzyskanie niepodległości",
+	"Możliwość uniknięcia wojny w Europie",
+	"Powstanie Rosji Radzieckiej",
+	"Zakończenie wszystkich rewolucji"
+	],
+	"correctAnswer": "Szansę na odzyskanie niepodległości",
+	"hint": "Zaborcy Polski walczyli przeciwko sobie."
 	},
 	{
-	  "question": "Czym jest macica?",
-	  "options": [
-		"Narządem, w którym może rozwijać się nowy organizm",
-		"Narządem, w którym powstają komórki jajowe",
-		"Przewodem, którym komórka jajowa przemieszcza się do macicy",
-		"Narządem łączącym macicę ze środowiskiem zewnętrznym"
-	  ],
-	  "correctAnswer": "Narządem, w którym może rozwijać się nowy organizm",
-	  "hint": "To miejsce rozwoju nowego organizmu."
+	"question": "Kogo Józef Piłsudski uważał za największego wroga Polski?",
+	"options": [
+	"Francję",
+	"Anglię",
+	"Austro-Węgry",
+	"Rosję"
+	],
+	"correctAnswer": "Rosję",
+	"hint": "Dlatego w czasie wojny poparł Austro-Węgry."
 	},
 	{
-	  "question": "Jaką funkcję pełni pochwa?",
-	  "options": [
-		"Łączy jajnik z jajowodem",
-		"Łączy macicę ze środowiskiem zewnętrznym",
-		"Wytwarza komórki jajowe",
-		"Jest miejscem powstawania plemników"
-	  ],
-	  "correctAnswer": "Łączy macicę ze środowiskiem zewnętrznym",
-	  "hint": "Pomyśl, co łączy wnętrze ciała z zewnątrz."
+	"question": "Co utworzył Piłsudski w sierpniu 1914 roku?",
+	"options": [
+	"Armię Czerwoną",
+	"Pierwszą Kompanię Kadrową",
+	"Rosję Radziecką",
+	"Ententę"
+	],
+	"correctAnswer": "Pierwszą Kompanię Kadrową",
+	"hint": "Miała ona być początkiem przyszłego wojska."
 	},
 	{
-	  "question": "Które narządy tworzą męski układ rozrodczy?",
-	  "options": [
-		"Jądra, pęcherz moczowy i prącie",
-		"Jądra, nasieniowody i macica",
-		"Jądra, nasieniowody i prącie",
-		"Jajniki, nasieniowody i prącie"
-	  ],
-	  "correctAnswer": "Jądra, nasieniowody i prącie",
-	  "hint": "Pomyśl o narządach, które wytwarzają plemniki i umożliwiają ich przemieszczanie."
+	"question": "Dlaczego pierwsza wyprawa do Kielc się nie powiodła?",
+	"options": [
+	"Bo Armia Czerwona dotarła do Warszawy",
+	"Bo legioniści odmówili przysięgi",
+	"Bo Polacy z Królestwa Kongresowego nie chcieli walczyć u boku zaborców",
+	"Bo wojna skończyła się w 1918 roku"
+	],
+	"correctAnswer": "Bo Polacy z Królestwa Kongresowego nie chcieli walczyć u boku zaborców",
+	"hint": "Mieszkańcy nie chcieli stanąć po stronie państw, które zabrały Polsce wolność."
 	},
 	{
-	  "question": "Gdzie powstają plemniki?",
-	  "options": [
-		"W nasieniowodach",
-		"W prąciu",
-		"W jądrach",
-		"W cewce moczowej"
-	  ],
-	  "correctAnswer": "W jądrach",
-	  "hint": "To narząd należący do męskiego układu rozrodczego."
+	"question": "Co zrobili Piłsudski i jego żołnierze po nieudanej wyprawie kadrowej?",
+	"options": [
+	"Wstąpili do Legionów Polskich",
+	"Przejęli władzę w Rosji",
+	"Ruszyli z Armią Czerwoną na zachód",
+	"Zakończyli I wojnę światową"
+	],
+	"correctAnswer": "Wstąpili do Legionów Polskich",
+	"hint": "Były to nowo powstałe polskie oddziały."
 	},
 	{
-	  "question": "Jak często powstają plemniki?",
-	  "options": [
-		"Tylko raz w miesiącu",
-		"Stale i w dużych ilościach",
-		"Tylko w dzieciństwie",
-		"Tylko po wysiłku fizycznym"
-	  ],
-	  "correctAnswer": "Stale i w dużych ilościach",
-	  "hint": "Plemniki nie powstają od czasu do czasu, ale cały czas."
+	"question": "Czego w 1917 roku Piłsudski kazał odmówić legionistom?",
+	"options": [
+	"Obrony Warszawy",
+	"Przysięgi braterstwa z Niemcami",
+	"Walki z Armią Czerwoną",
+	"Wyjazdu do Kielc"
+	],
+	"correctAnswer": "Przysięgi braterstwa z Niemcami",
+	"hint": "Za tę decyzję Piłsudski trafił do więzienia."
 	},
 	{
-	  "question": "Gdzie znajdują się jądra?",
-	  "options": [
-		"W jamie brzusznej",
-		"W worku mosznowym poza jamą brzuszną",
-		"W macicy",
-		"W jajowodach"
-	  ],
-	  "correctAnswer": "W worku mosznowym poza jamą brzuszną",
-	  "hint": "Chodzi o miejsce położone poza jamą brzuszną."
+	"question": "Kiedy Józef Piłsudski przyjechał do Warszawy po uwolnieniu?",
+	"options": [
+	"13 sierpnia 1920 roku",
+	"W lutym 1919 roku",
+	"11 listopada 1918 roku",
+	"10 listopada 1918 roku"
+	],
+	"correctAnswer": "10 listopada 1918 roku",
+	"hint": "Stało się to dzień przed objęciem dowództwa nad wojskiem."
 	},
 	{
-	  "question": "Dlaczego niższa temperatura w worku mosznowym jest ważna?",
-	  "options": [
-		"Pomaga w czytaniu tekstu",
-		"Sprzyja prawidłowemu rozwojowi plemników",
-		"Chroni oczy przed słońcem",
-		"Przyspiesza trawienie"
-	  ],
-	  "correctAnswer": "Sprzyja prawidłowemu rozwojowi plemników",
-	  "hint": "Chodzi o warunki potrzebne do rozwoju plemników."
+	"question": "Co wydarzyło się 11 listopada 1918 roku?",
+	"options": [
+	"Piłsudski objął dowództwo nad wojskiem",
+	"Wybuchły rewolucje w Rosji",
+	"Rozpoczęła się Bitwa Warszawska",
+	"Powstała Pierwsza Kompania Kadrowa"
+	],
+	"correctAnswer": "Piłsudski objął dowództwo nad wojskiem",
+	"hint": "Dziś tego dnia obchodzimy Narodowe Święto Niepodległości."
 	},
 	{
-	  "question": "Jaką drogą przemieszczają się plemniki do cewki moczowej?",
-	  "options": [
-		"Przez jajowody",
-		"Przez nasieniowody",
-		"Przez macicę",
-		"Przez pochwę"
-	  ],
-	  "correctAnswer": "Przez nasieniowody",
-	  "hint": "Nazwa tego narządu zawiera słowo „nasienie”."
+	"question": "Kto przejął władzę w Rosji pod koniec 1917 roku?",
+	"options": [
+	"Komuniści",
+	"Legioniści",
+	"Państwa centralne",
+	"Ententa"
+	],
+	"correctAnswer": "Komuniści",
+	"hint": "Stało się to po rewolucjach w Rosji."
 	},
 	{
-	  "question": "Co umożliwia ruch plemnika?",
-	  "options": [
-		"Skrzydło",
-		"Nóżka",
-		"Wić",
-		"Płetwa"
-	  ],
-	  "correctAnswer": "Wić",
-	  "hint": "To cienka część ciała plemnika, dzięki której może się poruszać."
+	"question": "Co głosiła teoria komunizmu?",
+	"options": [
+	"Że każde państwo powinno mieć króla",
+	"Że trzeba zlikwidować prywatną własność, aby nie było biednych i bogatych",
+	"Że Polska powinna walczyć u boku zaborców",
+	"Że należy zakończyć wszystkie wojny w 1918 roku"
+	],
+	"correctAnswer": "Że trzeba zlikwidować prywatną własność, aby nie było biednych i bogatych",
+	"hint": "Chodziło między innymi o fabryki, pola i banki."
 	},
 	{
-	  "question": "Jaka jest funkcja żeńskiego układu rozrodczego?",
-	  "options": [
-		"Wytwarzanie plemników i ich przemieszczanie",
-		"Wytwarzanie komórek jajowych i zapewnienie miejsca do rozwoju nowego organizmu",
-		"Tylko ochrona organizmu przed zimnem",
-		"Tylko trawienie pokarmu"
-	  ],
-	  "correctAnswer": "Wytwarzanie komórek jajowych i zapewnienie miejsca do rozwoju nowego organizmu",
-	  "hint": "Pomyśl o komórkach jajowych i miejscu rozwoju nowego organizmu."
+	"question": "Jak komuniści nazwali swoje państwo?",
+	"options": [
+	"Królestwem Kongresowym",
+	"Austro-Węgrami",
+	"Rosją Radziecką",
+	"Legionami Polskimi"
+	],
+	"correctAnswer": "Rosją Radziecką",
+	"hint": "Tak nazywało się państwo rządzone przez komunistów."
 	},
 	{
-	  "question": "Jaka jest funkcja męskiego układu rozrodczego?",
-	  "options": [
-		"Wytwarzanie komórek jajowych",
-		"Zapewnienie miejsca do rozwoju nowego organizmu",
-		"Wytwarzanie plemników i wprowadzanie ich do narządów rozrodczych kobiety",
-		"Regulowanie pracy całego organizmu"
-	  ],
-	  "correctAnswer": "Wytwarzanie plemników i wprowadzanie ich do narządów rozrodczych kobiety",
-	  "hint": "Chodzi o plemniki i ich przekazanie."
+	"question": "Dlaczego Rosja Radziecka wysłała Armię Czerwoną na zachód przez Polskę?",
+	"options": [
+	"Chciała wywołać światową rewolucję komunistyczną",
+	"Chciała pomóc Piłsudskiemu w tworzeniu Legionów",
+	"Chciała zakończyć I wojnę światową",
+	"Chciała dołączyć do ententy"
+	],
+	"correctAnswer": "Chciała wywołać światową rewolucję komunistyczną",
+	"hint": "Władze Rosji Radzieckiej chciały szerzyć komunizm dalej na zachód."
 	},
 	{
-	  "question": "Co to jest zapłodnienie?",
-	  "options": [
-		"Połączenie komórki jajowej z plemnikiem",
-		"Dojrzewanie komórki jajowej",
-		"Przemieszczanie się plemników przez nasieniowody",
-		"Rozwój nowego organizmu w macicy"
-	  ],
-	  "correctAnswer": "Połączenie komórki jajowej z plemnikiem",
-	  "hint": "To moment spotkania dwóch komórek rozrodczych."
+	"question": "Kiedy trwała wojna polsko-radziecka?",
+	"options": [
+	"Od końca lipca 1914 roku do 1918 roku",
+	"Od pierwszych walk w lutym 1919 roku do 1921 roku",
+	"Od sierpnia 1920 roku do marca 1921 roku",
+	"Od 1917 roku do końca 1917 roku"
+	],
+	"correctAnswer": "Od pierwszych walk w lutym 1919 roku do 1921 roku",
+	"hint": "Pierwsze walki zaczęły się po zakończeniu I wojny światowej."
 	},
 	{
-	  "question": "Gdzie zwykle dochodzi do zapłodnienia?",
-	  "options": [
-		"W macicy",
-		"W pochwie",
-		"W jajniku",
-		"W jajowodzie"
-	  ],
-	  "correctAnswer": "W jajowodzie",
-	  "hint": "To tam trafia komórka jajowa z jajnika."
+	"question": "Co stało się latem 1920 roku?",
+	"options": [
+	"Armia Czerwona dotarła na przedpola Warszawy",
+	"Piłsudski utworzył Pierwszą Kompanię Kadrową",
+	"Komuniści przejęli władzę w Rosji",
+	"I wojna światowa wybuchła w Europie"
+	],
+	"correctAnswer": "Armia Czerwona dotarła na przedpola Warszawy",
+	"hint": "Sytuacja Polaków zrobiła się wtedy bardzo trudna."
 	},
 	{
-	  "question": "Co dzieje się podczas zapłodnienia?",
-	  "options": [
-		"Do komórki jajowej wnika wiele plemników",
-		"Tylko jeden plemnik wnika do wnętrza komórki jajowej",
-		"Komórka jajowa wnika do plemnika",
-		"Żaden plemnik nie dociera do komórki jajowej"
-	  ],
-	  "correctAnswer": "Tylko jeden plemnik wnika do wnętrza komórki jajowej",
-	  "hint": "Do komórki jajowej dociera ich wiele, ale tylko jeden ma decydującą rolę."
+	"question": "Kiedy rozpoczęła się Bitwa Warszawska?",
+	"options": [
+	"10 listopada 1918 roku",
+	"W lutym 1919 roku",
+	"13 sierpnia 1920 roku",
+	"Pod koniec lipca 1914 roku"
+	],
+	"correctAnswer": "13 sierpnia 1920 roku",
+	"hint": "Do obrony stolicy stanęło wtedy wielu mężczyzn, także uczniowie."
 	},
 	{
-	  "question": "Dokąd przemieszcza się zapłodniona komórka jajowa?",
-	  "options": [
-		"Do pochwy",
-		"Do jajnika",
-		"Do macicy",
-		"Do pęcherza moczowego"
-	  ],
-	  "correctAnswer": "Do macicy",
-	  "hint": "To miejsce, w którym może rozwijać się nowy organizm."
+	"question": "Skąd miał ruszyć decydujący kontratak przygotowany przez Piłsudskiego?",
+	"options": [
+	"Z Warszawy",
+	"Znad rzeki Wieprz",
+	"Z Kielc",
+	"Z Rosji Radzieckiej"
+	],
+	"correctAnswer": "Znad rzeki Wieprz",
+	"hint": "Ten plan przygotował Naczelny Wódz Józef Piłsudski."
 	},
 	{
-	  "question": "Dzięki czemu nowy organizm rośnie i rozwija się w macicy?",
-	  "options": [
-		"Dzięki silnie ukrwionej tkance wyściełającej ścianę macicy",
-		"Dzięki powietrzu w macicy",
-		"Dzięki kościom miednicy",
-		"Dzięki mięśniom brzucha"
-	  ],
-	  "correctAnswer": "Dzięki silnie ukrwionej tkance wyściełającej ścianę macicy",
-	  "hint": "Pomyśl o tkance, która wyściela wnętrze macicy."
+	"question": "Jak nazwano polskie zwycięstwo po ataku z 16 sierpnia?",
+	"options": [
+	"Cudem nad Wisłą",
+	"Wyprawą na Kijów",
+	"Powstaniem Warszawskim",
+	"Obroną Westerplatte"
+	],
+	"correctAnswer": "Cudem nad Wisłą",
+	"hint": "Ten atak zaskoczył Rosjan i zmusił ich do ucieczki."
 	},
 	{
-	  "question": "Co dzieje się z komórką jajową, jeśli nie dojdzie do zapłodnienia?",
-	  "options": [
-		"Zamienia się w zarodek",
-		"Przemieszcza się do macicy i rośnie",
-		"Obumiera",
-		"Dzieli się na dwie części"
-	  ],
-	  "correctAnswer": "Obumiera",
-	  "hint": "Gdy nie połączy się z plemnikiem, nie rozwija się dalej."
+	"question": "Co dało Polakom zwycięstwo w Bitwie Warszawskiej?",
+	"options": [
+	"Zdobycie dużego portu nad morzem",
+	"Odepchnięcie komunistów na wschód i obronę niepodległości",
+	"Budowę nowych fabryk w kraju",
+	"Podpisanie sojuszu z Niemcami"
+	],
+	"correctAnswer": "Odepchnięcie komunistów na wschód i obronę niepodległości",
+	"hint": "Po tej bitwie Polska nadal mogła być wolnym państwem."
 	},
 	{
-	  "question": "Co dzieje się, gdy nie dojdzie do zapłodnienia?",
-	  "options": [
-		"Dziecko zaczyna rozwijać się w macicy",
-		"Złuszcza się błona wyściełająca macicę i pojawia się miesiączka",
-		"Komórka jajowa rośnie coraz szybciej",
-		"Macica przestaje pracować"
-	  ],
-	  "correctAnswer": "Złuszcza się błona wyściełająca macicę i pojawia się miesiączka",
-	  "hint": "Chodzi o zmianę w macicy, która pojawia się regularnie."
+	"question": "Co zakończyło wojnę w marcu 1921 roku?",
+	"options": [
+	"Budowa portu w Gdyni",
+	"Atak znad rzeki Wieprz",
+	"Podpisanie traktatu pokojowego",
+	"Powstanie Centralnego Okręgu Przemysłowego"
+	],
+	"correctAnswer": "Podpisanie traktatu pokojowego",
+	"hint": "Ten dokument ustalił granicę państwową."
 	},
 	{
-	  "question": "Jak często zwykle występuje miesiączka?",
-	  "options": [
-		"Co około 7 dni",
-		"Co około 14 dni",
-		"Co około 28 dni",
-		"Raz w roku"
-	  ],
-	  "correctAnswer": "Co około 28 dni",
-	  "hint": "To mniej więcej raz w miesiącu."
+	"question": "Jaka była Polska po 123 latach zaborów?",
+	"options": [
+	"Bardzo bogata i pełna nowych fabryk",
+	"Biedna, ale niezniszczona przez wojny",
+	"Bardzo biedna i mocno zniszczona przez wojny",
+	"Mała, ale z wielkim portem morskim"
+	],
+	"correctAnswer": "Bardzo biedna i mocno zniszczona przez wojny",
+	"hint": "Kraj dopiero się odrodził i musiał wiele odbudować."
 	},
 	{
-	  "question": "Kiedy mówimy, że kobieta jest w ciąży?",
-	  "options": [
-		"Gdy dziecko rozwija się w jej macicy",
-		"Gdy pojawia się miesiączka",
-		"Gdy komórka jajowa obumiera",
-		"Gdy kończy się dojrzewanie"
-	  ],
-	  "correctAnswer": "Gdy dziecko rozwija się w jej macicy",
-	  "hint": "Chodzi o czas rozwoju dziecka przed narodzinami."
+	"question": "Jaki problem miała Polska nad morzem?",
+	"options": [
+	"Miała za dużo dużych portów",
+	"Nie miała żadnego dostępu do morza",
+	"Miała tylko 147 kilometrów wybrzeża i brak dużego portu",
+	"Nie mogła budować statków na rzekach"
+	],
+	"correctAnswer": "Miała tylko 147 kilometrów wybrzeża i brak dużego portu",
+	"hint": "Dostęp Polski do morza był krótki i trudny do wykorzystania."
 	},
 	{
-	  "question": "Jak szybko rozwija się dziecko w czasie ciąży?",
-	  "options": [
-		"Bardzo wolno",
-		"Tylko w ostatnim miesiącu",
-		"Bardzo szybko",
-		"Wcale się nie zmienia"
-	  ],
-	  "correctAnswer": "Bardzo szybko",
-	  "hint": "W tym czasie zachodzi wiele zmian w krótkim czasie."
+	"question": "Czym był pobliski Gdańsk?",
+	"options": [
+	"Stolicą odrodzonej Polski",
+	"Wolnym Miastem",
+	"Małą wioską rybacką",
+	"Siedzibą sejmu"
+	],
+	"correctAnswer": "Wolnym Miastem",
+	"hint": "Rządzący nim Niemcy utrudniali Polakom korzystanie z portu."
 	},
 	{
-	  "question": "Co jest prawdą pod koniec trzeciego miesiąca ciąży?",
-	  "options": [
-		"Dziecko ma już wykształcone wszystkie narządy wewnętrzne",
-		"Dziecko ma już około 50 cm długości",
-		"Dziecko oddycha samodzielnie",
-		"Pojawia się odruch ssania"
-	  ],
-	  "correctAnswer": "Dziecko ma już wykształcone wszystkie narządy wewnętrzne",
-	  "hint": "To informacja o narządach dziecka."
+	"question": "Po co Polsce było własne „okno na świat”?",
+	"options": [
+	"Aby bez przeszkód sprzedawać za granicę węgiel",
+	"Aby przenieść stolicę nad morze",
+	"Aby zbudować więcej zamków",
+	"Aby zakończyć wojnę traktatem"
+	],
+	"correctAnswer": "Aby bez przeszkód sprzedawać za granicę węgiel",
+	"hint": "Chodziło o samodzielny handel z innymi krajami."
 	},
 	{
-	  "question": "Co pojawia się u dziecka w szóstym miesiącu ciąży?",
-	  "options": [
-		"Umiejętność chodzenia",
-		"Odruch ssania",
-		"Samodzielne oddychanie",
-		"Wszystkie zęby"
-	  ],
-	  "correctAnswer": "Odruch ssania",
-	  "hint": "To ważny odruch potrzebny po narodzinach."
+	"question": "Co sejm postanowił w 1922 roku?",
+	"options": [
+	"Zbudować magistralę węglową do Krakowa",
+	"Zbudować wielki port w Gdyni",
+	"Utworzyć Wolne Miasto Gdańsk",
+	"Zbudować 100 fabryk COP-u"
+	],
+	"correctAnswer": "Zbudować wielki port w Gdyni",
+	"hint": "Gdynia była wtedy małą wioską rybacką."
 	},
 	{
-	  "question": "Jaką długość i masę ma dziecko pod koniec ciąży?",
-	  "options": [
-		"Około 20 cm długości i 1 kg masy",
-		"Około 35 cm długości i 2 kg masy",
-		"Około 50 cm długości i około 3 kg masy",
-		"Około 70 cm długości i 5 kg masy"
-	  ],
-	  "correctAnswer": "Około 50 cm długości i około 3 kg masy",
-	  "hint": "Pomyśl o typowej długości i masie noworodka pod koniec ciąży."
+	"question": "Kto od 1926 roku energicznie pokierował budową portu w Gdyni?",
+	"options": [
+	"Józef Piłsudski",
+	"Eugeniusz Kwiatkowski",
+	"Mieszko I",
+	"Kazimierz Wielki"
+	],
+	"correctAnswer": "Eugeniusz Kwiatkowski",
+	"hint": "Był nowym ministrem i przyspieszył prace."
 	},
 	{
-	  "question": "Co dzieje się podczas porodu?",
-	  "options": [
-		"Dziecko wraca do macicy",
-		"Dziecko opuszcza macicę i wydostaje się przez pochwę",
-		"Dziecko przestaje się rozwijać",
-		"Komórka jajowa przemieszcza się do macicy"
-	  ],
-	  "correctAnswer": "Dziecko opuszcza macicę i wydostaje się przez pochwę",
-	  "hint": "Chodzi o moment przyjścia dziecka na świat."
+	"question": "Co powstało dzięki Kwiatkowskiemu w Gdyni?",
+	"options": [
+	"Największy i najnowocześniejszy port handlowy nad Bałtykiem oraz miasto",
+	"Wolne Miasto rządzone przez Niemców",
+	"Traktat pokojowy z 1921 roku",
+	"Pierwsza polska stolica nad morzem"
+	],
+	"correctAnswer": "Największy i najnowocześniejszy port handlowy nad Bałtykiem oraz miasto",
+	"hint": "Zmiana dokonała się w ciągu kilku lat."
 	},
 	{
-	  "question": "Co dzieje się z dzieckiem po porodzie?",
-	  "options": [
-		"Oddycha samodzielnie i odżywia się mlekiem matki",
-		"Nadal oddycha dzięki macicy",
-		"Nie potrzebuje pokarmu",
-		"Od razu zaczyna chodzić"
-	  ],
-	  "correctAnswer": "Oddycha samodzielnie i odżywia się mlekiem matki",
-	  "hint": "Pomyśl o dwóch ważnych zmianach po narodzinach."
+	"question": "Po co zbudowano magistralę węglową?",
+	"options": [
+	"Aby połączyć Gdynię ze Śląskiem i wozić węgiel z kopalń",
+	"Aby połączyć Warszawę z Gdańskiem dla turystów",
+	"Aby dowozić żołnierzy nad rzekę Wieprz",
+	"Aby budować nowoczesne kamienice w Gdyni"
+	],
+	"correctAnswer": "Aby połączyć Gdynię ze Śląskiem i wozić węgiel z kopalń",
+	"hint": "Ta kolej pomagała transportować węgiel do portu."
 	},
 	{
-	  "question": "Kiedy mogą urodzić się bliźnięta jednojajowe?",
-	  "options": [
-		"Gdy do komórki jajowej wnikną dwa plemniki",
-		"Gdy zapłodniona komórka jajowa podzieli się na dwie rozwijające się części",
-		"Gdy w macicy rozwijają się dwa różne organizmy z dwóch komórek jajowych",
-		"Gdy miesiączka występuje co 28 dni"
-	  ],
-	  "correctAnswer": "Gdy zapłodniona komórka jajowa podzieli się na dwie rozwijające się części",
-	  "hint": "Chodzi o podział jednej zapłodnionej komórki."
+	"question": "Jak wyglądały nowe budynki w Gdyni?",
+	"options": [
+	"Były drewniane jak chaty rybackie",
+	"Przypominały średniowieczne zamki",
+	"Miały prosty, nowoczesny styl",
+	"Były kopią budynków z Gdańska"
+	],
+	"correctAnswer": "Miały prosty, nowoczesny styl",
+	"hint": "Niektóre kształtem przypominały kadłuby statków."
 	},
 	{
-	  "question": "Dlaczego higiena intymna jest ważna?",
-	  "options": [
-		"Pomaga zapobiegać chorobom narządów płciowych",
-		"Sprawia, że dojrzewanie trwa krócej",
-		"Powoduje szybszy wzrost",
-		"Zatrzymuje miesiączkę"
-	  ],
-	  "correctAnswer": "Pomaga zapobiegać chorobom narządów płciowych",
-	  "hint": "Pomyśl o ochronie zdrowia."
+	"question": "Co oznacza skrót COP?",
+	"options": [
+	"Centralna Obrona Polski",
+	"Centrum Odbudowy Portów",
+	"Centralny Okręg Przemysłowy",
+	"Całkowita Organizacja Pracy"
+	],
+	"correctAnswer": "Centralny Okręg Przemysłowy",
+	"hint": "Jego budowę w 1937 roku zaproponował Eugeniusz Kwiatkowski."
 	},
 	{
-	  "question": "Czemu sprzyja wilgoć?",
-	  "options": [
-		"Rozwojowi bakterii i grzybów",
-		"Lepszemu oddychaniu skóry",
-		"Szybszemu wysychaniu ubrań",
-		"Wzmocnieniu kości"
-	  ],
-	  "correctAnswer": "Rozwojowi bakterii i grzybów",
-	  "hint": "To dlatego mokrych rzeczy nie powinno się długo nosić."
+	"question": "Jakie zadania miał COP?",
+	"options": [
+	"Rozwijać przemysł, zmniejszać bezrobocie i produkować nowoczesną broń",
+	"Budować tylko porty i statki handlowe",
+	"Ustalić granicę państwową po wojnie",
+	"Pomagać Polakom korzystać z portu w Gdańsku"
+	],
+	"correctAnswer": "Rozwijać przemysł, zmniejszać bezrobocie i produkować nowoczesną broń",
+	"hint": "COP miał wzmocnić kraj i armię."
 	},
 	{
-	  "question": "Czym jest dojrzewanie?",
-	  "options": [
-		"Okresem gwałtownych zmian fizycznych i psychicznych",
-		"Czasem, gdy organizm się nie zmienia",
-		"Tylko okresem szybkiego wzrostu włosów",
-		"Chwilą narodzin dziecka"
-	  ],
-	  "correctAnswer": "Okresem gwałtownych zmian fizycznych i psychicznych",
-	  "hint": "To czas wielu zmian w ciele i zachowaniu."
+	"question": "Ile fabryk zbudowano od zera w ramach COP-u od 1937 roku?",
+	"options": [
+	"147 fabryk",
+	"36 fabryk",
+	"100 fabryk",
+	"16 fabryk"
+	],
+	"correctAnswer": "100 fabryk",
+	"hint": "Wśród nich były zakłady w Mielcu i Stalowej Woli."
 	},
 	{
-	  "question": "Co dzieje się z narządami rozrodczymi w okresie dojrzewania?",
-	  "options": [
-		"Przestają się rozwijać",
-		"Dojrzewają",
-		"Zmniejszają się",
-		"Zamieniają się w kości"
-	  ],
-	  "correctAnswer": "Dojrzewają",
-	  "hint": "Pomyśl, jak zmieniają się narządy związane z rozmnażaniem."
+	"question": "Co wydarzyło się 1 września 1939 roku?",
+	"options": [
+	"Niemcy napadły na Polskę",
+	"Polska podpisała traktat pokojowy",
+	"Związek Radziecki zaatakował Polskę",
+	"Rozpoczęto budowę portu w Gdyni"
+	],
+	"correctAnswer": "Niemcy napadły na Polskę",
+	"hint": "To wydarzenie rozpoczęło II wojnę światową."
 	},
 	{
-	  "question": "Ile zwykle trwa okres dojrzewania?",
-	  "options": [
-		"Kilka dni",
-		"Kilka tygodni",
-		"Kilka miesięcy",
-		"Kilka lat"
-	  ],
-	  "correctAnswer": "Kilka lat",
-	  "hint": "To nie jest krótki etap, tylko proces trwający dłużej."
+	"question": "Kto zaatakował Polskę 17 września 1939 roku?",
+	"options": [
+	"Niemcy",
+	"Związek Radziecki",
+	"Wolne Miasto Gdańsk",
+	"Komuniści spod Warszawy"
+	],
+	"correctAnswer": "Związek Radziecki",
+	"hint": "Był to drugi atak na Polskę we wrześniu 1939 roku."
 	},
 	{
-	  "question": "Około którego roku życia zwykle zaczynają dojrzewać dziewczęta?",
-	  "options": [
-		"Około 8. roku życia",
-		"Około 10. roku życia",
-		"Około 12. roku życia",
-		"Około 15. roku życia"
-	  ],
-	  "correctAnswer": "Około 10. roku życia",
-	  "hint": "Chodzi o wiek podany dla dziewcząt, a nie dla chłopców."
+	"question": "Co stało się z Polską po 36 dniach wojny obronnej w 1939 roku?",
+	"options": [
+	"Wygrała wojnę i odzyskała port w Gdańsku",
+	"Podpisała traktat i ustaliła granicę",
+	"Przegrała i znalazła się pod okupacją",
+	"Zbudowała Centralny Okręg Przemysłowy"
+	],
+	"correctAnswer": "Przegrała i znalazła się pod okupacją",
+	"hint": "Polska była atakowana z kilku stron."
 	},
 	{
-	  "question": "Około którego roku życia zwykle zaczynają dojrzewać chłopcy?",
-	  "options": [
-		"Około 10. roku życia",
-		"Około 11. roku życia",
-		"Około 12. roku życia",
-		"Około 14. roku życia"
-	  ],
-	  "correctAnswer": "Około 12. roku życia",
-	  "hint": "Chłopcy zwykle zaczynają dojrzewać trochę później niż dziewczęta."
+	"question": "Co robili niemieccy okupanci?",
+	"options": [
+	"Pomagali budować polskie fabryki",
+	"Organizowali łapanki i wywozili ludzi do obozów koncentracyjnych",
+	"Ułatwiali Polakom korzystanie z portu",
+	"Podpisali pokój w marcu 1921 roku"
+	],
+	"correctAnswer": "Organizowali łapanki i wywozili ludzi do obozów koncentracyjnych",
+	"hint": "Okupanci stosowali okrutny terror."
 	},
 	{
-	  "question": "Która zmiana jest wspólna dla dziewcząt i chłopców w okresie dojrzewania?",
-	  "options": [
-		"Pojawienie się pierwszej miesiączki",
-		"Poszerzenie bioder",
-		"Szybki wzrost ciała i pojawienie się owłosienia pod pachami oraz w okolicach narządów płciowych",
-		"Obniżenie głosu"
-	  ],
-	  "correctAnswer": "Szybki wzrost ciała i pojawienie się owłosienia pod pachami oraz w okolicach narządów płciowych",
-	  "hint": "Szukaj zmiany, która dotyczy i dziewcząt, i chłopców."
+	"question": "Co rozwinęło się w okupowanej Polsce jako odpowiedź na przemoc?",
+	"options": [
+	"Tajny ruch oporu",
+	"Wielki port handlowy",
+	"Wolne Miasto",
+	"Magistrala węglowa"
+	],
+	"correctAnswer": "Tajny ruch oporu",
+	"hint": "Była to konspiracyjna, czyli ukryta walka z wrogiem."
 	},
 	{
-	  "question": "Co dzieje się ze skórą w okresie dojrzewania?",
-	  "options": [
-		"Skóra wydziela mniej potu i tłuszczu",
-		"Skóra przestaje się pocić",
-		"Zwiększa się wydzielanie potu i substancji tłuszczowych przez skórę",
-		"Skóra staje się całkiem sucha"
-	  ],
-	  "correctAnswer": "Zwiększa się wydzielanie potu i substancji tłuszczowych przez skórę",
-	  "hint": "Pomyśl o poceniu się i tłustej skórze."
+	"question": "Jaka była najważniejsza organizacja polskiego podziemia?",
+	"options": [
+	"Szare Szeregi",
+	"Armia Krajowa (AK)",
+	"Bojowe Szkoły",
+	"Grupy Szturmowe"
+	],
+	"correctAnswer": "Armia Krajowa (AK)",
+	"hint": "Ta organizacja liczyła aż 400 tysięcy żołnierzy."
 	},
 	{
-	  "question": "Co może powodować nadmierne wydzielanie łoju?",
-	  "options": [
-		"Wypryski i trądzik młodzieńczy",
-		"Lepsze widzenie",
-		"Szybszy wzrost kości",
-		"Zmianę koloru oczu"
-	  ],
-	  "correctAnswer": "Wypryski i trądzik młodzieńczy",
-	  "hint": "Chodzi o problem, który często pojawia się na skórze twarzy."
+	"question": "Czym były Szare Szeregi?",
+	"options": [
+	"Tajną nazwą polskiego harcerstwa w czasie wojny",
+	"Oddziałem komunistycznej policji",
+	"Nazwą więzienia w Warszawie",
+	"Grupą żołnierzy Armii Krajowej"
+	],
+	"correctAnswer": "Tajną nazwą polskiego harcerstwa w czasie wojny",
+	"hint": "To konspiracyjny kryptonim harcerzy."
 	},
 	{
-	  "question": "Jakie zmiany zachodzą u dziewcząt w okresie dojrzewania?",
-	  "options": [
-		"Poszerzają się barki i obniża się głos",
-		"Poszerzają się biodra i rozwijają piersi",
-		"Pojawia się zarost i polucje",
-		"Zmniejszają się biodra i barki"
-	  ],
-	  "correctAnswer": "Poszerzają się biodra i rozwijają piersi",
-	  "hint": "To zmiany typowe dla dziewcząt."
+	"question": "Kim byli Zawiszacy?",
+	"options": [
+	"Najstarszymi harcerzami walczącymi z bronią",
+	"Harcerzami, którzy tworzyli Bojowe Szkoły",
+	"Najmłodszymi harcerzami w wieku 12–14 lat",
+	"Dowódcami Grup Szturmowych"
+	],
+	"correctAnswer": "Najmłodszymi harcerzami w wieku 12–14 lat",
+	"hint": "Uczyli się na tajnych kompletach i nosili meldunki."
 	},
 	{
-	  "question": "Co oznacza pojawienie się pierwszej miesiączki u dziewcząt?",
-	  "options": [
-		"Rozpoczęcie wytwarzania komórek jajowych",
-		"Zakończenie dojrzewania",
-		"Początek szybkiego wzrostu ciała",
-		"Zmniejszenie wydzielania potu"
-	  ],
-	  "correctAnswer": "Rozpoczęcie wytwarzania komórek jajowych",
-	  "hint": "To znak, że organizm zaczyna wytwarzać ważne komórki rozrodcze."
+	"question": "Czym zajmowały się Bojowe Szkoły?",
+	"options": [
+	"Odbijaniem więźniów z rąk gestapo",
+	"Przyjmowaniem nazwy PRL",
+	"Pracą w tajnym seminarium",
+	"Małym sabotażem, np. pisaniem haseł na murach"
+	],
+	"correctAnswer": "Małym sabotażem, np. pisaniem haseł na murach",
+	"hint": "Należeli do nich harcerze w wieku 15–17 lat."
 	},
 	{
-	  "question": "Jaka może być miesiączka na początku dojrzewania?",
-	  "options": [
-		"Zawsze regularna i bez żadnych dolegliwości",
-		"Nieregularna i może powodować dolegliwości",
-		"Tylko jednodniowa",
-		"Codzienna"
-	  ],
-	  "correctAnswer": "Nieregularna i może powodować dolegliwości",
-	  "hint": "Na początku organizm dopiero się przyzwyczaja do tych zmian."
+	"question": "Kto tworzył Grupy Szturmowe?",
+	"options": [
+	"Najstarsi harcerze, powyżej 18 lat",
+	"Najmłodsi Zawiszacy",
+	"Harcerze w wieku 15–17 lat",
+	"Uczniowie tajnych kompletów"
+	],
+	"correctAnswer": "Najstarsi harcerze, powyżej 18 lat",
+	"hint": "Prowadzili akcje bojowe, zbrojne i odbijali więźniów."
 	},
 	{
-	  "question": "Która zmiana jest typowa dla chłopców w okresie dojrzewania?",
-	  "options": [
-		"Poszerzają się biodra i rozwijają piersi",
-		"Pojawia się pierwsza miesiączka",
-		"Poszerzają się barki, pojawia się zarost i obniża się głos",
-		"Zmniejsza się owłosienie"
-	  ],
-	  "correctAnswer": "Poszerzają się barki, pojawia się zarost i obniża się głos",
-	  "hint": "Pomyśl o barkach, głosie i włosach na twarzy."
+	"question": "Czym wsławił się Aleksy Dawidowski „Alek”?",
+	"options": [
+	"Został prymasem Polski",
+	"Przeprowadził pierwszą pielgrzymkę do ojczyzny",
+	"Odkręcił niemiecką tablicę z pomnika Kopernika",
+	"Przygotował kontratak znad Wieprza"
+	],
+	"correctAnswer": "Odkręcił niemiecką tablicę z pomnika Kopernika",
+	"hint": "Była to odważna akcja przy pomniku w Warszawie."
 	},
 	{
-	  "question": "Co zaczynają wytwarzać jądra u chłopców?",
-	  "options": [
-		"Komórki jajowe",
-		"Plemniki",
-		"Witaminy",
-		"Krew"
-	  ],
-	  "correctAnswer": "Plemniki",
-	  "hint": "To męskie komórki rozrodcze."
+	"question": "Kogo gestapo aresztowało w marcu 1943 roku?",
+	"options": [
+	"Tadeusza Zawadzkiego „Zośkę”",
+	"Jana Bytnara „Rudego”",
+	"Aleksego Dawidowskiego „Alka”",
+	"Stefana Wyszyńskiego"
+	],
+	"correctAnswer": "Jana Bytnara „Rudego”",
+	"hint": "Był jednym z młodych dowódców Grup Szturmowych."
 	},
 	{
-	  "question": "Co to są polucje?",
-	  "options": [
-		"Bolesne skurcze mięśni",
-		"Mimowolne wydostawanie się plemników podczas snu",
-		"Zmiany nastroju po południu",
-		"Nadmierne wydzielanie potu"
-	  ],
-	  "correctAnswer": "Mimowolne wydostawanie się plemników podczas snu",
-	  "hint": "Chodzi o zjawisko występujące u chłopców podczas snu."
+	"question": "Co zrobili harcerze w akcji pod Arsenałem?",
+	"options": [
+	"Odkręcili tablicę z pomnika Kopernika",
+	"Zerwali niemieckie flagi z murów",
+	"Uwolnili skatowanego „Rudego”",
+	"Utworzyli Polską Rzeczpospolitą Ludową"
+	],
+	"correctAnswer": "Uwolnili skatowanego „Rudego”",
+	"hint": "Akcją dowodził Tadeusz Zawadzki „Zośka”."
 	},
 	{
-	  "question": "Jakie zmiany psychiczne mogą pojawiać się w okresie dojrzewania?",
-	  "options": [
-		"Tylko większa siła mięśni",
-		"Wahania nastroju, większa wrażliwość i potrzeba akceptacji",
-		"Zawsze taki sam nastrój każdego dnia",
-		"Brak potrzeby kontaktu z innymi"
-	  ],
-	  "correctAnswer": "Wahania nastroju, większa wrażliwość i potrzeba akceptacji",
-	  "hint": "Pomyśl o uczuciach i relacjach z innymi."
+	"question": "Jak nazywano oficjalnie Polskę w czasach rządów komunistycznych?",
+	"options": [
+	"Polska Rzeczpospolita Ludowa (PRL)",
+	"Armia Krajowa (AK)",
+	"Szare Szeregi",
+	"Grupy Szturmowe"
+	],
+	"correctAnswer": "Polska Rzeczpospolita Ludowa (PRL)",
+	"hint": "Ta nazwa została oficjalnie wprowadzona w konstytucji z 1952 roku."
 	},
 	{
-	  "question": "Z czym wiąże się dojrzałość psychiczna?",
-	  "options": [
-		"Z umiejętnością samodzielnego podejmowania decyzji i brania za nie odpowiedzialności",
-		"Z bardzo szybkim wzrostem ciała",
-		"Z pojawieniem się owłosienia",
-		"Z obniżeniem głosu"
-	  ],
-	  "correctAnswer": "Z umiejętnością samodzielnego podejmowania decyzji i brania za nie odpowiedzialności",
-	  "hint": "Chodzi o mądre wybory i ponoszenie ich skutków."
+	"question": "Co komuniści robili wobec Kościoła katolickiego?",
+	"options": [
+	"Pomagali mu zachować władzę",
+	"Prześladowali go",
+	"Zmienili go w Armię Krajową",
+	"Utworzyli z niego Szare Szeregi"
+	],
+	"correctAnswer": "Prześladowali go",
+	"hint": "Kościół katolicki jako jedyny zachował niezależność."
 	},
 	{
-	  "question": "Do jakiego lekarza warto zgłosić się przy nasilonym trądziku?",
-	  "options": [
-		"Do okulisty",
-		"Do dermatologa",
-		"Do dentysty",
-		"Do kardiologa"
-	  ],
-	  "correctAnswer": "Do dermatologa",
-	  "hint": "To lekarz zajmujący się skórą."
+	"question": "Kogo komunistyczne władze aresztowały w 1953 roku?",
+	"options": [
+	"Karola Wojtyłę",
+	"Jana Bytnara „Rudego”",
+	"Prymasa Stefana Wyszyńskiego",
+	"Józefa Piłsudskiego"
+	],
+	"correctAnswer": "Prymasa Stefana Wyszyńskiego",
+	"hint": "Był uwięziony przez trzy lata."
 	},
 	{
-	  "question": "Dla kogo szczególnie ważna jest dieta bogata w żelazo?",
-	  "options": [
-		"Dla wszystkich tylko zimą",
-		"Szczególnie dla dziewcząt miesiączkujących",
-		"Tylko dla chłopców",
-		"Tylko dla małych dzieci"
-	  ],
-	  "correctAnswer": "Szczególnie dla dziewcząt miesiączkujących",
-	  "hint": "Pomyśl, komu ta dieta jest szczególnie potrzebna według podanej informacji."
+	"question": "Co wydarzyło się podczas „odwilży” w 1956 roku?",
+	"options": [
+	"Komuniści złagodzili rządy i wypuścili więźniów",
+	"Karol Wojtyła został papieżem",
+	"Powstała Armia Krajowa",
+	"Harcerze przeprowadzili akcję pod Arsenałem"
+	],
+	"correctAnswer": "Komuniści złagodzili rządy i wypuścili więźniów",
+	"hint": "Wypuszczono też prymasa z więzienia."
 	},
 	{
-		"question": "Który z wymienionych organizmów rozmnaża się poprzez pączkowanie?",
-		"options": [
-		  "Bakteria",
-		  "Drożdże",
-		  "Roślina",
-		  "Glony"
-		],
-		"correctAnswer": "Drożdże",
-		"hint": "Ten proces polega na tworzeniu się małego 'pączka' na ciele organizmu macierzystego."
-	  },
-	  {
-		"question": "Jaki sposób rozmnażania bezpłciowego jest charakterystyczny dla bakterii i protistów?",
-		"options": [
-		  "Fragmentacja",
-		  "Pączkowanie",
-		  "Podział",
-		  "Rozmnażanie płciowe"
-		],
-		"correctAnswer": "Podział",
-		"hint": "Polega to na rozdzieleniu się jednej komórki na dwie identyczne części."
-	  },
-	  {
-		"question": "Jak nazywa się komórka, która powstaje w wyniku połączenia się plemnika z komórką jajową?",
-		"options": [
-		  "Gameta",
-		  "Zygota",
-		  "Organizm potomny",
-		  "Pączek"
-		],
-		"correctAnswer": "Zygota",
-		"hint": "To pierwsza komórka nowego organizmu w rozmnażaniu płciowym."
-	  },
-	  {
-		"question": "Które organizmy mogą rozmnażać się bezpłciowo poprzez fragmentację?",
-		"options": [
-		  "Bakterie i drożdże",
-		  "Stulbia i bakterie",
-		  "Rośliny i glony",
-		  "Tylko zwierzęta"
-		],
-		"correctAnswer": "Rośliny i glony",
-		"hint": "Chodzi o sposób, w którym nowy organizm odrasta z oderwanego kawałka (fragmentu) ciała."
-	  },
-	  {
-		"question": "Jak nazywamy męskie gamety wytwarzane przez samca?",
-		"options": [
-		  "Komórki jajowe",
-		  "Zygota",
-		  "Plemniki",
-		  "Zarodki"
-		],
-		"correctAnswer": "Plemniki",
-		"hint": "Są to komórki rozrodcze płci męskiej."
-	  },
-	  {
-		"question": "Zgodnie ze schematem rozmnażania bezpłciowego, z jednego organizmu macierzystego powstają:",
-		"options": [
-		  "3 organizmy potomne",
-		  "2 organizmy potomne",
-		  "Wiele różnych organizmów",
-		  "Zygota"
-		],
-		"correctAnswer": "2 organizmy potomne",
-		"hint": "Spójrz na prosty schemat podziału w Twoich notatkach."
-	  },
-	  {
-		"question": "Płeć żeńska (samica) odpowiedzialna jest za wytwarzanie:",
-		"options": [
-		  "Plemników",
-		  "Komórek jajowych",
-		  "Zygoty",
-		  "Pączków"
-		],
-		"correctAnswer": "Komórek jajowych",
-		"hint": "Są to żeńskie komórki rozrodcze."
-	  },
-	  {
-		"question": "Stulbia to organizm, który rozmnaża się w taki sam sposób jak drożdże. Jaka to metoda?",
-		"options": [
-		  "Podział",
-		  "Fragmentacja",
-		  "Pączkowanie",
-		  "Rozmnażanie płciowe"
-		],
-		"correctAnswer": "Pączkowanie",
-		"hint": "Szukaj metody wymienionej w notatkach przy obu tych organizmach."
-	  },
-	  {
-		"question": "Do którego królestwa organizmów należą drożdże?",
-		"options": [
-		  "Rośliny",
-		  "Bakterie",
-		  "Grzyby",
-		  "Protisty"
-		],
-		"correctAnswer": "Grzyby",
-		"hint": "To jedno z pięciu królestw wymienionych na początku Twoich notatek."
-	  },
-	  {
-		"question": "Główną cechą rozmnażania płciowego jest to, że:",
-		"options": [
-		  "Biorą w nim udział dwie płcie i powstają gamety",
-		  "Organizm po prostu dzieli się na pół",
-		  "Występuje tylko u bakterii",
-		  "Nie wymaga kontaktu między osobnikami"
-		],
-		"correctAnswer": "Biorą w nim udział dwie płcie i powstają gamety",
-		"hint": "Wymaga to współpracy samca i samicy."
-	  }
+	"question": "Gdzie urodził się Karol Wojtyła?",
+	"options": [
+	"W Krakowie",
+	"W Warszawie",
+	"W Wadowicach",
+	"W Gnieźnie"
+	],
+	"correctAnswer": "W Wadowicach",
+	"hint": "Urodził się tam w 1920 roku."
+	},
+	{
+	"question": "Co robił Karol Wojtyła, gdy Niemcy zamknęli uniwersytet?",
+	"options": [
+	"Został Naczelnym Wodzem",
+	"Pracował jako robotnik i uczył się w tajnym seminarium",
+	"Wstąpił do Zawiszaków",
+	"Przyjął nazwę Polska Rzeczpospolita Ludowa"
+	],
+	"correctAnswer": "Pracował jako robotnik i uczył się w tajnym seminarium",
+	"hint": "Działo się to podczas II wojny światowej."
+	},
+	{
+	"question": "Kiedy Karol Wojtyła został księdzem?",
+	"options": [
+	"W 1920 roku",
+	"W 1978 roku",
+	"W 1946 roku",
+	"W 2005 roku"
+	],
+	"correctAnswer": "W 1946 roku",
+	"hint": "Później, w latach 1964–1978, był arcybiskupem krakowskim."
+	},
+	{
+	"question": "Jakie imię przyjął Karol Wojtyła jako papież?",
+	"options": [
+	"Stefan Wyszyński",
+	"Jan Paweł II",
+	"Józef Piłsudski",
+	"Tadeusz Zawadzki"
+	],
+	"correctAnswer": "Jan Paweł II",
+	"hint": "Został wybrany na papieża 16 października 1978 roku."
+	},
+	{
+	"question": "Kim był Jan Paweł II w historii papiestwa?",
+	"options": [
+	"Pierwszym papieżem Polakiem",
+	"Pierwszym prymasem Polski",
+	"Pierwszym dowódcą Grup Szturmowych",
+	"Pierwszym Naczelnym Wodzem"
+	],
+	"correctAnswer": "Pierwszym papieżem Polakiem",
+	"hint": "Był także pierwszym papieżem nie-Włochem od 455 lat."
+	},
+	{
+	"question": "Co dała Polakom pierwsza pielgrzymka papieża do ojczyzny w 1979 roku?",
+	"options": [
+	"Nową nazwę państwa",
+	"Rozkaz do akcji pod Arsenałem",
+	"Siłę i odwagę",
+	"Tajne komplety dla harcerzy"
+	],
+	"correctAnswer": "Siłę i odwagę",
+	"hint": "To pomogło doprowadzić do wielkich strajków w 1980 roku."
+	},
+	{
+	"question": "Ile krajów odwiedził Jan Paweł II?",
+	"options": [
+	"45 krajów",
+	"129 krajów",
+	"400 krajów",
+	"18 krajów"
+	],
+	"correctAnswer": "129 krajów",
+	"hint": "Papież Polak dużo podróżował po świecie."
+	},
+	{
+	"question": "Kiedy Jan Paweł II został ogłoszony świętym?",
+	"options": [
+	"W 1979 roku",
+	"W 2005 roku",
+	"W 2014 roku",
+	"W 1946 roku"
+	],
+	"correctAnswer": "W 2014 roku",
+	"hint": "Zmarł wcześniej, w kwietniu 2005 roku."
+	},
+	{
+	"question": "Jak nazywa się książka Aleksandra Kamińskiego opowiadająca o wojennych losach „Alka”, „Rudego” i „Zośki”?",
+	"options": [
+	"Dywizjon 303",
+	"Kamienie na szaniec",
+	"Syzyfowe prace",
+	"Chłopcy z Placu Broni"
+	],
+	"correctAnswer": "Kamienie na szaniec",
+	"hint": "Książka ta po raz pierwszy została wydana przez tajną drukarnię podczas niemieckiej okupacji."
+	},
+	{
+	"question": "Jakie konkretne zakłady przemysłowe powstały od 1937 roku w ramach budowy COP-u?",
+	"options": [
+	"Stocznia, port rybacki oraz baza okrętów marynarki wojennej",
+	"Fabryka samolotów w Mielcu, elektrownia wodna w Rożnowie i huta żelaza w Stalowej Woli",
+	"Kopalnie węgla kamiennego oraz nowa magistrala kolejowa łącząca Śląsk z morzem",
+	"Tajne drukarnie oraz specjalne schrony wojskowe na przedpolach Warszawy"
+	],
+	"correctAnswer": "Fabryka samolotów w Mielcu, elektrownia wodna w Rożnowie i huta żelaza w Stalowej Woli",
+	"hint": "Zakłady te miały nie tylko rozwijać przemysł, ale też podnieść obronność państwa i produkować broń dla armii."
+	}
   ]
 }

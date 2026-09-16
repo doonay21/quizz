@@ -1,695 +1,255 @@
 {
-  "title": "Historia 2",
-  "description": "Przygotowanie do sprawdzianu z historii.",
+  "title": "Części mowy",
+  "description": "Przygotowanie do sprawdzianu z części mowy.",
   "settings": {
-    "sessionSize": 4,
+    "sessionSize": 22,
     "stimulusMode": "standard",
     "trueFalsePercent": 0,
     "shuffleQuestions": true,
     "shuffleOptions": true
   },
   "items": [
-	{
-	"question": "Kiedy wybuchła I wojna światowa?",
-	"options": [
-	"Pod koniec lipca 1914 roku",
-	"Na początku lutego 1919 roku",
-	"Latem 1920 roku",
-	"Pod koniec roku 1917"
-	],
-	"correctAnswer": "Pod koniec lipca 1914 roku",
-	"hint": "Było to w Europie, kilka lat przed odzyskaniem przez Polskę niepodległości."
-	},
-	{
-	"question": "Które państwa tworzyły ententę?",
-	"options": [
-	"Niemcy i Austro-Węgry",
-	"Rosja, Francja i Anglia",
-	"Polska, Francja i Anglia",
-	"Rosja i Austro-Węgry"
-	],
-	"correctAnswer": "Rosja, Francja i Anglia",
-	"hint": "Ententa walczyła przeciwko Niemcom i Austro-Węgrom."
-	},
-	{
-	"question": "Jaka była najważniejsza przyczyna I wojny światowej?",
-	"options": [
-	"Spór o odbudowę polskiej armii",
-	"Chęć przejęcia władzy przez komunistów",
-	"Rywalizacja mocarstw o główną rolę w Europie i na świecie",
-	"Nieudana wyprawa do Kielc"
-	],
-	"correctAnswer": "Rywalizacja mocarstw o główną rolę w Europie i na świecie",
-	"hint": "Chodziło o walkę silnych państw o wpływy i znaczenie."
-	},
-	{
-	"question": "Dlaczego I wojna światowa była wyjątkowo krwawa?",
-	"options": [
-	"Ponieważ trwała tylko kilka miesięcy",
-	"Ponieważ użyto nowych broni, np. gazów trujących i czołgów",
-	"Ponieważ walczono wyłącznie na morzu",
-	"Ponieważ nie brały w niej udziału wielkie państwa"
-	],
-	"correctAnswer": "Ponieważ użyto nowych broni, np. gazów trujących i czołgów",
-	"hint": "Nowe rodzaje broni sprawiły, że walki były bardzo groźne."
-	},
-	{
-	"question": "Co dał Polakom konflikt między zaborcami?",
-	"options": [
-	"Szansę na odzyskanie niepodległości",
-	"Możliwość uniknięcia wojny w Europie",
-	"Powstanie Rosji Radzieckiej",
-	"Zakończenie wszystkich rewolucji"
-	],
-	"correctAnswer": "Szansę na odzyskanie niepodległości",
-	"hint": "Zaborcy Polski walczyli przeciwko sobie."
-	},
-	{
-	"question": "Kogo Józef Piłsudski uważał za największego wroga Polski?",
-	"options": [
-	"Francję",
-	"Anglię",
-	"Austro-Węgry",
-	"Rosję"
-	],
-	"correctAnswer": "Rosję",
-	"hint": "Dlatego w czasie wojny poparł Austro-Węgry."
-	},
-	{
-	"question": "Co utworzył Piłsudski w sierpniu 1914 roku?",
-	"options": [
-	"Armię Czerwoną",
-	"Pierwszą Kompanię Kadrową",
-	"Rosję Radziecką",
-	"Ententę"
-	],
-	"correctAnswer": "Pierwszą Kompanię Kadrową",
-	"hint": "Miała ona być początkiem przyszłego wojska."
-	},
-	{
-	"question": "Dlaczego pierwsza wyprawa do Kielc się nie powiodła?",
-	"options": [
-	"Bo Armia Czerwona dotarła do Warszawy",
-	"Bo legioniści odmówili przysięgi",
-	"Bo Polacy z Królestwa Kongresowego nie chcieli walczyć u boku zaborców",
-	"Bo wojna skończyła się w 1918 roku"
-	],
-	"correctAnswer": "Bo Polacy z Królestwa Kongresowego nie chcieli walczyć u boku zaborców",
-	"hint": "Mieszkańcy nie chcieli stanąć po stronie państw, które zabrały Polsce wolność."
-	},
-	{
-	"question": "Co zrobili Piłsudski i jego żołnierze po nieudanej wyprawie kadrowej?",
-	"options": [
-	"Wstąpili do Legionów Polskich",
-	"Przejęli władzę w Rosji",
-	"Ruszyli z Armią Czerwoną na zachód",
-	"Zakończyli I wojnę światową"
-	],
-	"correctAnswer": "Wstąpili do Legionów Polskich",
-	"hint": "Były to nowo powstałe polskie oddziały."
-	},
-	{
-	"question": "Czego w 1917 roku Piłsudski kazał odmówić legionistom?",
-	"options": [
-	"Obrony Warszawy",
-	"Przysięgi braterstwa z Niemcami",
-	"Walki z Armią Czerwoną",
-	"Wyjazdu do Kielc"
-	],
-	"correctAnswer": "Przysięgi braterstwa z Niemcami",
-	"hint": "Za tę decyzję Piłsudski trafił do więzienia."
-	},
-	{
-	"question": "Kiedy Józef Piłsudski przyjechał do Warszawy po uwolnieniu?",
-	"options": [
-	"13 sierpnia 1920 roku",
-	"W lutym 1919 roku",
-	"11 listopada 1918 roku",
-	"10 listopada 1918 roku"
-	],
-	"correctAnswer": "10 listopada 1918 roku",
-	"hint": "Stało się to dzień przed objęciem dowództwa nad wojskiem."
-	},
-	{
-	"question": "Co wydarzyło się 11 listopada 1918 roku?",
-	"options": [
-	"Piłsudski objął dowództwo nad wojskiem",
-	"Wybuchły rewolucje w Rosji",
-	"Rozpoczęła się Bitwa Warszawska",
-	"Powstała Pierwsza Kompania Kadrowa"
-	],
-	"correctAnswer": "Piłsudski objął dowództwo nad wojskiem",
-	"hint": "Dziś tego dnia obchodzimy Narodowe Święto Niepodległości."
-	},
-	{
-	"question": "Kto przejął władzę w Rosji pod koniec 1917 roku?",
-	"options": [
-	"Komuniści",
-	"Legioniści",
-	"Państwa centralne",
-	"Ententa"
-	],
-	"correctAnswer": "Komuniści",
-	"hint": "Stało się to po rewolucjach w Rosji."
-	},
-	{
-	"question": "Co głosiła teoria komunizmu?",
-	"options": [
-	"Że każde państwo powinno mieć króla",
-	"Że trzeba zlikwidować prywatną własność, aby nie było biednych i bogatych",
-	"Że Polska powinna walczyć u boku zaborców",
-	"Że należy zakończyć wszystkie wojny w 1918 roku"
-	],
-	"correctAnswer": "Że trzeba zlikwidować prywatną własność, aby nie było biednych i bogatych",
-	"hint": "Chodziło między innymi o fabryki, pola i banki."
-	},
-	{
-	"question": "Jak komuniści nazwali swoje państwo?",
-	"options": [
-	"Królestwem Kongresowym",
-	"Austro-Węgrami",
-	"Rosją Radziecką",
-	"Legionami Polskimi"
-	],
-	"correctAnswer": "Rosją Radziecką",
-	"hint": "Tak nazywało się państwo rządzone przez komunistów."
-	},
-	{
-	"question": "Dlaczego Rosja Radziecka wysłała Armię Czerwoną na zachód przez Polskę?",
-	"options": [
-	"Chciała wywołać światową rewolucję komunistyczną",
-	"Chciała pomóc Piłsudskiemu w tworzeniu Legionów",
-	"Chciała zakończyć I wojnę światową",
-	"Chciała dołączyć do ententy"
-	],
-	"correctAnswer": "Chciała wywołać światową rewolucję komunistyczną",
-	"hint": "Władze Rosji Radzieckiej chciały szerzyć komunizm dalej na zachód."
-	},
-	{
-	"question": "Kiedy trwała wojna polsko-radziecka?",
-	"options": [
-	"Od końca lipca 1914 roku do 1918 roku",
-	"Od pierwszych walk w lutym 1919 roku do 1921 roku",
-	"Od sierpnia 1920 roku do marca 1921 roku",
-	"Od 1917 roku do końca 1917 roku"
-	],
-	"correctAnswer": "Od pierwszych walk w lutym 1919 roku do 1921 roku",
-	"hint": "Pierwsze walki zaczęły się po zakończeniu I wojny światowej."
-	},
-	{
-	"question": "Co stało się latem 1920 roku?",
-	"options": [
-	"Armia Czerwona dotarła na przedpola Warszawy",
-	"Piłsudski utworzył Pierwszą Kompanię Kadrową",
-	"Komuniści przejęli władzę w Rosji",
-	"I wojna światowa wybuchła w Europie"
-	],
-	"correctAnswer": "Armia Czerwona dotarła na przedpola Warszawy",
-	"hint": "Sytuacja Polaków zrobiła się wtedy bardzo trudna."
-	},
-	{
-	"question": "Kiedy rozpoczęła się Bitwa Warszawska?",
-	"options": [
-	"10 listopada 1918 roku",
-	"W lutym 1919 roku",
-	"13 sierpnia 1920 roku",
-	"Pod koniec lipca 1914 roku"
-	],
-	"correctAnswer": "13 sierpnia 1920 roku",
-	"hint": "Do obrony stolicy stanęło wtedy wielu mężczyzn, także uczniowie."
-	},
-	{
-	"question": "Skąd miał ruszyć decydujący kontratak przygotowany przez Piłsudskiego?",
-	"options": [
-	"Z Warszawy",
-	"Znad rzeki Wieprz",
-	"Z Kielc",
-	"Z Rosji Radzieckiej"
-	],
-	"correctAnswer": "Znad rzeki Wieprz",
-	"hint": "Ten plan przygotował Naczelny Wódz Józef Piłsudski."
-	},
-	{
-	"question": "Jak nazwano polskie zwycięstwo po ataku z 16 sierpnia?",
-	"options": [
-	"Cudem nad Wisłą",
-	"Wyprawą na Kijów",
-	"Powstaniem Warszawskim",
-	"Obroną Westerplatte"
-	],
-	"correctAnswer": "Cudem nad Wisłą",
-	"hint": "Ten atak zaskoczył Rosjan i zmusił ich do ucieczki."
-	},
-	{
-	"question": "Co dało Polakom zwycięstwo w Bitwie Warszawskiej?",
-	"options": [
-	"Zdobycie dużego portu nad morzem",
-	"Odepchnięcie komunistów na wschód i obronę niepodległości",
-	"Budowę nowych fabryk w kraju",
-	"Podpisanie sojuszu z Niemcami"
-	],
-	"correctAnswer": "Odepchnięcie komunistów na wschód i obronę niepodległości",
-	"hint": "Po tej bitwie Polska nadal mogła być wolnym państwem."
-	},
-	{
-	"question": "Co zakończyło wojnę w marcu 1921 roku?",
-	"options": [
-	"Budowa portu w Gdyni",
-	"Atak znad rzeki Wieprz",
-	"Podpisanie traktatu pokojowego",
-	"Powstanie Centralnego Okręgu Przemysłowego"
-	],
-	"correctAnswer": "Podpisanie traktatu pokojowego",
-	"hint": "Ten dokument ustalił granicę państwową."
-	},
-	{
-	"question": "Jaka była Polska po 123 latach zaborów?",
-	"options": [
-	"Bardzo bogata i pełna nowych fabryk",
-	"Biedna, ale niezniszczona przez wojny",
-	"Bardzo biedna i mocno zniszczona przez wojny",
-	"Mała, ale z wielkim portem morskim"
-	],
-	"correctAnswer": "Bardzo biedna i mocno zniszczona przez wojny",
-	"hint": "Kraj dopiero się odrodził i musiał wiele odbudować."
-	},
-	{
-	"question": "Jaki problem miała Polska nad morzem?",
-	"options": [
-	"Miała za dużo dużych portów",
-	"Nie miała żadnego dostępu do morza",
-	"Miała tylko 147 kilometrów wybrzeża i brak dużego portu",
-	"Nie mogła budować statków na rzekach"
-	],
-	"correctAnswer": "Miała tylko 147 kilometrów wybrzeża i brak dużego portu",
-	"hint": "Dostęp Polski do morza był krótki i trudny do wykorzystania."
-	},
-	{
-	"question": "Czym był pobliski Gdańsk?",
-	"options": [
-	"Stolicą odrodzonej Polski",
-	"Wolnym Miastem",
-	"Małą wioską rybacką",
-	"Siedzibą sejmu"
-	],
-	"correctAnswer": "Wolnym Miastem",
-	"hint": "Rządzący nim Niemcy utrudniali Polakom korzystanie z portu."
-	},
-	{
-	"question": "Po co Polsce było własne „okno na świat”?",
-	"options": [
-	"Aby bez przeszkód sprzedawać za granicę węgiel",
-	"Aby przenieść stolicę nad morze",
-	"Aby zbudować więcej zamków",
-	"Aby zakończyć wojnę traktatem"
-	],
-	"correctAnswer": "Aby bez przeszkód sprzedawać za granicę węgiel",
-	"hint": "Chodziło o samodzielny handel z innymi krajami."
-	},
-	{
-	"question": "Co sejm postanowił w 1922 roku?",
-	"options": [
-	"Zbudować magistralę węglową do Krakowa",
-	"Zbudować wielki port w Gdyni",
-	"Utworzyć Wolne Miasto Gdańsk",
-	"Zbudować 100 fabryk COP-u"
-	],
-	"correctAnswer": "Zbudować wielki port w Gdyni",
-	"hint": "Gdynia była wtedy małą wioską rybacką."
-	},
-	{
-	"question": "Kto od 1926 roku energicznie pokierował budową portu w Gdyni?",
-	"options": [
-	"Józef Piłsudski",
-	"Eugeniusz Kwiatkowski",
-	"Mieszko I",
-	"Kazimierz Wielki"
-	],
-	"correctAnswer": "Eugeniusz Kwiatkowski",
-	"hint": "Był nowym ministrem i przyspieszył prace."
-	},
-	{
-	"question": "Co powstało dzięki Kwiatkowskiemu w Gdyni?",
-	"options": [
-	"Największy i najnowocześniejszy port handlowy nad Bałtykiem oraz miasto",
-	"Wolne Miasto rządzone przez Niemców",
-	"Traktat pokojowy z 1921 roku",
-	"Pierwsza polska stolica nad morzem"
-	],
-	"correctAnswer": "Największy i najnowocześniejszy port handlowy nad Bałtykiem oraz miasto",
-	"hint": "Zmiana dokonała się w ciągu kilku lat."
-	},
-	{
-	"question": "Po co zbudowano magistralę węglową?",
-	"options": [
-	"Aby połączyć Gdynię ze Śląskiem i wozić węgiel z kopalń",
-	"Aby połączyć Warszawę z Gdańskiem dla turystów",
-	"Aby dowozić żołnierzy nad rzekę Wieprz",
-	"Aby budować nowoczesne kamienice w Gdyni"
-	],
-	"correctAnswer": "Aby połączyć Gdynię ze Śląskiem i wozić węgiel z kopalń",
-	"hint": "Ta kolej pomagała transportować węgiel do portu."
-	},
-	{
-	"question": "Jak wyglądały nowe budynki w Gdyni?",
-	"options": [
-	"Były drewniane jak chaty rybackie",
-	"Przypominały średniowieczne zamki",
-	"Miały prosty, nowoczesny styl",
-	"Były kopią budynków z Gdańska"
-	],
-	"correctAnswer": "Miały prosty, nowoczesny styl",
-	"hint": "Niektóre kształtem przypominały kadłuby statków."
-	},
-	{
-	"question": "Co oznacza skrót COP?",
-	"options": [
-	"Centralna Obrona Polski",
-	"Centrum Odbudowy Portów",
-	"Centralny Okręg Przemysłowy",
-	"Całkowita Organizacja Pracy"
-	],
-	"correctAnswer": "Centralny Okręg Przemysłowy",
-	"hint": "Jego budowę w 1937 roku zaproponował Eugeniusz Kwiatkowski."
-	},
-	{
-	"question": "Jakie zadania miał COP?",
-	"options": [
-	"Rozwijać przemysł, zmniejszać bezrobocie i produkować nowoczesną broń",
-	"Budować tylko porty i statki handlowe",
-	"Ustalić granicę państwową po wojnie",
-	"Pomagać Polakom korzystać z portu w Gdańsku"
-	],
-	"correctAnswer": "Rozwijać przemysł, zmniejszać bezrobocie i produkować nowoczesną broń",
-	"hint": "COP miał wzmocnić kraj i armię."
-	},
-	{
-	"question": "Ile fabryk zbudowano od zera w ramach COP-u od 1937 roku?",
-	"options": [
-	"147 fabryk",
-	"36 fabryk",
-	"100 fabryk",
-	"16 fabryk"
-	],
-	"correctAnswer": "100 fabryk",
-	"hint": "Wśród nich były zakłady w Mielcu i Stalowej Woli."
-	},
-	{
-	"question": "Co wydarzyło się 1 września 1939 roku?",
-	"options": [
-	"Niemcy napadły na Polskę",
-	"Polska podpisała traktat pokojowy",
-	"Związek Radziecki zaatakował Polskę",
-	"Rozpoczęto budowę portu w Gdyni"
-	],
-	"correctAnswer": "Niemcy napadły na Polskę",
-	"hint": "To wydarzenie rozpoczęło II wojnę światową."
-	},
-	{
-	"question": "Kto zaatakował Polskę 17 września 1939 roku?",
-	"options": [
-	"Niemcy",
-	"Związek Radziecki",
-	"Wolne Miasto Gdańsk",
-	"Komuniści spod Warszawy"
-	],
-	"correctAnswer": "Związek Radziecki",
-	"hint": "Był to drugi atak na Polskę we wrześniu 1939 roku."
-	},
-	{
-	"question": "Co stało się z Polską po 36 dniach wojny obronnej w 1939 roku?",
-	"options": [
-	"Wygrała wojnę i odzyskała port w Gdańsku",
-	"Podpisała traktat i ustaliła granicę",
-	"Przegrała i znalazła się pod okupacją",
-	"Zbudowała Centralny Okręg Przemysłowy"
-	],
-	"correctAnswer": "Przegrała i znalazła się pod okupacją",
-	"hint": "Polska była atakowana z kilku stron."
-	},
-	{
-	"question": "Co robili niemieccy okupanci?",
-	"options": [
-	"Pomagali budować polskie fabryki",
-	"Organizowali łapanki i wywozili ludzi do obozów koncentracyjnych",
-	"Ułatwiali Polakom korzystanie z portu",
-	"Podpisali pokój w marcu 1921 roku"
-	],
-	"correctAnswer": "Organizowali łapanki i wywozili ludzi do obozów koncentracyjnych",
-	"hint": "Okupanci stosowali okrutny terror."
-	},
-	{
-	"question": "Co rozwinęło się w okupowanej Polsce jako odpowiedź na przemoc?",
-	"options": [
-	"Tajny ruch oporu",
-	"Wielki port handlowy",
-	"Wolne Miasto",
-	"Magistrala węglowa"
-	],
-	"correctAnswer": "Tajny ruch oporu",
-	"hint": "Była to konspiracyjna, czyli ukryta walka z wrogiem."
-	},
-	{
-	"question": "Jaka była najważniejsza organizacja polskiego podziemia?",
-	"options": [
-	"Szare Szeregi",
-	"Armia Krajowa (AK)",
-	"Bojowe Szkoły",
-	"Grupy Szturmowe"
-	],
-	"correctAnswer": "Armia Krajowa (AK)",
-	"hint": "Ta organizacja liczyła aż 400 tysięcy żołnierzy."
-	},
-	{
-	"question": "Czym były Szare Szeregi?",
-	"options": [
-	"Tajną nazwą polskiego harcerstwa w czasie wojny",
-	"Oddziałem komunistycznej policji",
-	"Nazwą więzienia w Warszawie",
-	"Grupą żołnierzy Armii Krajowej"
-	],
-	"correctAnswer": "Tajną nazwą polskiego harcerstwa w czasie wojny",
-	"hint": "To konspiracyjny kryptonim harcerzy."
-	},
-	{
-	"question": "Kim byli Zawiszacy?",
-	"options": [
-	"Najstarszymi harcerzami walczącymi z bronią",
-	"Harcerzami, którzy tworzyli Bojowe Szkoły",
-	"Najmłodszymi harcerzami w wieku 12–14 lat",
-	"Dowódcami Grup Szturmowych"
-	],
-	"correctAnswer": "Najmłodszymi harcerzami w wieku 12–14 lat",
-	"hint": "Uczyli się na tajnych kompletach i nosili meldunki."
-	},
-	{
-	"question": "Czym zajmowały się Bojowe Szkoły?",
-	"options": [
-	"Odbijaniem więźniów z rąk gestapo",
-	"Przyjmowaniem nazwy PRL",
-	"Pracą w tajnym seminarium",
-	"Małym sabotażem, np. pisaniem haseł na murach"
-	],
-	"correctAnswer": "Małym sabotażem, np. pisaniem haseł na murach",
-	"hint": "Należeli do nich harcerze w wieku 15–17 lat."
-	},
-	{
-	"question": "Kto tworzył Grupy Szturmowe?",
-	"options": [
-	"Najstarsi harcerze, powyżej 18 lat",
-	"Najmłodsi Zawiszacy",
-	"Harcerze w wieku 15–17 lat",
-	"Uczniowie tajnych kompletów"
-	],
-	"correctAnswer": "Najstarsi harcerze, powyżej 18 lat",
-	"hint": "Prowadzili akcje bojowe, zbrojne i odbijali więźniów."
-	},
-	{
-	"question": "Czym wsławił się Aleksy Dawidowski „Alek”?",
-	"options": [
-	"Został prymasem Polski",
-	"Przeprowadził pierwszą pielgrzymkę do ojczyzny",
-	"Odkręcił niemiecką tablicę z pomnika Kopernika",
-	"Przygotował kontratak znad Wieprza"
-	],
-	"correctAnswer": "Odkręcił niemiecką tablicę z pomnika Kopernika",
-	"hint": "Była to odważna akcja przy pomniku w Warszawie."
-	},
-	{
-	"question": "Kogo gestapo aresztowało w marcu 1943 roku?",
-	"options": [
-	"Tadeusza Zawadzkiego „Zośkę”",
-	"Jana Bytnara „Rudego”",
-	"Aleksego Dawidowskiego „Alka”",
-	"Stefana Wyszyńskiego"
-	],
-	"correctAnswer": "Jana Bytnara „Rudego”",
-	"hint": "Był jednym z młodych dowódców Grup Szturmowych."
-	},
-	{
-	"question": "Co zrobili harcerze w akcji pod Arsenałem?",
-	"options": [
-	"Odkręcili tablicę z pomnika Kopernika",
-	"Zerwali niemieckie flagi z murów",
-	"Uwolnili skatowanego „Rudego”",
-	"Utworzyli Polską Rzeczpospolitą Ludową"
-	],
-	"correctAnswer": "Uwolnili skatowanego „Rudego”",
-	"hint": "Akcją dowodził Tadeusz Zawadzki „Zośka”."
-	},
-	{
-	"question": "Jak nazywano oficjalnie Polskę w czasach rządów komunistycznych?",
-	"options": [
-	"Polska Rzeczpospolita Ludowa (PRL)",
-	"Armia Krajowa (AK)",
-	"Szare Szeregi",
-	"Grupy Szturmowe"
-	],
-	"correctAnswer": "Polska Rzeczpospolita Ludowa (PRL)",
-	"hint": "Ta nazwa została oficjalnie wprowadzona w konstytucji z 1952 roku."
-	},
-	{
-	"question": "Co komuniści robili wobec Kościoła katolickiego?",
-	"options": [
-	"Pomagali mu zachować władzę",
-	"Prześladowali go",
-	"Zmienili go w Armię Krajową",
-	"Utworzyli z niego Szare Szeregi"
-	],
-	"correctAnswer": "Prześladowali go",
-	"hint": "Kościół katolicki jako jedyny zachował niezależność."
-	},
-	{
-	"question": "Kogo komunistyczne władze aresztowały w 1953 roku?",
-	"options": [
-	"Karola Wojtyłę",
-	"Jana Bytnara „Rudego”",
-	"Prymasa Stefana Wyszyńskiego",
-	"Józefa Piłsudskiego"
-	],
-	"correctAnswer": "Prymasa Stefana Wyszyńskiego",
-	"hint": "Był uwięziony przez trzy lata."
-	},
-	{
-	"question": "Co wydarzyło się podczas „odwilży” w 1956 roku?",
-	"options": [
-	"Komuniści złagodzili rządy i wypuścili więźniów",
-	"Karol Wojtyła został papieżem",
-	"Powstała Armia Krajowa",
-	"Harcerze przeprowadzili akcję pod Arsenałem"
-	],
-	"correctAnswer": "Komuniści złagodzili rządy i wypuścili więźniów",
-	"hint": "Wypuszczono też prymasa z więzienia."
-	},
-	{
-	"question": "Gdzie urodził się Karol Wojtyła?",
-	"options": [
-	"W Krakowie",
-	"W Warszawie",
-	"W Wadowicach",
-	"W Gnieźnie"
-	],
-	"correctAnswer": "W Wadowicach",
-	"hint": "Urodził się tam w 1920 roku."
-	},
-	{
-	"question": "Co robił Karol Wojtyła, gdy Niemcy zamknęli uniwersytet?",
-	"options": [
-	"Został Naczelnym Wodzem",
-	"Pracował jako robotnik i uczył się w tajnym seminarium",
-	"Wstąpił do Zawiszaków",
-	"Przyjął nazwę Polska Rzeczpospolita Ludowa"
-	],
-	"correctAnswer": "Pracował jako robotnik i uczył się w tajnym seminarium",
-	"hint": "Działo się to podczas II wojny światowej."
-	},
-	{
-	"question": "Kiedy Karol Wojtyła został księdzem?",
-	"options": [
-	"W 1920 roku",
-	"W 1978 roku",
-	"W 1946 roku",
-	"W 2005 roku"
-	],
-	"correctAnswer": "W 1946 roku",
-	"hint": "Później, w latach 1964–1978, był arcybiskupem krakowskim."
-	},
-	{
-	"question": "Jakie imię przyjął Karol Wojtyła jako papież?",
-	"options": [
-	"Stefan Wyszyński",
-	"Jan Paweł II",
-	"Józef Piłsudski",
-	"Tadeusz Zawadzki"
-	],
-	"correctAnswer": "Jan Paweł II",
-	"hint": "Został wybrany na papieża 16 października 1978 roku."
-	},
-	{
-	"question": "Kim był Jan Paweł II w historii papiestwa?",
-	"options": [
-	"Pierwszym papieżem Polakiem",
-	"Pierwszym prymasem Polski",
-	"Pierwszym dowódcą Grup Szturmowych",
-	"Pierwszym Naczelnym Wodzem"
-	],
-	"correctAnswer": "Pierwszym papieżem Polakiem",
-	"hint": "Był także pierwszym papieżem nie-Włochem od 455 lat."
-	},
-	{
-	"question": "Co dała Polakom pierwsza pielgrzymka papieża do ojczyzny w 1979 roku?",
-	"options": [
-	"Nową nazwę państwa",
-	"Rozkaz do akcji pod Arsenałem",
-	"Siłę i odwagę",
-	"Tajne komplety dla harcerzy"
-	],
-	"correctAnswer": "Siłę i odwagę",
-	"hint": "To pomogło doprowadzić do wielkich strajków w 1980 roku."
-	},
-	{
-	"question": "Ile krajów odwiedził Jan Paweł II?",
-	"options": [
-	"45 krajów",
-	"129 krajów",
-	"400 krajów",
-	"18 krajów"
-	],
-	"correctAnswer": "129 krajów",
-	"hint": "Papież Polak dużo podróżował po świecie."
-	},
-	{
-	"question": "Kiedy Jan Paweł II został ogłoszony świętym?",
-	"options": [
-	"W 1979 roku",
-	"W 2005 roku",
-	"W 2014 roku",
-	"W 1946 roku"
-	],
-	"correctAnswer": "W 2014 roku",
-	"hint": "Zmarł wcześniej, w kwietniu 2005 roku."
-	},
-	{
-	"question": "Jak nazywa się książka Aleksandra Kamińskiego opowiadająca o wojennych losach „Alka”, „Rudego” i „Zośki”?",
-	"options": [
-	"Dywizjon 303",
-	"Kamienie na szaniec",
-	"Syzyfowe prace",
-	"Chłopcy z Placu Broni"
-	],
-	"correctAnswer": "Kamienie na szaniec",
-	"hint": "Książka ta po raz pierwszy została wydana przez tajną drukarnię podczas niemieckiej okupacji."
-	},
-	{
-	"question": "Jakie konkretne zakłady przemysłowe powstały od 1937 roku w ramach budowy COP-u?",
-	"options": [
-	"Stocznia, port rybacki oraz baza okrętów marynarki wojennej",
-	"Fabryka samolotów w Mielcu, elektrownia wodna w Rożnowie i huta żelaza w Stalowej Woli",
-	"Kopalnie węgla kamiennego oraz nowa magistrala kolejowa łącząca Śląsk z morzem",
-	"Tajne drukarnie oraz specjalne schrony wojskowe na przedpolach Warszawy"
-	],
-	"correctAnswer": "Fabryka samolotów w Mielcu, elektrownia wodna w Rożnowie i huta żelaza w Stalowej Woli",
-	"hint": "Zakłady te miały nie tylko rozwijać przemysł, ale też podnieść obronność państwa i produkować broń dla armii."
-	}
+    {
+      "question": "Która z wymienionych grup zawiera TYLKO odmienne części mowy?",
+      "options": [
+        "Rzeczownik, przysłówek, czasownik",
+        "Przymiotnik, rzeczownik, czasownik",
+        "Przyimek, spójnik, liczebnik",
+        "Zaimek, partykuła, wykrzyknik"
+      ],
+      "correctAnswer": "Przymiotnik, rzeczownik, czasownik",
+      "hint": "Przymiotnik, rzeczownik, czasownik to odmienne; w opcji A przysłówek jest nieodmienny, w C przyimek i spójnik są nieodmienne, w D partykuła i wykrzyknik są nieodmienne."
+    },
+    {
+      "question": "Która z poniższych części mowy zalicza się do nieodmiennych?",
+      "options": [
+        "Liczebnik",
+        "Zaimek",
+        "Spójnik",
+        "Przymiotnik"
+      ],
+      "correctAnswer": "Spójnik",
+      "hint": "Spójnik."
+    },
+    {
+      "question": "Czasownik to część mowy, która:",
+      "options": [
+        "Jest nieodmienna i łączy wyrazy w zdaniu.",
+        "Odmienia się przez przypadki.",
+        "Odmienia się przez osoby, liczby, czasy, tryby i rodzaje.",
+        "Odmienia się tylko przez stopnie."
+      ],
+      "correctAnswer": "Odmienia się przez osoby, liczby, czasy, tryby i rodzaje.",
+      "hint": "Czasownik odmienia się przez osoby, liczby, czasy, tryby, rodzaje - tzw. koniugacja."
+    },
+    {
+      "question": "Przez co odmienia się rzeczownik?",
+      "options": [
+        "Przez przypadki i liczby.",
+        "Przez osoby i czasy.",
+        "Przez stopnie.",
+        "Rzeczownik jest nieodmienną częścią mowy."
+      ],
+      "correctAnswer": "Przez przypadki i liczby.",
+      "hint": "Rzeczownik odmienia się przez przypadki i liczby - tzw. deklinacja; ma stały rodzaj."
+    },
+    {
+      "question": "W którym szeregu znajdują się same NIEODMIENNE części mowy?",
+      "options": [
+        "lub, ale, oraz, i",
+        "dom, kot, drzewo, auto",
+        "piękny, mądry, duży, wesoły",
+        "pisać, czytać, malować, spać"
+      ],
+      "correctAnswer": "lub, ale, oraz, i",
+      "hint": "To są spójniki, czyli części nieodmienne."
+    },
+    {
+      "question": "Przysłówek odpowiada na pytania \"jak? gdzie? kiedy?\". Do jakiej grupy należy?",
+      "options": [
+        "Do części mowy odmieniających się przez przypadki.",
+        "Do części mowy odmieniających się przez osoby.",
+        "Do nieodmiennych części mowy.",
+        "Do odmiennych części mowy, ale tylko w liczbie mnogiej."
+      ],
+      "correctAnswer": "Do nieodmiennych części mowy.",
+      "hint": "Przysłówek to nieodmienna część mowy."
+    },
+    {
+      "question": "Mimo że przysłówek jest nieodmienny, większość przysłówków ulega pewnemu procesowi. Jakiemu?",
+      "options": [
+        "Koniugacji (odmianie przez czasy).",
+        "Deklinacji (odmianie przez przypadki).",
+        "Stopniowaniu (np. szybko – szybciej – najszybciej).",
+        "Transformacji."
+      ],
+      "correctAnswer": "Stopniowaniu (np. szybko – szybciej – najszybciej).",
+      "hint": "Stopniowanie."
+    },
+    {
+      "question": "Słowa takie jak: w, z, na, pod, o, do to:",
+      "options": [
+        "Nieodmienne spójniki.",
+        "Odmienne zaimki.",
+        "Nieodmienne przyimki.",
+        "Odmienne partykuły."
+      ],
+      "correctAnswer": "Nieodmienne przyimki.",
+      "hint": "Nieodmienne przyimki."
+    },
+    {
+      "question": "Wskaż zdanie, w którym NIE MA ani jednej nieodmiennej części mowy:",
+      "options": [
+        "Tomek i Olek czytają.",
+        "Kot śpi na kanapie.",
+        "On bardzo szybko biega.",
+        "Ala lubi psy."
+      ],
+      "correctAnswer": "Ala lubi psy.",
+      "hint": "Ala - rzeczownik, lubi - czasownik, psy - rzeczownik. Wszystkie są odmienne. W A jest \"i\", w B jest \"na\", w C jest \"bardzo\" i \"szybko\"."
+    },
+    {
+      "question": "Do jakiej części mowy należą wyrazy wyolbrzymiające emocje lub naśladujące dźwięki, np. och!, ach!, miau, bum?",
+      "options": [
+        "Do partykuł.",
+        "Do wykrzykników (są nieodmienne).",
+        "Do zaimków (są odmienne).",
+        "Do spójników (są nieodmienne)."
+      ],
+      "correctAnswer": "Do wykrzykników (są nieodmienne).",
+      "hint": "Wykrzykniki."
+    },
+    {
+      "question": "W zdaniu: „Mały pies głośno szczeka” słowo „mały” to:",
+      "options": [
+        "Odmienny przymiotnik.",
+        "Nieodmienny przysłówek.",
+        "Odmienny rzeczownik.",
+        "Nieodmienny zaimek."
+      ],
+      "correctAnswer": "Odmienny przymiotnik.",
+      "hint": "\"Mały\" to przymiotnik, odmienia się przez przypadki, liczby i rodzaje."
+    },
+    {
+      "question": "Liczebnik (odpowiadający na pytania ile? który z kolei?) należy do:",
+      "options": [
+        "Nieodmiennych części mowy.",
+        "Odmiennych części mowy.",
+        "Części mowy odmieniających się tylko przez czasy.",
+        "Wyjątków, których w ogóle nie przypisuje się do żadnej grupy."
+      ],
+      "correctAnswer": "Odmiennych części mowy.",
+      "hint": "Liczebnik to odmienna część mowy. Powodzenia dla syna na sprawdzianie!"
+    },
+    {
+      "question": "Zaimki to bardzo wyjątkowa część mowy. Zastępują one inne słowa. Czy zaimki są odmienne?",
+      "options": [
+        "Nie, wszystkie zaimki są nieodmienne.",
+        "Tak, odmieniają się zawsze tylko przez osoby.",
+        "Część zaimków się odmienia (np. te zastępujące rzeczowniki), a część nie (te zastępujące przysłówki).",
+        "Odmieniają się tylko zaimki pytające (np. kto?, co?)."
+      ],
+      "correctAnswer": "Część zaimków się odmienia (np. te zastępujące rzeczowniki), a część nie (te zastępujące przysłówki).",
+      "hint": "Zaimki dzielą się na rzeczowne, przymiotne, liczebne – te są odmienne, oraz przysłowne – te są nieodmienne."
+    },
+    {
+      "question": "Słowa takie jak: nie, tak, niech, czy, oby, by należą do:",
+      "options": [
+        "Odmiennych spójników.",
+        "Nieodmiennych partykuł.",
+        "Odmiennych zaimków.",
+        "Nieodmiennych wykrzykników."
+      ],
+      "correctAnswer": "Nieodmiennych partykuł.",
+      "hint": "To są partykuły, nadają znaczenie zdaniu lub wyrazowi, np. przeczenie, i są nieodmienne."
+    },
+    {
+      "question": "W zdaniu: „Zosia narysowała bardzo piękny obrazek” słowo „piękny” to:",
+      "options": [
+        "Odmienny przymiotnik.",
+        "Nieodmienny przysłówek.",
+        "Odmienny zaimek.",
+        "Nieodmienny wykrzyknik."
+      ],
+      "correctAnswer": "Odmienny przymiotnik.",
+      "hint": "Piękny odpowiada na pytanie jaki? – to przymiotnik, odmienia się przez przypadki."
+    },
+    {
+      "question": "W zdaniu: „Zosia pięknie rysuje” słowo „pięknie” to:",
+      "options": [
+        "Odmienny przymiotnik.",
+        "Nieodmienny przysłówek (choć się stopniuje!).",
+        "Odmienny czasownik.",
+        "Nieodmienna partykuła."
+      ],
+      "correctAnswer": "Nieodmienny przysłówek (choć się stopniuje!).",
+      "hint": "Pięknie odpowiada na pytanie jak? – to przysłówek. Częsta pułapka: mylenie przymiotnika z przysłówkiem!"
+    },
+    {
+      "question": "Połączenie przyimka z rzeczownikiem (np. w domu, na stole, do szkoły) to tak zwane:",
+      "options": [
+        "Równoważnik zdania.",
+        "Wyrażenie przyimkowe.",
+        "Związek główny.",
+        "Wyrażenie spójnikowe."
+      ],
+      "correctAnswer": "Wyrażenie przyimkowe.",
+      "hint": "Wyrażenie przyimkowe to częsty temat na sprawdzianach."
+    },
+    {
+      "question": "Wyrazy: pływać, czytać, pisać to:",
+      "options": [
+        "Rzeczowniki odczasownikowe (odmienne).",
+        "Bezokoliczniki, czyli nieodmienne formy czasownika.",
+        "Czasowniki w czasie teraźniejszym (odmienne).",
+        "Przysłówki (nieodmienne)."
+      ],
+      "correctAnswer": "Bezokoliczniki, czyli nieodmienne formy czasownika.",
+      "hint": "Bezokolicznik to forma czasownika, która nie wskazuje na osobę, czas ani liczbę – dlatego się nie odmienia."
+    },
+    {
+      "question": "Rzeczownik ma z góry określony rodzaj. Który z podanych rodzajów NIE występuje w liczbie pojedynczej?",
+      "options": [
+        "Rodzaj męski.",
+        "Rodzaj żeński.",
+        "Rodzaj nijaki.",
+        "Rodzaj męskoosobowy."
+      ],
+      "correctAnswer": "Rodzaj męskoosobowy.",
+      "hint": "Rodzaj męskoosobowy i niemęskoosobowy występują tylko w liczbie mnogiej."
+    },
+    {
+      "question": "W zdaniu: „My idziemy jutro do kina” słowo „My” to:",
+      "options": [
+        "Rzeczownik.",
+        "Zaimek (odmienny, bo zastępuje rzeczownik).",
+        "Partykuła.",
+        "Spójnik."
+      ],
+      "correctAnswer": "Zaimek (odmienny, bo zastępuje rzeczownik).",
+      "hint": "My to zaimek osobowy, odmienia się przez przypadki: nas, nam, nami."
+    },
+    {
+      "question": "Które zdanie zawiera BŁĘDNĄ informację?",
+      "options": [
+        "Spójniki (np. i, oraz, ale) łączą wyrazy lub zdania i są nieodmienne.",
+        "Przysłówki tworzymy najczęściej od przymiotników.",
+        "Liczebnik to nieodmienna część mowy.",
+        "Czasownik jest jedyną częścią mowy, która odmienia się przez czasy."
+      ],
+      "correctAnswer": "Liczebnik to nieodmienna część mowy.",
+      "hint": "Liczebniki są ODMIENNE – np. jeden, jednego, jednemu."
+    },
+    {
+      "question": "Policz, ile odmiennych części mowy znajduje się w zdaniu: „Dwa czarne koty szybko piją mleko.”",
+      "options": [
+        "Dwie (koty, mleko).",
+        "Trzy (czarne, koty, piją).",
+        "Cztery (dwa, czarne, koty, piją, mleko – uwaga, tu jest pięć!).",
+        "Pięć (dwa, czarne, koty, piją, mleko)."
+      ],
+      "correctAnswer": "Pięć (dwa, czarne, koty, piją, mleko).",
+      "hint": "Wszystkie oprócz słowa \"szybko\", które jest przysłówkiem. Dwa – liczebnik, czarne – przymiotnik, koty – rzeczownik, piją – czasownik, mleko – rzeczownik. Zatem 5 odmiennych."
+    }
   ]
 }

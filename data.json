@@ -1,255 +1,343 @@
 {
-  "title": "Części mowy",
-  "description": "Przygotowanie do sprawdzianu z części mowy.",
+  "title": "Czas w historii — przygotowanie do kartkówki",
+  "description": "30 pytań na podstawie stron 6-9 podręcznika. Każde pytanie ma dokładnie jedną prawidłową odpowiedź. Daty i podział na epoki przyjmujemy zgodnie z podręcznikiem. W zadaniach o upływie czasu porównujemy ten sam dzień i miesiąc podanych lat; obliczamy czas, który minął, a nie liczbę dat rocznych wymienionych po drodze.",
   "settings": {
-    "sessionSize": 22,
-    "stimulusMode": "standard",
-    "trueFalsePercent": 0,
-    "shuffleQuestions": true,
-    "shuffleOptions": true
+    "sessionSize": 4,
+    "stimulusMode": "calm",
+    "trueFalsePercent": 25,
+    "shuffleQuestions": false,
+    "shuffleOptions": false
   },
   "items": [
     {
-      "question": "Która z wymienionych grup zawiera TYLKO odmienne części mowy?",
+      "question": "Czym jest epoka w dziejach ludzkości?",
       "options": [
-        "Rzeczownik, przysłówek, czasownik",
-        "Przymiotnik, rzeczownik, czasownik",
-        "Przyimek, spójnik, liczebnik",
-        "Zaimek, partykuła, wykrzyknik"
+        "Okresem trwającym zawsze dokładnie sto lat.",
+        "Długim okresem w historii lub prehistorii, różniącym się od innych epok.",
+        "Okresem trwającym zawsze dokładnie tysiąc lat.",
+        "Dowolnym okresem obejmującym wyłącznie czasy przed wynalezieniem pisma."
       ],
-      "correctAnswer": "Przymiotnik, rzeczownik, czasownik",
-      "hint": "Przymiotnik, rzeczownik, czasownik to odmienne; w opcji A przysłówek jest nieodmienny, w C przyimek i spójnik są nieodmienne, w D partykuła i wykrzyknik są nieodmienne."
+      "correctAnswer": "Długim okresem w historii lub prehistorii, różniącym się od innych epok.",
+      "hint": "Wiek i tysiąclecie mają ustaloną długość. Zastanów się, czy epoki również muszą mieć jednakową liczbę lat i czy występują tylko w prehistorii."
     },
     {
-      "question": "Która z poniższych części mowy zalicza się do nieodmiennych?",
+      "question": "Która kolejność epok, od najwcześniejszej do najpóźniejszej, jest zgodna z podręcznikiem?",
       "options": [
-        "Liczebnik",
-        "Zaimek",
-        "Spójnik",
-        "Przymiotnik"
+        "Młodsza epoka kamienna → starsza epoka kamienna → starożytność → średniowiecze → nowożytność.",
+        "Starsza epoka kamienna → młodsza epoka kamienna → średniowiecze → starożytność → nowożytność.",
+        "Starsza epoka kamienna → młodsza epoka kamienna → starożytność → nowożytność → średniowiecze.",
+        "Starsza epoka kamienna → młodsza epoka kamienna → starożytność → średniowiecze → nowożytność."
       ],
-      "correctAnswer": "Spójnik",
-      "hint": "Spójnik."
+      "correctAnswer": "Starsza epoka kamienna → młodsza epoka kamienna → starożytność → średniowiecze → nowożytność.",
+      "hint": "Najpierw uporządkuj dwie epoki kamienne. Następnie przypomnij sobie, która epoka historyczna była pierwsza i jaka nastąpiła po niej."
     },
     {
-      "question": "Czasownik to część mowy, która:",
+      "question": "Jakie wydarzenie i jaka przybliżona data oddzielają prehistorię od historii?",
       "options": [
-        "Jest nieodmienna i łączy wyrazy w zdaniu.",
-        "Odmienia się przez przypadki.",
-        "Odmienia się przez osoby, liczby, czasy, tryby i rodzaje.",
-        "Odmienia się tylko przez stopnie."
+        "Wynalezienie pisma około 3500 r. p.n.e.",
+        "Wynalezienie pisma około 3500 r. n.e.",
+        "Początek młodszej epoki kamiennej około 8000 r. p.n.e.",
+        "Odkrycie Ameryki w 1492 r. n.e."
       ],
-      "correctAnswer": "Odmienia się przez osoby, liczby, czasy, tryby i rodzaje.",
-      "hint": "Czasownik odmienia się przez osoby, liczby, czasy, tryby, rodzaje - tzw. koniugacja."
+      "correctAnswer": "Wynalezienie pisma około 3500 r. p.n.e.",
+      "hint": "Granica wiąże się z możliwością zapisywania informacji. Sprawdź również, po której stronie początku naszej ery znajduje się właściwa data."
     },
     {
-      "question": "Przez co odmienia się rzeczownik?",
+      "question": "Który zakres dat odpowiada starożytności według podręcznika?",
       "options": [
-        "Przez przypadki i liczby.",
-        "Przez osoby i czasy.",
-        "Przez stopnie.",
-        "Rzeczownik jest nieodmienną częścią mowy."
+        "Od około 8000 r. p.n.e. do około 2500 r. p.n.e.",
+        "Od 476 r. n.e. do 1492 r. n.e.",
+        "Od około 3500 r. p.n.e. do 476 r. n.e.",
+        "Od około 3500 r. p.n.e. do 1492 r. n.e."
       ],
-      "correctAnswer": "Przez przypadki i liczby.",
-      "hint": "Rzeczownik odmienia się przez przypadki i liczby - tzw. deklinacja; ma stały rodzaj."
+      "correctAnswer": "Od około 3500 r. p.n.e. do 476 r. n.e.",
+      "hint": "Starożytność zaczęła się wraz z historią i skończyła wtedy, gdy rozpoczęło się średniowiecze."
     },
     {
-      "question": "W którym szeregu znajdują się same NIEODMIENNE części mowy?",
+      "question": "Jakie daty wyznaczają początek i koniec średniowiecza według podręcznika?",
       "options": [
-        "lub, ale, oraz, i",
-        "dom, kot, drzewo, auto",
-        "piękny, mądry, duży, wesoły",
-        "pisać, czytać, malować, spać"
+        "476 r. p.n.e. i 1492 r. n.e.",
+        "476 r. n.e. i 1492 r. n.e.",
+        "Około 3500 r. p.n.e. i 476 r. n.e.",
+        "1492 r. n.e. i 2000 r. n.e."
       ],
-      "correctAnswer": "lub, ale, oraz, i",
-      "hint": "To są spójniki, czyli części nieodmienne."
+      "correctAnswer": "476 r. n.e. i 1492 r. n.e.",
+      "hint": "Średniowiecze następuje po starożytności, a przed nowożytnością. Obie jego daty graniczne należą do tej samej ery."
     },
     {
-      "question": "Przysłówek odpowiada na pytania \"jak? gdzie? kiedy?\". Do jakiej grupy należy?",
+      "question": "Jaką granicę epok wyznacza w podręczniku odkrycie Ameryki w 1492 r.?",
       "options": [
-        "Do części mowy odmieniających się przez przypadki.",
-        "Do części mowy odmieniających się przez osoby.",
-        "Do nieodmiennych części mowy.",
-        "Do odmiennych części mowy, ale tylko w liczbie mnogiej."
+        "Koniec średniowiecza i początek nowożytności.",
+        "Koniec starożytności i początek średniowiecza.",
+        "Koniec prehistorii i początek starożytności.",
+        "Koniec młodszej epoki kamiennej i początek nowożytności."
       ],
-      "correctAnswer": "Do nieodmiennych części mowy.",
-      "hint": "Przysłówek to nieodmienna część mowy."
+      "correctAnswer": "Koniec średniowiecza i początek nowożytności.",
+      "hint": "Odszukaj w pamięci dwie sąsiadujące epoki, pomiędzy którymi na osi czasu znajduje się rok 1492."
     },
     {
-      "question": "Mimo że przysłówek jest nieodmienny, większość przysłówków ulega pewnemu procesowi. Jakiemu?",
+      "question": "Co oznacza stwierdzenie, że podział na epoki jest umowny?",
       "options": [
-        "Koniugacji (odmianie przez czasy).",
-        "Deklinacji (odmianie przez przypadki).",
-        "Stopniowaniu (np. szybko – szybciej – najszybciej).",
-        "Transformacji."
+        "Wszystkie epoki muszą trwać tyle samo lat, aby dało się je porównywać.",
+        "Daty graniczne epok są całkowicie przypadkowe i nie mają związku z wydarzeniami.",
+        "Historycy mogą przyjmować różne daty graniczne, ponieważ przed naszą erą istniał rok 0.",
+        "Historycy wybierają przełomowe wydarzenia jako granice epok, ale mogą różnie oceniać ich znaczenie."
       ],
-      "correctAnswer": "Stopniowaniu (np. szybko – szybciej – najszybciej).",
-      "hint": "Stopniowanie."
+      "correctAnswer": "Historycy wybierają przełomowe wydarzenia jako granice epok, ale mogą różnie oceniać ich znaczenie.",
+      "hint": "Przypomnij sobie, dlaczego część historyków za ważniejszy przełom uznaje wynalazek druku, a część odkrycie Ameryki."
     },
     {
-      "question": "Słowa takie jak: w, z, na, pod, o, do to:",
+      "question": "Jaki zakres dat przypisano młodszej epoce kamiennej na dolnym podziale osi czasu w podręczniku?",
       "options": [
-        "Nieodmienne spójniki.",
-        "Odmienne zaimki.",
-        "Nieodmienne przyimki.",
-        "Odmienne partykuły."
+        "Od około 8000 r. p.n.e. do około 3500 r. p.n.e.",
+        "Od około 3500 r. p.n.e. do około 2500 r. p.n.e.",
+        "Od około 8000 r. p.n.e. do około 2500 r. p.n.e.",
+        "Od około 2500 r. p.n.e. do 476 r. n.e."
       ],
-      "correctAnswer": "Nieodmienne przyimki.",
-      "hint": "Nieodmienne przyimki."
+      "correctAnswer": "Od około 8000 r. p.n.e. do około 2500 r. p.n.e.",
+      "hint": "Odczytaj granice dolnego pasa osi. Data początku historii, zaznaczona na górnym podziale, nie jest tu datą końca młodszej epoki kamiennej."
     },
     {
-      "question": "Wskaż zdanie, w którym NIE MA ani jednej nieodmiennej części mowy:",
+      "question": "Który zakres lat obejmuje I wiek n.e.?",
       "options": [
-        "Tomek i Olek czytają.",
-        "Kot śpi na kanapie.",
-        "On bardzo szybko biega.",
-        "Ala lubi psy."
+        "1-100 r. n.e.",
+        "0-99 r. n.e.",
+        "1-99 r. n.e.",
+        "100-199 r. n.e."
       ],
-      "correctAnswer": "Ala lubi psy.",
-      "hint": "Ala - rzeczownik, lubi - czasownik, psy - rzeczownik. Wszystkie są odmienne. W A jest \"i\", w B jest \"na\", w C jest \"bardzo\" i \"szybko\"."
+      "correctAnswer": "1-100 r. n.e.",
+      "hint": "Wiek musi obejmować sto lat. Zacznij od pierwszego roku naszej ery i pamiętaj, że nie było roku 0."
     },
     {
-      "question": "Do jakiej części mowy należą wyrazy wyolbrzymiające emocje lub naśladujące dźwięki, np. och!, ach!, miau, bum?",
+      "question": "Który zakres lat obejmuje XV wiek n.e.?",
       "options": [
-        "Do partykuł.",
-        "Do wykrzykników (są nieodmienne).",
-        "Do zaimków (są odmienne).",
-        "Do spójników (są nieodmienne)."
+        "1400-1499 r. n.e.",
+        "1501-1600 r. n.e.",
+        "1401-1500 r. n.e.",
+        "1500-1599 r. n.e."
       ],
-      "correctAnswer": "Do wykrzykników (są nieodmienne).",
-      "hint": "Wykrzykniki."
+      "correctAnswer": "1401-1500 r. n.e.",
+      "hint": "Piętnasty wiek kończy się po upływie piętnastu pełnych stuleci. Jego pierwszy rok następuje bezpośrednio po końcu XIV wieku."
     },
     {
-      "question": "W zdaniu: „Mały pies głośno szczeka” słowo „mały” to:",
+      "question": "Do którego wieku należy rok 2000 n.e. i jaki jest zakres tego wieku?",
       "options": [
-        "Odmienny przymiotnik.",
-        "Nieodmienny przysłówek.",
-        "Odmienny rzeczownik.",
-        "Nieodmienny zaimek."
+        "Do XIX wieku n.e., obejmującego lata 1801-1900 n.e.",
+        "Do XXI wieku n.e., obejmującego lata 2001-2100 n.e.",
+        "Do XX wieku n.e., obejmującego lata 1900-1999 n.e.",
+        "Do XX wieku n.e., obejmującego lata 1901-2000 n.e."
       ],
-      "correctAnswer": "Odmienny przymiotnik.",
-      "hint": "\"Mały\" to przymiotnik, odmienia się przez przypadki, liczby i rodzaje."
+      "correctAnswer": "Do XX wieku n.e., obejmującego lata 1901-2000 n.e.",
+      "hint": "Przy roku zakończonym pełnymi setkami nie dodawaj jedynki do liczby stuleci. Sprawdź także granice podanego zakresu."
     },
     {
-      "question": "Liczebnik (odpowiadający na pytania ile? który z kolei?) należy do:",
+      "question": "Do którego wieku należy rok 1001 n.e. i jaki jest zakres tego wieku?",
       "options": [
-        "Nieodmiennych części mowy.",
-        "Odmiennych części mowy.",
-        "Części mowy odmieniających się tylko przez czasy.",
-        "Wyjątków, których w ogóle nie przypisuje się do żadnej grupy."
+        "Do X wieku n.e., obejmującego lata 901-1000 n.e.",
+        "Do XI wieku n.e., obejmującego lata 1001-1100 n.e.",
+        "Do XI wieku n.e., obejmującego lata 1000-1099 n.e.",
+        "Do XII wieku n.e., obejmującego lata 1101-1200 n.e."
       ],
-      "correctAnswer": "Odmiennych części mowy.",
-      "hint": "Liczebnik to odmienna część mowy. Powodzenia dla syna na sprawdzianie!"
+      "correctAnswer": "Do XI wieku n.e., obejmującego lata 1001-1100 n.e.",
+      "hint": "Rok 1000 zamyka dziesiąte stulecie. Zastanów się, do którego stulecia należy następny rok."
     },
     {
-      "question": "Zaimki to bardzo wyjątkowa część mowy. Zastępują one inne słowa. Czy zaimki są odmienne?",
+      "question": "Który zakres lat obejmuje IV wiek p.n.e., zapisany od roku wcześniejszego do późniejszego?",
       "options": [
-        "Nie, wszystkie zaimki są nieodmienne.",
-        "Tak, odmieniają się zawsze tylko przez osoby.",
-        "Część zaimków się odmienia (np. te zastępujące rzeczowniki), a część nie (te zastępujące przysłówki).",
-        "Odmieniają się tylko zaimki pytające (np. kto?, co?)."
+        "301-400 r. p.n.e.",
+        "399-300 r. p.n.e.",
+        "400-301 r. p.n.e.",
+        "500-401 r. p.n.e."
       ],
-      "correctAnswer": "Część zaimków się odmienia (np. te zastępujące rzeczowniki), a część nie (te zastępujące przysłówki).",
-      "hint": "Zaimki dzielą się na rzeczowne, przymiotne, liczebne – te są odmienne, oraz przysłowne – te są nieodmienne."
+      "correctAnswer": "400-301 r. p.n.e.",
+      "hint": "Przed naszą erą liczby oznaczające lata maleją w miarę upływu czasu. Czwarty wiek p.n.e. musi obejmować dokładnie sto lat."
     },
     {
-      "question": "Słowa takie jak: nie, tak, niech, czy, oby, by należą do:",
+      "question": "Do którego wieku należy rok 1800 p.n.e. i jaki jest zakres tego wieku, od roku wcześniejszego do późniejszego?",
       "options": [
-        "Odmiennych spójników.",
-        "Nieodmiennych partykuł.",
-        "Odmiennych zaimków.",
-        "Nieodmiennych wykrzykników."
+        "Do XIX wieku p.n.e., obejmującego lata 1900-1801 p.n.e.",
+        "Do XVIII wieku p.n.e., obejmującego lata 1800-1701 p.n.e.",
+        "Do XVIII wieku p.n.e., obejmującego lata 1799-1700 p.n.e.",
+        "Do XVII wieku p.n.e., obejmującego lata 1700-1601 p.n.e."
       ],
-      "correctAnswer": "Nieodmiennych partykuł.",
-      "hint": "To są partykuły, nadają znaczenie zdaniu lub wyrazowi, np. przeczenie, i są nieodmienne."
+      "correctAnswer": "Do XVIII wieku p.n.e., obejmującego lata 1800-1701 p.n.e.",
+      "hint": "Wyjątek dla pełnych setek obowiązuje również przed naszą erą. Potem sprawdź kierunek liczenia lat i obie granice wieku."
     },
     {
-      "question": "W zdaniu: „Zosia narysowała bardzo piękny obrazek” słowo „piękny” to:",
+      "question": "Który zakres lat obejmuje VIII wiek p.n.e., zapisany od roku wcześniejszego do późniejszego?",
       "options": [
-        "Odmienny przymiotnik.",
-        "Nieodmienny przysłówek.",
-        "Odmienny zaimek.",
-        "Nieodmienny wykrzyknik."
+        "800-701 r. p.n.e.",
+        "800-700 r. p.n.e.",
+        "799-700 r. p.n.e.",
+        "700-601 r. p.n.e."
       ],
-      "correctAnswer": "Odmienny przymiotnik.",
-      "hint": "Piękny odpowiada na pytanie jaki? – to przymiotnik, odmienia się przez przypadki."
+      "correctAnswer": "800-701 r. p.n.e.",
+      "hint": "Uważaj na zakres obejmujący 101 lat zamiast stu oraz na przesunięcie obu granic o jeden rok."
     },
     {
-      "question": "W zdaniu: „Zosia pięknie rysuje” słowo „pięknie” to:",
+      "question": "Do którego wieku i której jego połowy należy rok 1370 n.e.?",
       "options": [
-        "Odmienny przymiotnik.",
-        "Nieodmienny przysłówek (choć się stopniuje!).",
-        "Odmienny czasownik.",
-        "Nieodmienna partykuła."
+        "Do I połowy XIV wieku n.e.",
+        "Do II połowy XIII wieku n.e.",
+        "Do I połowy XIII wieku n.e.",
+        "Do II połowy XIV wieku n.e."
       ],
-      "correctAnswer": "Nieodmienny przysłówek (choć się stopniuje!).",
-      "hint": "Pięknie odpowiada na pytanie jak? – to przysłówek. Częsta pułapka: mylenie przymiotnika z przysłówkiem!"
+      "correctAnswer": "Do II połowy XIV wieku n.e.",
+      "hint": "Najpierw wyznacz stulecie obejmujące ten rok. Następnie sprawdź, czy rok mieści się w pierwszych, czy w ostatnich pięćdziesięciu latach tego stulecia."
     },
     {
-      "question": "Połączenie przyimka z rzeczownikiem (np. w domu, na stole, do szkoły) to tak zwane:",
+      "question": "Do którego wieku i której jego połowy należy rok 1450 n.e.?",
       "options": [
-        "Równoważnik zdania.",
-        "Wyrażenie przyimkowe.",
-        "Związek główny.",
-        "Wyrażenie spójnikowe."
+        "Do II połowy XV wieku n.e.",
+        "Do I połowy XV wieku n.e.",
+        "Do II połowy XIV wieku n.e.",
+        "Do I połowy XIV wieku n.e."
       ],
-      "correctAnswer": "Wyrażenie przyimkowe.",
-      "hint": "Wyrażenie przyimkowe to częsty temat na sprawdzianach."
+      "correctAnswer": "Do I połowy XV wieku n.e.",
+      "hint": "Policz pierwsze pięćdziesiąt lat wieku, zaczynając od roku 1401. Rok zamykający tę pięćdziesiątkę nadal należy do pierwszej połowy."
     },
     {
-      "question": "Wyrazy: pływać, czytać, pisać to:",
+      "question": "Do którego wieku i której jego połowy należy rok 1451 n.e.?",
       "options": [
-        "Rzeczowniki odczasownikowe (odmienne).",
-        "Bezokoliczniki, czyli nieodmienne formy czasownika.",
-        "Czasowniki w czasie teraźniejszym (odmienne).",
-        "Przysłówki (nieodmienne)."
+        "Do I połowy XV wieku n.e.",
+        "Do II połowy XIV wieku n.e.",
+        "Do II połowy XV wieku n.e.",
+        "Do I połowy XVI wieku n.e."
       ],
-      "correctAnswer": "Bezokoliczniki, czyli nieodmienne formy czasownika.",
-      "hint": "Bezokolicznik to forma czasownika, która nie wskazuje na osobę, czas ani liczbę – dlatego się nie odmienia."
+      "correctAnswer": "Do II połowy XV wieku n.e.",
+      "hint": "Porównaj ten rok z rokiem 1450. Czy przekroczenie granicy połowy wieku oznacza już rozpoczęcie kolejnego wieku?"
     },
     {
-      "question": "Rzeczownik ma z góry określony rodzaj. Który z podanych rodzajów NIE występuje w liczbie pojedynczej?",
+      "question": "Do którego wieku i której jego połowy należy rok 1500 n.e.?",
       "options": [
-        "Rodzaj męski.",
-        "Rodzaj żeński.",
-        "Rodzaj nijaki.",
-        "Rodzaj męskoosobowy."
+        "Do II połowy XV wieku n.e.",
+        "Do I połowy XVI wieku n.e.",
+        "Do I połowy XV wieku n.e.",
+        "Do II połowy XVI wieku n.e."
       ],
-      "correctAnswer": "Rodzaj męskoosobowy.",
-      "hint": "Rodzaj męskoosobowy i niemęskoosobowy występują tylko w liczbie mnogiej."
+      "correctAnswer": "Do II połowy XV wieku n.e.",
+      "hint": "Rok zakończony dwiema zerami zamyka stulecie. Nowe stulecie zaczyna się dopiero w następnym roku."
     },
     {
-      "question": "W zdaniu: „My idziemy jutro do kina” słowo „My” to:",
+      "question": "Do którego wieku i której jego połowy należy rok 776 p.n.e.?",
       "options": [
-        "Rzeczownik.",
-        "Zaimek (odmienny, bo zastępuje rzeczownik).",
-        "Partykuła.",
-        "Spójnik."
+        "Do II połowy VIII wieku p.n.e.",
+        "Do I połowy VII wieku p.n.e.",
+        "Do II połowy VII wieku p.n.e.",
+        "Do I połowy VIII wieku p.n.e."
       ],
-      "correctAnswer": "Zaimek (odmienny, bo zastępuje rzeczownik).",
-      "hint": "My to zaimek osobowy, odmienia się przez przypadki: nas, nam, nami."
+      "correctAnswer": "Do I połowy VIII wieku p.n.e.",
+      "hint": "Ustal granice wieku. Przed naszą erą jego pierwsza połowa obejmuje wcześniejsze lata, czyli te oznaczone większymi liczbami."
     },
     {
-      "question": "Które zdanie zawiera BŁĘDNĄ informację?",
+      "question": "Do którego wieku i której jego połowy należy rok 150 p.n.e.?",
       "options": [
-        "Spójniki (np. i, oraz, ale) łączą wyrazy lub zdania i są nieodmienne.",
-        "Przysłówki tworzymy najczęściej od przymiotników.",
-        "Liczebnik to nieodmienna część mowy.",
-        "Czasownik jest jedyną częścią mowy, która odmienia się przez czasy."
+        "Do I połowy II wieku p.n.e.",
+        "Do II połowy I wieku p.n.e.",
+        "Do II połowy II wieku p.n.e.",
+        "Do I połowy I wieku p.n.e."
       ],
-      "correctAnswer": "Liczebnik to nieodmienna część mowy.",
-      "hint": "Liczebniki są ODMIENNE – np. jeden, jednego, jednemu."
+      "correctAnswer": "Do II połowy II wieku p.n.e.",
+      "hint": "II wiek p.n.e. rozpoczyna rok 200 p.n.e. Odlicz pierwsze pięćdziesiąt lat w stronę mniejszych liczb, a potem sprawdź, po której stronie granicy znajduje się rok 150."
     },
     {
-      "question": "Policz, ile odmiennych części mowy znajduje się w zdaniu: „Dwa czarne koty szybko piją mleko.”",
+      "question": "Do którego wieku i której jego połowy należy rok 151 p.n.e.?",
       "options": [
-        "Dwie (koty, mleko).",
-        "Trzy (czarne, koty, piją).",
-        "Cztery (dwa, czarne, koty, piją, mleko – uwaga, tu jest pięć!).",
-        "Pięć (dwa, czarne, koty, piją, mleko)."
+        "Do I połowy II wieku p.n.e.",
+        "Do II połowy II wieku p.n.e.",
+        "Do I połowy I wieku p.n.e.",
+        "Do II połowy I wieku p.n.e."
       ],
-      "correctAnswer": "Pięć (dwa, czarne, koty, piją, mleko).",
-      "hint": "Wszystkie oprócz słowa \"szybko\", które jest przysłówkiem. Dwa – liczebnik, czarne – przymiotnik, koty – rzeczownik, piją – czasownik, mleko – rzeczownik. Zatem 5 odmiennych."
+      "correctAnswer": "Do I połowy II wieku p.n.e.",
+      "hint": "Przed naszą erą rok 151 jest wcześniejszy niż rok 150. Sprawdź, który z nich zamyka pierwszą pięćdziesiątkę lat II wieku p.n.e."
+    },
+    {
+      "question": "Do którego wieku i której jego połowy należy rok 100 p.n.e.?",
+      "options": [
+        "Do II połowy I wieku p.n.e.",
+        "Do I połowy I wieku p.n.e.",
+        "Do I połowy II wieku p.n.e.",
+        "Do II połowy II wieku p.n.e."
+      ],
+      "correctAnswer": "Do I połowy I wieku p.n.e.",
+      "hint": "I wiek p.n.e. obejmuje lata od 100 do 1 p.n.e. Ustal, przy którym końcu tego zakresu czasowo zaczyna się stulecie."
+    },
+    {
+      "question": "Ile lat minęło od 476 r. n.e. do 1492 r. n.e., czyli między datami granicznymi średniowiecza podanymi w podręczniku?",
+      "options": [
+        "1015 lat.",
+        "1017 lat.",
+        "1968 lat.",
+        "1016 lat."
+      ],
+      "correctAnswer": "1016 lat.",
+      "hint": "Obie daty należą do naszej ery. Odejmij wcześniejszy rok od późniejszego; nie doliczaj osobno obu lat granicznych."
+    },
+    {
+      "question": "Rysunek podróży przyszłości pochodzi z 1829 r., a zdjęcie Pendolino z 2015 r. Ile lat dzieli te daty?",
+      "options": [
+        "186 lat.",
+        "185 lat.",
+        "187 lat.",
+        "286 lat."
+      ],
+      "correctAnswer": "186 lat.",
+      "hint": "To daty z tej samej ery. Możesz policzyć osobno czas od 1829 do 1900 r., od 1900 do 2000 r. i od 2000 do 2015 r."
+    },
+    {
+      "question": "Jedno wydarzenie nastąpiło w 776 r. p.n.e., a drugie w 399 r. p.n.e. Ile lat minęło między nimi?",
+      "options": [
+        "376 lat.",
+        "378 lat.",
+        "377 lat.",
+        "1175 lat."
+      ],
+      "correctAnswer": "377 lat.",
+      "hint": "Oba wydarzenia nastąpiły przed naszą erą. Wcześniejszy rok ma większą liczbę, ale odległość między datami nadal oblicza się przez odejmowanie."
+    },
+    {
+      "question": "Ile lat minęło od wydarzenia w 200 r. p.n.e. do wydarzenia w 101 r. p.n.e.?",
+      "options": [
+        "100 lat.",
+        "98 lat.",
+        "301 lat.",
+        "99 lat."
+      ],
+      "correctAnswer": "99 lat.",
+      "hint": "Odróżnij liczbę lat należących do całego wieku od czasu między tym samym dniem jego pierwszego i ostatniego roku. Między rokiem 200 a 199 p.n.e. mija jeden rok."
+    },
+    {
+      "question": "Ile lat minęło od wydarzenia w 1 r. p.n.e. do wydarzenia w 1 r. n.e.?",
+      "options": [
+        "0 lat.",
+        "1 rok.",
+        "2 lata.",
+        "3 lata."
+      ],
+      "correctAnswer": "1 rok.",
+      "hint": "Narysuj fragment osi czasu wokół początku naszej ery. Nie wstawiaj roku 0, ponieważ go nie było."
+    },
+    {
+      "question": "Jedno wydarzenie nastąpiło w 87 r. p.n.e., a drugie w 78 r. n.e. Ile lat minęło między nimi?",
+      "options": [
+        "9 lat.",
+        "165 lat.",
+        "164 lata.",
+        "166 lat."
+      ],
+      "correctAnswer": "164 lata.",
+      "hint": "Daty leżą po przeciwnych stronach początku naszej ery. Dodaj liczby oznaczające lata i uwzględnij brak roku 0."
+    },
+    {
+      "question": "Ile lat minęło od wydarzenia w 100 r. p.n.e. do wydarzenia w 100 r. n.e.?",
+      "options": [
+        "199 lat.",
+        "200 lat.",
+        "0 lat.",
+        "201 lat."
+      ],
+      "correctAnswer": "199 lat.",
+      "hint": "Jednakowe liczby przy datach nie oznaczają tego samego roku, jeśli ery są różne. Przy przejściu między erami pamiętaj o brakującym roku 0."
     }
   ]
 }
